@@ -14,6 +14,7 @@ func main() {
 	fmt.Println(lengthOfLongestSubstring1("abcabcbb"))
 }
 
+// 同 hot100 3
 // 使用滑动窗口解决
 func lengthOfLongestSubstring(s string) int {
 
