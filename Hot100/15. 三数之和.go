@@ -14,7 +14,7 @@ func main() {
 }
 
 // 类似两数之和的解法的话，每次要循环遍历map，时间复杂度太高
-// 此题解法 -- 排序 + 双指针 + 二分法
+// 此题解法 -- 排序 + 双指针
 func threeSum(nums []int) [][]int {
 	if nums == nil || len(nums) < 3 {
 		return nil
