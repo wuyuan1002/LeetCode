@@ -34,9 +34,9 @@ func isValid(s string) bool {
 	for _, c := range sbyte {
 		if c == '(' || c == '[' || c == '{' {
 			stack = append(stack, c)
-		} else if (c == ')' || c == ']' || c == '}') && len(stack) > 0 {
+		} else if len(stack) > 0 && (c == ')' || c == ']' || c == '}') {
 			if c != brackets[stack[len(stack)-1]] {
-				// 于栈中最后一个左括号对应的合法右括号比较，若不同则返回false
+				// 与栈中最后一个左括号对应的合法右括号比较，若不同则返回false
 				return false
 			}
 			// 若当前右括号合法，则将栈顶左括号出栈，继续检查下一个右括号
