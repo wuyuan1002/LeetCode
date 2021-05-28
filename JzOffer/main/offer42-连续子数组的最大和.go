@@ -30,7 +30,7 @@ func max(a, b int) int {
 	return b
 }
 
-// 第二次做 -- 不适用动态规划，每次加数组后面一个元素，前面和和小于当前数字时抛弃前面的数字重新累加
+// 第二次做 -- 不用动态规划，每次加数组后面一个元素，前面的和小于当前数字时抛弃前面的数字重新累加
 func maxSubArray1(nums []int) int {
 	if nums == nil || len(nums) == 0 {
 		return 0
