@@ -24,6 +24,7 @@ var phone = map[string][]byte{
 	"9": {'w', 'x', 'y', 'z'},
 }
 
+// offer 17
 // 回溯法
 func letterCombinations(digits string) []string {
 	if digits == "" {
