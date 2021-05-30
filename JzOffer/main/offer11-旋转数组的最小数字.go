@@ -55,6 +55,7 @@ func orderFind(arr []int) int {
 }
 
 // 第二次做
+// 二分法
 func minArray1(numbers []int) int {
 	if numbers == nil || len(numbers) == 0 {
 		panic("数组为nil或长度为0")
@@ -63,27 +64,27 @@ func minArray1(numbers []int) int {
 		return numbers[0]
 	}
 
-	first := 0               // 第一个元素下标
-	last := len(numbers) - 1 // 最后一个元素下标
-	mid := first             // 中间元素的下标; 把中间下标初始化为first，如果是把数组的前0个元素移到数组后面，其实就递增数组本身，那么最小值其实就是数组的第一个元素，在后面的循环中就不会进入，这也是为什么循环条件不能写成(first < last)的原因
+	l := 0                // 第一个元素下标
+	r := len(numbers) - 1 // 最后一个元素下标
+	mid := l              // 中间元素的下标; 把中间下标初始化为first，如果是把数组的前0个元素移到数组后面，其实就递增数组本身，那么最小值其实就是数组的第一个元素，在后面的循环中就不会进入，这也是为什么循环条件不能写成(l <= r)的原因
 
-	// first始终往大的数字上移动，last始终往小的数字上移动，当两个下标的差为1时，说明first移到了最大的数字上，last移到了最小的数字上
-	for numbers[first] >= numbers[last] { // 循环条件不可以是first < last，见mid的解释
-		if last-first == 1 {
-			mid = last
+	// l始终往大的数字上移动，r始终往小的数字上移动，当两个下标的差为1时，说明l移到了最大的数字上，r移到了最小的数字上
+	for numbers[l] >= numbers[r] { // 循环条件不可以是first < r，见mid的解释
+		if r-l == 1 {
+			mid = r
 			break
 		}
-		mid = (first + last) / 2
+		mid = (l + r) / 2
 
-		if numbers[mid] == numbers[first] && numbers[mid] == numbers[last] {
+		if numbers[mid] == numbers[l] && numbers[mid] == numbers[r] {
 			// 若三个指向的值相等，则无法判断中间的数字是位于前面的数组还是后面的数组，只能顺序查找
-			return orderFind(numbers[first : last+1])
+			return orderFind(numbers[l : r+1])
 		}
 
-		if numbers[mid] >= numbers[first] {
-			first = mid
-		} else if numbers[mid] <= numbers[last] {
-			last = mid
+		if numbers[mid] >= numbers[l] {
+			l = mid
+		} else if numbers[mid] <= numbers[r] {
+			r = mid
 		}
 	}
 	return numbers[mid]
