@@ -24,7 +24,7 @@ func threeSum(nums []int) [][]int {
 	result := make([][]int, 0)
 
 	// 排序
-	sort(nums, 0, len(nums)-1)
+	quickSort(nums, 0, len(nums)-1)
 
 	target := 0
 	for i := 0; i < len(nums)-1; i++ {
@@ -64,7 +64,7 @@ func threeSum(nums []int) [][]int {
 }
 
 // 快排
-func sort(nums []int, left, right int) {
+func quickSort(nums []int, left, right int) {
 	if left >= right || nums == nil || len(nums) == 0 {
 		return
 	}
@@ -84,6 +84,6 @@ func sort(nums []int, left, right int) {
 	}
 	nums[left], nums[l] = nums[l], temp
 
-	sort(nums, left, l-1)
-	sort(nums, r+1, right)
+	quickSort(nums, left, l-1)
+	quickSort(nums, r+1, right)
 }
