@@ -29,9 +29,9 @@ func minPathSum(grid [][]int) int {
 	products := make([]int, len(grid[0]))
 	for i := 0; i < len(grid); i++ {
 		for j := 0; j < len(grid[0]); j++ {
-			if j == 0 {
+			if j == 0 { // 第一列
 				products[j] = grid[i][j] + products[j]
-			} else if i == 0 {
+			} else if i == 0 { // 第一行
 				products[j] = grid[i][j] + products[j-1]
 			} else {
 				products[j] = grid[i][j] + min(products[j], products[j-1])
