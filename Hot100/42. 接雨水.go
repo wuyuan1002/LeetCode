@@ -6,7 +6,8 @@ func main() {
 
 }
 
-// 双指针
+// 对比Hot100 84
+// 双指针 -- 也可用单调栈来解决
 // 一列一列求，每一列所能接的雨水数量等于当前列高度和它左右最高列相对低的那列的差决定
 func trap(height []int) int {
 	if height == nil || len(height) == 0 {
