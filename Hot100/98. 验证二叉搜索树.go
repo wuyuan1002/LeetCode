@@ -61,5 +61,6 @@ func isValidTree(root *TreeNode, min, max int) bool {
 		return false
 	}
 
+	// 左树所有节点的值都不能大于当前节点，右树所有节点都不能小于当前节点
 	return isValidTree(root.Left, min, root.Val) && isValidTree(root.Right, root.Val, max)
 }
