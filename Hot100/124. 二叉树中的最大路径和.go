@@ -15,26 +15,25 @@ func main() {
 
 func maxPathSum(root *TreeNode) int {
 	maxSum := math.MinInt32
-	var maxGain func(*TreeNode) int
-	maxGain = func(node *TreeNode) int {
-		if node == nil {
-			return 0
-		}
-
-		// 递归计算左右子节点的最大贡献值
-		// 只有在最大贡献值大于 0 时，才会选取对应子节点
-		leftGain := max(maxGain(node.Left), 0)
-		rightGain := max(maxGain(node.Right), 0)
-
-		// 节点的最大路径和取决于该节点的值与该节点的左右子节点的最大贡献值
-		priceNewPath := node.Val + leftGain + rightGain
-
-		// 更新答案
-		maxSum = max(maxSum, priceNewPath)
-
-		// 返回节点的最大贡献值
-		return node.Val + max(leftGain, rightGain)
-	}
-	maxGain(root)
+	pathSum(root, &maxSum)
 	return maxSum
+}
+
+func pathSum(root *TreeNode, maxSum *int) int {
+	if root == nil {
+		return 0
+	}
+
+	// 左右树能提供的最大值 -- 最小为0
+	leftSum := pathSum(root.Left, maxSum)
+	rightSum := pathSum(root.Right, maxSum)
+
+	// 当前节点的最大值
+	priceNewPath := root.Val + leftSum + rightSum
+
+	// 更新最大值
+	*maxSum = max(*maxSum, priceNewPath)
+
+	// 返回当前节点对父节点的最大贡献值 -- 若贡献值小于0，则返回0
+	return max(root.Val+max(leftSum, rightSum), 0)
 }
