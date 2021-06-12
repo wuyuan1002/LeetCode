@@ -16,6 +16,7 @@ func maxSubArray(nums []int) int {
 		panic("nums is empty")
 	}
 
+	// 以某个值结尾的最大和 = max(它本身+以前一个值结尾的最大和, 它本身)
 	products := make([]int, len(nums))
 	products[0] = nums[0] // products[i]表示以第i个数结尾的最大和
 
