@@ -9,16 +9,20 @@ func main() {
 
 }
 
+// 类似Hot100 152
 // 使用动态规划 -- 见offer14
 func maxSubArray(nums []int) int {
 	if nums == nil || len(nums) == 0 {
 		panic("nums is empty")
 	}
 
-	sum := nums[0]
+	products := make([]int, len(nums))
+	products[0] = nums[0] // products[i]表示以第i个数结尾的最大和
+
+	sum := nums[0] // 最大和
 	for i := 1; i < len(nums); i++ {
-		nums[i] = max(nums[i]+nums[i-1], nums[i])
-		sum = max(nums[i], sum)
+		products[i] = max(nums[i]+products[i-1], nums[i])
+		sum = max(products[i], sum)
 	}
 	return sum
 }
