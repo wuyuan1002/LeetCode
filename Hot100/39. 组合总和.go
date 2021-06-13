@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
+// 39. 组合总和
+
 // 给定一个无重复元素的数组candidates和一个目标数target，找出candidates中所有可以使数字和为target的组合。
 // candidates中的数字可以无限制重复被选取。
 //

@@ -4,6 +4,10 @@ import (
 	"fmt"
 )
 
+// 5. 最长回文子串
+
+// 给你一个字符串 s，找到 s 中最长的回文子串。
+
 func main() {
 	// fmt.Println([]int{1,2,3,4,5}[3:5])
 	fmt.Println(longestPalindrome("babad"))
