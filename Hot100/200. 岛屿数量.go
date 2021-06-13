@@ -31,7 +31,7 @@ func numIslands(grid [][]byte) int {
 }
 
 func dfs8(grid [][]byte, i, j int) {
-	// 若当前位置不是岛屿，直接返回
+	// 若当前位置不是岛屿或已被访问过，直接返回
 	if i < 0 || i > len(grid)-1 || j < 0 || j > len(grid[0])-1 || grid[i][j] != '1' {
 		return
 	}
