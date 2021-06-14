@@ -16,8 +16,7 @@ func reverseList(head *ListNode) *ListNode {
 	}
 
 	// 前一个节点、当前节点、下一个节点
-	pre, node, next := head, head.Next, head.Next
-	pre.Next = nil
+	var pre, node, next *ListNode = nil, head, head.Next
 	for node != nil {
 		next = node.Next
 
