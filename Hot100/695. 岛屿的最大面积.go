@@ -35,7 +35,7 @@ func maxAreaOfIsland(grid [][]int) int {
 	maxArea := 0
 	for i := 0; i < len(grid); i++ {
 		for j := 0; j < len(grid[0]); j++ {
-			// 若当前节点已被访问过则是*, 水是0, 只有当前节点是陆地时是1
+			// 若当前节点已被访问过则是-1, 水是0, 只有当前节点是陆地时是1
 			if grid[i][j] == 1 {
 				area := dfs9(grid, i, j)
 				maxArea = max(maxArea, area)
