@@ -23,14 +23,18 @@ func constructArr(a []int) []int {
 	for i := range result {
 		result[i] = 1
 	}
+
+	// 乘nums里i的前半部分
 	for i := 1; i < len(a); i++ {
-		result[i] *= result[i-1] * a[i-1]
+		result[i] = result[i-1] * a[i-1]
 	}
 
+	// 乘nums里i的后半部分
 	accu := 1
 	for i := len(a) - 2; i >= 0; i-- {
 		accu *= a[i+1]
 		result[i] *= accu
 	}
+
 	return result
 }
