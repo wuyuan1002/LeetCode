@@ -13,6 +13,7 @@ func main() {
 	fmt.Println(maxSlidingWindow1([]int{1, 3, -1, -3, 5, 3, 6, 7}, 3))
 }
 
+// 同Hot100 239
 func maxSlidingWindow(nums []int, k int) []int {
 	if nums == nil || len(nums) == 0 || k <= 0 {
 		return nil
