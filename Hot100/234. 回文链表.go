@@ -16,7 +16,7 @@ func isPalindrome(head *ListNode) bool {
 		return false
 	}
 
-	// 快慢指针寻找链表的中间节点
+	// 快慢指针寻找链表的中间节点 -- 偶数找到的是前一个
 	slow, fast := head, head
 	for fast.Next != nil && fast.Next.Next != nil {
 		slow = slow.Next
@@ -26,6 +26,7 @@ func isPalindrome(head *ListNode) bool {
 	// 翻转链表的后半部分
 	end := reversList(slow.Next)
 
+	// 从两边遍历链表，分别比较
 	result := true
 	p1, p2 := head, end
 	for result && p2 != nil {
@@ -36,6 +37,7 @@ func isPalindrome(head *ListNode) bool {
 		p2 = p2.Next
 	}
 
+	// 将反转的后半部分再反转回去
 	slow.Next = reversList(end)
 
 	return result
