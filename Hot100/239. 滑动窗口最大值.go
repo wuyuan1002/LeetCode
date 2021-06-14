@@ -16,6 +16,8 @@ func main() {
 }
 
 // 同 offer 59
+// offer59那样做会超出时间限制
+// 构建一个单调递减队列，具体实现类似于offer 59-2
 func maxSlidingWindow(nums []int, k int) []int {
 
 	if nums == nil || len(nums) == 0 || k <= 0 {
@@ -40,12 +42,13 @@ func maxSlidingWindow(nums []int, k int) []int {
 		maxqueue = append(maxqueue[:index], i)
 	}
 
+	// 形成窗口后，将第一个窗口的最大值入结果集
 	result = append(result, nums[maxqueue[0]])
 
 	// 形成窗口后，向后移动窗口
 	for ; i < len(nums); i++ {
 
-		// 删掉队列中超出窗口大小的元素
+		// 删掉队列中超出窗口大小的元素 -- 若窗口中最大值超出窗口大小
 		if len(maxqueue) > 0 && i-maxqueue[0]+1 > k {
 			index := 0
 			for ; index < len(maxqueue); index++ {
