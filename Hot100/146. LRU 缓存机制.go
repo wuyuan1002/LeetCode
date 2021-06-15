@@ -70,7 +70,7 @@ func (cache *LRUCache) Put(key int, value int) {
 	} else {
 		// 获取最后一个节点
 		lastNode := cache.cacheList.Back()
-		// zaimap中删除
+		// 在map中删除
 		delete(cache.cacheMap, lastNode.Value.(KV).K)
 		// 在链表中删除
 		cache.cacheList.Remove(lastNode)
