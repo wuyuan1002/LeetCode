@@ -15,6 +15,7 @@ func main() {
 	fmt.Print(findNumberIn2DArray2(arr, 5))
 }
 
+// 同Hot100 240
 func findNumberIn2DArray(matrix [][]int, target int) bool {
 	// 从左下角开始找
 
