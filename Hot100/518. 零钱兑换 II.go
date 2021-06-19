@@ -13,9 +13,9 @@ func main() {
 
 }
 
-// 见Hot100 322
+// 见Hot100 322, 416
 // 同样类似于跳楼梯，只不过跳的楼梯数不是1和2，而是每一个金额数了
-// 组合背包问题 -- dp[i]+=dp[i-num]
+// 背包问题 - 组合问题-- dp[i]+=dp[i-num]
 func change(amount int, coins []int) int {
 	if coins == nil || len(coins) == 0 {
 		return 0

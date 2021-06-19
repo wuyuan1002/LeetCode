@@ -12,6 +12,7 @@ func main() {
 
 // 回溯法
 // 类似 offer 12, 13
+// Hot100 463, 695
 // 等于机器人有几个可以运动的范围
 func numIslands(grid [][]byte) int {
 	if grid == nil || len(grid) == 0 || len(grid[0]) == 0 {

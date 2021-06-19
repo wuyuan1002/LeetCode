@@ -20,7 +20,7 @@ func main() {
 
 // 回溯法和动态规划:
 // 给定一个目标值，给定一个选择空间，问达到目标的解的个数 --(求解的个数、求是否存在问题、求排列组合)-- 回溯法
-// 给定一个目标值，给定一个选择空间，问达到目标的最优解 --(求最优解、求是否存在问题)-- 背包问题
+// 给定一个目标值，给定一个选择空间，问达到目标的最优解 --(求最优解、求是否存在问题)-- 动态规划
 
 // --------------------
 
@@ -31,7 +31,7 @@ func main() {
 
 // --------------------
 
-// 类似Hot100 518
+// 类似Hot100 518, 416
 // 动态规划 -- dp[i]表示i元的最少硬币数 -- dp[i] = min(dp[j]+dp[i-j])
 func coinChange(coins []int, amount int) int {
 	if coins == nil || len(coins) == 0 || amount < 0 {
@@ -52,7 +52,7 @@ func coinChange(coins []int, amount int) int {
 	dp[0] = 0
 
 	for _, coin := range coins { // 遍历每一个物品
-		for i := 1; i <= amount; i++ { // 求在这个物品和之前的物品下的最优解
+		for i := 1; i <= amount; i++ { // 求选择这个物品后构成目标值的最优解
 			if coin <= i {
 				dp[i] = min(dp[i], dp[i-coin]+1)
 			}
