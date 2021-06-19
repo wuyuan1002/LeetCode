@@ -31,6 +31,7 @@ func main() {
 
 // --------------------
 
+// 类似Hot100 518
 // 动态规划 -- dp[i]表示i元的最少硬币数 -- dp[i] = min(dp[j]+dp[i-j])
 func coinChange(coins []int, amount int) int {
 	if coins == nil || len(coins) == 0 || amount < 0 {
