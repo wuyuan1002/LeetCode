@@ -13,7 +13,7 @@ func main() {
 
 }
 
-// 见Hot100 322, 416
+// 见Hot100 322, 416，39(与回溯法的区别)
 // 同样类似于跳楼梯，只不过跳的楼梯数不是1和2，而是每一个金额数了
 // 背包问题 - 组合问题-- dp[i]+=dp[i-num]
 func change(amount int, coins []int) int {

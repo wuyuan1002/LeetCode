@@ -19,12 +19,18 @@ func main() {
 	// sort1(aa, 0, len(aa)-1)
 	// fmt.Println(aa)
 
+	// 回溯法可以求出左右解是什么
 	aa := combinationSum([]int{3, 5, 6, 1, 2, 8, 3, 4}, 7)
-	fmt.Println(aa)
+	fmt.Println(len(aa))
+
+	// 动态规划只能求出解的个数
+	bb := combinationSum1([]int{3, 5, 6, 1, 2, 8, 3, 4}, 7)
+	fmt.Println(bb)
 
 }
 
-// 回溯法+剪枝
+// 见Hot100 518(同类问题，动态规划)
+// 1. 回溯法+剪枝 -- 可以求出每个解是什么
 func combinationSum(candidates []int, target int) [][]int {
 	if candidates == nil || len(candidates) == 0 {
 		return nil
@@ -98,4 +104,25 @@ func sort1(arr []int, left, right int) {
 
 	sort1(arr, left, l-1)
 	sort1(arr, l+1, right)
+}
+
+// 动态规划 -- 只是求出解的个数
+// 2. 背包问题 - 组合问题-- dp[i]+=dp[i-num]
+func combinationSum1(candidates []int, target int) int {
+	if candidates == nil || len(candidates) == 0 {
+		return 0
+	}
+
+	dp := make([]int, target+1)
+	dp[0] = 1
+
+	for _, num := range candidates {
+		for i := 1; i <= target; i++ {
+			if i >= num {
+				dp[i] += dp[i-num]
+			}
+		}
+	}
+
+	return dp[target]
 }
