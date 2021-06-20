@@ -14,6 +14,7 @@ func main() {
 	// findQueen()
 }
 
+// Hot100 46, 78
 // 回溯法 + 剪枝
 func permutation(s string) []string {
 	result := make([]string, 0)

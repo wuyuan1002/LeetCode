@@ -13,7 +13,7 @@ func main() {
 	fmt.Println(subsets([]int{1, 2, 3}))
 }
 
-// 排列组合，类似offer 38
+// 排列组合，类似offer 38, Hot100 46
 // 回溯法
 func subsets(nums []int) [][]int {
 	if nums == nil || len(nums) == 0 {

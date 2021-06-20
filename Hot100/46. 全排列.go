@@ -8,7 +8,7 @@ func main() {
 	permute([]int{1, 2, 3})
 }
 
-// offer 38
+// 排列组合，类似offer 38, Hot100 78
 // 回溯法+剪枝
 func permute(nums []int) [][]int {
 	if nums == nil || len(nums) == 0 {
