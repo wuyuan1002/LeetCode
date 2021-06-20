@@ -62,7 +62,7 @@ func coinChange(coins []int, amount int) int {
 
 	for _, coin := range coins { // 遍历每一个物品
 		for i := 1; i <= amount; i++ { // 求选择这个物品后构成目标值的最优解
-			if coin <= i {
+			if i >= coin {
 				dp[i] = min(dp[i], dp[i-coin]+1)
 			}
 		}

@@ -25,7 +25,7 @@ func canPartition(nums []int) bool {
 		sum += num
 	}
 	if sum%2 != 0 {
-		// 总和为奇数，也无法分成相等的两部分
+		// 总和为奇数，无法分成相等的两部分
 		return false
 	}
 
