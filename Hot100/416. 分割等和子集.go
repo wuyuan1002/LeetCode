@@ -34,11 +34,9 @@ func canPartition(nums []int) bool {
 	dp := make([]bool, target+1) // dp[i]:是否存在子集和为i
 	dp[0] = true                 // target=0不需要选择任何元素，所以是可以实现的
 
-	for _, num := range nums {
-		for i := target; i >= 0; i-- {
-			if i >= num {
-				dp[i] = dp[i] || dp[i-num]
-			}
+	for _, num := range nums { // 遍历选择列表 -- 所有零钱
+		for i := target; i >= num; i-- { // 遍历目标值 -- 目标值target
+			dp[i] = dp[i] || dp[i-num]
 		}
 	}
 
