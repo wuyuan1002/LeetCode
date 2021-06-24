@@ -9,7 +9,7 @@ import (
 // 给定一个整数数组和一个整数 k，你需要找到该数组中和为 k 的连续的子数组的个数。
 
 func main() {
-	fmt.Println(subarraySum([]int{1, 2, 3, 2, 3, 2}, 5))
+	fmt.Println(subarraySum([]int{1, 2, -2, 4, 3, 2}, 4))
 }
 
 // 前缀和
