@@ -9,7 +9,7 @@ func main() {
 
 }
 
-// 中序遍历二叉树
+// 后序遍历二叉树
 func diameterOfBinaryTree(root *TreeNode) int {
 	if root == nil {
 		return 0
