@@ -13,6 +13,9 @@ func main() {
 }
 
 // 前缀和
+// 题意：有几种 i、j 的组合，使得从第 i 到 j 项的子数组和等于 k。
+// ↓ ↓ ↓ 转化为 ↓ ↓ ↓
+// 有几种 i、j 的组合，满足 prefixSum[j] - prefixSum[i - 1] == kprefixSum[j]−prefixSum[i−1]==k。
 func subarraySum(nums []int, k int) int {
 	count, preSum := 0, 0          // preSum: nums 的第 0 项到 当前项 的和
 	prefixSum := make(map[int]int) // prefixSum[x]: 第 0 项到 第 x 项 的和
