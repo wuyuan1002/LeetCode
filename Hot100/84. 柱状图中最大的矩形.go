@@ -14,7 +14,7 @@ func main() {
 }
 
 // 一直解答错误
-// 对比Hot100 42
+// 对比Hot100 42, 739
 // 单调栈 -- 单调递增栈
 // 某个柱子能构成的最大面积 == 它的高度 * 左右第一个比它低的柱子的坐标差
 func largestRectangleArea(heights []int) int {

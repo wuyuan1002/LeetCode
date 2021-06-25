@@ -51,7 +51,7 @@ func trap(height []int) int {
 }
 
 // 单调递减栈 -- 对于每个点找其左边和右边第一个大于或等于它的点（这样才能构成凹形）
-// 类似Hot100 84
+// 类似Hot100 84, 739
 func trap1(height []int) int {
 	if height == nil {
 		return 0
