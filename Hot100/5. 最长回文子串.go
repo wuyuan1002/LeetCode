@@ -13,7 +13,8 @@ func main() {
 	fmt.Println(longestPalindrome("babad"))
 }
 
-// 遍历数组，先 左右寻找与当前字符相等的字符，之后左右同时扩散，知道做右指针的值不相等
+// 中心拓展
+// 遍历数组，先 左右寻找与当前字符相等的字符，之后左右同时扩散，直到左右指针的值不相等
 func longestPalindrome(s string) string {
 	if s == "" || len(s) == 1 {
 		return s
