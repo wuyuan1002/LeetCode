@@ -10,7 +10,9 @@ import (
 // 求在该柱状图中，能够勾勒出来的矩形的最大面积。
 
 func main() {
-	fmt.Println(largestRectangleArea([]int{2, 3, 4, 5}))
+	// fmt.Println(largestRectangleArea([]int{2, 3, 4, 5}))
+	// fmt.Println(largestRectangleArea([]int{2, 1, 5, 6, 2, 3}))
+	fmt.Println(largestRectangleArea([]int{2, 1, 2}))
 }
 
 // 一直解答错误
@@ -36,32 +38,39 @@ func largestRectangleArea(heights []int) int {
 	stack := make([]int, 0)
 
 	for i := 0; i < len(heights); i++ {
-		// 若栈为空或当前元素大于等于栈顶元素，直接入栈 -- 栈内元素的右面比它低的元素还没有确定下来
-		if len(stack) == 0 || (len(stack) > 0 && heights[i] >= heights[stack[len(stack)-1]]) {
-			stack = append(stack, i)
-			continue
+		for len(stack) > 0 && heights[i] < heights[stack[len(stack)-1]] {
+			top := stack[len(stack)-1]
+			stack = stack[:len(stack)-1]
+
+			// 当前柱子与左面第一个比它高的柱子的距离 -- 若栈中当前柱子左面没有元素，说明当前柱子左面的元素都比它高，它左面的宽度就是它的下标值-1，否则左面的宽度等于它与左面第一个比它高的元素的距离
+			leftWidth := top
+			if len(stack) > 0 {
+				leftWidth = top - stack[len(stack)-1] - 1
+			}
+			// 当前柱子与右面第一个比它高的柱子的距离 -- 右面宽度等于它与右面第一个比它高的元素的距离
+			rightWidth := i - top - 1
+
+			curWidth := leftWidth + rightWidth + 1 // 总的宽度
+			curHeight := heights[top]              // 总的高度
+			maxArea = max(maxArea, curHeight*curWidth)
 		}
 
-		// 若当前元素小于栈顶元素，说明有栈内元素的右边界已经确定，
-		// 接下来依次弹出栈内元素，当前元素为它的右边界，栈内它的前一个元素是它的左边界，计算他们所能构成的最大矩形面积
-		// 直到栈内元素小于了当前元素或栈内元素全部弹出，再将当前元素入栈，让当前元素位于栈顶，成为最大的元素
-		j := len(stack) - 1
-		for ; j >= 0 && heights[stack[j]] >= heights[i]; j-- {
-			left := 0 // 栈内元素左面第一个比它小的下标
-			if j == 0 {
-				left = -1
-			} else {
-				left = stack[j-1]
-			}
-			maxArea = max(maxArea, heights[stack[j]]*(i-left-1))
-		}
-		// 将j之后的元素去掉，将当前元素入栈 -- 此时当前元素为栈内最大值
-		stack = append(stack[:j+1], i)
+		stack = append(stack, i)
 	}
 
-	// 计算栈中剩余元素所能构成的最大矩形面积，或者是数组本身单调递增时求面积，如heights == []int{2,3,4,5}
-	for index := len(stack) - 1; index >= 0; index-- {
-		maxArea = max(maxArea, heights[stack[index]]*(len(heights)-stack[index]))
+	// 防止栈始终为递增，如[]int{2, 3, 4, 5}
+	if len(stack) > 0 {
+		// 获取当前栈内的最大高度
+		maxHeight := stack[len(stack)-1]
+		for len(stack) > 0 {
+			top := stack[len(stack)-1]
+			stack = stack[:len(stack)-1]
+
+			curWidth := maxHeight - top + 1
+			curHeight := heights[top]
+
+			maxArea = max(maxArea, curHeight*curWidth)
+		}
 	}
 
 	return maxArea
