@@ -18,17 +18,24 @@ class Solution1 {
             return root;
         }
 
-        // 后序遍历二叉树，从底向上寻找第一个p和q在它两侧的root节点
+        // 访问到一个节点时:
+        // 1.如果 p 和 q 都存在，则返回它们的公共祖先
+        // 2.如果只存在一个，则返回存在的一个
+        // 3.如果 p 和 q 都不存在，则返回nil
 
-        TreeNode left = lowestCommonAncestor(root.left, p, q); // 从左子树中寻找p或q
-        TreeNode right = lowestCommonAncestor(root.right, p, q); // 从右子树中寻找p或q
+        // 后序遍历二叉树
+        // 返回值left和right的含义: 若子树中都存在，则返回的是公共祖先，若只存在一个，则返回那一个，若都不存在，则返回nil
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
 
-        // 若p和q分别在root的两侧，则root为最近公共祖先
         if (left == null) {
+            // 若left为nil，说明左树中没有p和q，right可能为nil，也可能为p或q中的一个，也可能为公共节点
             return right;
         } else if (right == null) {
+            // 若right为nil，说明左树中没有p和q，left可能为nil，也可能为p或q中的一个，也可能为公共节点
             return left;
         } else {
+            // 若left和right都不为nil，说明left和right分别为p和q，p和q分别在root的两侧了，root为最近公共祖先
             return root;
         }
     }
