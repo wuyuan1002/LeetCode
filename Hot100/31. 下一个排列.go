@@ -11,7 +11,7 @@ import (
 // 必须 原地 修改，只允许使用额外常数空间。
 
 func main() {
-	aa := []int{3, 2, 1}
+	aa := []int{3, 1, 2}
 	nextPermutation(aa)
 	fmt.Println(aa)
 }
