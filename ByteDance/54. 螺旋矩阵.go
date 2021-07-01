@@ -43,12 +43,12 @@ func printCircle(matrix [][]int, start int, result *[]int) {
 	for i := start + 1; i <= endY; i++ { // 打印右面的一列
 		*result = append(*result, matrix[i][endX])
 	}
-	if endY-start > 0 {
+	if endY-start > 0 { // 总行数大于1才会有第二行
 		for i := endX - 1; i >= start; i-- { // 打印下面的一行
 			*result = append(*result, matrix[endY][i])
 		}
 	}
-	if endX-start > 0 {
+	if endX-start > 0 { // 总列数大于1才会有第二列
 		for i := endY - 1; i >= start+1; i-- { // 打印左面的一列
 			*result = append(*result, matrix[i][start])
 		}
