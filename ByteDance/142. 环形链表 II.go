@@ -45,11 +45,8 @@ func main() {
 // 2. 快慢指针 -- 两指针相遇后，再定义一个慢指针从链表头出发，当快慢指针再次相遇时，它指向的就是环的入口
 func detectCycle(head *ListNode3) *ListNode3 {
 	slow, fast := head, head
-	for fast != nil {
+	for fast != nil && fast.Next != nil {
 		slow = slow.Next
-		if fast.Next == nil {
-			return nil
-		}
 		fast = fast.Next.Next
 
 		if slow == fast {
