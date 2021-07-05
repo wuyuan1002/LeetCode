@@ -13,7 +13,7 @@ import (
 // 假设环境不允许存储 64 位整数（有符号或无符号）。
 
 func main() {
-	fmt.Println(reverse(1534236469))
+	fmt.Println(reverse(15342300))
 }
 
 // 1. 转换成字符串，再翻转字符串
