@@ -9,7 +9,7 @@ func main() {
 
 }
 
-// 后序遍历二叉树
+// 后序遍历二叉树 -- 分别求每个节点左右子树的深度，求每个节点左右子树深度和的最大值
 func diameterOfBinaryTree(root *TreeNode) int {
 	if root == nil {
 		return 0
