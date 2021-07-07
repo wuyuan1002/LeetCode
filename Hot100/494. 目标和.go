@@ -61,7 +61,7 @@ func findTargetSumWays1(nums []int, S int) int {
 	dp[0] = 1
 
 	for _, num := range nums { // 遍历选择列表 -- 所有零钱
-		for i := target; i >= num; i-- { // 遍历目标值 -- target
+		for i := target; i >= num; i-- { // 遍历目标值 -- target -- 每个物品只能被使用1次时就应该倒序遍历
 			dp[i] += dp[i-num]
 		}
 	}

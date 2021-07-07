@@ -35,7 +35,7 @@ func canPartition(nums []int) bool {
 	dp[0] = true                 // target=0不需要选择任何元素，所以是可以实现的
 
 	for _, num := range nums { // 遍历选择列表 -- 所有零钱
-		for i := target; i >= num; i-- { // 遍历目标值 -- 目标值target
+		for i := target; i >= num; i-- { // 遍历目标值 -- 目标值target -- 每个物品只能被使用1次时就应该倒序遍历
 			dp[i] = dp[i] || dp[i-num]
 		}
 	}

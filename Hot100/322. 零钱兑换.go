@@ -34,7 +34,7 @@ func main() {
 // --------------------
 
 // 类似Hot100 518, 416，39(与回溯法的区别)
-// 动态规划 -- dp[i]表示i元的最少硬币数 -- dp[i] = min(dp[j]+dp[i-j])
+// 动态规划 -- dp[i]表示i元的最少硬币数 -- dp[i] = min(dp[i], dp[i-num]+1)
 func coinChange(coins []int, amount int) int {
 	if coins == nil || len(coins) == 0 || amount < 0 {
 		return -1
@@ -54,7 +54,7 @@ func coinChange(coins []int, amount int) int {
 	dp[0] = 0
 
 	for _, coin := range coins { // 遍历每一个物品
-		for i := 1; i <= amount; i++ { // 求选择这个物品后构成目标值的最优解
+		for i := 1; i <= amount; i++ { // 求选择这个物品后构成目标值的最优解 -- 每个物品只能被使用1次时应该是倒序遍历，如Hot100 416、494
 			if i >= coin {
 				dp[i] = min(dp[i], dp[i-coin]+1)
 			}
