@@ -13,7 +13,7 @@ func main() {
 }
 
 // 类似 offer 63,Hot100 121
-func maxProfit1(prices []int) int {
+func maxProfit2(prices []int) int {
 	if prices == nil || len(prices) == 0 {
 		return 0
 	}
