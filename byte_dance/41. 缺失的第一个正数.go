@@ -15,7 +15,7 @@ func main() {
 }
 
 // 1. 将所有数字放入map，随后从1开始依次枚举正整数，并判断其是否在哈希表中
-// 2. 使用数组构建这个hsah表
+// 2. 使用数组构建这个hash表
 func firstMissingPositive(nums []int) int {
 	if nums == nil || len(nums) == 0 {
 		return -1
