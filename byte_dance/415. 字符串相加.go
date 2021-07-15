@@ -25,7 +25,7 @@ func addStrings(num1 string, num2 string) string {
 	i, j := len(num1)-1, len(num2)-1 // 两个指针分贝指向两数末尾
 
 	n1, n2 := 0, 0 // 两数在i,j位置的数字
-	for i >= 0 || j >= 0 {
+	for i >= 0 || j >= 0 || carry > 0 {
 		if i >= 0 {
 			n1 = int(num1[i] - '0')
 		} else {
@@ -43,11 +43,6 @@ func addStrings(num1 string, num2 string) string {
 
 		i--
 		j--
-	}
-
-	// 加上最后一个进位
-	if carry > 0 {
-		res = append(res, byte(carry)+'0')
 	}
 
 	// 翻转结果数组
