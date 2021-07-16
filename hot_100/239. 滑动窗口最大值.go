@@ -18,9 +18,10 @@ func main() {
 // 同 offer 59
 // offer59那样做会超出时间限制
 // 构建一个单调递减队列，具体实现类似于offer 59-2
+// 见byte_dance 239的解法
 func maxSlidingWindow(nums []int, k int) []int {
 
-	if nums == nil || len(nums) == 0 || k <= 0 {
+	if nums == nil || len(nums) == 0 || k <= 0 || k > len(nums) {
 		return nil
 	}
 
