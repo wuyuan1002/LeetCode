@@ -11,9 +11,9 @@ func main() {
 
 }
 
-// 类似Hot100 23
-// 1.插入排序
-// 2.归并排序 -- 自顶向下，或自底向上
+// 类似Hot100 23, offer 51
+// 1.插入排序 O(n2)
+// 2.归并排序 O(nlogn) -- 自顶向下，或自底向上
 func sortList(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
