@@ -30,19 +30,19 @@ func lengthOfLIS(nums []int) int {
 		return b
 	}
 
-	products := make([]int, len(nums))
-	for i := range products {
-		products[i] = 1
+	dp := make([]int, len(nums))
+	for i := range dp {
+		dp[i] = 1
 	}
 
 	res := 1
 	for i := 1; i < len(nums); i++ {
 		for j := 0; j < i; j++ {
 			if nums[i] > nums[j] {
-				products[i] = max(products[i], products[j]+1)
+				dp[i] = max(dp[i], dp[j]+1)
 			}
 		}
-		res = max(res, products[i])
+		res = max(res, dp[i])
 	}
 
 	return res
