@@ -14,6 +14,7 @@ func main() {
 
 }
 
+// 两两交换链表中的节点与本题类似
 func reverseKGroup(head *ListNode, k int) *ListNode {
 	if head == nil {
 		return nil
