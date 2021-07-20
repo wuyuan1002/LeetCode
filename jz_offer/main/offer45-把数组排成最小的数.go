@@ -81,5 +81,10 @@ func minNumber1(nums []int) string {
 		strArr[j+1] = temp
 	}
 
-	return strings.Join(strArr, "")
+	res := strings.Join(strArr, "")
+	if n, _ := strconv.Atoi(res); n == 0 {
+		// 排除输入为[0,0,0]却返回"000"的情况
+		return "0"
+	}
+	return res
 }
