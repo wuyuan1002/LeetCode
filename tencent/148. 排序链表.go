@@ -14,19 +14,13 @@ func main() {
 // 类似Hot100 23, offer 51
 // 1.插入排序 O(n2)
 // 2.归并排序 O(nlogn) -- 自顶向下，或自底向上
-
-// 不是自己写的, 是leetcode的答案
 func sortList(head *ListNode) *ListNode {
-	if head == nil || head.Next == nil {
-		return head
-	}
-
 	return sort(head, nil)
 }
 
 func sort(head, tail *ListNode) *ListNode {
 	if head == nil {
-		return head
+		return nil
 	}
 
 	if head.Next == tail {
@@ -34,13 +28,14 @@ func sort(head, tail *ListNode) *ListNode {
 		return head
 	}
 
+	// 寻找链表中点
 	slow, fast := head, head
 	for fast != tail && fast.Next != tail {
 		slow = slow.Next
 		fast = fast.Next.Next
 	}
-
 	mid := slow
+
 	return mergeTwoList(sort(head, mid), sort(mid, tail))
 }
 
@@ -52,14 +47,19 @@ func mergeTwoList(head1, head2 *ListNode) *ListNode {
 		return head1
 	}
 
-	merge := &ListNode{}
-	if head1.Val < head2.Val {
-		merge.Val = head1.Val
-		merge.Next = mergeTwoList(head1.Next, head2)
-	} else {
-		merge.Val = head2.Val
+	var merge *ListNode
+	if head1.Val > head2.Val {
+		merge = head2
 		merge.Next = mergeTwoList(head1, head2.Next)
+	} else {
+		merge = head1
+		merge.Next = mergeTwoList(head1.Next, head2)
 	}
 
 	return merge
+}
+
+type ListNode struct {
+	Val  int
+	Next *ListNode
 }
