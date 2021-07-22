@@ -53,17 +53,10 @@ func reverseWords(s string) string {
 
 	// 去掉单词间的多余空格
 	str := strings.Builder{}
-	preIsSpace := false // 前一个字符是否为空格
 	for i := 0; i < len(sbyte); i++ {
-		if sbyte[i] == ' ' {
-			if preIsSpace {
-				continue
-			}
-			preIsSpace = true
-		} else {
-			preIsSpace = false
+		if sbyte[i] == ' ' && sbyte[i-1] == ' ' {
+			continue
 		}
-
 		str.WriteByte(sbyte[i])
 	}
 
