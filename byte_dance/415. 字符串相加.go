@@ -12,6 +12,7 @@ func main() {
 	fmt.Println(addStrings("347", "20"))
 }
 
+// 类似 43. 字符串相乘
 // 大数相加
 func addStrings(num1 string, num2 string) string {
 	if num1 == "" {
