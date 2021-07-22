@@ -40,3 +40,35 @@ func lengthOfLongestSubstring(s string) int {
 
 	return maxLen
 }
+
+// 第二次做
+// 滑动窗口，同时使用map存储字符出现过的下标
+func lengthOfLongestSubstring1(s string) int {
+	if s == "" {
+		return 0
+	}
+
+	max := func(a, b int) int {
+		if a >= b {
+			return a
+		}
+		return b
+	}
+
+	hash := make(map[byte]int) // 存储字符出现过的下标
+	maxLen := 0                // 最长子串长度
+	l := 0                     // 左指针
+	for i, c := range s {
+		if index, ok := hash[byte(c)]; ok {
+			// 更新窗口左边界
+			l = max(l, index+1)
+		}
+		// 更新窗口有边界
+		hash[byte(c)] = i
+
+		// 更新最大长度
+		maxLen = max(maxLen, i-l+1)
+	}
+
+	return maxLen
+}
