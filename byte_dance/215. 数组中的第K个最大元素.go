@@ -54,3 +54,45 @@ func partition(nums []int, left, right int) int {
 
 	return l
 }
+
+// --------------
+
+// 第二次做
+func findKthLargest1(nums []int, k int) int {
+	if nums == nil || len(nums) == 0 || k <= 0 || k > len(nums) {
+		return -1
+	}
+
+	l, r := 0, len(nums)-1
+	index := partition1(nums, l, r)
+	for index != k-1 {
+		if index > k-1 {
+			r = index - 1
+		} else if index < k-1 {
+			l = index + 1
+		}
+
+		index = partition1(nums, l, r)
+	}
+
+	return nums[index]
+}
+
+func partition1(nums []int, left, right int) int {
+	l, r := left, right
+	tmp := nums[left]
+	for l < r {
+		for l < r && nums[r] <= tmp {
+			r--
+		}
+		for l < r && nums[l] >= tmp {
+			l++
+		}
+		if l < r {
+			nums[l], nums[r] = nums[r], nums[l]
+		}
+	}
+	nums[left], nums[l] = nums[l], tmp
+
+	return l
+}
