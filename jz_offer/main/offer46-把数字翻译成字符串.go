@@ -41,7 +41,7 @@ func translateNum1(num int) int {
 		return -1
 	}
 
-	// 先将数字准成字符串
+	// 先将数字转成字符串
 	strNum := strconv.FormatInt(int64(num), 10)
 
 	num1 := 1 // 前一项
