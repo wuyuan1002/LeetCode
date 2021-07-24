@@ -52,3 +52,36 @@ func reverse(head, nextGroupStartNode *ListNode) *ListNode {
 
 	return pre
 }
+
+// -------
+
+// 第二次做
+// 两两交换链表中的节点与本题类似
+func reverseKGroup1(head *ListNode, k int) *ListNode {
+	if head == nil {
+		return head
+	}
+
+	nextGroupHead := head
+	for i := 0; i < k; i++ {
+		if nextGroupHead == nil {
+			return head
+		}
+		nextGroupHead = nextGroupHead.Next
+	}
+
+	newHead := reverse2(head, nextGroupHead)
+	head.Next = reverseKGroup1(nextGroupHead, k)
+	return newHead
+}
+
+func reverse2(head, nextGroupHead *ListNode) *ListNode {
+	var pre, node, next *ListNode = nil, head, head
+	for node != nextGroupHead {
+		next = node.Next
+		node.Next = pre
+		pre = node
+		node = next
+	}
+	return pre
+}
