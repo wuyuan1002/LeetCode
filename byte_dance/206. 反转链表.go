@@ -26,6 +26,23 @@ func reverseList(head *ListNode) *ListNode {
 	return pre
 }
 
+// ---------
+// 第二次做
+func reverseList2(head *ListNode) *ListNode {
+	if head == nil {
+		return nil
+	}
+
+	var pre, node, next *ListNode = nil, head, head
+	for node != nil {
+		next = node.Next
+		node.Next = pre
+		pre = node
+		node = next
+	}
+	return pre
+}
+
 type ListNode struct {
 	Val  int
 	Next *ListNode
