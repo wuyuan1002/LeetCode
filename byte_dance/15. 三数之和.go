@@ -13,7 +13,8 @@ import (
 
 func main() {
 	// fmt.Println(threeSum([]int{-1, 0, 1, 2, -1, -4}))
-	fmt.Println(threeSum([]int{-2, 0, 0, 2, 2}))
+	// fmt.Println(threeSum([]int{-2, 0, 0, 2, 2}))
+	fmt.Println(threeSum([]int{0, 0, 0}))
 }
 
 // 1. 先排序数组，然后先固定一个值，然后在之后元素中使用双指针寻找两数之和
@@ -41,19 +42,22 @@ func threeSum(nums []int) [][]int {
 		for l < r {
 			sum = num + nums[l] + nums[r]
 			if sum < 0 {
-				l++
-			} else if sum > 0 {
-				r--
-			} else {
-				// 只将与上一次结果不相等的值存入结果中 -- 见 -2, 0, 0, 2, 2
-				if l > i+1 && r < len(nums)-1 && nums[l] == nums[l-1] && nums[r] == nums[r+1] {
-					l++
-					r--
-					continue
+				// 将l移动到下一个与当前数字不同的位置 -- 见 -2, 0, 0, 2, 2
+				for l++; l < r && nums[l] == nums[l-1]; l++ {
 				}
+			} else if sum > 0 {
+				// 将r移动到下一个与当前数字不同的位置 -- 见 -2, 0, 0, 2, 2
+				for r--; l < r && nums[r] == nums[r+1]; r-- {
+				}
+			} else {
+				// 入结果集
 				result = append(result, []int{num, nums[l], nums[r]})
-				l++
-				r--
+
+				// 将l和r分别移动到与当前数字不同的位置 -- 见 -2, 0, 0, 2, 2
+				for l++; l < r && nums[l] == nums[l-1]; l++ {
+				}
+				for r--; l < r && nums[r] == nums[r+1]; r-- {
+				}
 			}
 		}
 	}
