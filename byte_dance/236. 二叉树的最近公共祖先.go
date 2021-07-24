@@ -11,6 +11,7 @@ func main() {
 
 }
 
+// 后序遍历二叉树
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	if root == nil || p == root || q == root {
 		return root
@@ -21,19 +22,18 @@ func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	// 2.如果只存在一个，则返回存在的一个
 	// 3.如果 p 和 q 都不存在，则返回nil
 
-	// 后序遍历二叉树
-	// 返回值left和right的含义: 若子树中都存在，则返回的是公共祖先，若只存在一个，则返回那一个，若都不存在，则返回nil
+	// 求在左右子树中p和q的公共祖先节点
 	left := lowestCommonAncestor(root.Left, p, q)
 	right := lowestCommonAncestor(root.Right, p, q)
 
 	if left == nil {
-		// 若left为nil，说明左树中没有p和q，right可能为nil，也可能为p或q中的一个，也可能为公共节点
+		// 若左子树中没有p和q的公共祖先，说明p和q都不在左子树中，返回右子树的公共祖先
 		return right
 	} else if right == nil {
-		// 若right为nil，说明左树中没有p和q，left可能为nil，也可能为p或q中的一个，也可能为公共节点
+		// 若右子树中没有p和q的公共祖先，说明p和q都不在右子树中，返回左子树的公共祖先
 		return left
 	} else {
-		// 若left和right都不为nil，说明left和right分别为p和q，p和q分别在root的两侧了，root为最近公共祖先
+		// 若left和right都不为nil，说明p和q分别位于root的两侧，root为公共祖先节点
 		return root
 	}
 }
