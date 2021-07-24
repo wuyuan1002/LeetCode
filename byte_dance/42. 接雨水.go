@@ -88,3 +88,77 @@ func trap2(height []int) int {
 
 	return res
 }
+
+// ------
+
+// 第二次做
+// 双指针
+// 一列一列求，每一列所能接的雨水数量等于当前列高度和它左右最高列相对低的那列的差决定
+func trap3(height []int) int {
+	if height == nil || len(height) < 3 {
+		return 0
+	}
+
+	max := func(a, b int) int {
+		if a >= b {
+			return a
+		}
+		return b
+	}
+
+	l, r := 0, len(height)-1 // 左右指针
+	lmax, rmax := 0, 0       // 左右侧的最大高度
+	res := 0                 // 总结果
+	for l < r {
+		lmax = max(lmax, height[l])
+		rmax = max(rmax, height[r])
+
+		if lmax > rmax {
+			res += rmax - height[r]
+			r--
+		} else {
+			res += lmax - height[l]
+			l++
+		}
+	}
+
+	return res
+}
+
+// 单调栈
+// 单调递减栈 -- 对于每个点找其左边和右边第一个大于或等于它的点（这样才能构成凹形）
+func trap4(height []int) int {
+	if height == nil || len(height) < 3 {
+		return 0
+	}
+
+	min := func(a, b int) int {
+		if a <= b {
+			return a
+		}
+		return b
+	}
+
+	stack := make([]int, 0) // 单调递减栈
+	res := 0                // 总结果
+	for i := 0; i < len(height); i++ {
+		for len(stack) > 0 && height[i] > height[stack[len(stack)-1]] {
+			top := stack[len(stack)-1]
+			stack = stack[:len(stack)-1]
+
+			if len(stack) == 0 {
+				break
+			}
+
+			left := stack[len(stack)-1]                     // 左侧第一个高于当前的柱子
+			w := i - left - 1                               // 宽度
+			h := min(height[i], height[left]) - height[top] // 高度差
+
+			res += w * h
+		}
+
+		stack = append(stack, i)
+	}
+
+	return res
+}
