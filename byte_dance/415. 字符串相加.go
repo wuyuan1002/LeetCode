@@ -15,15 +15,15 @@ func main() {
 // 类似 43. 字符串相乘
 // 大数相加
 func addStrings(num1 string, num2 string) string {
-	if num1 == "" {
+	if num1 == "" || num1 == "0" {
 		return num2
-	} else if num2 == "" {
+	} else if num2 == "" || num2 == "0" {
 		return num1
 	}
 
 	res := make([]byte, 0)           // 两数之和
 	carry := 0                       // 进位
-	i, j := len(num1)-1, len(num2)-1 // 两个指针分贝指向两数末尾
+	i, j := len(num1)-1, len(num2)-1 // 两个指针分别指向两数末尾
 
 	n1, n2 := 0, 0 // 两数在i,j位置的数字
 	for i >= 0 || j >= 0 || carry > 0 {
