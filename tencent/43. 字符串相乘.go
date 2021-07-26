@@ -23,7 +23,7 @@ func multiply(num1 string, num2 string) string {
 		return "0"
 	}
 
-	// 使用数组存储每次计算结果，避免大量的字符串相加运算
+	// 使用数组存储每次计算结果，避免大量的字符串相加运算 -- 数组的每一位代表结果的每一位
 	res := make([]int, len(num1)+len(num2))
 	for i := len(num2) - 1; i >= 0; i-- {
 		// 取num2中每一位与num1中各数字相乘
@@ -37,13 +37,14 @@ func multiply(num1 string, num2 string) string {
 		}
 	}
 
+	// 把最终的int数组转换成字符串
 	str := strings.Builder{}
 	for i := 0; i < len(res); i++ {
 		if str.Len() == 0 && res[i] == 0 {
 			// 跳过开头的0
 			continue
 		}
-		str.WriteRune(rune(res[i] + '0'))
+		str.WriteByte(byte(res[i] + '0'))
 	}
 
 	return str.String()
