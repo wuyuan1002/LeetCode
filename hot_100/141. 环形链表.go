@@ -36,3 +36,18 @@ func hasCycle(head *ListNode) bool {
 	}
 	return true
 }
+
+// 第二次做
+func hasCycle1(head *ListNode) bool {
+	slow, fast := head, head
+	if fast != nil && fast.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+
+		if slow == fast {
+			return true
+		}
+	}
+
+	return false
+}
