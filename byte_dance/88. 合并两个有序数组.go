@@ -45,7 +45,7 @@ func merge(nums1 []int, m int, nums2 []int, n int) {
 			j--
 		}
 
-		// 将末尾指针想签移动一位
+		// 将末尾指针向前移动一位
 		end--
 	}
 }
