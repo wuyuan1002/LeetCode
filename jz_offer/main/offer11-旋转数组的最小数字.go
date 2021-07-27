@@ -14,10 +14,11 @@ func main() {
 	// fmt.Printf("%d", minArray([]int{10, 10, 1, 10, 10, 10, 10}))
 }
 
+// 同 tencent 153
 // 使用二分法查找
 func minArray(numbers []int) int {
 	if numbers == nil || len(numbers) == 0 {
-		panic("数组为nil或长度为0")
+		return -1
 	}
 	p := 0                 // 第一个元素下标
 	q := len(numbers) - 1  // 最后一个元素下标
