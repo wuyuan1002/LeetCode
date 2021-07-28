@@ -51,17 +51,20 @@ func reverselr(left, right *ListNode) *ListNode {
 	return pre
 }
 
-// 2. 寻找到左节点后继续象后遍历寻找右节点，过程中完成反转操作 -- 总共需要遍历一次
+// 2. 寻找到左节点后继续向后遍历寻找右节点，过程中完成反转操作 -- 总共需要遍历一次
 func reverseBetween1(head *ListNode, left, right int) *ListNode {
 
 	// 设置dummyNode是这一类问题的一般做法
 	dummyNode := &ListNode{}
 	dummyNode.Next = head
 
+	// 先找到左节点
 	pre := dummyNode
 	for i := 0; i < left-1; i++ {
 		pre = pre.Next
 	}
+
+	// 向后遍历并翻转左右节点之间的节点
 	node, next := pre.Next, pre.Next
 	for i := 0; i < right-left; i++ {
 		next = node.Next
