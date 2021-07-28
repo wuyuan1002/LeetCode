@@ -21,10 +21,10 @@ func sortList(head *ListNode) *ListNode {
 		return head
 	}
 
-	return sort(head, nil)
+	return sort1(head, nil)
 }
 
-func sort(head, tail *ListNode) *ListNode {
+func sort1(head, tail *ListNode) *ListNode {
 	if head == nil {
 		return head
 	}
@@ -41,7 +41,7 @@ func sort(head, tail *ListNode) *ListNode {
 	}
 
 	mid := slow
-	return mergeTwoList(sort(head, mid), sort(mid, tail))
+	return mergeTwoList(sort1(head, mid), sort1(mid, tail))
 }
 
 // 合并两个排序链表
