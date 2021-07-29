@@ -46,7 +46,7 @@ func findRepeatNumber2(nums []int) int {
 	i := 0
 	nowNum := 0 // 下标i对应的当前数字
 	n := -1     // 重复数字
-	for ; i < len(nums); i++ {
+	for i < len(nums) {
 		nowNum = nums[i]
 		if nowNum < 0 || nowNum > len(nums) {
 			panic("数字必须在0~n-1范围内")
@@ -54,6 +54,7 @@ func findRepeatNumber2(nums []int) int {
 
 		// 若当前数字和下标相等，说明它本身就在正确的位置
 		if nowNum == i {
+			i++
 			continue
 		}
 

@@ -1,0 +1,64 @@
+package main
+
+import (
+	"fmt"
+)
+
+// 442. 数组中重复的数据
+
+// 给定一个整数数组 a，其中1 ≤ a[i] ≤ n （n为数组长度）, 其中有些元素出现两次而其他元素出现一次。
+//
+// 找到所有出现两次的元素。
+//
+// 你可以不用到任何额外空间并在O(n)时间复杂度内解决这个问题吗？
+
+func main() {
+	fmt.Println(findDuplicates([]int{4, 3, 2, 7, 8, 2, 3, 1}))
+}
+
+// 1. 遍历数组，存入map的同时检查出现次数
+// 2. offer 03
+func findDuplicates(nums []int) []int {
+	if nums == nil || len(nums) == 0 {
+		return nil
+	}
+
+	result := make([]int, 0)
+	nowNum := 0 // 当前数字
+	for i := 0; i < len(nums); {
+		nowNum = nums[i]
+		if nowNum > len(nums) {
+			// 若当前数字已被访问过
+			i++
+			continue
+		}
+
+		if nowNum-1 == i {
+			// 当前数字在正确的位置上
+			i++
+			continue
+		}
+
+		if nowNum == nums[nowNum-1] {
+			result = append(result, nowNum)
+
+			// 加上数组长度，标记该数已被记录
+			nums[i] += len(nums)
+			nums[nowNum-1] += len(nums)
+
+			i++
+			continue
+		}
+
+		nums[nowNum-1], nums[i] = nums[i], nums[nowNum-1]
+	}
+
+	// 将数组元素复原
+	for i, n := range nums {
+		if n > len(nums) {
+			nums[i] -= len(nums)
+		}
+	}
+
+	return result
+}
