@@ -11,7 +11,7 @@ import (
 // 整数除法仅保留整数部分。
 
 func main() {
-	fmt.Println(calculate("37+2*3"))
+	fmt.Println(calculate("37-2*3+7"))
 }
 
 // 加号：将数字压入栈；
