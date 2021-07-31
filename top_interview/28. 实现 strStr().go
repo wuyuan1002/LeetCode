@@ -15,6 +15,7 @@ func main() {
 
 }
 
+// KMP解法
 func strStr(haystack string, needle string) int {
 	if needle == "" {
 		return 0
