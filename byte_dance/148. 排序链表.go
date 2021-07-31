@@ -34,6 +34,7 @@ func sort1(head, tail *ListNode) *ListNode {
 		return head
 	}
 
+	// 寻找中点
 	slow, fast := head, head
 	for fast != tail && fast.Next != tail {
 		slow = slow.Next
