@@ -13,7 +13,7 @@ import (
 // 你可以认为每种硬币的数量是无限的。
 
 func main() {
-	fmt.Println(coinChange([]int{5, 2, 1}, 7))
+	fmt.Println(coinChange1([]int{5, 3, 1}, 7))
 }
 
 // --------------------
@@ -22,7 +22,7 @@ func main() {
 
 // 背包问题的转移方程:
 // 1、最值问题(求最优解): dp[i] = max/min(dp[i], dp[i-nums]+1) 或 dp[i] = max/min(dp[i], dp[i-num]+nums)
-// Hot100 322
+// Hot100 322、718、1143
 
 // 2、存在问题(是否存在): dp[i]=dp[i] || dp[i-num]
 // Hot100 416
@@ -67,6 +67,42 @@ func coinChange(coins []int, amount int) int {
 		for i := 1; i <= amount; i++ { // 求选择这个物品后构成目标值的最优解 -- 每个物品只能被使用1次时应该是倒序遍历，如Hot100 416、494
 			if i >= coin {
 				dp[i] = min(dp[i], dp[i-coin]+1)
+			}
+		}
+	}
+
+	if dp[amount] > amount {
+		return -1
+	}
+	return dp[amount]
+}
+
+// ----------
+// 第二次做
+// 类似Hot100 518, 416，39(与回溯法的区别)
+// 动态规划 -- dp[i]表示i元的最少硬币数 -- dp[i] = min(dp[i], dp[i-num]+1)
+func coinChange1(coins []int, amount int) int {
+	if coins == nil || len(coins) == 0 || amount < 0 {
+		return -1
+	}
+
+	min := func(a, b int) int {
+		if a <= b {
+			return a
+		}
+		return b
+	}
+
+	dp := make([]int, amount+1)
+	for i := range dp {
+		dp[i] = math.MaxInt32
+	}
+	dp[0] = 0
+
+	for _, coin := range coins {
+		for j := 1; j <= amount; j++ {
+			if j >= coin {
+				dp[j] = min(dp[j-coin]+1, dp[j])
 			}
 		}
 	}
