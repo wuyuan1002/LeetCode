@@ -13,7 +13,7 @@ import (
 // 你可以不用到任何额外空间并在O(n)时间复杂度内解决这个问题吗？
 
 func main() {
-	fmt.Println(findDuplicates([]int{4, 3, 2, 7, 8, 2, 3, 1}))
+	fmt.Println(findDuplicates1([]int{4, 3, 2, 7, 8, 2, 3, 1}))
 }
 
 // 1. 遍历数组，存入map的同时检查出现次数
@@ -61,4 +61,43 @@ func findDuplicates(nums []int) []int {
 	}
 
 	return result
+}
+
+func findDuplicates1(nums []int) []int {
+	if nums == nil || len(nums) == 0 {
+		return nil
+	}
+
+	res := make([]int, 0) // 总结果
+	i := 0                // 下标
+	n := -1               // 当前数字
+	for i < len(nums) {
+		n = nums[i]
+		if n > len(nums) {
+			// 若已被访问过
+			i++
+			continue
+		}
+		if n-1 != i { // 若当前数字不在正确位置
+			if n != nums[n-1] {
+				nums[i], nums[n-1] = nums[n-1], nums[i]
+				continue
+			}
+
+			// 记录重复数字并标记已被访问
+			res = append(res, n)
+			nums[i] += len(nums)
+			nums[n-1] += len(nums)
+		}
+		i++
+	}
+
+	// 复原标记的元素
+	for i := range nums {
+		if nums[i] > len(nums) {
+			nums[i] -= len(nums)
+		}
+	}
+
+	return res
 }
