@@ -10,7 +10,8 @@ func main() {
 
 }
 
-// 双指针
+// 类似 27. 移除元素
+// 双指针 -- 左指针及前面的都是已经确定好没有重复元素的
 func removeDuplicates(nums []int) int {
 	if nums == nil || len(nums) == 0 {
 		return 0
