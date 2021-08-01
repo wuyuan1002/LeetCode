@@ -69,3 +69,26 @@ func findRepeatNumber2(nums []int) int {
 	}
 	return n
 }
+
+func findRepeatNumber3(nums []int) int {
+	if nums == nil || len(nums) == 0 {
+		return -1
+	}
+
+	i := 0
+	n := -1
+	for i < len(nums) {
+		n = nums[i]
+		if n != i {
+			if n != nums[n] {
+				nums[i], nums[n] = nums[n], nums[i]
+				continue
+			}
+			break
+		}
+		i++
+		n = -1
+	}
+
+	return n
+}
