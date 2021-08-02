@@ -7,7 +7,7 @@ func main() {
 }
 
 // 二分法
-// 同offer11，但是此题说了元素互不相同，因此比offer11要简单很多
+// 类似byte_dance 33、 同offer11，但是此题说了元素互不相同，因此比offer11要简单很多
 func findMin(nums []int) int {
 	if nums == nil || len(nums) == 0 {
 		return -1

@@ -20,6 +20,7 @@ func main() {
 }
 
 // 二分法
+// 类似tencent 153、offer 11
 func search(nums []int, target int) int {
 	if nums == nil || len(nums) == 0 {
 		return -1
