@@ -14,7 +14,7 @@ func main() {
 }
 
 // 二分法
-// 同offer11，但是此题说了元素互不相同，音因此比offer11要简单很多
+// 同offer11，但是此题说了元素互不相同，因此比offer11要简单很多
 func findMin(nums []int) int {
 	l, r := 0, len(nums)-1
 	for l < r {
