@@ -12,7 +12,6 @@ func main() {
 }
 
 func myPow(x float64, n int) float64 {
-
 	if n == 0 {
 		return 1
 	}
@@ -67,4 +66,30 @@ func myPow1(x float64, n int) float64 {
 		result = 1 / result
 	}
 	return result
+}
+
+func myPow2(x float64, n int) float64 {
+	if n == 0 {
+		return 1
+	} else if n == 1 {
+		return x
+	}
+
+	// 是否为负数
+	un := n
+	if n < 0 {
+		un = -n
+	}
+
+	res := myPow2(x, un>>1)
+	res *= res
+	if un&0x1 == 1 {
+		// 若是奇数则需要再乘一次
+		res *= x
+	}
+
+	if n < 0 {
+		return 1 / res
+	}
+	return res
 }
