@@ -12,7 +12,7 @@ func main() {
 
 }
 
-// 类似 26. 删除有序数组中的重复项
+// 类似 26、80
 // 双指针 -- 左指针i之前的元素都是没有目标值的元素
 func removeElement(nums []int, val int) int {
 	if nums == nil || len(nums) == 0 {
