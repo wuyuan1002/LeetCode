@@ -21,7 +21,7 @@ func main() {
 // 背包问题: 给定一个target(直接或间接求出)，给定一个选择列表，求达到target的最优解、解的个数、是否存在等问题
 
 // 背包问题的转移方程:
-// 1、最值问题(求最优解): dp[i] = max/min(dp[i], dp[i-nums]+1) 或 dp[i] = max/min(dp[i], dp[i-num]+nums)
+// 1、最值问题(求最优解): dp[i] = max/min(dp[i], dp[i-num]+1) 或 dp[i] = max/min(dp[i], dp[i-num]+num)
 // Hot100 322、718、1143
 
 // 2、存在问题(是否存在): dp[i]=dp[i] || dp[i-num]
