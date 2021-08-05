@@ -55,3 +55,17 @@ func reverseList1(head *ListNode3) *ListNode3 {
 
 	return pre
 }
+
+// 第三次做
+func reverseList3(head *ListNode3) *ListNode3 {
+	var pre, node, next *ListNode3 = nil, head, head
+	for node != nil {
+		next = node.Next
+
+		node.Next = pre
+
+		pre = node
+		node = next
+	}
+	return pre
+}
