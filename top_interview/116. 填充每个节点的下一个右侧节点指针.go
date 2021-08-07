@@ -44,6 +44,7 @@ func main() {
 	connect(root)
 }
 
+// 类似 117
 // 二叉树的层序遍历
 func connect(root *Node) *Node {
 	if root == nil {
