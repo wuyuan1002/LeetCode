@@ -2,46 +2,42 @@ package main
 
 import "fmt"
 
-// 46.全排列 -- 排列
+// 47. 全排列 II
 
-// 给定一个不含重复数字的数组 nums ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。
+// 给定一个可包含重复数字的序列 nums ，按任意顺序 返回所有不重复的全排列。
 
 func main() {
-	fmt.Println(permute([]int{1, 1, 3}))
+	fmt.Println(permuteUnique([]int{1, 1, 2}))
 }
 
-// 排列组合，类似offer 38, Hot100 78、47
-// 回溯法+剪枝
-func permute(nums []int) [][]int {
+// 类似 46
+func permuteUnique(nums []int) [][]int {
 	if nums == nil || len(nums) == 0 {
 		return nil
 	}
 
 	result := make([][]int, 0)
-	dfs3(nums, 0, &result)
+	dfs5(nums, 0, &result)
 	return result
 }
 
-func dfs3(nums []int, index int, result *[][]int) {
+func dfs5(nums []int, index int, result *[][]int) {
 	if index == len(nums)-1 {
 		tmp := make([]int, len(nums))
 		copy(tmp, nums)
 		*result = append(*result, tmp)
-
 		return
 	}
 
-	visited := make(map[int]bool) // 当前层是否出现过
-
+	visited := make(map[int]bool)
 	for i := index; i < len(nums); i++ {
 		if visited[nums[i]] {
 			continue
 		}
 
 		visited[nums[i]] = true
-
 		nums[index], nums[i] = nums[i], nums[index]
-		dfs3(nums, index+1, result)
+		dfs5(nums, index+1, result)
 		nums[index], nums[i] = nums[i], nums[index]
 	}
 }
