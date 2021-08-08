@@ -7,7 +7,7 @@ func main() {
 }
 
 // 1. 回溯法
-// 2. 动态规划 -- 背包问题
+// 2. 动态规划 -- 完全背包问题
 func combinationSum(candidates []int, target int) [][]int {
 	if candidates == nil || len(candidates) == 0 {
 		return nil
