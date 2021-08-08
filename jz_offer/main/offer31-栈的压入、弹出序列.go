@@ -41,7 +41,7 @@ func validateStackSequences(pushed []int, popped []int) bool {
 	return len(stack) == 0
 }
 
-// 第二次做 -- 建一个辅助栈，按照入栈序列一次入栈，直到遇到弹出序列的栈顶元素时，弹出元素
+// 第二次做 -- 建一个辅助栈，按照入栈序列依次入栈，直到遇到弹出序列的栈顶元素时，弹出元素
 func validateStackSequences1(pushed []int, popped []int) bool {
 	if pushed == nil && popped == nil {
 		return true
