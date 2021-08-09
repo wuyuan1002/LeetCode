@@ -16,7 +16,7 @@ func main() {
 
 }
 
-// 类似岛屿数量
+// 类似岛屿数量、797
 // 遍历每一个城市，之后深度访问该城市能到达的所有城市
 func findCircleNum(isConnected [][]int) int {
 	visited := make([]bool, len(isConnected)) // 记录每个城市是否已被访问过
