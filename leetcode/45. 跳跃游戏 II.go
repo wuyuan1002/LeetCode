@@ -10,6 +10,8 @@ package main
 func main() {
 
 }
+
+// 类似 55
 func jump(nums []int) int {
 	if nums == nil || len(nums) == 0 {
 		return 0
