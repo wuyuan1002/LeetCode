@@ -18,6 +18,7 @@ var (
 	head *TreeNode = nil // 记录链表头节点
 )
 
+// 类似 114
 func treeToDoublyList(root *TreeNode) *TreeNode {
 	if root == nil {
 		return nil
