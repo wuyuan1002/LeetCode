@@ -27,6 +27,7 @@ func rob1(root *TreeNode) int {
 	return max(rob, nrob)
 }
 
+// 同 198、213
 // 后序遍历二叉树，求每个节点的最大价值
 func dfs12(root *TreeNode) (rob int, nrob int) {
 	if root == nil {
