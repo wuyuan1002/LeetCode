@@ -84,7 +84,7 @@ func dfsQueen(index int, columnIndex *[]int, result *[]*[]int) {
 			}
 		}
 
-		// 若所有皇后位置正确，则天界到结果中
+		// 若所有皇后位置正确，则添加到结果中
 		if isTrue {
 			*result = append(*result, columnIndex)
 		}
