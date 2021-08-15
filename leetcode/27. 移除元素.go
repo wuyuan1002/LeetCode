@@ -29,3 +29,20 @@ func removeElement(nums []int, val int) int {
 	}
 	return i
 }
+
+// 第二次做
+func removeElement1(nums []int, val int) int {
+	if nums == nil || len(nums) == 0 {
+		return 0
+	}
+
+	l, r := 0, 0
+	for r < len(nums) {
+		if nums[r] != val {
+			nums[l] = nums[r]
+			l++
+		}
+		r++
+	}
+	return l
+}
