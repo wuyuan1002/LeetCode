@@ -94,3 +94,24 @@ func findRepeatNumber3(nums []int) int {
 
 	return n
 }
+
+func findRepeatNumber4(nums []int) int {
+	if nums == nil || len(nums) == 0 {
+		return -1
+	}
+
+	i, n := 0, 0 // 当前下标和当前数字
+	for i < len(nums) {
+		n = nums[i]
+		if i != n {
+			if n != nums[n] {
+				nums[i], nums[n] = nums[n], nums[i]
+				continue
+			} else {
+				return n
+			}
+		}
+		i++
+	}
+	return -1
+}
