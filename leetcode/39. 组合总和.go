@@ -13,7 +13,7 @@ func combinationSum(candidates []int, target int) [][]int {
 		return nil
 	}
 
-	sort(candidates, 0, len(candidates)-1)
+	sort2(candidates, 0, len(candidates)-1)
 
 	result := make([][]int, 0)
 	res := make([]int, 0)

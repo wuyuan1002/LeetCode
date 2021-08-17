@@ -17,7 +17,7 @@ func subsetsWithDup(nums []int) [][]int {
 		return nil
 	}
 
-	sort(nums, 0, len(nums)-1)
+	sort2(nums, 0, len(nums)-1)
 
 	res := make([]int, 0)      // 一个子集
 	result := make([][]int, 0) // 所有子集结果
@@ -46,7 +46,7 @@ func dfs4(nums []int, start, num int, res *[]int, result *[][]int) {
 	}
 }
 
-func sort(nums []int, left, right int) {
+func sort2(nums []int, left, right int) {
 	if nums == nil || len(nums) == 0 || left >= right {
 		return
 	}
@@ -65,6 +65,6 @@ func sort(nums []int, left, right int) {
 		}
 	}
 	nums[l], nums[left] = tmp, nums[l]
-	sort(nums, left, l-1)
-	sort(nums, r+1, right)
+	sort2(nums, left, l-1)
+	sort2(nums, r+1, right)
 }
