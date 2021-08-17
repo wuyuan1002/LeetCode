@@ -8,6 +8,7 @@ func main() {
 
 }
 
+// 350
 // 使用map存数字是否出现过
 func intersection(nums1 []int, nums2 []int) []int {
 	if nums1 == nil || len(nums1) == 0 || nums2 == nil || len(nums2) == 0 {
