@@ -66,9 +66,9 @@ func threeSum1(nums []int) [][]int {
 		for l < r {
 			sum := nums[l] + nums[r] + n
 			if sum > 0 {
-				l++
-			} else if sum < 0 {
 				r--
+			} else if sum < 0 {
+				l++
 			} else {
 				res = append(res, []int{n, nums[l], nums[r]})
 
