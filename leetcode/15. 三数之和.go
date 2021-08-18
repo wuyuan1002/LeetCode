@@ -46,6 +46,43 @@ func threeSum(nums []int) [][]int {
 	return res
 }
 
+// 第二次做
+func threeSum1(nums []int) [][]int {
+	if nums == nil || len(nums) == 0 {
+		return nil
+	}
+
+	res := make([][]int, 0)
+	quickSort(nums, 0, len(nums)-1)
+	for i, n := range nums {
+		if n > 0 {
+			break
+		}
+		if i > 0 && nums[i-1] == n {
+			continue
+		}
+
+		l, r := i+1, len(nums)-1
+		for l < r {
+			sum := nums[l] + nums[r] + n
+			if sum > 0 {
+				l++
+			} else if sum < 0 {
+				r--
+			} else {
+				res = append(res, []int{n, nums[l], nums[r]})
+
+				for l++; l < r && nums[l] == nums[l-1]; l++ {
+				}
+				for r--; l < r && nums[r] == nums[r+1]; r-- {
+				}
+			}
+		}
+	}
+
+	return res
+}
+
 func quickSort(nums []int, left, right int) {
 	if nums == nil || len(nums) == 0 || left >= right {
 		return
