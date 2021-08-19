@@ -72,3 +72,29 @@ func lengthOfLongestSubstring1(s string) int {
 
 	return maxLen
 }
+
+func lengthOfLongestSubstring2(s string) int {
+	if s == "" {
+		return 0
+	}
+
+	max := func(a, b int) int {
+		if a >= b {
+			return a
+		}
+		return b
+	}
+
+	hash := make(map[byte]int)
+	maxLen := 0
+	l := 0
+	for i, c := range s {
+		if index, ok := hash[byte(c)]; ok {
+			l = max(l, index+1)
+		}
+		hash[byte(c)] = i
+
+		maxLen = max(maxLen, i-l+1)
+	}
+	return maxLen
+}
