@@ -64,6 +64,51 @@ func zigzagLevelOrder(root *TreeNode) [][]int {
 	return result
 }
 
+func zigzagLevelOrder1(root *TreeNode) [][]int {
+	result := make([][]int, 0)
+	if root == nil {
+		return result
+	}
+
+	queue := list.List{}
+	queue.PushBack(root)
+	currentNum := 1
+	n := 1
+	res := make([]int, 0)
+	for currentNum > 0 {
+		if n%2 == 1 {
+			node := queue.Remove(queue.Front()).(*TreeNode)
+			currentNum--
+			res = append(res, node.Val)
+			if node.Left != nil {
+				queue.PushBack(node.Left)
+			}
+			if node.Right != nil {
+				queue.PushBack(node.Right)
+			}
+		} else {
+			node := queue.Remove(queue.Back()).(*TreeNode)
+			currentNum--
+			res = append(res, node.Val)
+			if node.Right != nil {
+				queue.PushFront(node.Right)
+			}
+			if node.Left != nil {
+				queue.PushFront(node.Left)
+			}
+		}
+
+		if currentNum == 0 {
+			result = append(result, res)
+			res = make([]int, 0)
+			currentNum = queue.Len()
+			n++
+		}
+	}
+
+	return result
+}
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
