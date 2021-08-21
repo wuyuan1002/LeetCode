@@ -30,6 +30,11 @@ func dfs13(start, n, k int, res *[]int, result *[][]int) {
 	}
 
 	for i := start; i <= n; i++ {
+		if len(*res)+n-start+1 < k {
+			// 剪枝 -- 若已有元素+剩余元素 < k 时可以直接跳出，因为无论如何都不会满足总数等于k了
+			return
+		}
+
 		*res = append(*res, i)
 		dfs13(i+1, n, k, res, result)
 		*res = (*res)[:len(*res)-1]
