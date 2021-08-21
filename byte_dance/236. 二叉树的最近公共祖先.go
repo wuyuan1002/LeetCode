@@ -12,6 +12,8 @@ func main() {
 }
 
 // 后序遍历二叉树
+// 如果找到一个节点，发现左子树出现结点p，右子树出现节点q，
+// 或者左子树出现结点q，右子树出现节点p，那么该节点就是节点p和q的最近公共祖先。
 func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 	if root == nil || p == root || q == root {
 		return root
