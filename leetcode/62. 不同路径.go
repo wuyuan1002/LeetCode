@@ -25,3 +25,21 @@ func uniquePaths(m int, n int) int {
 
 	return dp[n-1]
 }
+
+func uniquePaths1(m int, n int) int {
+	if m <= 0 || n <= 0 {
+		return 0
+	}
+
+	dp := make([]int, n)
+	dp[0] = 1
+	for i := 0; i < m; i++ {
+		for j := 0; j < n; j++ {
+			if j > 0 {
+				dp[j] += dp[j-1]
+			}
+		}
+	}
+
+	return dp[n-1]
+}
