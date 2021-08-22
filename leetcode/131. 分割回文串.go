@@ -10,6 +10,7 @@ func main() {
 
 }
 
+// 回溯法
 func partition(s string) [][]string {
 	result := make([][]string, 0)
 	res := make([]string, 0)
