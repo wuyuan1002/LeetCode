@@ -62,3 +62,25 @@ func translateNum1(num int) int {
 	}
 	return res
 }
+
+func translateNum2(num int) int {
+	if num < 0 {
+		return -1
+	}
+
+	str := strconv.Itoa(num)
+	pre1, pre2 := 1, 1
+	res := 0
+	for i := 1; i < len(str); i++ {
+		tmp := str[i-1 : i+1]
+		if tmp > "10" && tmp < "23" {
+			res = pre1 + pre2
+		} else {
+			res = pre1
+		}
+
+		pre2 = pre1
+		pre1 = res
+	}
+	return res
+}
