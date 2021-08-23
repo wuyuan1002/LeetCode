@@ -13,7 +13,7 @@ func main() {
 }
 
 // 见Hot100 322
-// 组合背包问题 -- dp[i]+=dp[i-num]
+// 组合背包问题 -- dp[i] += dp[i-num]
 func change(amount int, coins []int) int {
 	if coins == nil || len(coins) == 0 || amount <= 0 {
 		return 0

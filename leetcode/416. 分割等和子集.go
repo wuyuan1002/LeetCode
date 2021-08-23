@@ -7,7 +7,7 @@ func main() {
 }
 
 // Hot100 322, 518
-// 背包问题 - 存在问题 -- dp[i]=dp[i] || dp[i-num]
+// 背包问题 - 存在问题 -- dp[i] = dp[i] || dp[i-num]
 func canPartition(nums []int) bool {
 	if nums == nil || len(nums) == 0 {
 		return false

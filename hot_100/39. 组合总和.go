@@ -107,7 +107,7 @@ func sort1(arr []int, left, right int) {
 }
 
 // 动态规划 -- 只是求出解的个数
-// 2. 背包问题 - 组合问题-- dp[i]+=dp[i-num]
+// 2. 背包问题 - 组合问题-- dp[i] += dp[i-num]
 func combinationSum1(candidates []int, target int) int {
 	if candidates == nil || len(candidates) == 0 {
 		return 0
