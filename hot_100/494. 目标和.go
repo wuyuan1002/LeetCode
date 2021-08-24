@@ -43,9 +43,13 @@ func dfs13(nums []int, index, currentSum, target int, result *int) {
 // 2. 动态规划 -- 背包问题 - 组合问题
 // 同Hot100 518，类似Hot100 416
 func findTargetSumWays1(nums []int, S int) int {
-	if nums == nil || len(nums) == 0 {
+	if nums == nil || len(nums) == 0 || S < 0 {
 		return 0
 	}
+
+	// left组合 - right组合 = target
+	// left + right等于sum，而sum是固定的
+	// left - (sum - left) = target -> left = (target + sum)/2
 
 	sum := 0
 	for _, v := range nums {
