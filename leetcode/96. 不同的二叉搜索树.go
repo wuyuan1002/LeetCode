@@ -9,12 +9,8 @@ func main() {
 
 }
 
-// 动态规划 -- 类似于剪绳子 offer 14
+// 动态规划 -- 类似于跳台阶
 func numTrees(n int) int {
-	if n < 1 {
-		return 1
-	}
-
 	dp := make([]int, n+1)
 	dp[0] = 1
 	for i := 1; i <= n; i++ {
