@@ -30,3 +30,25 @@ func dailyTemperatures(temperatures []int) []int {
 
 	return res
 }
+
+// 单调栈 -- 单调递减栈
+func dailyTemperatures1(temperatures []int) []int {
+	if temperatures == nil || len(temperatures) == 0 {
+		return nil
+	}
+
+	res := make([]int, len(temperatures))
+
+	stack := make([]int, 0)
+	for i := 0; i < len(temperatures); i++ {
+		for len(stack) > 0 && temperatures[i] > temperatures[stack[len(stack)-1]] {
+			top := stack[len(stack)-1]
+			stack = stack[:len(stack)-1]
+
+			res[top] = i - top
+		}
+		stack = append(stack, i)
+	}
+
+	return res
+}
