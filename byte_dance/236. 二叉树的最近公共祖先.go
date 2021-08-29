@@ -19,23 +19,18 @@ func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
 		return root
 	}
 
-	// 访问到一个节点时:
-	// 1.如果 p 和 q 都存在，则返回它们的公共祖先
-	// 2.如果只存在一个，则返回存在的一个
-	// 3.如果 p 和 q 都不存在，则返回nil
-
-	// 求在左右子树中p和q的公共祖先节点
+	// 在左右子树中寻找p或q
 	left := lowestCommonAncestor(root.Left, p, q)
 	right := lowestCommonAncestor(root.Right, p, q)
 
 	if left == nil {
-		// 若左子树中没有p和q的公共祖先，说明p和q都不在左子树中，返回右子树的公共祖先
+		// 两个都在右子树中
 		return right
 	} else if right == nil {
-		// 若右子树中没有p和q的公共祖先，说明p和q都不在右子树中，返回左子树的公共祖先
+		// 两个都在左子树中
 		return left
 	} else {
-		// 若left和right都不为nil，说明p和q分别位于root的两侧，root为公共祖先节点
+		// root为公共祖先
 		return root
 	}
 }
