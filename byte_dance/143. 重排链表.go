@@ -38,7 +38,7 @@ func reorderList(head *ListNode) {
 	nodes[i].Next = nil
 }
 
-// 2. 运行没过
+// 2. 先找到中间节点，反转后半部分，再重排链表
 func reorderList1(head *ListNode) {
 	if head == nil {
 		return
