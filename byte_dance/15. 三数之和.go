@@ -23,37 +23,29 @@ func threeSum(nums []int) [][]int {
 		return nil
 	}
 
-	result := make([][]int, 0)
+	res := make([][]int, 0)
 
 	quickSort(nums, 0, len(nums)-1)
 
-	for i, num := range nums {
-		// 若i指向大于0的数，则直接退出，因为数组已排序，i后面的数也肯定都是正数
-		if num > 0 {
+	for i, n := range nums {
+		if n > 0 {
+			// 剪枝
 			break
-		}
-		// 跳过重复元素
-		if i > 0 && num == nums[i-1] {
+		} else if i > 0 && n == nums[i-1] {
+			// 跳过重复元素
 			continue
 		}
 
 		l, r := i+1, len(nums)-1
-		sum := 0
 		for l < r {
-			sum = num + nums[l] + nums[r]
-			if sum < 0 {
-				// 将l移动到下一个与当前数字不同的位置 -- 见 -2, 0, 0, 2, 2
-				for l++; l < r && nums[l] == nums[l-1]; l++ {
-				}
-			} else if sum > 0 {
-				// 将r移动到下一个与当前数字不同的位置 -- 见 -2, 0, 0, 2, 2
-				for r--; l < r && nums[r] == nums[r+1]; r-- {
-				}
+			sum := n + nums[l] + nums[r]
+			if sum > 0 {
+				r--
+			} else if sum < 0 {
+				l++
 			} else {
-				// 入结果集
-				result = append(result, []int{num, nums[l], nums[r]})
+				res = append(res, []int{n, nums[l], nums[r]})
 
-				// 将l和r分别移动到与当前数字不同的位置 -- 见 -2, 0, 0, 2, 2
 				for l++; l < r && nums[l] == nums[l-1]; l++ {
 				}
 				for r--; l < r && nums[r] == nums[r+1]; r-- {
@@ -62,7 +54,7 @@ func threeSum(nums []int) [][]int {
 		}
 	}
 
-	return result
+	return res
 }
 
 // 2. 先固定一个值，然后在之后元素中使用map寻找两数之和 -- 会有重复解
