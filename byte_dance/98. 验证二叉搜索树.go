@@ -34,3 +34,23 @@ func check(node *TreeNode, min, max int) bool {
 
 	return check(node.Left, min, node.Val) && check(node.Right, node.Val, max)
 }
+
+// 中序遍历 -- 若为二叉搜索树则中序遍历为递增的
+var preVal = math.MinInt32 // 前一个访问的节点值
+
+func isValidBST1(root *TreeNode) bool {
+	if root == nil {
+		return true
+	}
+
+	if !isValidBST1(root.Left) {
+		return false
+	}
+
+	if preVal > root.Val {
+		return false
+	}
+	preVal = root.Val
+
+	return isValidBST1(root.Right)
+}
