@@ -67,7 +67,7 @@ func reorderList1(head *ListNode) {
 // 获取链表中间节点
 func getMiddleNode(head *ListNode) *ListNode {
 	slow, fast := head, head
-	for fast != nil && fast.Next != nil {
+	for fast.Next != nil && fast.Next.Next != nil {
 		slow = slow.Next
 		fast = fast.Next.Next
 	}
