@@ -47,3 +47,31 @@ func dfs4(node *TreeNode, nums *[]byte, result *int) {
 	// 将当前节点移出路径
 	*nums = (*nums)[:len(*nums)-1]
 }
+
+func sumNumbers1(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+
+	res := make([]byte, 0)
+	result := 0
+	dfs44(root, &res, &result)
+	return result
+}
+
+func dfs44(node *TreeNode, res *[]byte, result *int) {
+	if node == nil {
+		return
+	}
+
+	*res = append(*res, byte(node.Val+'0'))
+	if node.Left == nil && node.Right == nil {
+		num, _ := strconv.Atoi(string(*res))
+		*result += num
+	} else {
+		dfs44(node.Left, res, result)
+		dfs44(node.Right, res, result)
+	}
+
+	*res = (*res)[:len(*res)-1]
+}
