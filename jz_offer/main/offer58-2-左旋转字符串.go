@@ -13,6 +13,7 @@ func main() {
 
 }
 
+// leetcode 151、189
 // 先翻转整个字符串，再翻转每一部分, 或者先翻转每个部分，再翻转整个字符串
 func reverseLeftWords(s string, n int) string {
 	if len(s) == 0 || n >= len(s) {

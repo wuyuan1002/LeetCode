@@ -8,6 +8,7 @@ func main() {
 
 }
 
+// 类似 189. 旋转数组
 // 先把链表首位相连，之后根据k计算断开的位置
 func rotateRight(head *ListNode, k int) *ListNode {
 	if head == nil || head.Next == nil || k <= 0 {
