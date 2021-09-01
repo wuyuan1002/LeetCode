@@ -14,6 +14,8 @@ func main() {
 
 // 类似Offer 58、leetcode 151
 // 类似 61. 旋转链表
+// 1. 每个元素向后移动k格，使用tmp保存被覆盖的元素
+// 2. 旋转
 func rotate(nums []int, k int) {
 	if k <= 0 {
 		return
