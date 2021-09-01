@@ -55,9 +55,29 @@ func orderFind(arr []int) int {
 	return arr[min]
 }
 
+// 第二种写法，输入：[3, 1, 3] 时结果是错的
+func minArray1(numbers []int) int {
+	if numbers == nil || len(numbers) == 0 {
+		return 0
+	}
+
+	l, r := 0, len(numbers)-1
+	for l <= r {
+		mid := (l + r) / 2
+		if numbers[mid] > numbers[r] {
+			l = mid + 1
+		} else if numbers[mid] < numbers[r] {
+			r = mid - 1
+		} else {
+			r--
+		}
+	}
+	return l
+}
+
 // 第二次做
 // 二分法
-func minArray1(numbers []int) int {
+func minArray2(numbers []int) int {
 	if numbers == nil || len(numbers) == 0 {
 		panic("数组为nil或长度为0")
 	}
