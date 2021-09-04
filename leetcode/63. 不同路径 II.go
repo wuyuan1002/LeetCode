@@ -22,7 +22,7 @@ func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 	for i := range dp {
 		dp[i] = make([]int, n)
 	}
-	// 初始化
+	// 初始化dp数组的第一行和第一列的走法个数
 	for i := 0; i < m; i++ {
 		if obstacleGrid[i][0] == 1 {
 			break
@@ -44,6 +44,45 @@ func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 				dp[i][j] = 0
 			} else {
 				// 若该点不时障碍物，则等于左面和上面的路径和
+				dp[i][j] = dp[i-1][j] + dp[i][j-1]
+			}
+		}
+	}
+
+	return dp[m-1][n-1]
+}
+
+// 第二次做
+func uniquePathsWithObstacles1(obstacleGrid [][]int) int {
+	if obstacleGrid == nil || len(obstacleGrid) == 0 {
+		return 0
+	}
+
+	m, n := len(obstacleGrid), len(obstacleGrid[0])
+	dp := make([][]int, m)
+	for i := range dp {
+		dp[i] = make([]int, n)
+	}
+
+	// 初始化
+	for i := 0; i < m; i++ {
+		if obstacleGrid[i][0] == 1 {
+			break
+		}
+		dp[i][0] = 1
+	}
+	for j := 0; j < n; j++ {
+		if obstacleGrid[0][j] == 1 {
+			break
+		}
+		dp[0][j] = 1
+	}
+
+	for i := 1; i < m; i++ {
+		for j := 1; j < n; j++ {
+			if obstacleGrid[i][j] == 1 {
+				dp[i][j] = 0
+			} else {
 				dp[i][j] = dp[i-1][j] + dp[i][j-1]
 			}
 		}
