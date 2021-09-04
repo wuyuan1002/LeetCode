@@ -11,7 +11,7 @@ import (
 // 整数除法仅保留整数部分。
 
 func main() {
-	fmt.Println(calculate("37-2*3+7"))
+	fmt.Println(calculate1("37-2*3+7"))
 }
 
 // 加号：将数字压入栈；
@@ -46,11 +46,47 @@ func calculate(s string) int {
 		}
 	}
 
-	// 类即栈内元素的值
+	// 累加栈内元素的值
 	res := 0
 	for _, n := range stack {
 		res += n
 	}
 
+	return res
+}
+
+func calculate1(s string) int {
+	if s == "" {
+		return 0
+	}
+
+	stack := make([]int, 0)
+	preSign := '+'
+	num := 0
+	for i, c := range s {
+		isDigit := '0' <= c && c <= '9'
+		if isDigit {
+			num = num*10 + int(c-'0')
+		}
+		if !isDigit && c != ' ' || i == len(s)-1 {
+			switch preSign {
+			case '+':
+				stack = append(stack, num)
+			case '-':
+				stack = append(stack, -num)
+			case '*':
+				stack[len(stack)-1] *= num
+			case '/':
+				stack[len(stack)-1] /= num
+			}
+			preSign = c
+			num = 0
+		}
+	}
+
+	res := 0
+	for _, n := range stack {
+		res += n
+	}
 	return res
 }
