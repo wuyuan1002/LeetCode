@@ -32,3 +32,35 @@ func integerBreak(n int) int {
 
 	return dp[n]
 }
+
+// 第二次做
+func integerBreak1(n int) int {
+	if n < 2 {
+		return 0
+	} else if n == 2 {
+		return 1
+	} else if n == 3 {
+		return 2
+	}
+
+	max := func(a, b int) int {
+		if a >= b {
+			return a
+		}
+		return b
+	}
+
+	dp := make([]int, n+1)
+	dp[0] = 0
+	dp[1] = 1
+	dp[2] = 2
+	dp[3] = 3
+
+	for i := 4; i <= n; i++ {
+		for j := 1; j <= i/2; j++ {
+			dp[i] = max(dp[i], dp[j]*dp[i-j])
+		}
+	}
+
+	return dp[n]
+}
