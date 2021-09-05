@@ -22,7 +22,7 @@ func main() {
 
 // 背包问题的转移方程:
 // 1、最值问题(求最优解): dp[i] = max/min(dp[i], dp[i-num]+1) 或 dp[i] = max/min(dp[i], dp[i-num]+num)
-// Hot100 322
+// Hot100 322、1049
 // 类似题: 718、1143
 
 // 2、存在问题(是否存在): dp[i] = dp[i] || dp[i-num]
