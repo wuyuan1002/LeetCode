@@ -43,7 +43,7 @@ func dfs13(nums []int, index, currentSum, target int, result *int) {
 // 2. 动态规划 -- 背包问题 - 组合问题
 // 同Hot100 518，类似Hot100 416
 func findTargetSumWays1(nums []int, S int) int {
-	if nums == nil || len(nums) == 0 || S < 0 {
+	if nums == nil || len(nums) == 0 {
 		return 0
 	}
 
@@ -60,15 +60,17 @@ func findTargetSumWays1(nums []int, S int) int {
 	}
 	// 计算目标值 -- 背包大小
 	target := (sum + S) / 2
+	if target < 0 {
+		return 0
+	}
+
 	// 定义dp数组
 	dp := make([]int, target+1) // dp[i]: 和为i的子集个数
 	dp[0] = 1
 
 	for _, num := range nums { // 遍历选择列表 -- 所有零钱
-		for i := target; i >= 0; i-- { // 遍历目标值 -- target -- 每个物品只能被使用1次时就应该倒序遍历
-			if i >= num {
-				dp[i] += dp[i-num]
-			}
+		for i := target; i >= num; i-- { // 遍历目标值 -- target -- 每个物品只能被使用1次时就应该倒序遍历
+			dp[i] += dp[i-num]
 		}
 	}
 
