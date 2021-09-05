@@ -77,6 +77,7 @@ func sort1(nums []int, left, right int) {
 	sort1(nums, r+1, right)
 }
 
+// 此题有重复元素，计算时无法去重，因此元素集合有重复元素时无法用这种方法，但若没有重复元素的话就可以
 func combinationSum3(candidates []int, target int) int {
 	if candidates == nil || len(candidates) == 0 {
 		return 0
