@@ -29,7 +29,7 @@ func lastStoneWeightII(stones []int) int {
 
 	target := sum / 2           // 目标和向下取整，接下来计算容量为target的背包所能背的最大重量
 	dp := make([]int, target+1) // dp[i]表示容量为i的背包所能盛放的最大重量
-	dp[0] = 1
+	dp[0] = 0
 	for _, stone := range stones { // 遍历物品
 		for i := target; i >= stone; i-- { // 遍历背包容量
 			dp[i] = max(dp[i], dp[i-stone]+stone)
