@@ -31,10 +31,7 @@ func maxProfit4(prices []int) int {
 		return 0
 	}
 
-	dp := make([][]int, len(prices))
-	for i := range dp {
-		dp[i] = make([]int, 4)
-	}
+	dp := make([][4]int, len(prices))
 
 	// 初始化dp数组
 	dp[0][0] = -prices[0] // 已买入股票 -- 可交易

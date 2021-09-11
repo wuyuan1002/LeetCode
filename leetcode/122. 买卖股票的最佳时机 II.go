@@ -22,7 +22,7 @@ func maxProfit1(prices []int) int {
 	return profit
 }
 
-// 2. 动态规划
+// 2. 动态规划 -- 类似714
 // 一天共有两种状态:
 // 0: 持有股票
 // 1: 未持有股票
@@ -33,10 +33,7 @@ func maxProfit11(prices []int) int {
 		return 0
 	}
 
-	dp := make([][]int, len(prices))
-	for i := range dp {
-		dp[i] = make([]int, 2)
-	}
+	dp := make([][2]int, len(prices))
 
 	// 初始化dp
 	dp[0][0] = -prices[0]
