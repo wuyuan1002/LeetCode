@@ -1,1 +1,1 @@
-# LeetCode算法个人学习记录
+# LeetCode学习记录
