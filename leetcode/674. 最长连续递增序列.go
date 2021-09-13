@@ -12,7 +12,8 @@ func main() {
 
 }
 
-// 类似 300. 最长递增子序列
+// 类似 128、300
+// 动态规划 -- dp[i]表示以下标i处数字结尾的连续递增序列长度
 func findLengthOfLCIS(nums []int) int {
 	if nums == nil || len(nums) == 0 {
 		return 0
@@ -23,7 +24,31 @@ func findLengthOfLCIS(nums []int) int {
 		dp[i] = 1
 	}
 
-	maxLen := 0
+	maxLen := 1
+	for i := 1; i < len(nums); i++ {
+		if nums[i] > nums[i-1] {
+			dp[i] = dp[i-1] + 1
+		}
+		maxLen = max(maxLen, dp[i])
+	}
+
+	return maxLen
+}
+
+// 第二次做
+func findLengthOfLCIS1(nums []int) int {
+	if nums == nil || len(nums) == 0 {
+		return 0
+	}
+
+	// 构建并初始化dp
+	dp := make([]int, len(nums))
+	for i := range dp {
+		dp[i] = 1
+	}
+
+	// 遍历数组
+	maxLen := 1
 	for i := 1; i < len(nums); i++ {
 		if nums[i] > nums[i-1] {
 			dp[i] = dp[i-1] + 1
