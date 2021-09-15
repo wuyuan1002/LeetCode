@@ -21,3 +21,17 @@ func findPeakElement(nums []int) int {
 
 	return l
 }
+
+// 二分查找 -- 只要数组中存在一个元素比相邻元素大，那么沿着它一定可以找到一个峰值
+func findPeakElement1(nums []int) int {
+	l, r := 0, len(nums)-1
+	for l < r {
+		mid := l + (r-l)/2 // 防止l+r时超出int的范围
+		if nums[mid] > nums[mid+1] {
+			r = mid
+		} else {
+			l = mid + 1
+		}
+	}
+	return r
+}
