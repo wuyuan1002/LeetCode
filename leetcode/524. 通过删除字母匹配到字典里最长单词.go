@@ -8,7 +8,7 @@ package main
 // 如果答案不止一个，返回长度最长且字典序最小的字符串。如果答案不存在，则返回空字符串。
 
 func main() {
-	findLongestWord1("abcde", []string{"aplpllre"})
+	findLongestWord1("abcb", []string{"aplpllre"})
 }
 
 // 类似1143
@@ -32,12 +32,24 @@ func findLongestWord(s string, dictionary []string) string {
 	// 遍历数组
 	res := ""
 	for _, t := range dictionary {
+		i := 0 // s中的字符下标
 		for _, c := range t {
-			if dp[c-'a'] == len(s) {
-
+			// 若c在s中没有出现过则跳出
+			if dp[i][c-'a'] == len(s) {
+				i = -1 // 当前t不是目标字符串，将i置为-1
+				break
 			}
+			// 若出现过则将i移动到出现位置的下一个下标
+			i = dp[i][c-'a'] + 1
+		}
+
+		// 若找到目标字符串且t的长度大于res或长度相等但t的字典序小于res，则将t替代res
+		if i != -1 && (len(t) > len(res) || len(t) == len(res) && t < res) {
+			res = t
 		}
 	}
+
+	return res
 }
 
 func findLongestWord1(s string, dictionary []string) (ans string) {
