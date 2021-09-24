@@ -13,23 +13,23 @@ func main() {
 
 // 先遍历一次数组得到链表长度，再计算每一段的长度，将结果放入结果集中
 func splitListToParts(head *ListNode, k int) []*ListNode {
-	num := 0
+	num := 0 // 链表长度
 	for node := head; node != nil; node = node.Next {
 		num++
 	}
 	avg, remain := num/k, num%k
 
 	parts := make([]*ListNode, k)
-	for i, curr := 0, head; i < k && curr != nil; i++ {
-		parts[i] = curr
-		partSize := avg
+	for i, node := 0, head; i < k && node != nil; i++ {
+		parts[i] = node
+		size := avg // 一组的节点数量
 		if i < remain {
-			partSize++
+			size++
 		}
-		for j := 1; j < partSize; j++ {
-			curr = curr.Next
+		for j := 1; j < size; j++ {
+			node = node.Next
 		}
-		curr, curr.Next = curr.Next, nil
+		node, node.Next = node.Next, nil
 	}
 	return parts
 }
