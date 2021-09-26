@@ -8,7 +8,7 @@ package main
 // 如果答案不止一个，返回长度最长且字典序最小的字符串。如果答案不存在，则返回空字符串。
 
 func main() {
-	findLongestWord1("abcb", []string{"aplpllre"})
+	findLongestWord("abcb", []string{"aplpllre"})
 }
 
 // 类似1143
@@ -50,31 +50,4 @@ func findLongestWord(s string, dictionary []string) string {
 	}
 
 	return res
-}
-
-func findLongestWord1(s string, dictionary []string) (ans string) {
-	m := len(s)
-	f := make([][26]int, m+1)
-	for i := range f[m] {
-		f[m][i] = m
-	}
-	for i := m - 1; i >= 0; i-- {
-		f[i] = f[i+1]
-		f[i][s[i]-'a'] = i
-	}
-
-outer:
-	for _, t := range dictionary {
-		j := 0
-		for _, ch := range t {
-			if f[j][ch-'a'] == m {
-				continue outer
-			}
-			j = f[j][ch-'a'] + 1
-		}
-		if len(t) > len(ans) || len(t) == len(ans) && t < ans {
-			ans = t
-		}
-	}
-	return
 }
