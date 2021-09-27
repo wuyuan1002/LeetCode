@@ -13,6 +13,7 @@ func main() {
 
 }
 
+// 类似57
 func merge1(intervals [][]int) [][]int {
 	if intervals == nil || len(intervals) == 0 {
 		return nil
