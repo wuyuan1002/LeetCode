@@ -8,7 +8,7 @@ import "fmt"
 // 在列表中插入一个新的区间，你需要确保列表中的区间仍然有序且不重叠（如果有必要的话，可以合并区间）。
 
 func main() {
-	fmt.Println(insert([][]int{{1, 3}, {6, 9}}, []int{2, 5}))
+	fmt.Println(insert([][]int{{1, 3}, {6, 10}}, []int{2, 5}))
 }
 
 // 类似56
