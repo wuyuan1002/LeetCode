@@ -10,6 +10,7 @@ func main() {
 
 }
 
+// 类似120
 // offer 47
 // 动态规划
 func minPathSum(grid [][]int) int {
