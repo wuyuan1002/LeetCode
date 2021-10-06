@@ -18,7 +18,7 @@ func main() {
 	fmt.Println(minimumTotal(triangle))
 }
 
-// 类似64
+// 类似64、118
 // 动态规划(二维dp) -- dp[i][j] = min(dp[i-1][j-1], dp[i-1][j]) + triangle[i][j]
 // dp[i][j]表示从三角形顶部走到位置 (i, j) 的最小路径和
 func minimumTotal(triangle [][]int) int {
