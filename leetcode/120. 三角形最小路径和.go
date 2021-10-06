@@ -19,7 +19,7 @@ func main() {
 }
 
 // 类似64
-// 动态规划 -- dp[i][j] = min(dp[i-1][j-1], dp[i-1][j]) + triangle[i][j]
+// 动态规划(二维dp) -- dp[i][j] = min(dp[i-1][j-1], dp[i-1][j]) + triangle[i][j]
 // dp[i][j]表示从三角形顶部走到位置 (i, j) 的最小路径和
 func minimumTotal(triangle [][]int) int {
 	if triangle == nil || len(triangle) == 0 {
@@ -41,16 +41,57 @@ func minimumTotal(triangle [][]int) int {
 	// 遍历数组
 	dp[0][0] = triangle[0][0]
 	for i := 1; i < len(triangle); i++ {
-		dp[i][0] = dp[i-1][0] + triangle[i][0] // 第一列
-		for j := 1; j < i; j++ {
-			dp[i][j] = min(dp[i-1][j-1], dp[i-1][j]) + triangle[i][j]
+		for j := 0; j <= i; j++ {
+			if j == 0 {
+				dp[i][j] = dp[i-1][j] + triangle[i][j] // 第一列 -- 只能是上一个
+			} else if j == i {
+				dp[i][j] = dp[i-1][j-1] + triangle[i][j] // 最后一列 -- 只能在左上
+			} else {
+				dp[i][j] = min(dp[i-1][j-1], dp[i-1][j]) + triangle[i][j]
+			}
 		}
-		dp[i][i] = dp[i-1][i-1] + triangle[i][i] // 最后一列 -- 只能在左上
 	}
 
 	// 查找底边的最小路径
 	res := math.MaxInt32
 	for _, n := range dp[len(triangle)-1] {
+		res = min(res, n)
+	}
+	return res
+}
+
+// 一维滚动dp
+func minimumTotal1(triangle [][]int) int {
+	if triangle == nil || len(triangle) == 0 {
+		return 0
+	}
+
+	min := func(a, b int) int {
+		if a <= b {
+			return a
+		}
+		return b
+	}
+
+	dp := make([]int, len(triangle))
+	dp[0] = triangle[0][0]
+
+	// 遍历数组
+	for i := 1; i < len(triangle); i++ {
+		for j := i; j >= 0; j-- {
+			if j == 0 { // 第一列
+				dp[j] = dp[j] + triangle[i][j]
+			} else if j == i { // 最后一列
+				dp[j] = dp[j-1] + triangle[i][j]
+			} else {
+				dp[j] = min(dp[j-1], dp[j]) + triangle[i][j]
+			}
+		}
+	}
+
+	// 查找底边的最小路径
+	res := math.MaxInt32
+	for _, n := range dp {
 		res = min(res, n)
 	}
 	return res
