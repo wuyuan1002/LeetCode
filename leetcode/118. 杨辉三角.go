@@ -10,6 +10,7 @@ func main() {
 
 }
 
+// 动态规划
 // 类似120
 func generate(numRows int) [][]int {
 	if numRows <= 0 {
