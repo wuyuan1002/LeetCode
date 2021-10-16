@@ -40,7 +40,10 @@ func dfs22(s []byte, index int, result *[]string) {
 
 	if s[i] >= 'a' && s[i] <= 'z' {
 		s[i] -= diff
-	} else if s[i] >= 'A' && s[i] <= 'Z' {
+	}
+	dfs22(s, i+1, result)
+
+	if s[i] >= 'A' && s[i] <= 'Z' {
 		s[i] += diff
 	}
 	dfs22(s, i+1, result)
