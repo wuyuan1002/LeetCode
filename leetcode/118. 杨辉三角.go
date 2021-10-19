@@ -11,16 +11,16 @@ func main() {
 }
 
 // 动态规划
-// 类似120
+// 类似119、120
 func generate(numRows int) [][]int {
 	if numRows <= 0 {
 		return nil
 	}
 
 	dp := make([][]int, numRows)
-	for i := range dp {
+	for i := range dp { // 遍历第几行
 		dp[i] = make([]int, i+1)
-		for j := 0; j <= i; j++ {
+		for j := 0; j <= i; j++ { // 遍历当前行
 			if j == 0 || j == i { // 第一列和最后一列
 				dp[i][j] = 1
 			} else {
