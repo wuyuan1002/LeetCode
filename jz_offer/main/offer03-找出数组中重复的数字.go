@@ -115,3 +115,20 @@ func findRepeatNumber4(nums []int) int {
 	}
 	return -1
 }
+
+func findRepeatNumber5(nums []int) int {
+	i, n := 0, 0 // 当前下标和对应的数字
+	for i < len(nums) {
+		n = nums[i] // 获取当前下标的数字
+		if n != i { // 若当前数字不在正确的位置上，则将它交换到与其相等的下标处
+			if n != nums[n] { // 若目标交换下标处的数字已经在正确位置，说明当前数字是重复数字
+				nums[i], nums[n] = nums[n], nums[i]
+			} else {
+				return n
+			}
+		} else { // 若当前下标处数字已在正确位置，则继续遍历数组下一个位置
+			i++
+		}
+	}
+	return -1 // 没有找到重复数字
+}
