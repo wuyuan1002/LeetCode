@@ -65,3 +65,24 @@ func findNumberIn2DArray2(matrix [][]int, target int) bool {
 	}
 	return false
 }
+
+func findNumberIn2DArray3(matrix [][]int, target int) bool {
+	if matrix == nil || len(matrix) == 0 {
+		return false
+	}
+
+	lieNum := len(matrix) - 1     // 列长度
+	hangNum := len(matrix[0]) - 1 // 行长度
+
+	i, j := lieNum, 0 // 左下角开始遍历
+	for i >= 0 && j <= hangNum {
+		if matrix[i][j] > target {
+			i--
+		} else if matrix[i][j] < target {
+			j++
+		} else {
+			return true
+		}
+	}
+	return false
+}
