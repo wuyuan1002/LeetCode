@@ -10,15 +10,16 @@ func main() {
 // 递归法 -- 始终先遍历节点的后一个元素知道最后一个节点，把节点迅如数组中
 func reversePrint1(head *ListNode) []int {
 	arr := make([]int, 0)
-	return digui(head, arr)
+	digui(head, &arr)
+	return arr
 }
 
-func digui(head *ListNode, arr []int) []int {
-	if head != nil {
-		digui(head.Next, arr)
-		arr = append(arr, head.Val)
+func digui(head *ListNode, arr *[]int) {
+	if head == nil {
+		return
 	}
-	return arr
+	digui(head.Next, arr)
+	*arr = append(*arr, head.Val)
 }
 
 // 2.先将节点挨个放入栈中，然后出栈放入数组中
