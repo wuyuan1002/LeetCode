@@ -9,6 +9,7 @@ func main() {
 
 }
 
+// 136，260
 func singleNumbers(nums []int) []int {
 	if nums == nil || len(nums) == 0 {
 		return nil
@@ -19,7 +20,7 @@ func singleNumbers(nums []int) []int {
 		flag ^= n
 	}
 
-	mask := flag & -flag // 找到flag中第一个为1的位
+	mask := flag & -flag // 找到flag中第一个为1的位 -- 即找到两个数字的第一个不相同的位
 
 	result := make([]int, 2)
 	for _, n := range nums {

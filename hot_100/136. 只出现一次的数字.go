@@ -11,7 +11,7 @@ func main() {
 
 }
 
-// offer 56
+// offer 56， leetcode 260
 // 异或运算 -- 一个数字与本身异或后为0
 func singleNumber(nums []int) int {
 	if nums == nil || len(nums) == 0 {
