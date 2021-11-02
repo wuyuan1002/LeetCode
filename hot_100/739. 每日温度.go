@@ -18,7 +18,7 @@ func main() {
 }
 
 // 单调栈 -- 单调递减栈
-// 见Hot100 42,84
+// 见Hot100 42,84，leetcode 496、503
 func dailyTemperatures(temperatures []int) []int {
 	if temperatures == nil || len(temperatures) == 0 {
 		return nil
