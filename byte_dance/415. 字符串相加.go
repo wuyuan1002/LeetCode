@@ -12,7 +12,7 @@ func main() {
 	fmt.Println(addStrings("347", "20"))
 }
 
-// 类似 43. 字符串相乘
+// 类似 43字符串相乘、67二进制求和
 // 大数相加
 func addStrings(num1 string, num2 string) string {
 	if num1 == "" || num1 == "0" {
@@ -38,9 +38,9 @@ func addStrings(num1 string, num2 string) string {
 			n2 = 0
 		}
 
-		sum := n1 + n2 + carry                // 当前位的和
-		res = append(res, byte((sum)%10)+'0') // 当前位
-		carry = (sum) / 10                    // 进位
+		sum := n1 + n2 + carry              // 当前位的和
+		res = append(res, byte(sum%10)+'0') // 当前位
+		carry = (sum) / 10                  // 进位
 
 		i--
 		j--
