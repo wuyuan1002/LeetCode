@@ -34,7 +34,8 @@ func search(nums []int, target int) int {
 	l, r := 0, len(nums)-1 // 左右指针
 	mid := l               // 中间元素下标
 	for l <= r {
-		mid = (l + r) / 2
+		// mid = (l + r) / 2
+		mid = l + (r-l)/2 // 防止l+r时超出int的范围
 		if nums[mid] == target {
 			return mid
 		}
