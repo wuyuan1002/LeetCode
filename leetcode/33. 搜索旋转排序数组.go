@@ -6,7 +6,7 @@ func main() {
 
 }
 
-// offer 11
+// offer 11，leetcode 153
 // 二分法
 func search(nums []int, target int) int {
 	if nums == nil || len(nums) == 0 {
@@ -15,7 +15,8 @@ func search(nums []int, target int) int {
 
 	l, r := 0, len(nums)-1
 	for l <= r {
-		mid := (l + r) / 2
+		// mid := (l + r) / 2
+		mid := l + (r-l)/2 // 防止l+r时超出int的范围
 		if nums[mid] == target {
 			return mid
 		}

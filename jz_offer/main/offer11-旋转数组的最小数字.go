@@ -14,7 +14,7 @@ func main() {
 	// fmt.Printf("%d", minArray([]int{10, 10, 1, 10, 10, 10, 10}))
 }
 
-// 同 tencent 153
+// 同 leetcode 33、153
 // 使用二分法查找
 func minArray(numbers []int) int {
 	if numbers == nil || len(numbers) == 0 {
@@ -31,7 +31,8 @@ func minArray(numbers []int) int {
 			mid = q
 			break
 		}
-		mid = (p + q) / 2
+		// mid = (p + q) / 2
+		mid = p + (q-p)/2 // 防止p+q时超出int的范围
 		if numbers[mid] == numbers[p] && numbers[mid] == numbers[q] {
 			// 若三个指向的值相等，则无法判断中间的数字是位于前面的数组还是后面的数组，只能顺序查找
 			return orderFind(numbers[p : q+1])
