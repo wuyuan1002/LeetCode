@@ -11,9 +11,9 @@ import (
 //
 // 说明: 叶子节点是指没有子节点的节点。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 回溯法
 func binaryTreePaths(root *TreeNode) []string {

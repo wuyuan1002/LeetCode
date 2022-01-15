@@ -7,9 +7,9 @@ package main
 //
 // 叶子节点是指没有子节点的节点。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func hasPathSum(root *TreeNode, targetSum int) bool {
 	return dfs2(root, 0, targetSum)

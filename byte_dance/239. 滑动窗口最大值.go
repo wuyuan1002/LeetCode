@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 239. 滑动窗口最大值
 
 // 给你一个整数数组 nums，有一个大小为k的滑动窗口从数组的最左侧移动到数组的最右侧。
@@ -11,9 +7,9 @@ import (
 //
 // 返回滑动窗口中的最大值。
 
-func main() {
-	fmt.Println(maxSlidingWindow([]int{1, 3, 1, 2, 0, 5}, 3))
-}
+// func main() {
+// 	fmt.Println(maxSlidingWindow([]int{1, 3, 1, 2, 0, 5}, 3))
+// }
 
 // 同 offer 59
 func maxSlidingWindow(nums []int, k int) []int {

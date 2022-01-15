@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 40. 组合总和 II
 
 // 给定一个数组candidates和一个目标数target，找出candidates中所有可以使数字和为target的组合。
@@ -9,10 +7,10 @@ import "fmt"
 //
 // 注意：解集不能包含重复的组合。
 
-func main() {
-	fmt.Println(combinationSum2([]int{10, 1, 2, 7, 6, 1, 5}, 8))
-	fmt.Println(combinationSum3([]int{10, 1, 2, 7, 6, 1, 5}, 8))
-}
+// func main() {
+// 	fmt.Println(combinationSum2([]int{10, 1, 2, 7, 6, 1, 5}, 8))
+// 	fmt.Println(combinationSum3([]int{10, 1, 2, 7, 6, 1, 5}, 8))
+// }
 
 // 1. 回溯法
 // 2. 动态规划 -- 01背包问题 -- 此题有重复元素，计算时无法去重

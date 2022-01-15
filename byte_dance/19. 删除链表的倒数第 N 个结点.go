@@ -6,9 +6,9 @@ package main
 //
 // 进阶：你能尝试使用一趟扫描实现吗？
 
-func main() {
+// func main() {
 
-}
+// }
 
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 	if head == nil || n <= 0 {

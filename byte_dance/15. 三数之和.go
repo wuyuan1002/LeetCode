@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 15. 三数之和
 
 // 给你一个包含 n 个整数的数组nums，
@@ -11,11 +7,11 @@ import (
 //
 // 注意：答案中不可以包含重复的三元组。
 
-func main() {
-	// fmt.Println(threeSum([]int{-1, 0, 1, 2, -1, -4}))
-	// fmt.Println(threeSum([]int{-2, 0, 0, 2, 2}))
-	fmt.Println(threeSum([]int{0, 0, 0}))
-}
+// func main() {
+// 	// fmt.Println(threeSum([]int{-1, 0, 1, 2, -1, -4}))
+// 	// fmt.Println(threeSum([]int{-2, 0, 0, 2, 2}))
+// 	fmt.Println(threeSum([]int{0, 0, 0}))
+// }
 
 // 1. 先排序数组，然后先固定一个值，然后在之后元素中使用双指针寻找两数之和
 func threeSum(nums []int) [][]int {

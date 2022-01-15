@@ -2,9 +2,9 @@ package main
 
 // 20. 有效的括号
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 定义合法的括号匹配关系
 var brackets = map[byte]byte{

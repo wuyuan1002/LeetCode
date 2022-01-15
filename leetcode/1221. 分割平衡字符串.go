@@ -8,9 +8,9 @@ package main
 // 注意：分割得到的每个字符串都必须是平衡字符串。
 // 返回可以通过分割得到的平衡字符串的 最大数量 。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func balancedStringSplit(s string) int {
 	res := 0

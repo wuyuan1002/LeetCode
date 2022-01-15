@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 142. 环形链表 II
 
 // 给定一个链表，返回链表开始入环的第一个节点。如果链表无环，则返回null。
@@ -33,13 +29,13 @@ var (
 	}
 )
 
-func main() {
-	node1.Next = node2
-	node2.Next = node3
-	node3.Next = node4
-	node4.Next = node2
-	fmt.Println(detectCycle(node1).Val)
-}
+// func main() {
+// 	node1.Next = node2
+// 	node2.Next = node3
+// 	node3.Next = node4
+// 	node4.Next = node2
+// 	fmt.Println(detectCycle(node1).Val)
+// }
 
 // 1. 遍历所有节点，使用map记录已经访问过的节点
 // 2. 快慢指针 -- 两指针相遇后，再定义一个慢指针从链表头出发，当快慢指针再次相遇时，它指向的就是环的入口

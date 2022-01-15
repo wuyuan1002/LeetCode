@@ -10,9 +10,9 @@ import (
 // 找出nums中的三个整数，使得它们的和与target最接近。
 // 返回这三个数的和。假定每组输入只存在唯一答案。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 类似三数之和
 func threeSumClosest(nums []int, target int) int {

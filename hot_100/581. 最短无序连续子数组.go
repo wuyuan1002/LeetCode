@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 581. 最短无序连续子数组
 
 // 给你一个整数数组 nums ，你需要找出一个 连续子数组 ，如果对这个子数组进行升序排序，
@@ -11,9 +7,9 @@ import (
 //
 // 请你找出符合题意的 最短子数组，并输出它的长度。
 
-func main() {
-	fmt.Println(findUnsortedSubarray([]int{1, 3, 5, 2, 4}))
-}
+// func main() {
+// 	fmt.Println(findUnsortedSubarray([]int{1, 3, 5, 2, 4}))
+// }
 
 // 先将数组排序，之后使用双指针比较两个数组不同的位置
 func findUnsortedSubarray(nums []int) int {

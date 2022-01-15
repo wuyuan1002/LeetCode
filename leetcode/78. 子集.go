@@ -2,9 +2,9 @@ package main
 
 // 78. 子集
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 排列组合，类似offer 38
 // 回溯法

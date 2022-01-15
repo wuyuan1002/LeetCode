@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 33. 搜索旋转排序数组
 
 // 整数数组 nums 按升序排列，数组中的值 互不相同 。
@@ -14,9 +10,9 @@ import (
 //
 // 给你旋转后的数组nums和一个整数target，如果 nums 中存在这个目标值target，则返回它的下标，否则返回-1。
 
-func main() {
-	fmt.Println(search([]int{1, 3}, 3))
-}
+// func main() {
+// 	fmt.Println(search([]int{1, 3}, 3))
+// }
 
 // offer 11
 // 二分法

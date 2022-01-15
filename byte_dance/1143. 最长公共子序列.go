@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 1143. 最长公共子序列
 
 // 给定两个字符串text1 和text2，返回这两个字符串的最长 公共子序列 的长度。如果不存在 公共子序列 ，返回 0 。
@@ -13,9 +9,9 @@ import (
 // 例如，"ace" 是 "abcde" 的子序列，但 "aec" 不是 "abcde" 的子序列。
 // 两个字符串的 公共子序列 是这两个字符串所共同拥有的子序列。
 
-func main() {
-	fmt.Println(longestCommonSubsequence1("abcba", "abcbcba"))
-}
+// func main() {
+// 	fmt.Println(longestCommonSubsequence1("abcba", "abcbcba"))
+// }
 
 // 类似于 718. 最长重复子数组
 // 动态规划，二维dp -- dp[i][j]表示以下标i-1结尾的text1和下标j-1结尾的text2的数组的字符串的公共子序列长度

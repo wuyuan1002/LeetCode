@@ -1,17 +1,13 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 78. 子集 -- 组合
 
 // 给你一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。
 // 解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。
 
-func main() {
-	fmt.Println(subsets([]int{1, 2, 3}))
-}
+// func main() {
+// 	fmt.Println(subsets([]int{1, 2, 3}))
+// }
 
 // 排列组合，类似offer 38, Hot100 46、90
 // 回溯法

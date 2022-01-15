@@ -11,9 +11,9 @@ package main
 // 对于本题而言，当needle是空字符串时我们应当返回 0 。
 // 这与 C 语言的strstr()以及 Java 的indexOf()定义相符。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // KMP解法
 func strStr(haystack string, needle string) int {

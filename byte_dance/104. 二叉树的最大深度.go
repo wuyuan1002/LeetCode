@@ -7,9 +7,9 @@ package main
 //
 // 说明: 叶子节点是指没有子节点的节点。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 同offer 55-1
 func maxDepth(root *TreeNode) int {

@@ -9,9 +9,9 @@ package main
 // 如果单词不只含有一个字母，只有首字母大写，比如"Google" 。
 // 给你一个字符串 word 。如果大写用法正确，返回 true ；否则，返回 false 。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func detectCapitalUse(word string) bool {
 	if word == "" {

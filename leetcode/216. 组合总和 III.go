@@ -8,9 +8,9 @@ package main
 // 所有数字都是正整数。
 // 解集不能包含重复的组合。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func combinationSum4(k int, n int) [][]int {
 	result := make([][]int, 0)

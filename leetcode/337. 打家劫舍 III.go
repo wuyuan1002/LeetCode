@@ -2,9 +2,9 @@ package main
 
 // 337. 打家劫舍 III
 
-func main() {
+// func main() {
 
-}
+// }
 
 func rob2(root *TreeNode) int {
 	rob, nrob := dfs19(root)

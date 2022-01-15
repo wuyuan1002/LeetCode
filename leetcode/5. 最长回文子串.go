@@ -1,12 +1,10 @@
 package main
 
-import "fmt"
-
 // 5. 最长回文子串
 
-func main() {
-	fmt.Println(longestPalindrome("babad"))
-}
+// func main() {
+// 	fmt.Println(longestPalindrome("babad"))
+// }
 
 // 中心扩散法
 func longestPalindrome(s string) string {

@@ -1,19 +1,15 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 剑指 Offer 56 - II. 数组中数字出现的次数 II
 
 // 在一个数组 nums 中除一个数字只出现一次之外，其他数字都出现了三次。请找出那个只出现一次的数字。
 
-func main() {
-	// 方法1：算出每一位二进制位中1出现的次数，每一位次数与3取余
-	// 方法2：使用map记录次数
+// func main() {
+// 	// 方法1：算出每一位二进制位中1出现的次数，每一位次数与3取余
+// 	// 方法2：使用map记录次数
 
-	fmt.Println(singleNumber1([]int{13, 13, 13, 3}))
-}
+// 	fmt.Println(singleNumber1([]int{13, 13, 13, 3}))
+// }
 
 // 方法1：算出每一位二进制位中1出现的次数，每一位次数与3取余
 func singleNumber(nums []int) int {

@@ -16,9 +16,9 @@ import "strings"
 // 可以被写作AB（A连接B）的字符串，其中A和B都是有效「括号字符串」
 // 可以被写作(A)的字符串，其中A是一个有效的「括号字符串」
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 使用栈来保存遇到的左括号出现的下标，每次遇到右括号就从栈顶出栈
 func minRemoveToMakeValid(s string) string {

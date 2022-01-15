@@ -2,9 +2,9 @@ package main
 
 // 28. 实现 strStr()
 
-func main() {
+// func main() {
 
-}
+// }
 
 func strStr(haystack string, needle string) int {
 	if needle == "" {

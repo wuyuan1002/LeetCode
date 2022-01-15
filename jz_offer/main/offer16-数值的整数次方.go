@@ -1,15 +1,13 @@
 package main
 
-import "fmt"
-
 // 剑指 Offer 16. 数值的整数次方
 
 // 实现函数double Power(double base, int exponent)，求base的exponent次方。
 // 不得使用库函数，同时不需要考虑大数问题。
 
-func main() {
-	fmt.Printf("%f", myPow(0.00001, 2147483647))
-}
+// func main() {
+// 	fmt.Printf("%f", myPow(0.00001, 2147483647))
+// }
 
 func myPow(x float64, n int) float64 {
 	if n == 0 {

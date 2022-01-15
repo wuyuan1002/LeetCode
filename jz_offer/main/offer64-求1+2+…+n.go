@@ -4,9 +4,9 @@ package main
 
 // 求 1+2+...+n ，要求不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 不让用循环 - 那就用递归
 // 不让用if - 那就用&&

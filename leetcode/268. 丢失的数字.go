@@ -1,16 +1,14 @@
 package main
 
-import "fmt"
-
 // 268. 丢失的数字
 
 // 给定一个包含 [0, n]中n个数的数组 nums ，找出 [0, n] 这个范围内没有出现在数组中的那个数。
 // 进阶：
 // 你能否实现线性时间复杂度、仅使用额外常数空间的算法解决此问题?
 
-func main() {
-	fmt.Println(missingNumber([]int{0, 3, 1}))
-}
+// func main() {
+// 	fmt.Println(missingNumber([]int{0, 3, 1}))
+// }
 
 // 1. 排序后判断
 // 2. 放入map后判断

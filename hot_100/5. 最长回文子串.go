@@ -1,17 +1,13 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 5. 最长回文子串
 
 // 给你一个字符串 s，找到 s 中最长的回文子串。
 
-func main() {
-	// fmt.Println([]int{1,2,3,4,5}[3:5])
-	fmt.Println(longestPalindrome("babad"))
-}
+// func main() {
+// 	// fmt.Println([]int{1,2,3,4,5}[3:5])
+// 	fmt.Println(longestPalindrome("babad"))
+// }
 
 // 1.Manacher算法 见Hot100 647
 // 2.中心拓展法: 遍历数组，先 左右寻找与当前字符相等的字符，之后左右同时扩散，直到左右指针的值不相等

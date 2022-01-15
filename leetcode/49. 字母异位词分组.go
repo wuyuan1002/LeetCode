@@ -6,9 +6,9 @@ import (
 
 // 49. 字母异位词分组
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 字母异位词排序后为相等的字符串
 func groupAnagrams(strs []string) [][]string {

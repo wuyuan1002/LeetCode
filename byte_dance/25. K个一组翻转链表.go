@@ -10,9 +10,9 @@ package main
 // 你可以设计一个只使用常数额外空间的算法来解决此问题吗？
 // 你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 两两交换链表中的节点与本题类似
 func reverseKGroup(head *ListNode, k int) *ListNode {

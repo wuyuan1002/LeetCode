@@ -8,9 +8,9 @@ package main
 // 删除一个字符
 // 替换一个字符
 
-func main() {
+// func main() {
 
-}
+// }
 
 func minDistance(word1 string, word2 string) int {
 	return 0

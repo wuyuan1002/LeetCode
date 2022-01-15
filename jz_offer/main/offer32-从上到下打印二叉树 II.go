@@ -8,9 +8,9 @@ import (
 
 // 从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func levelOrder1(root *TreeNode) [][]int {
 	result := make([][]int, 0)

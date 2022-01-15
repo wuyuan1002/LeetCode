@@ -2,9 +2,9 @@ package main
 
 // 139. 单词拆分
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 动态规划
 func wordBreak(s string, wordDict []string) bool {

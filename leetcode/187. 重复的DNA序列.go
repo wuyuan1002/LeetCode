@@ -7,9 +7,9 @@ package main
 //
 // 编写一个函数来找出所有目标子串，目标子串的长度为 10，且在 DNA 字符串 s 中出现次数超过一次。
 
-func main() {
-	findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT")
-}
+// func main() {
+// 	findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT")
+// }
 
 // 使用map存所有长度为10的子串和出现的次数
 func findRepeatedDnaSequences(s string) []string {

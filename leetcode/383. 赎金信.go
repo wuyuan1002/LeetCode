@@ -9,9 +9,9 @@ package main
 // (题目说明：为了不暴露赎金信字迹，要从杂志上搜索各个需要的字母，
 // 组成单词来表达意思。杂志字符串中的每个字符只能在赎金信字符串中使用一次。)
 
-func main() {
+// func main() {
 
-}
+// }
 
 func canConstruct(ransomNote string, magazine string) bool {
 	record := make([]int, 26) // 存magazine每个字符出现的次数

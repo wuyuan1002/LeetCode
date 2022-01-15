@@ -1,16 +1,14 @@
 package main
 
-import "fmt"
-
 // 剑指 Offer 21. 调整数组顺序使奇数位于偶数前面
 
 // 输入一个整数数组，实现一个函数来调整该数组中数字的顺序，使得所有奇数位于数组的前半部分，
 // 所有偶数位于数组的后半部分。
 
-func main() {
-	nums := []int{1, 2, 3, 4, 5, 6, 7}
-	fmt.Printf("%v", exchange(nums))
-}
+// func main() {
+// 	nums := []int{1, 2, 3, 4, 5, 6, 7}
+// 	fmt.Printf("%v", exchange(nums))
+// }
 
 func exchange(nums []int) []int {
 	if nums == nil || len(nums) == 0 {

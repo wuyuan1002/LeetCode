@@ -10,10 +10,10 @@ import (
 // 输入一个英文句子，翻转句子中单词的顺序，但单词内字符的顺序不变。
 // 为简单起见，标点符号和普通字母一样处理。例如输入字符串"I am a student. "，则输出"student. a am I"。
 
-func main() {
-	// fmt.Println(reverseWords(" I am a student. "))
-	fmt.Println(reverseWords2("a good  example"))
-}
+// func main() {
+// 	// fmt.Println(reverseWords(" I am a student. "))
+// 	fmt.Println(reverseWords2("a good  example"))
+// }
 
 // 先翻转整个字符串，再翻转每一个单词, 或者先翻转每个单词，再翻转整个字符串
 func reverseWords(s string) string {

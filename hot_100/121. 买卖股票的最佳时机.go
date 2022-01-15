@@ -7,9 +7,9 @@ package main
 // 设计一个算法来计算你所能获取的最大利润。
 // 返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 同offer 63
 func maxProfit(prices []int) int {

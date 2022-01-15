@@ -2,9 +2,9 @@ package main
 
 // 70. 爬楼梯
 
-func main() {
+// func main() {
 
-}
+// }
 
 // offer 10-2
 func climbStairs(n int) int {

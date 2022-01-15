@@ -11,8 +11,8 @@ package main
 // s = ""
 // 返回 " "
 
-func main() {
-}
+// func main() {
+// }
 
 func firstUniqChar(s string) byte {
 	if len(s) == 0 {

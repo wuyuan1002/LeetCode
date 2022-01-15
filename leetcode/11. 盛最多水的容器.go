@@ -2,9 +2,9 @@ package main
 
 // 11. 盛最多水的容器
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 双指针法，两个指针向中间移动，每次都是移动数字小的那个
 func maxArea(height []int) int {

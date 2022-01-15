@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 )
@@ -12,10 +11,10 @@ import (
 //
 // 注意：输出结果可能非常大，所以你需要返回一个字符串而不是整数。
 
-func main() {
-	nums := []int{0, 0}
-	fmt.Println(largestNumber(nums))
-}
+// func main() {
+// 	nums := []int{0, 0}
+// 	fmt.Println(largestNumber(nums))
+// }
 
 // 类似 Offer 45 把数组排成最小的数
 func largestNumber(nums []int) string {

@@ -1,18 +1,14 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 剑指 Offer 48. 最长不含重复字符的子字符串
 
 // 请从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长子字符串的长度。
 
-func main() {
-	// fmt.Println(lengthOfLongestSubstring("pwwkew"))
-	// fmt.Println(lengthOfLongestSubstring("abba"))
-	fmt.Println(lengthOfLongestSubstring1("abcabcbb"))
-}
+// func main() {
+// 	// fmt.Println(lengthOfLongestSubstring("pwwkew"))
+// 	// fmt.Println(lengthOfLongestSubstring("abba"))
+// 	fmt.Println(lengthOfLongestSubstring1("abcabcbb"))
+// }
 
 // 同 hot100 3
 // 使用滑动窗口解决

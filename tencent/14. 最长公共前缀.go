@@ -6,9 +6,9 @@ package main
 //
 // 如果不存在公共前缀，返回空字符串 ""。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func longestCommonPrefix(strs []string) string {
 	if strs == nil || len(strs) == 0 {

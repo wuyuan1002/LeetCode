@@ -6,9 +6,9 @@ package main
 //
 // 你可以假设数组是非空的，并且给定的数组总是存在多数元素。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 同 offer 39
 func majorityElement(nums []int) int {

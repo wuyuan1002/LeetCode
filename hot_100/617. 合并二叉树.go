@@ -7,9 +7,9 @@ package main
 // 你需要将他们合并为一个新的二叉树。合并的规则是如果两个节点重叠，
 // 那么将他们的值相加作为节点合并后的新值，否则不为NULL 的节点将直接作为新二叉树的节点。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 先序遍历二叉树，先合并当前节点，之后递归合并子节点
 func mergeTrees(root1 *TreeNode, root2 *TreeNode) *TreeNode {

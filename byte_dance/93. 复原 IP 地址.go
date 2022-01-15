@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strconv"
 )
 
@@ -15,11 +14,11 @@ import (
 // 例如："0.1.2.201" 和 "192.168.1.1" 是 有效 IP 地址，
 // 但是 "0.011.255.245"、"192.168.1.312" 和 "192.168@1.1" 是 无效 IP 地址。
 
-func main() {
-	// fmt.Println(restoreIpAddresses("101023"))
-	// fmt.Println(restoreIpAddresses("010010"))
-	fmt.Println(restoreIpAddresses("25525511135"))
-}
+// func main() {
+// 	// fmt.Println(restoreIpAddresses("101023"))
+// 	// fmt.Println(restoreIpAddresses("010010"))
+// 	fmt.Println(restoreIpAddresses("25525511135"))
+// }
 
 // 回溯法
 func restoreIpAddresses(s string) []string {

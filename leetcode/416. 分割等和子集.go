@@ -2,9 +2,9 @@ package main
 
 // 416. 分割等和子集
 
-func main() {
+// func main() {
 
-}
+// }
 
 // Hot100 322, 518
 // 背包问题 - 存在问题 -- dp[i] = dp[i] || dp[i-num]

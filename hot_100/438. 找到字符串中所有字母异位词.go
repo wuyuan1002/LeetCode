@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 438. 找到字符串中所有字母异位词
 
 // 给定一个字符串s和一个非空字符串p，找到s中所有是p的字母异位词的子串，返回这些子串的起始索引。
@@ -13,10 +9,10 @@ import (
 // 字母异位词指字母相同，但排列不同的字符串。
 // 不考虑答案输出的顺序。
 
-func main() {
-	fmt.Println(findAnagrams("cbaebabacd", "abc"))
-	// fmt.Println(findAnagrams("abab", "ab"))
-}
+// func main() {
+// 	fmt.Println(findAnagrams("cbaebabacd", "abc"))
+// 	// fmt.Println(findAnagrams("abab", "ab"))
+// }
 
 // 滑动窗口+(数组或map)
 func findAnagrams(s string, p string) []int {

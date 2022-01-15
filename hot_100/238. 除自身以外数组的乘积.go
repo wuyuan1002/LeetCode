@@ -5,9 +5,9 @@ package main
 // 给你一个长度为n的整数数组nums，其中n > 1，返回输出数组output，
 // 其中 output[i]等于nums中除nums[i]之外其余各元素的乘积。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 同 offer 66
 func productExceptSelf(nums []int) []int {

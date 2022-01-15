@@ -1,14 +1,12 @@
 package main
 
-import "fmt"
-
 // 229. 求众数 II
 
 // 给定一个大小为 n 的整数数组，找出其中所有出现超过 ⌊ n/3 ⌋ 次的元素。
 
-func main() {
-	fmt.Println(majorityElement([]int{2, 1, 1, 3, 1, 4, 5, 6}))
-}
+// func main() {
+// 	fmt.Println(majorityElement([]int{2, 1, 1, 3, 1, 4, 5, 6}))
+// }
 
 // 超过n/k次的数字个数最多为k-1个
 

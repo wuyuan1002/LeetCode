@@ -2,9 +2,9 @@ package main
 
 // 470. 用 Rand7() 实现 Rand10()
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 定理：若rand_n()能等概率生成1到n的随机整数，则有(rand_n() - 1) * n + rand_n()能
 // 　　　等概率生成1到n * n的随机整数。

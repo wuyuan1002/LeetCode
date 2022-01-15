@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -15,14 +14,14 @@ import (
 // 节点的右子树只包含大于当前节点的数。
 // 所有左子树和右子树自身必须也是二叉搜索树。
 
-func main() {
-	aa := &TreeNode{
-		Val:   0,
-		Left:  nil,
-		Right: nil,
-	}
-	fmt.Println(isValidBST(aa))
-}
+// func main() {
+// 	aa := &TreeNode{
+// 		Val:   0,
+// 		Left:  nil,
+// 		Right: nil,
+// 	}
+// 	fmt.Println(isValidBST(aa))
+// }
 
 var pre = math.MinInt64
 

@@ -10,9 +10,9 @@ package main
 // 例如，先修课程对[0, 1] 表示：想要学习课程 0 ，你需要先完成课程 1 。
 // 请你判断是否可能完成所有课程的学习？如果可以，返回 true ；否则，返回 false 。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func canFinish(numCourses int, prerequisites [][]int) bool {
 	return false

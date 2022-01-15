@@ -2,9 +2,9 @@ package main
 
 // 1. 两数之和
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 可以在查找时将数字存入map中，这样，下次使用时可以直接获取
 func twoSum(nums []int, target int) []int {

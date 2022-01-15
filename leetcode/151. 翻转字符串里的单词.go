@@ -4,9 +4,9 @@ import "strings"
 
 // 151. 翻转字符串里的单词
 
-func main() {
+// func main() {
 
-}
+// }
 
 // offer 58、leetcode 189
 // 先翻转整个字符串，再翻转每一个单词, 或者先翻转每个单词，再翻转整个字符串

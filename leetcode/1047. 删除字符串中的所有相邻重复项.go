@@ -7,9 +7,9 @@ package main
 //
 // 在完成所有重复项删除操作后返回最终的字符串。答案保证唯一。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 使用栈
 func removeDuplicates2(s string) string {

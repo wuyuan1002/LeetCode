@@ -1,20 +1,16 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 31. 下一个排列
 
 // 实现获取 下一个排列 的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列。
 // 如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。
 // 必须 原地 修改，只允许使用额外常数空间。
 
-func main() {
-	aa := []int{3, 1, 2}
-	nextPermutation(aa)
-	fmt.Println(aa)
-}
+// func main() {
+// 	aa := []int{3, 1, 2}
+// 	nextPermutation(aa)
+// 	fmt.Println(aa)
+// }
 
 // 按字典顺序生成序列：
 // 1.先找出最大的索引 k 满足 nums[k] < nums[k+1]，如果不存在，就翻转整个数组；

@@ -6,9 +6,9 @@ package main
 // 注意:
 // 你可以假设树中没有重复的元素。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 同offer 07
 func buildTree(preorder []int, inorder []int) *TreeNode {

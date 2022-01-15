@@ -7,9 +7,9 @@ package main
 //
 // 必须 原地 修改，只允许使用额外常数空间。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func nextPermutation(nums []int) {
 	if nums == nil || len(nums) == 0 {

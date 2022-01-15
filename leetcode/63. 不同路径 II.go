@@ -8,9 +8,9 @@ package main
 //
 // 现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？
 
-func main() {
+// func main() {
 
-}
+// }
 
 func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 	if obstacleGrid == nil || len(obstacleGrid) == 0 {

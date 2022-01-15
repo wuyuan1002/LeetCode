@@ -6,9 +6,9 @@ package main
 //
 // 输入为 非空 字符串且只包含数字 1 和 0。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 类似 415大数相加
 func addBinary(a string, b string) string {

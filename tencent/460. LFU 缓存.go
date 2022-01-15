@@ -19,15 +19,15 @@ import (
 //
 // 当一个键首次插入到缓存中时，它的使用计数器被设置为 1 (由于 put 操作)。对缓存中的键执行 get 或 put 操作，使用计数器的值将会递增。
 
-func main() {
-	obj := Constructor(0)
-	obj.Put(2, 22)
-	obj.Get(0)
-	// obj.Put(3, 33)
-	// obj.Put(4, 44)
-	// obj.Put(3, 33)
-	// obj.Put(5, 55)
-}
+// func main() {
+// 	obj := Constructor(0)
+// 	obj.Put(2, 22)
+// 	obj.Get(0)
+// 	// obj.Put(3, 33)
+// 	// obj.Put(4, 44)
+// 	// obj.Put(3, 33)
+// 	// obj.Put(5, 55)
+// }
 
 // LFUCache 类似 146. LRU缓存机制
 type LFUCache struct {

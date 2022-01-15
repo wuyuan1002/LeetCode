@@ -4,9 +4,9 @@ package main
 
 // 给定一个二进制数组， 计算其中最大连续 1 的个数。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func findMaxConsecutiveOnes(nums []int) int {
 	if nums == nil || len(nums) == 0 {

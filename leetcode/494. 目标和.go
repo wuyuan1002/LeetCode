@@ -2,9 +2,9 @@ package main
 
 // 494. 目标和
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 2. 动态规划 -- 背包问题 - 组合问题
 // 同Hot100 518，类似Hot100 416

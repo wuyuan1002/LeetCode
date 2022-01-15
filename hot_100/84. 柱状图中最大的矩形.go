@@ -1,19 +1,15 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 84. 柱状图中最大的矩形
 
 // 给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。
 // 求在该柱状图中，能够勾勒出来的矩形的最大面积。
 
-func main() {
-	// fmt.Println(largestRectangleArea([]int{2, 3, 4, 5}))
-	// fmt.Println(largestRectangleArea([]int{2, 1, 5, 6, 2, 3}))
-	fmt.Println(largestRectangleArea([]int{2, 1, 2}))
-}
+// func main() {
+// 	// fmt.Println(largestRectangleArea([]int{2, 3, 4, 5}))
+// 	// fmt.Println(largestRectangleArea([]int{2, 1, 5, 6, 2, 3}))
+// 	fmt.Println(largestRectangleArea([]int{2, 1, 2}))
+// }
 
 // 一直解答错误
 // 对比Hot100 42, 739

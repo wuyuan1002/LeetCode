@@ -14,11 +14,11 @@ type TreeNode struct {
 // 前序遍历 -- 第一个始终是根节点，后面部分的前半部分是它左子树前序遍历的结果，后半部分使它右子树前序遍历的结果
 // 中序遍历 -- 根节点始终在中间，前半部分是它左子树中序遍历的结果，后半部分使它右子树中序遍历的结果
 
-func main() {
-	pre := []int{3, 9, 20, 15, 7}
-	in := []int{9, 3, 15, 20, 7}
-	buildTree2(pre, in)
-}
+// func main() {
+// 	pre := []int{3, 9, 20, 15, 7}
+// 	in := []int{9, 3, 15, 20, 7}
+// 	buildTree2(pre, in)
+// }
 
 func buildTree(preorder []int, inorder []int) *TreeNode {
 	if len(preorder) == 0 || len(inorder) == 0 { // 已经是叶子节点了

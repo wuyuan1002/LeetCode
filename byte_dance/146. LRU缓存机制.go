@@ -15,9 +15,9 @@ import (
 //
 // 进阶：你是否可以在O(1) 时间复杂度内完成这两种操作？
 
-func main() {
+// func main() {
 
-}
+// }
 
 // LRUCache 最近最少使用机制
 type LRUCache struct {

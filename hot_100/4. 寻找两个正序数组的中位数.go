@@ -1,17 +1,13 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 4.寻找两高正序数组的中位数
 
 // 给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。
 // 请你找出并返回这两个正序数组的中位数 。
 
-func main() {
-	fmt.Println(findMedianSortedArrays([]int{}, []int{1}))
-}
+// func main() {
+// 	fmt.Println(findMedianSortedArrays([]int{}, []int{1}))
+// }
 
 // 1. 合并两个数组，求中位数 -- 合并过程类似归并排序的一部分，见offer 51
 // 2. 不需要合并两个数组，由于两个数组长度已知，因此最终的中位数是第几个也是已知的，使用两个指针同时遍历两个数组即可得到中位数

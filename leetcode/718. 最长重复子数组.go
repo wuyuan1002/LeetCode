@@ -2,9 +2,9 @@ package main
 
 // 718. 最长重复子数组
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 2. 滚动数组优化，一维dp，空间占用较小 -- 类似礼物的最大价值、零钱兑换
 func findLength(nums1 []int, nums2 []int) int {

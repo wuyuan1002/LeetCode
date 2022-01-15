@@ -8,9 +8,9 @@ package main
 //
 // 你可以假设数组中的所有字符都是 ASCII 码表中的可打印字符。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 双指针
 func reverseString(s []byte) {

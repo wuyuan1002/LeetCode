@@ -7,9 +7,9 @@ package main
 // 每行的元素从左到右升序排列。
 // 每列的元素从上到下升序排列。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 同offer 04
 func searchMatrix(matrix [][]int, target int) bool {

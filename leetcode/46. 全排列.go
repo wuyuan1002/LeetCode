@@ -2,9 +2,9 @@ package main
 
 // 46. 全排列
 
-func main() {
+// func main() {
 
-}
+// }
 
 // offer 38
 // 回溯法+剪枝

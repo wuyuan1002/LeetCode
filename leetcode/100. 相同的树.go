@@ -6,9 +6,9 @@ package main
 //
 // 如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func isSameTree(p *TreeNode, q *TreeNode) bool {
 	if p == nil && q == nil {

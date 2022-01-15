@@ -10,9 +10,9 @@ package main
 // 如果 可以变为 1，那么这个数就是快乐数。
 // 如果 n 是快乐数就返回 true ；不是，则返回 false 。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 使用map存某依次的计算结果是否出现过，若出现过，则说明将会无限循环永远变不成1
 func isHappy(n int) bool {

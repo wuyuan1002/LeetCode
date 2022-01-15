@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 695. 岛屿的最大面积
 
 // 给定一个包含了一些 0 和 1 的非空二维数组grid 。
@@ -13,9 +9,9 @@ import (
 //
 // 找到给定的二维数组中最大的岛屿面积。(如果没有岛屿，则返回面积为 0 。)
 
-func main() {
-	fmt.Println(maxAreaOfIsland([][]int{{1, 1, 0}, {1, 0, 0}, {0, 1, 0}}))
-}
+// func main() {
+// 	fmt.Println(maxAreaOfIsland([][]int{{1, 1, 0}, {1, 0, 0}, {0, 1, 0}}))
+// }
 
 // 回溯法
 // 类似 offer 12, 13

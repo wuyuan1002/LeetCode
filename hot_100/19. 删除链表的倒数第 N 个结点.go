@@ -1,23 +1,19 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 19. 删除链表的倒数第 N 个结点
 
 // 给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
 //
 // 进阶：你能尝试使用一趟扫描实现吗？
 
-func main() {
+// func main() {
 
-	head := &ListNode1{
-		Val:  5,
-		Next: nil,
-	}
-	fmt.Println(removeNthFromEnd(head, 1).Val)
-}
+// 	head := &ListNode1{
+// 		Val:  5,
+// 		Next: nil,
+// 	}
+// 	fmt.Println(removeNthFromEnd(head, 1).Val)
+// }
 
 type ListNode1 struct {
 	Val  int

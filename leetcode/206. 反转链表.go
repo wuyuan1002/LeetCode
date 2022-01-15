@@ -2,9 +2,9 @@ package main
 
 // 206. 反转链表
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 同offer 24
 // 三指针

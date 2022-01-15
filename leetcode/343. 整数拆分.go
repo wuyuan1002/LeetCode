@@ -2,9 +2,9 @@ package main
 
 // 343. 整数拆分
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 同 剪绳子
 func integerBreak(n int) int {

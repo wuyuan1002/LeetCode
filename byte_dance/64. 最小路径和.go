@@ -6,9 +6,9 @@ package main
 //
 // 说明：每次只能向下或者向右移动一步。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 类似120
 // offer 47

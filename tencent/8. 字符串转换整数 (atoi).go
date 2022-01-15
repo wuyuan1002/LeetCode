@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 	"strings"
 )
@@ -23,10 +22,10 @@ import (
 // 本题中的空白字符只包括空格字符 ' ' 。
 // 除前导空格或数字后的其余字符串外，请勿忽略 任何其他字符。
 
-func main() {
-	fmt.Println(math.MinInt32)
-	fmt.Println(math.MaxInt32)
-}
+// func main() {
+// 	fmt.Println(math.MinInt32)
+// 	fmt.Println(math.MaxInt32)
+// }
 
 func myAtoi(s string) int {
 	s = strings.TrimSpace(s)

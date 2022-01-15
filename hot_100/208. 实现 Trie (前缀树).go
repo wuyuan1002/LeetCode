@@ -11,9 +11,9 @@ package main
 // boolean search(String word) 如果字符串 word 在前缀树中，返回 true（即，在检索之前已经插入）；否则，返回 false 。
 // boolean startsWith(String prefix) 如果之前已经插入的字符串word 的前缀之一为 prefix ，返回 true ；否则，返回 false 。
 
-func main() {
+// func main() {
 
-}
+// }
 
 type Trie struct {
 	isEnd    bool      // 标记当前节点是否为结束节点

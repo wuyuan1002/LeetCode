@@ -4,9 +4,9 @@ package main
 
 // 给定一个二叉树，检查它是否是镜像对称的。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func isSymmetric(root *TreeNode) bool {
 	return isSymme(root, root)

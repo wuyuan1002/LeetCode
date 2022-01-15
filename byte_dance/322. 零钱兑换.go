@@ -11,9 +11,9 @@ import (
 //
 // 你可以认为每种硬币的数量是无限的。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 动态规划 -- dp[i]表示i元的最少硬币数 -- dp[i] = min(dp[i], dp[i-num]+1)
 func coinChange(coins []int, amount int) int {

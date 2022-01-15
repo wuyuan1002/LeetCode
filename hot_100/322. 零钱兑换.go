@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -12,9 +11,9 @@ import (
 //
 // 你可以认为每种硬币的数量是无限的。
 
-func main() {
-	fmt.Println(coinChange1([]int{5, 3, 1}, 7))
-}
+// func main() {
+// 	fmt.Println(coinChange1([]int{5, 3, 1}, 7))
+// }
 
 // --------------------
 

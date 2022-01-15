@@ -6,9 +6,9 @@ package main
 //
 // 回文串 是正着读和反着读都一样的字符串。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 回溯法
 func partition(s string) [][]string {

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -12,11 +11,11 @@ import (
 //
 // 请写一个函数，求任意第n位对应的数字。
 
-func main() {
-	// fmt.Println(findNthDigit(10))
+// func main() {
+// 	// fmt.Println(findNthDigit(10))
 
-	fmt.Println(getNumsCount(2))
-}
+// 	fmt.Println(getNumsCount(2))
+// }
 
 func findNthDigit(n int) int {
 	if n < 0 {

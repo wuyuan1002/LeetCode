@@ -7,9 +7,9 @@ package main
 //
 // 此外，你可以假设该网格的四条边均被水包围。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func numIslands(grid [][]byte) int {
 	if grid == nil || len(grid) == 0 {

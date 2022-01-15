@@ -4,9 +4,9 @@ package main
 
 // 给你二叉树的根节点 root ，返回它节点值的 前序 遍历。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func preorderTraversal(root *TreeNode) []int {
 	if root == nil {

@@ -9,9 +9,9 @@ package main
 //
 // 你可以假设nums[-1] = nums[n] = -∞ 。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 1. 一次遍历数组，寻找比它前一个和后一个都大的元素下标 O(n)
 // 2. 二分查找 O(log n)

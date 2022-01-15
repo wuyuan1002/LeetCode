@@ -1,18 +1,14 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 227. 基本计算器 II
 
 // 给你一个字符串表达式 s ，请你实现一个基本计算器来计算并返回它的值。
 //
 // 整数除法仅保留整数部分。
 
-func main() {
-	fmt.Println(calculate1("37-2*3+7"))
-}
+// func main() {
+// 	fmt.Println(calculate1("37-2*3+7"))
+// }
 
 // 加号：将数字压入栈；
 // 减号：将数字的相反数压入栈；

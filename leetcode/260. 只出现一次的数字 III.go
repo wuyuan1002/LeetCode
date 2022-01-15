@@ -7,9 +7,9 @@ package main
 //
 // 进阶：你的算法应该具有线性时间复杂度。你能否仅使用常数空间复杂度来实现？
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 类似offer 56、leetcode 136
 func singleNumber(nums []int) []int {

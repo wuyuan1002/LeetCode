@@ -2,9 +2,9 @@ package main
 
 // 15. 三数之和
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 1. 先排序数组，然后先固定一个值，然后在之后元素中使用双指针寻找两数之和
 func threeSum(nums []int) [][]int {

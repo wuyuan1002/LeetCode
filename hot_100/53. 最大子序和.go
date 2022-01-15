@@ -1,16 +1,12 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 53. 最大子序和
 
 // 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
 
-func main() {
-	fmt.Println(maxSubArray([]int{-1, -2}))
-}
+// func main() {
+// 	fmt.Println(maxSubArray([]int{-1, -2}))
+// }
 
 func maxSubArray(nums []int) int {
 	if nums == nil || len(nums) == 0 {

@@ -7,9 +7,9 @@ package main
 // 本题中，一棵高度平衡二叉树定义为：
 // 一个二叉树每个节点的左右两个子树的高度差的绝对值不超过 1 。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // offer 55-2
 func isBalanced(root *TreeNode) bool {

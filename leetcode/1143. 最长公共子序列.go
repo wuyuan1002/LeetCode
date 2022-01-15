@@ -2,9 +2,9 @@ package main
 
 // 1143. 最长公共子序列
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 二维dp
 func longestCommonSubsequence(text1 string, text2 string) int {

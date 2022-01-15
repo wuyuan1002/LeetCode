@@ -2,9 +2,9 @@ package main
 
 // 25. K 个一组翻转链表
 
-func main() {
+// func main() {
 
-}
+// }
 
 func reverseKGroup(head *ListNode, k int) *ListNode {
 	if head == nil || k <= 0 {

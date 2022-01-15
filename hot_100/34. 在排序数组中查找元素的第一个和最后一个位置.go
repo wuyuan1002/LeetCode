@@ -6,9 +6,10 @@ package main
 // 如果数组中不存在目标值 target，返回[-1, -1]。
 // 进阶：
 // 你可以设计并实现时间复杂度为O(log n)的算法解决此问题吗？
-func main() {
 
-}
+// func main() {
+
+// }
 
 func searchRange(nums []int, target int) []int {
 	return []int{getFirstTarget(nums, target), getLastTarget(nums, target)}

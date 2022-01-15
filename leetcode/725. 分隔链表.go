@@ -7,9 +7,9 @@ package main
 // 这 k 个部分应该按照在链表中出现的顺序排列，并且排在前面的部分的长度应该大于或等于排在后面的长度。
 // 返回一个由上述 k 部分组成的数组。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 先遍历一次数组得到链表长度，再计算每一段的长度，将结果放入结果集中
 func splitListToParts(head *ListNode, k int) []*ListNode {

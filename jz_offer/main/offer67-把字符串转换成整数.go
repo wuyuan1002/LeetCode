@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 	"strings"
 )
@@ -18,9 +17,9 @@ import (
 // 说明：
 // 假设我们的环境只能存储 32 位大小的有符号整数，那么其数值范围为[−231, 231− 1]。如果数值超过这个范围，请返回 INT_MAX (231− 1) 或INT_MIN (−231) 。
 
-func main() {
-	fmt.Println(strToInt("9223372036854775808"))
-}
+// func main() {
+// 	fmt.Println(strToInt("9223372036854775808"))
+// }
 
 func strToInt(str string) int {
 

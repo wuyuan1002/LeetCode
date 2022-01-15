@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 20. 有效的括号
 
 // 给定一个只包括 '('，')'，'{'，'}'，'['，']'的字符串 s ，判断字符串是否有效。
@@ -13,9 +9,9 @@ import (
 // 左括号必须用相同类型的右括号闭合。
 // 左括号必须以正确的顺序闭合。
 
-func main() {
-	fmt.Println(isValid(")"))
-}
+// func main() {
+// 	fmt.Println(isValid(")"))
+// }
 
 // 定义合法的括号匹配关系
 var brackets = map[byte]byte{

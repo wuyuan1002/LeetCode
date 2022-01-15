@@ -8,9 +8,9 @@ package main
 //
 // 题目数据保证结果符合 32 位带符号整数。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 见Hot100 322
 // 组合背包问题 -- dp[i] += dp[i-num]

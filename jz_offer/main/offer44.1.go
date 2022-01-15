@@ -11,9 +11,9 @@ import (
 //
 // 请写一个函数，求任意第n位对应的数字。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func findNthDigit1(n int) int {
 	if n < 10 {

@@ -2,9 +2,9 @@ package main
 
 // 110. 平衡二叉树
 
-func main() {
+// func main() {
 
-}
+// }
 
 func isBalanced(root *TreeNode) bool {
 	depth := 0

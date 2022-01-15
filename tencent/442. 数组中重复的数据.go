@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 442. 数组中重复的数据
 
 // 给定一个整数数组 a，其中1 ≤ a[i] ≤ n （n为数组长度）, 其中有些元素出现两次而其他元素出现一次。
@@ -12,9 +8,9 @@ import (
 //
 // 你可以不用到任何额外空间并在O(n)时间复杂度内解决这个问题吗？
 
-func main() {
-	fmt.Println(findDuplicates1([]int{4, 3, 2, 7, 8, 2, 3, 1}))
-}
+// func main() {
+// 	fmt.Println(findDuplicates1([]int{4, 3, 2, 7, 8, 2, 3, 1}))
+// }
 
 // 1. 遍历数组，存入map的同时检查出现次数
 // 2. offer 03

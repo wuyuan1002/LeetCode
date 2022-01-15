@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 39. 组合总和
 
 // 给定一个无重复元素的数组candidates和一个目标数target，找出candidates中所有可以使数字和为target的组合。
@@ -13,21 +9,21 @@ import (
 // 所有数字（包括target）都是正整数。
 // 解集不能包含重复的组合。
 
-func main() {
+// func main() {
 
-	// aa := []int{3, 5, 6, 1, 2, 8, 3, 4}
-	// sort1(aa, 0, len(aa)-1)
-	// fmt.Println(aa)
+// 	// aa := []int{3, 5, 6, 1, 2, 8, 3, 4}
+// 	// sort1(aa, 0, len(aa)-1)
+// 	// fmt.Println(aa)
 
-	// 回溯法可以求出左右解是什么
-	aa := combinationSum([]int{3, 5, 6, 1, 2, 8, 3, 4}, 7)
-	fmt.Println(len(aa))
+// 	// 回溯法可以求出左右解是什么
+// 	aa := combinationSum([]int{3, 5, 6, 1, 2, 8, 3, 4}, 7)
+// 	fmt.Println(len(aa))
 
-	// 动态规划只能求出解的个数
-	bb := combinationSum1([]int{3, 5, 6, 1, 2, 8, 3, 4}, 7)
-	fmt.Println(bb)
+// 	// 动态规划只能求出解的个数
+// 	bb := combinationSum1([]int{3, 5, 6, 1, 2, 8, 3, 4}, 7)
+// 	fmt.Println(bb)
 
-}
+// }
 
 // 见Hot100 518(同类问题，动态规划)
 // 1. 回溯法+剪枝 -- 可以求出每个解是什么

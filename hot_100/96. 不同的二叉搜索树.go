@@ -1,17 +1,13 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 96. 不同的二叉搜索树
 
 // 给你一个整数 n ，求恰由 n 个节点组成且节点值从 1 到 n 互不相同的二叉搜索树有多少种？
 // 返回满足题意的二叉搜索树的种数。
 
-func main() {
-	fmt.Println(numTrees(3))
-}
+// func main() {
+// 	fmt.Println(numTrees(3))
+// }
 
 // 动态规划 -- 类似于剪绳子 offer 14
 func numTrees(n int) int {

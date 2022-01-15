@@ -5,9 +5,9 @@ package main
 // 给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。
 // 这条路径可能穿过也可能不穿过根结点。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 后序遍历二叉树 -- 分别求每个节点左右子树的深度，求每个节点左右子树深度和的最大值
 func diameterOfBinaryTree(root *TreeNode) int {

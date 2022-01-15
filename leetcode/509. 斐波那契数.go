@@ -2,9 +2,9 @@ package main
 
 // 509. 斐波那契数
 
-func main() {
+// func main() {
 
-}
+// }
 
 func fib(n int) int {
 	if n == 0 {

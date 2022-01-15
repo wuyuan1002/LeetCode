@@ -1,16 +1,12 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 54. 螺旋矩阵
 
 // 给你一个 m 行 n 列的矩阵 matrix ，请按照 顺时针螺旋顺序 ，返回矩阵中的所有元素。
 
-func main() {
-	fmt.Println(spiralOrder([][]int{{1, 2, 3}}))
-}
+// func main() {
+// 	fmt.Println(spiralOrder([][]int{{1, 2, 3}}))
+// }
 
 func spiralOrder(matrix [][]int) []int {
 	if matrix == nil || len(matrix) == 0 {

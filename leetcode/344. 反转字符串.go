@@ -2,9 +2,9 @@ package main
 
 // 344. 反转字符串
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 双指针
 func reverseString(s []byte) {

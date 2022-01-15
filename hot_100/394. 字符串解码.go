@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strconv"
 )
 
@@ -15,11 +14,11 @@ import (
 // 你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。
 // 此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像3a或2[4]的输入。
 
-func main() {
-	// fmt.Println(decodeString("as3[a]2[bc]zx"))
-	// fmt.Println(decodeString("dhj3[a2[c]]"))
-	fmt.Println(decodeString("12[ads]"))
-}
+// func main() {
+// 	// fmt.Println(decodeString("as3[a]2[bc]zx"))
+// 	// fmt.Println(decodeString("dhj3[a2[c]]"))
+// 	fmt.Println(decodeString("12[ads]"))
+// }
 
 // 使用栈，遇到左括号入栈，遇到右括号出栈
 func decodeString(s string) string {

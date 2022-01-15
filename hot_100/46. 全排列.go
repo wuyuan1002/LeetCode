@@ -1,14 +1,12 @@
 package main
 
-import "fmt"
-
 // 46.全排列 -- 排列
 
 // 给定一个不含重复数字的数组 nums ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。
 
-func main() {
-	fmt.Println(permute([]int{1, 1, 3}))
-}
+// func main() {
+// 	fmt.Println(permute([]int{1, 1, 3}))
+// }
 
 // 排列组合，类似offer 38, Hot100 78、47
 // 回溯法+剪枝

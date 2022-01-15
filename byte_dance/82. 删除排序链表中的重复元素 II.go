@@ -7,9 +7,9 @@ package main
 //
 // 返回同样按升序排列的结果链表。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func deleteDuplicates1(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {

@@ -7,9 +7,9 @@ package main
 //
 // 注意：给定 n 是一个正整数。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func climbStairs(n int) int {
 	if n < 2 {

@@ -4,9 +4,9 @@ package main
 
 // 我们把只包含质因子 2、3 和 5 的数称作丑数（Ugly Number）。求按从小到大的顺序的第 n 个丑数。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 动态规划 -- 当前丑数是由我前面的丑数x2、x3、x5得到的
 func nthUglyNumber(n int) int {

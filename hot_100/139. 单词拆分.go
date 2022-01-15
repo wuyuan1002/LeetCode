@@ -10,9 +10,9 @@ package main
 // 拆分时可以重复使用字典中的单词。
 // 你可以假设字典中没有重复的单词。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 动态规划
 func wordBreak(s string, wordDict []string) bool {

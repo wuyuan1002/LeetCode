@@ -7,9 +7,9 @@ package main
 //
 // 请必须使用时间复杂度为 O(log n) 的算法。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 二分法
 func searchInsert(nums []int, target int) int {

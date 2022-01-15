@@ -2,9 +2,9 @@ package main
 
 // 153. 寻找旋转排序数组中的最小值
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 二分法
 // 类似byte_dance 33、 同offer11，但是此题说了元素互不相同，因此比offer11要简单很多

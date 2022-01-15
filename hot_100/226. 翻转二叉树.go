@@ -4,9 +4,9 @@ package main
 
 // 翻转一棵二叉树。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 同offer 27
 // 前中后序遍历二叉树，把左右子树交换

@@ -11,9 +11,9 @@ import (
 // 路径和 是路径中各节点值的总和。
 // 给你一个二叉树的根节点 root ，返回其 最大路径和 。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func maxPathSum(root *TreeNode) int {
 	maxSum := math.MinInt32

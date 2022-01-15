@@ -4,9 +4,9 @@ package main
 
 // 给定一个不含重复数字的数组 nums ，返回其所有可能的全排列 。你可以 按任意顺序 返回答案。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func permute(nums []int) [][]int {
 	if nums == nil || len(nums) == 0 {

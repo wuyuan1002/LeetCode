@@ -6,9 +6,9 @@ package main
 //
 // 假设二叉树中至少有一个节点。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 层序遍历，找最后一层，左面第一个节点
 func findBottomLeftValue(root *TreeNode) int {

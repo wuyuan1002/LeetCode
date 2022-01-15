@@ -8,16 +8,17 @@ package main
 
 // 入队列时始终将元素放进ru栈，
 // 出队列时始终从chu栈获取栈顶元素，若chu栈已经为空，将ru栈的元素挨个出栈放入chu队列，再从chu栈获取栈顶元素
-func main() {
-	queue := Constructor()
-	queue.DeleteHead()
-	queue.AppendTail(5)
-	queue.AppendTail(7)
-	queue.DeleteHead()
-	queue.AppendTail(2)
-	queue.DeleteHead()
-	queue.DeleteHead()
-}
+
+// func main() {
+// 	queue := Constructor()
+// 	queue.DeleteHead()
+// 	queue.AppendTail(5)
+// 	queue.AppendTail(7)
+// 	queue.DeleteHead()
+// 	queue.AppendTail(2)
+// 	queue.DeleteHead()
+// 	queue.DeleteHead()
+// }
 
 type CQueue struct {
 	ru  *[]int // 入队列所用的栈

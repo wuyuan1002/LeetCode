@@ -2,9 +2,9 @@ package main
 
 // 112. 路径总和
 
-func main() {
+// func main() {
 
-}
+// }
 
 func hasPathSum(root *TreeNode, targetSum int) bool {
 	return dfs12(root, 0, targetSum)

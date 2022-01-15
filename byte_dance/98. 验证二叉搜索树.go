@@ -14,9 +14,9 @@ import (
 // 节点的右子树只包含大于当前节点的数。
 // 所有左子树和右子树自身必须也是二叉搜索树。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func isValidBST(root *TreeNode) bool {
 	return check(root, math.MinInt64, math.MaxInt64)

@@ -12,9 +12,9 @@ import (
 //
 // 给你一个二叉树的根节点root，返回其最大路径和。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func maxPathSum(root *TreeNode) int {
 	if root == nil {

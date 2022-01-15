@@ -12,9 +12,9 @@ package main
 //
 // 你能用 O(1)（即，常量）内存解决此问题吗？
 
-func main() {
+// func main() {
 
-}
+// }
 
 func hasCycle(head *ListNode) bool {
 	slow, fast := head, head

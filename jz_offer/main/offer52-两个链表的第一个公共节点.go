@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 剑指 Offer 52. 两个链表的第一个公共节点
 
 // ListNode 输入两个链表，找出它们的第一个公共节点。
@@ -12,46 +8,46 @@ type ListNode struct {
 	Next *ListNode
 }
 
-func main() {
-	headA := &ListNode{
-		Val: 4,
-		Next: &ListNode{
-			Val: 1,
-			Next: &ListNode{
-				Val: 8,
-				Next: &ListNode{
-					Val: 4,
-					Next: &ListNode{
-						Val:  5,
-						Next: nil,
-					},
-				},
-			},
-		},
-	}
+// func main() {
+// 	headA := &ListNode{
+// 		Val: 4,
+// 		Next: &ListNode{
+// 			Val: 1,
+// 			Next: &ListNode{
+// 				Val: 8,
+// 				Next: &ListNode{
+// 					Val: 4,
+// 					Next: &ListNode{
+// 						Val:  5,
+// 						Next: nil,
+// 					},
+// 				},
+// 			},
+// 		},
+// 	}
 
-	headB := &ListNode{
-		Val: 5,
-		Next: &ListNode{
-			Val: 0,
-			Next: &ListNode{
-				Val: 1,
-				Next: &ListNode{
-					Val: 8,
-					Next: &ListNode{
-						Val: 4,
-						Next: &ListNode{
-							Val:  5,
-							Next: nil,
-						},
-					},
-				},
-			},
-		},
-	}
-	node1 := getIntersectionNode1(headA, headB)
-	fmt.Println(node1)
-}
+// 	headB := &ListNode{
+// 		Val: 5,
+// 		Next: &ListNode{
+// 			Val: 0,
+// 			Next: &ListNode{
+// 				Val: 1,
+// 				Next: &ListNode{
+// 					Val: 8,
+// 					Next: &ListNode{
+// 						Val: 4,
+// 						Next: &ListNode{
+// 							Val:  5,
+// 							Next: nil,
+// 						},
+// 					},
+// 				},
+// 			},
+// 		},
+// 	}
+// 	node1 := getIntersectionNode1(headA, headB)
+// 	fmt.Println(node1)
+// }
 
 // 方法1: 建立两个栈，将两个链表分别从头到尾遍历放入栈中，
 // 之后从两个栈中同时弹出栈顶元素，直到两个栈顶元素不同时，则最后一个相同元素就是两个链表的第一个公共节点

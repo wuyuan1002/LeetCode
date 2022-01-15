@@ -2,9 +2,9 @@ package main
 
 // 非递归快排
 
-func main() {
+// func main() {
 
-}
+// }
 
 func quickSort1(nums []int, left, right int) {
 	stack := []int{left, right} // 使用栈保存每次需要递归的左右界限

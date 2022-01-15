@@ -7,9 +7,9 @@ package main
 //
 // 注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 等价于每天都买卖 -- 前一天比后一天小,买卖; 前一天比后一天大,不买卖
 func maxProfit1(prices []int) int {

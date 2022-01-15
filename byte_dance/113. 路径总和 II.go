@@ -7,9 +7,9 @@ package main
 //
 // 叶子节点 是指没有子节点的节点。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func pathSum(root *TreeNode, targetSum int) [][]int {
 	result := make([][]int, 0)

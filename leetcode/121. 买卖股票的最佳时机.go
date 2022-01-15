@@ -2,9 +2,9 @@ package main
 
 // 121. 买卖股票的最佳时机
 
-func main() {
+// func main() {
 
-}
+// }
 
 func maxProfit(prices []int) int {
 	if prices == nil || len(prices) < 2 {

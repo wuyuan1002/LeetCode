@@ -1,17 +1,13 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 剑指 Offer 59 - I. 滑动窗口的最大值
 
 // 给定一个数组 nums 和滑动窗口的大小 k，请找出所有滑动窗口里的最大值。
 
-func main() {
-	// fmt.Println(maxSlidingWindow1([]int{1, -1}, 1))
-	fmt.Println(maxSlidingWindow1([]int{1, 3, -1, -3, 5, 3, 6, 7}, 3))
-}
+// func main() {
+// 	// fmt.Println(maxSlidingWindow1([]int{1, -1}, 1))
+// 	fmt.Println(maxSlidingWindow1([]int{1, 3, -1, -3, 5, 3, 6, 7}, 3))
+// }
 
 // 同Hot100 239
 func maxSlidingWindow(nums []int, k int) []int {

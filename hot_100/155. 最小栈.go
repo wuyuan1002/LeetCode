@@ -9,9 +9,9 @@ package main
 // top()—— 获取栈顶元素。
 // getMin() —— 检索栈中的最小元素。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 同offer 30
 

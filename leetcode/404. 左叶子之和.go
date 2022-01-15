@@ -4,9 +4,9 @@ package main
 
 // 计算给定二叉树的所有左叶子之和。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func sumOfLeftLeaves(root *TreeNode) int {
 	sum := 0

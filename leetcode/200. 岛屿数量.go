@@ -2,9 +2,9 @@ package main
 
 // 200. 岛屿数量
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 回溯法
 // 类似 offer 12, 13

@@ -2,9 +2,9 @@ package main
 
 // 33. 搜索旋转排序数组
 
-func main() {
+// func main() {
 
-}
+// }
 
 // offer 11，leetcode 153
 // 二分法

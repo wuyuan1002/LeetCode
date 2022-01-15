@@ -10,9 +10,9 @@ import (
 // ……，11 翻译成 “l”，……，25 翻译成 “z”。一个数字可能有多个翻译。
 // 请编程实现一个函数，用来计算一个数字有多少种不同的翻译方法。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func translateNum(num int) int {
 	numStr := strconv.Itoa(num)

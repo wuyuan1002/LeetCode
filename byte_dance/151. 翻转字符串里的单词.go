@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -16,9 +15,9 @@ import (
 // 翻转后单词间应当仅用一个空格分隔。
 // 翻转后的字符串中不应包含额外的空格。
 
-func main() {
-	fmt.Println(reverseWords(" the sky   is  blue"))
-}
+// func main() {
+// 	fmt.Println(reverseWords(" the sky   is  blue"))
+// }
 
 // offer 58
 // 先翻转整个字符串，再翻转每一个单词, 或者先翻转每个单词，再翻转整个字符串

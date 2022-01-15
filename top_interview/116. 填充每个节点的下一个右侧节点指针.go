@@ -15,34 +15,34 @@ package main
 //
 // 初始状态下，所有next 指针都被设置为 NULL。
 
-func main() {
-	root := &Node{
-		Val: 1,
-		Left: &Node{
-			Val: 2,
-			Left: &Node{
-				Val: 4,
-			},
-			Right: &Node{
-				Val: 5,
-			},
-			Next: nil,
-		},
-		Right: &Node{
-			Val: 3,
-			Left: &Node{
-				Val: 6,
-			},
-			Right: &Node{
-				Val: 7,
-			},
-			Next: nil,
-		},
-		Next: nil,
-	}
+// func main() {
+// 	root := &Node{
+// 		Val: 1,
+// 		Left: &Node{
+// 			Val: 2,
+// 			Left: &Node{
+// 				Val: 4,
+// 			},
+// 			Right: &Node{
+// 				Val: 5,
+// 			},
+// 			Next: nil,
+// 		},
+// 		Right: &Node{
+// 			Val: 3,
+// 			Left: &Node{
+// 				Val: 6,
+// 			},
+// 			Right: &Node{
+// 				Val: 7,
+// 			},
+// 			Next: nil,
+// 		},
+// 		Next: nil,
+// 	}
 
-	connect(root)
-}
+// 	connect(root)
+// }
 
 // 类似 117
 // 二叉树的层序遍历

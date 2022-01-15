@@ -9,9 +9,9 @@ package main
  * 左指针表示双链表向前指，右指针表示双链表向后指
  */
 
-func main() {
+// func main() {
 
-}
+// }
 
 var (
 	pre  *TreeNode = nil // 记录遍历的上一个节点

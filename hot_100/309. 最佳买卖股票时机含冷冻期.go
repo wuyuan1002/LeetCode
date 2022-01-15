@@ -8,9 +8,9 @@ package main
 // 你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
 // 卖出股票后，你无法在第二天买入股票 (即冷冻期为 1 天)。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 类似 offer 63,Hot100 121
 func maxProfit2(prices []int) int {

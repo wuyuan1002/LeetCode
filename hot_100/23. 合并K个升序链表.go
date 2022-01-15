@@ -1,46 +1,42 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 23. 合并K个升序链表
 
 // 给你一个链表数组，每个链表都已经按升序排列。
 // 请你将所有链表合并到一个升序链表中，返回合并后的链表。
 
-func main() {
-	head1 := &ListNode2{
-		Val: 1,
-		Next: &ListNode2{
-			Val: 4,
-			Next: &ListNode2{
-				Val:  5,
-				Next: nil,
-			},
-		},
-	}
-	head2 := &ListNode2{
-		Val: 1,
-		Next: &ListNode2{
-			Val: 3,
-			Next: &ListNode2{
-				Val:  4,
-				Next: nil,
-			},
-		},
-	}
-	head3 := &ListNode2{
-		Val: 2,
-		Next: &ListNode2{
-			Val:  6,
-			Next: nil,
-		},
-	}
+// func main() {
+// 	head1 := &ListNode2{
+// 		Val: 1,
+// 		Next: &ListNode2{
+// 			Val: 4,
+// 			Next: &ListNode2{
+// 				Val:  5,
+// 				Next: nil,
+// 			},
+// 		},
+// 	}
+// 	head2 := &ListNode2{
+// 		Val: 1,
+// 		Next: &ListNode2{
+// 			Val: 3,
+// 			Next: &ListNode2{
+// 				Val:  4,
+// 				Next: nil,
+// 			},
+// 		},
+// 	}
+// 	head3 := &ListNode2{
+// 		Val: 2,
+// 		Next: &ListNode2{
+// 			Val:  6,
+// 			Next: nil,
+// 		},
+// 	}
 
-	aa := mergeKLists([]*ListNode2{head1, head2, head3})
-	fmt.Println(aa)
-}
+// 	aa := mergeKLists([]*ListNode2{head1, head2, head3})
+// 	fmt.Println(aa)
+// }
 
 type ListNode2 struct {
 	Val  int

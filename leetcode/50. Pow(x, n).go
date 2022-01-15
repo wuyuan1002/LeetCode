@@ -4,9 +4,9 @@ package main
 
 // 实现 pow(x, n) ，即计算 x 的 n 次幂函数（即，xn）。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 同 offer 16
 func myPow(x float64, n int) float64 {

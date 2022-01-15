@@ -6,9 +6,9 @@ package main
 //
 // 你可以按 任何顺序返回答案。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func combine(n int, k int) [][]int {
 	if n < k {

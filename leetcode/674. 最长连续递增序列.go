@@ -8,9 +8,9 @@ package main
 // 都有 nums[i] < nums[i + 1] ，那么子序列 [nums[l], nums[l + 1], ...,
 // nums[r - 1], nums[r]] 就是连续递增子序列。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 类似 128、300
 // 动态规划 -- dp[i]表示以下标i处数字结尾的连续递增序列长度

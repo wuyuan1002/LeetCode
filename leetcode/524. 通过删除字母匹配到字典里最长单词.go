@@ -7,9 +7,9 @@ package main
 //
 // 如果答案不止一个，返回长度最长且字典序最小的字符串。如果答案不存在，则返回空字符串。
 
-func main() {
-	findLongestWord("abcb", []string{"aplpllre"})
-}
+// func main() {
+// 	findLongestWord("abcb", []string{"aplpllre"})
+// }
 
 // 类似1143
 // 1. 双指针遍历每一个元素和给定字符串，返回匹配的最长串

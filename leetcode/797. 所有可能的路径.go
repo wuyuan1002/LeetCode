@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 797. 所有可能的路径
 
 // 给一个有n个结点的有向无环图，找到所有从0到n-1的路径并输出（不要求按顺序）
@@ -9,9 +7,9 @@ import "fmt"
 // 二维数组的第 i 个数组中的单元都表示有向图中 i 号结点所能到达的下一些结点
 // （译者注：有向图是有方向的，即规定了 a→b 你就不能从 b→a ）空就是没有下一个结点了。
 
-func main() {
-	fmt.Println(allPathsSourceTarget([][]int{{4, 3, 1}, {3, 2, 4}, {3}, {4}, {}}))
-}
+// func main() {
+// 	fmt.Println(allPathsSourceTarget([][]int{{4, 3, 1}, {3, 2, 4}, {3}, {4}, {}}))
+// }
 
 // 类似 省份数量
 func allPathsSourceTarget(graph [][]int) [][]int {

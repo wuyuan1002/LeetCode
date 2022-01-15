@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 39. 组合总和
 
 // 给定一个无重复元素的数组candidates和一个目标数target，
@@ -16,9 +12,9 @@ import (
 // 所有数字（包括target）都是正整数。
 // 解集不能包含重复的组合。
 
-func main() {
-	fmt.Println(combinationSum([]int{2, 6, 3, 7}, 7))
-}
+// func main() {
+// 	fmt.Println(combinationSum([]int{2, 6, 3, 7}, 7))
+// }
 
 func combinationSum(candidates []int, target int) [][]int {
 	if candidates == nil || len(candidates) == 0 {

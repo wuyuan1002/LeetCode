@@ -6,9 +6,9 @@ package main
 //
 // 具有不同开始位置或结束位置的子串，即使是由相同的字符组成，也会被视作不同的子串。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // Manacher算法
 func countSubstrings(s string) int {

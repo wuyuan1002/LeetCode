@@ -7,9 +7,10 @@ package main
 // 找出其中的两条线，使得它们与x轴共同构成的容器可以容纳最多的水。
 //
 // 说明：你不能倾斜容器。
-func main() {
 
-}
+// func main() {
+
+// }
 
 // 双指针法，两个指针向中间移动，每次都是移动数字小的那个
 func maxArea(height []int) int {

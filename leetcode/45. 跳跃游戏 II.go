@@ -7,9 +7,9 @@ package main
 // 你的目标是使用最少的跳跃次数到达数组的最后一个位置。
 // 假设你总是可以到达数组的最后一个位置。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 类似 55
 func jump(nums []int) int {

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 )
@@ -10,10 +9,10 @@ import (
 
 // 输入一个非负整数数组，把数组里所有数字拼接起来排成一个数，打印能拼接出的所有数字中最小的一个。
 
-func main() {
-	nums := []int{3, 30, 34, 5, 9}
-	fmt.Println(minNumber(nums))
-}
+// func main() {
+// 	nums := []int{3, 30, 34, 5, 9}
+// 	fmt.Println(minNumber(nums))
+// }
 
 func minNumber(nums []int) string {
 	if nums == nil || len(nums) == 0 {

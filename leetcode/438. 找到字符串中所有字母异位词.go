@@ -2,9 +2,9 @@ package main
 
 // 438. 找到字符串中所有字母异位词
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 滑动窗口+(数组或map)
 func findAnagrams(s string, p string) []int {

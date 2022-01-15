@@ -2,9 +2,9 @@ package main
 
 // 53. 最大子序和
 
-func main() {
+// func main() {
 
-}
+// }
 
 func maxSubArray(nums []int) int {
 	if nums == nil || len(nums) == 0 {

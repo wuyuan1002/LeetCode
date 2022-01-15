@@ -6,9 +6,9 @@ package main
 //
 // 整数 n 是 3 的幂次方需满足：存在整数 x 使得 n == 3x
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 不断除以3
 func isPowerOfThree(n int) bool {

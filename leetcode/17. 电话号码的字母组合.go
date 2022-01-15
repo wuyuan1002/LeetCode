@@ -2,9 +2,9 @@ package main
 
 // 17. 电话号码的字母组合
 
-func main() {
+// func main() {
 
-}
+// }
 
 var phone = map[byte][]byte{
 	'2': {'a', 'b', 'c'},

@@ -4,9 +4,9 @@ package main
 
 // 给你一棵 完全二叉树 的根节点 root ，求出该树的节点个数。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 1. 没有利用上完全二叉树的特点 -- 遍历每一个节点进行求解
 func countNodes(root *TreeNode) int {

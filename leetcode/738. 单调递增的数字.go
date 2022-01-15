@@ -8,9 +8,9 @@ import "strconv"
 //
 // （当且仅当每个相邻位数上的数字x和y满足x <= y时，我们称这个整数是单调递增的。）
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 从后向前遍历，一旦出现num[i-1] > num[i]，就让num[i-1]--，同时num[i] = 9
 func monotoneIncreasingDigits(n int) int {

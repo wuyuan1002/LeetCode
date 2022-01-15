@@ -1,12 +1,8 @@
 package main
 
-import (
-	"fmt"
-)
-
-func main() {
-	fmt.Println(coverWays())
-}
+// func main() {
+// 	fmt.Println(coverWays())
+// }
 
 func coverWays() int {
 	count := 0

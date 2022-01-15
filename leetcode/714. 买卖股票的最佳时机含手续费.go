@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 714. 买卖股票的最佳时机含手续费
 
 // 给定一个整数数组prices，其中第i个元素代表了第i天的股票价格 ；整数fee 代表了交易股票的手续费用。
@@ -12,9 +10,9 @@ import "fmt"
 //
 // 注意：这里的一笔交易指买入持有并卖出股票的整个过程，每笔交易你只需要为支付一次手续费。
 
-func main() {
-	fmt.Println(maxProfit5([]int{1, 3, 2, 8, 4, 9}, 2))
-}
+// func main() {
+// 	fmt.Println(maxProfit5([]int{1, 3, 2, 8, 4, 9}, 2))
+// }
 
 // 同122
 // 只是在卖出股票时需要同时扣除手续费

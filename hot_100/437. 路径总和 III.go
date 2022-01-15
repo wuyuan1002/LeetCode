@@ -8,9 +8,9 @@ package main
 //
 // 二叉树不超过1000个节点，且节点数值范围是 [-1000000,1000000] 的整数。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 回溯法
 func pathSum1(root *TreeNode, targetSum int) int {

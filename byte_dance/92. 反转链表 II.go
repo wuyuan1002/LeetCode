@@ -5,9 +5,9 @@ package main
 // 给你单链表的头指针 head 和两个整数left 和 right ，
 // 其中left <= right 。请你反转从位置 left 到位置 right 的链表节点，返回反转后的链表 。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 1. 遍历一次寻找到要翻转的子链表前后节点，翻转子链表还需要遍历一次子链表 -- 总共需要遍历两次链表
 func reverseBetween(head *ListNode, left int, right int) *ListNode {

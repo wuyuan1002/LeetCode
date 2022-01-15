@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 1297. 子串的最大出现次数
 
 // 给你一个字符串s ，请你返回满足以下条件且出现次数最大的任意子串的出现次数：
@@ -9,9 +7,9 @@ import "fmt"
 // 子串中不同字母的数目必须小于等于 maxLetters 。
 // 子串的长度必须大于等于minSize 且小于等于maxSize 。
 
-func main() {
-	fmt.Println(maxFreq("aababcaab", 2, 3, 4))
-}
+// func main() {
+// 	fmt.Println(maxFreq("aababcaab", 2, 3, 4))
+// }
 
 // 若长度为maxSize的子串可以，那么它的子串也必然可以，所以必然存在minSize的子串满足
 // 所以只需要求minSize长度的子串就可以了

@@ -8,9 +8,9 @@ package main
 //
 // 你可以假设除了数字 0 之外，这两个数都不会以 0开头。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	if l1 == nil {

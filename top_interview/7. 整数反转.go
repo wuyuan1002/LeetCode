@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -12,9 +11,9 @@ import (
 //
 // 假设环境不允许存储 64 位整数（有符号或无符号）
 
-func main() {
-	fmt.Println(reverse(15342300))
-}
+// func main() {
+// 	fmt.Println(reverse(15342300))
+// }
 
 // 1. 转换成字符串，再翻转字符串
 // 2. 从末尾挨个取数字

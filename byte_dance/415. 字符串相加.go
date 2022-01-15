@@ -1,16 +1,12 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 415. 字符串相加
 
 // 给定两个字符串形式的非负整数 num1 和num2 ，计算它们的和。
 
-func main() {
-	fmt.Println(addStrings("347", "20"))
-}
+// func main() {
+// 	fmt.Println(addStrings("347", "20"))
+// }
 
 // 类似 43字符串相乘、67二进制求和
 // 大数相加

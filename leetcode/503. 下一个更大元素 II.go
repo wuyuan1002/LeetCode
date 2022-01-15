@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 503. 下一个更大元素 II
 
 // 给定一个循环数组（最后一个元素的下一个元素是数组的第一个元素），
@@ -9,9 +7,9 @@ import "fmt"
 // 这个数字之后的第一个比它更大的数，这意味着你应该循环地搜索它的下一个更大的数。
 // 如果不存在，则输出 -1。
 
-func main() {
-	fmt.Println(nextGreaterElements([]int{2, 5, 1, 4}))
-}
+// func main() {
+// 	fmt.Println(nextGreaterElements([]int{2, 5, 1, 4}))
+// }
 
 // 单调栈
 // 类似739

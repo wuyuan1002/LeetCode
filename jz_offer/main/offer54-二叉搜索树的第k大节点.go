@@ -4,9 +4,9 @@ package main
 
 // 给定一棵二叉搜索树，请找出其中第k大的节点。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func kthLargest(root *TreeNode, k int) int {
 	if root == nil || k <= 0 {

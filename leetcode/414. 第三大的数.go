@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -9,9 +8,9 @@ import (
 
 // 给你一个非空数组，返回此数组中 第三大的数 。如果不存在，则返回数组中最大的数。
 
-func main() {
-	fmt.Println(thirdMax([]int{5, 2, 2}))
-}
+// func main() {
+// 	fmt.Println(thirdMax([]int{5, 2, 2}))
+// }
 
 // 1. 排序
 // 2. 快排partition -- 类似215

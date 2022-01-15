@@ -6,9 +6,9 @@ package main
 //
 // 单词 是指仅由字母组成、不包含任何空格字符的最大子字符串。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func lengthOfLastWord(s string) int {
 	if s == "" {

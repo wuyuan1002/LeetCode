@@ -4,9 +4,9 @@ import "strconv"
 
 // 93. 复原 IP 地址
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 回溯法
 func restoreIpAddresses(s string) []string {

@@ -7,9 +7,9 @@ package main
 // 注意:
 // 你可以假设树中没有重复的元素。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func buildTree(inorder []int, postorder []int) *TreeNode {
 	if inorder == nil || len(inorder) == 0 || postorder == nil || len(postorder) == 0 {

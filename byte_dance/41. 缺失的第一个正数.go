@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -10,9 +9,9 @@ import (
 // 给你一个未排序的整数数组 nums ，请你找出其中没有出现的最小的正整数。
 // 请你实现时间复杂度为 O(n) 并且只使用常数级别额外空间的解决方案。
 
-func main() {
-	fmt.Println(firstMissingPositive([]int{1}))
-}
+// func main() {
+// 	fmt.Println(firstMissingPositive([]int{1}))
+// }
 
 // 1. 将所有数字放入map，随后从1开始依次枚举正整数，并判断其是否在哈希表中
 // 2. 使用数组构建这个hash表

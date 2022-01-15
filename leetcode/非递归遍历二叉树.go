@@ -4,9 +4,9 @@ import "fmt"
 
 // 非递归遍历二叉树
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 前序遍历
 func preOrder(root *TreeNode) {

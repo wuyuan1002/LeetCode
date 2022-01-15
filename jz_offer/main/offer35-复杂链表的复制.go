@@ -1,58 +1,54 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 剑指 Offer 35. 复杂链表的复制
 
 // 请实现 copyRandomList 函数，复制一个复杂链表。在复杂链表中，
 // 每个节点除了有一个 next 指针指向下一个节点，还有一个 random 指针指向链表中的任意节点或者 null。
 
-func main() {
-	n7 := &Node{
-		Val:    7,
-		Next:   nil,
-		Random: nil,
-	}
-	n13 := &Node{
-		Val:    13,
-		Next:   nil,
-		Random: nil,
-	}
-	n11 := &Node{
-		Val:    11,
-		Next:   nil,
-		Random: nil,
-	}
-	n10 := &Node{
-		Val:    10,
-		Next:   nil,
-		Random: nil,
-	}
-	n1 := &Node{
-		Val:    1,
-		Next:   nil,
-		Random: nil,
-	}
+// func main() {
+// 	n7 := &Node{
+// 		Val:    7,
+// 		Next:   nil,
+// 		Random: nil,
+// 	}
+// 	n13 := &Node{
+// 		Val:    13,
+// 		Next:   nil,
+// 		Random: nil,
+// 	}
+// 	n11 := &Node{
+// 		Val:    11,
+// 		Next:   nil,
+// 		Random: nil,
+// 	}
+// 	n10 := &Node{
+// 		Val:    10,
+// 		Next:   nil,
+// 		Random: nil,
+// 	}
+// 	n1 := &Node{
+// 		Val:    1,
+// 		Next:   nil,
+// 		Random: nil,
+// 	}
 
-	n7.Next = n13
-	n7.Random = nil
-	n13.Next = n11
-	n13.Random = n7
-	n11.Next = n10
-	n11.Random = n1
-	n10.Next = n1
-	n10.Random = n11
-	n1.Next = nil
-	n1.Random = n7
+// 	n7.Next = n13
+// 	n7.Random = nil
+// 	n13.Next = n11
+// 	n13.Random = n7
+// 	n11.Next = n10
+// 	n11.Random = n1
+// 	n10.Next = n1
+// 	n10.Random = n11
+// 	n1.Next = nil
+// 	n1.Random = n7
 
-	list2 := copyRandomList(n7)
-	for node := list2; node != nil; node = node.Next {
-		fmt.Println(node.Val)
-	}
+// 	list2 := copyRandomList(n7)
+// 	for node := list2; node != nil; node = node.Next {
+// 		fmt.Println(node.Val)
+// 	}
 
-}
+// }
 
 type Node struct {
 	Val    int

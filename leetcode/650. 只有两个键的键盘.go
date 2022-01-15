@@ -9,9 +9,9 @@ package main
 // 给你一个数字n ，你需要使用最少的操作次数，
 // 在记事本上输出 恰好n个 'A' 。返回能够打印出n个 'A' 的最少操作次数。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func minSteps(n int) int {
 	sum, copyy, num := 1, 0, 0 // 当前记事本中A的个数、当前拷贝的所有A、累计操作的次数

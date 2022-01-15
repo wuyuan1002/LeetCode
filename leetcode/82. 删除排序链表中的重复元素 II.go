@@ -2,9 +2,9 @@ package main
 
 // 82. 删除排序链表中的重复元素 II
 
-func main() {
+// func main() {
 
-}
+// }
 
 func deleteDuplicates(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {

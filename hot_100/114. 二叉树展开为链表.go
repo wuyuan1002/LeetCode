@@ -7,9 +7,9 @@ package main
 // 而左子指针始终为 null 。
 // 展开后的单链表应该与二叉树 先序遍历 顺序相同。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 类似 offer 36
 

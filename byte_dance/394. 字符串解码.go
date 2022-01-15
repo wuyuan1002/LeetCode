@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strconv"
 )
 
@@ -13,9 +12,9 @@ import (
 //
 // 此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像3a或2[4]的输入。
 
-func main() {
-	fmt.Println(decodeString("as13[a]2[bc]zx"))
-}
+// func main() {
+// 	fmt.Println(decodeString("as13[a]2[bc]zx"))
+// }
 
 // 使用栈，遇到左括号入栈，遇到右括号出栈
 func decodeString(s string) string {

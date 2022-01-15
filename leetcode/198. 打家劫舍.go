@@ -2,9 +2,9 @@ package main
 
 // 198. 打家劫舍
 
-func main() {
+// func main() {
 
-}
+// }
 
 func rob1(nums []int) int {
 	if nums == nil || len(nums) == 0 {

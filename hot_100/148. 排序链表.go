@@ -7,9 +7,9 @@ package main
 // 进阶：
 // 你可以在O(nlogn) 时间复杂度和常数级空间复杂度下，对链表进行排序吗？
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 类似Hot100 23, offer 51
 // 1.插入排序 O(n2)

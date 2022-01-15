@@ -4,9 +4,9 @@ package main
 
 // 给你一个整数数组 nums，请你将该数组升序排列。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func sortArray(nums []int) []int {
 	quickSort2(nums, 0, len(nums)-1)

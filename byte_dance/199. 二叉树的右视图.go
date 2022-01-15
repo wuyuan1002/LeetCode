@@ -4,9 +4,9 @@ package main
 
 // 给定一棵二叉树，想象自己站在它的右侧，按照从顶部到底部的顺序，返回从右侧所能看到的节点值。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 层级遍历二叉树，把每一层的最后一个入结果集
 func rightSideView(root *TreeNode) []int {

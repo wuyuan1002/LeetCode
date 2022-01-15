@@ -6,9 +6,9 @@ package main
 //
 // 请你将所有链表合并到一个升序链表中，返回合并后的链表。
 
-func main() {
+// func main() {
 
-}
+// }
 
 func mergeKLists(lists []*ListNode) *ListNode {
 	if lists == nil || len(lists) == 0 {

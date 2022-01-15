@@ -7,9 +7,9 @@ package main
 //
 // 给你一个数字n ，计算并返回可形成 完整阶梯行 的总行数。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 等差数列求和 -- 首项加末项乘以项数除以2
 func arrangeCoins(n int) int {

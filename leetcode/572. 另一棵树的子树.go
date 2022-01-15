@@ -8,9 +8,9 @@ package main
 // 二叉树 tree 的一棵子树包括 tree 的某个节点和这个节点的所有后代节点。
 // tree 也可以看做它自身的一棵子树。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 类似 offer 26
 func isSubtree(root *TreeNode, subRoot *TreeNode) bool {

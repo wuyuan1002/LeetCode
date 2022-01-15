@@ -7,9 +7,9 @@ package main
 //
 // 数组中可能含有重复元素，如出现两个整数相等，也可以视作递增序列的一种特殊情况。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // func findSubsequences(nums []int) [][]int {
 // 	if nums == nil || len(nums) < 2 {

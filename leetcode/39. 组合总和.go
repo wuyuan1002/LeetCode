@@ -2,9 +2,9 @@ package main
 
 // 39. 组合总和
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 1. 回溯法
 // 2. 动态规划 -- 完全背包问题

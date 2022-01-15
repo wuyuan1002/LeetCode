@@ -2,9 +2,9 @@ package main
 
 // 617. 合并二叉树
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 先序遍历二叉树，先合并当前节点，之后递归合并子节点
 func mergeTrees(root1 *TreeNode, root2 *TreeNode) *TreeNode {

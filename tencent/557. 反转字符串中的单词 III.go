@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -9,9 +8,9 @@ import (
 
 // 给定一个字符串，你需要反转字符串中每个单词的字符顺序，同时仍保留空格和单词的初始顺序。
 
-func main() {
-	fmt.Println(reverseWords(" the sky   is  blue"))
-}
+// func main() {
+// 	fmt.Println(reverseWords(" the sky   is  blue"))
+// }
 
 // byte_dance 151 翻转字符串里的单词
 func reverseWords(s string) string {

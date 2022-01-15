@@ -2,9 +2,9 @@ package main
 
 // 26. 删除有序数组中的重复项
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 双指针
 func removeDuplicates1(nums []int) int {

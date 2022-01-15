@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 剑指 Offer 59 - II. 队列的最大值
 
 // 请定义一个队列并实现函数 max_value 得到队列里的最大值，
@@ -11,24 +7,24 @@ import (
 //
 // 若队列为空，pop_front 和 max_value需要返回 -1
 
-func main() {
-	obj := Constructor4()
-	// obj.Pop_front()
-	// obj.Pop_front()
-	// obj.Pop_front()
-	// obj.Pop_front()
-	// obj.Pop_front()
-	// obj.Push_back(15)
-	// fmt.Println(obj.Max_value())
-	// obj.Push_back(9)
-	// fmt.Println(obj.Max_value())
+// func main() {
+// 	obj := Constructor4()
+// 	// obj.Pop_front()
+// 	// obj.Pop_front()
+// 	// obj.Pop_front()
+// 	// obj.Pop_front()
+// 	// obj.Pop_front()
+// 	// obj.Push_back(15)
+// 	// fmt.Println(obj.Max_value())
+// 	// obj.Push_back(9)
+// 	// fmt.Println(obj.Max_value())
 
-	obj.Push_back(1)
-	obj.Push_back(2)
-	fmt.Println(obj.Max_value())
-	obj.Pop_front()
-	fmt.Println(obj.Max_value())
-}
+// 	obj.Push_back(1)
+// 	obj.Push_back(2)
+// 	fmt.Println(obj.Max_value())
+// 	obj.Pop_front()
+// 	fmt.Println(obj.Max_value())
+// }
 
 type MaxQueue struct {
 	queue    []int // 存储队列中的值 -- 先进先出

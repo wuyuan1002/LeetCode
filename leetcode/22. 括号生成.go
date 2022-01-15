@@ -2,9 +2,9 @@ package main
 
 // 22. 括号生成
 
-func main() {
+// func main() {
 
-}
+// }
 
 func generateParenthesis(n int) []string {
 	if n <= 0 {

@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -13,10 +12,10 @@ import (
 // 相同或者等于 上一层结点下标 + 1 的两个结点。也就是说，如果正位于当前行的下标 i ，
 // 那么下一步可以移动到下一行的下标 i 或 i + 1 。
 
-func main() {
-	triangle := [][]int{{2}, {3, 4}, {6, 5, 7}, {4, 1, 8, 3}}
-	fmt.Println(minimumTotal(triangle))
-}
+// func main() {
+// 	triangle := [][]int{{2}, {3, 4}, {6, 5, 7}, {4, 1, 8, 3}}
+// 	fmt.Println(minimumTotal(triangle))
+// }
 
 // 类似64、118
 // 动态规划(二维dp) -- dp[i][j] = min(dp[i-1][j-1], dp[i-1][j]) + triangle[i][j]

@@ -10,9 +10,9 @@ import (
 // 初始化nums1 和 nums2 的元素数量分别为m 和 n 。
 // 你可以假设nums1 的空间大小等于m + n，这样它就有足够的空间保存来自 nums2 的元素。
 
-func main() {
+// func main() {
 
-}
+// }
 
 // 从后向前同时遍历两个数组，将两数组末尾大拿数字放到第一个数组的最后面
 func merge(nums1 []int, m int, nums2 []int, n int) {

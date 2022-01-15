@@ -1,25 +1,21 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 剑指 Offer 41. 数据流中的中位数
 
 // 如何得到一个数据流中的中位数？如果从数据流中读出奇数个数值，
 // 那么中位数就是所有数值排序之后位于中间的数值。如果从数据流中读出偶数个数值，
 // 那么中位数就是所有数值排序之后中间两个数的平均值。
 
-func main() {
-	aa := Constructor2()
-	aa.AddNum(1)
-	aa.AddNum(2)
-	// aa.AddNum(3)
-	// aa.AddNum(4)
-	// aa.AddNum(5)
+// func main() {
+// 	aa := Constructor2()
+// 	aa.AddNum(1)
+// 	aa.AddNum(2)
+// 	// aa.AddNum(3)
+// 	// aa.AddNum(4)
+// 	// aa.AddNum(5)
 
-	fmt.Println(aa.FindMedian())
-}
+// 	fmt.Println(aa.FindMedian())
+// }
 
 type MedianFinder1 struct {
 	nums []int
