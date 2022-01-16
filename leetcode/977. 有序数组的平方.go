@@ -38,3 +38,33 @@ func abs(a int) int {
 	}
 	return a
 }
+
+// 第二次做 -- 双指针
+// 负数的平方可能成为最大值，因此，新数组的最大值出现在旧数组两端
+func sortedSquares1(nums []int) []int {
+	if nums == nil || len(nums) == 0 {
+		return []int{}
+	}
+
+	// 求绝对值
+	abs := func(a int) int {
+		if a < 0 {
+			return -a
+		}
+		return a
+	}
+
+	result := make([]int, len(nums))
+	l, r := 0, len(nums)-1
+	for i := len(result) - 1; l <= r; {
+		if abs(nums[l]) > abs(nums[r]) {
+			result[i] = nums[l] * nums[l]
+			l++
+		} else {
+			result[i] = nums[r] * nums[r]
+			r--
+		}
+		i--
+	}
+	return result
+}
