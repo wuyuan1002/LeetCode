@@ -46,3 +46,21 @@ func removeElement1(nums []int, val int) int {
 	}
 	return l
 }
+
+// 第三次做
+// 双指针 -- 左指针l之前的元素都是不等于val的元素，由右指针不断向右探索，将不等于val的元素交换至l
+func removeElement2(nums []int, val int) int {
+	if nums == nil || len(nums) == 0 {
+		return 0
+	}
+
+	l, r := 0, 0
+	for r < len(nums) {
+		if nums[r] != val {
+			nums[l] = nums[r]
+			l++
+		}
+		r++
+	}
+	return l
+}
