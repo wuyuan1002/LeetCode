@@ -54,3 +54,48 @@ func generateMatrix(n int) [][]int {
 
 	return result
 }
+
+// 第二次做
+func generateMatrix1(n int) [][]int {
+	if n <= 0 {
+		return nil
+	}
+
+	matrix := make([][]int, n)
+	for i := 0; i < len(matrix); i++ {
+		matrix[i] = make([]int, n)
+	}
+
+	num, count := 1, n*n
+	t, r, b, l := 0, n-1, n-1, 0
+	for num <= count {
+		// 打印上面一行
+		for i := l; i <= r; i++ {
+			matrix[t][i] = num
+			num++
+		}
+		t++
+
+		// 打印右面一列
+		for i := t; i <= b; i++ {
+			matrix[i][r] = num
+			num++
+		}
+		r--
+
+		// 打印下面一行
+		for i := r; i >= l; i-- {
+			matrix[b][i] = num
+			num++
+		}
+		b--
+
+		// 打印左面一列
+		for i := b; i >= t; i-- {
+			matrix[i][l] = num
+			num++
+		}
+		l++
+	}
+	return matrix
+}
