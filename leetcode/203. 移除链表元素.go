@@ -24,3 +24,20 @@ func removeElements(head *ListNode, val int) *ListNode {
 	}
 	return dummy.Next
 }
+
+// 第二次做
+func removeElements1(head *ListNode, val int) *ListNode {
+	if head == nil {
+		return nil
+	}
+
+	dummy := &ListNode{Next: head} // 虚拟头节点
+	for node := dummy; node != nil && node.Next != nil; {
+		if node.Next.Val == val {
+			node.Next = node.Next.Next
+		} else {
+			node = node.Next
+		}
+	}
+	return dummy.Next
+}
