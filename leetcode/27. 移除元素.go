@@ -12,7 +12,7 @@ package main
 
 // }
 
-// 类似 26、80
+// 类似 26、80、283
 // 双指针 -- 左指针i之前的元素都是没有目标值的元素
 func removeElement(nums []int, val int) int {
 	if nums == nil || len(nums) == 0 {
