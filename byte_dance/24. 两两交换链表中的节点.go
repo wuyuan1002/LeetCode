@@ -9,7 +9,7 @@ package main
 
 // }
 
-// 类似 K个一组翻转链表, 本题等于两个一组翻转链表
+// 类似 25 K个一组翻转链表, 本题等于两个一组翻转链表
 func swapPairs(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil {
 		return head
