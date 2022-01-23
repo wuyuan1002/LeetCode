@@ -2,6 +2,10 @@ package main
 
 // 19. 删除链表的倒数第 N 个结点
 
+// 给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。
+//
+// 进阶：你能尝试使用一趟扫描实现吗？
+
 // func main() {
 
 // }
@@ -32,4 +36,22 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 		l.Next = l.Next.Next
 		return head
 	}
+}
+
+// 第二次做
+func removeNthFromEnd1(head *ListNode, n int) *ListNode {
+	// 设置虚拟头节点
+	dummy := &ListNode{Next: head}
+	// 快慢指针
+	l, r := dummy, head
+	for i := 0; r != nil; i++ {
+		r = r.Next
+		if i < n {
+			// 先让快指针向前走k步
+			continue
+		}
+		l = l.Next
+	}
+	l.Next = l.Next.Next
+	return dummy.Next
 }
