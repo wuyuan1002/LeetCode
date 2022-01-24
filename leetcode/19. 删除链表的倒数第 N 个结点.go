@@ -52,6 +52,8 @@ func removeNthFromEnd1(head *ListNode, n int) *ListNode {
 		}
 		l = l.Next
 	}
+
+	// 此时l的next就是倒数第k个节点 -- 删掉倒数第k个节点
 	l.Next = l.Next.Next
 	return dummy.Next
 }
