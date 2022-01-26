@@ -31,3 +31,24 @@ func isAnagram(s string, t string) bool {
 	}
 	return true
 }
+
+// 第二次做
+func isAnagram1(s string, t string) bool {
+	if len(s) != len(t) {
+		return false
+	}
+
+	record := make([]int, 26) // 记录a-z出现的次数
+	for _, c := range s {
+		record[c-'a']++
+	}
+	for _, c := range t {
+		record[c-'a']--
+	}
+	for _, n := range record {
+		if n > 0 {
+			return false
+		}
+	}
+	return true
+}
