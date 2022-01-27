@@ -30,3 +30,25 @@ func intersect(nums1 []int, nums2 []int) []int {
 
 	return result
 }
+
+// 第二次做
+func intersect1(nums1 []int, nums2 []int) []int {
+	if nums1 == nil || len(nums1) == 0 || nums2 == nil || len(nums2) == 0 {
+		return nil
+	}
+
+	hash := make(map[int]int)
+	for _, n := range nums1 {
+		hash[n]++
+	}
+
+	result := make([]int, 0)
+	for _, n := range nums2 {
+		if _, ok := hash[n]; ok && hash[n] > 0 {
+			result = append(result, n)
+			hash[n]--
+		}
+	}
+
+	return result
+}
