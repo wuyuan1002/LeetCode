@@ -38,3 +38,34 @@ func isHappy(n int) bool {
 		mapp[num] = struct{}{}
 	}
 }
+
+// 第二次做
+func isHappy1(n int) bool {
+
+	// 获取每一位数字的平方和
+	getSum := func(num int) int {
+		sum := 0
+		for num != 0 {
+			n := num % 10
+			num /= 10
+			sum += n * n
+		}
+		return sum
+	}
+
+	// 用于存放每次的平方和结果
+	hash := make(map[int]bool)
+	num := n
+	for {
+		num = getSum(num)
+		if num == 1 {
+			return true
+		} else if _, ok := hash[num]; ok {
+			// 次次结果之前出现过，说明出现了循环，不可能是快乐数
+			return false
+		} else {
+			// 若没出现过，将结果记录下来，进入下一次计算
+			hash[num] = true
+		}
+	}
+}
