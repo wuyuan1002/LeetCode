@@ -32,3 +32,14 @@ func twoSum2(nums []int, target int) []int {
 	}
 	return nil
 }
+
+func twoSum3(nums []int, target int) []int {
+	hash := make(map[int]int)
+	for i, num := range nums {
+		if index, ok := hash[target-num]; ok {
+			return []int{index, i}
+		}
+		hash[num] = i
+	}
+	return nil
+}
