@@ -12,6 +12,7 @@ package main
 // }
 
 // 二分法
+// offer 11、leetcode 33、35、153
 func searchInsert(nums []int, target int) int {
 	if nums == nil || len(nums) == 0 {
 		return -1

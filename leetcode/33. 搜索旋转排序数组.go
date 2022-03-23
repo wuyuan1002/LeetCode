@@ -15,7 +15,7 @@ package main
 // 	fmt.Println(search([]int{1}, 3))
 // }
 
-// offer 11，leetcode 153
+// offer 11、leetcode 33、35、153
 // 二分法
 func search(nums []int, target int) int {
 	if nums == nil || len(nums) == 0 {
