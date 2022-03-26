@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // 35. 搜索插入位置
 
 // 给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。
@@ -7,9 +9,9 @@ package main
 //
 // 请必须使用时间复杂度为 O(log n) 的算法。
 
-// func main() {
-
-// }
+func main() {
+	fmt.Println(searchInsert([]int{2, 3, 5, 6, 9, 10}, 7))
+}
 
 // 二分法
 // offer 11、leetcode 33、35、153
