@@ -17,7 +17,7 @@ package main
 // func main() {
 // 	board := [][]byte{{'A', 'B', 'C', 'E'}, {'S', 'F', 'C', 'S'}, {'A', 'D', 'E', 'E'}}
 // 	word := "ABCCED"
-// 	fmt.Printf("%v", exist1(board, word))
+// 	fmt.Printf("%v", exist(board, word))
 // }
 
 func exist(board [][]byte, word string) bool {
@@ -66,27 +66,26 @@ func hasPathCorn(board [][]byte, row int, rows int, col int, cols int,
 	return hasPath
 }
 
-// 第二次做 -- 回溯法
+// 第二次做
 func exist1(board [][]byte, word string) bool {
-	if board == nil || len(board) == 0 {
-		return false
-	}
 	if len(word) == 0 {
 		return true
-	}
-	if len(board[0]) == 0 {
+	} else if len(board) == 0 {
 		return false
 	}
 
-	// 用来记录已经访问过的位置
-	visited := make([][]bool, len(board))
+	rows := len(board)    // 行数
+	cols := len(board[0]) // 列数
+
+	// visited用于记录对应位置是否被访问过
+	visited := make([][]bool, rows)
 	for i := range visited {
-		visited[i] = make([]bool, len(board[0]))
+		visited[i] = make([]bool, cols)
 	}
 
-	for i := range board {
-		for j := range board[i] {
-			if hasPathCorn1(board, visited, i, len(board), j, len(board[0]), 0, word) {
+	for i := 0; i < rows; i++ {
+		for j := 0; j < cols; j++ {
+			if havePath(board, i, rows, j, cols, 0, word, visited) {
 				return true
 			}
 		}
@@ -94,28 +93,23 @@ func exist1(board [][]byte, word string) bool {
 	return false
 }
 
-func hasPathCorn1(board [][]byte, visited [][]bool, row, rows, col, cols, index int, word string) bool {
-
-	hasPath := false
-
-	if row >= 0 && row < rows && col >= 0 && col < cols &&
-		board[row][col] == word[index] && !visited[row][col] {
-		// 标记当前位置已被访问
-		visited[row][col] = true
-		index++
-		if index == len(word) {
-			return true
-		}
-
-		hasPath = hasPathCorn1(board, visited, row-1, rows, col, cols, index, word) ||
-			hasPathCorn1(board, visited, row+1, rows, col, cols, index, word) ||
-			hasPathCorn1(board, visited, row, rows, col-1, cols, index, word) ||
-			hasPathCorn1(board, visited, row, rows, col+1, cols, index, word)
-
-		if !hasPath {
-			visited[row][col] = false
-		}
+func havePath(board [][]byte, i int, rows int, j int, cols int, index int, word string, visited [][]bool) bool {
+	if index >= len(word) {
+		return true
 	}
 
-	return hasPath
+	have := false
+	if i >= 0 && i < rows && j >= 0 && j < cols && board[i][j] == word[index] && !visited[i][j] {
+		visited[i][j] = true // 标记当前位置已被访问
+
+		have = havePath(board, i+1, rows, j, cols, index+1, word, visited) ||
+			havePath(board, i-1, rows, j, cols, index+1, word, visited) ||
+			havePath(board, i, rows, j+1, cols, index+1, word, visited) ||
+			havePath(board, i, rows, j-1, cols, index+1, word, visited)
+
+		if !have {
+			visited[i][j] = false // 将当前位置标记为未访问
+		}
+	}
+	return have
 }
