@@ -26,4 +26,5 @@ int main()
 {
     std::vector<int> list = { 1, 6, 3, 2, 5, 3, 3, 7, 5, 3, 9 };
     printf("%d", Solution().removeElement(list, 3));
+    return 0;
 }

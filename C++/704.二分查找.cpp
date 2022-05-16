@@ -28,4 +28,5 @@ int main()
 {
     std::vector<int> nums = { 2, 5, 7, 12, 34, 54, 56, 77, 89 };
     printf("%d", Solution().search(nums, 7));
+    return 0;
 }
