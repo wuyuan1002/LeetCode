@@ -1,7 +1,6 @@
 // 977. 有序数组的平方
 // 给你一个按非递减顺序排序的整数数组nums, 返回每个数字的平方组成的新数组，要求也按非递减顺序排序。
 
-#include <cmath>
 #include <vector>
 
 class Solution {
