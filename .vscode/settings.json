@@ -64,6 +64,7 @@
         "typeinfo": "cpp",
         "vector": "cpp",
         "version": "cpp",
-        "climits": "cpp"
+        "climits": "cpp",
+        "unordered_set": "cpp"
     }
 }
