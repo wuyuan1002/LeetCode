@@ -12,7 +12,7 @@ class Solution {
 public:
     std::vector<std::vector<int>> threeSum(std::vector<int>& nums)
     {
-        // sort(nums.begin(), nums.end());
+        // std::sort(nums.begin(), nums.end());
         quick_sort(nums, 0, nums.size() - 1);
 
         std::vector<std::vector<int>> result;
