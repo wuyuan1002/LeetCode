@@ -1,6 +1,7 @@
 
 // 344. 反转字符串
 
+#include <algorithm>
 #include <vector>
 
 class Solution {
