@@ -6,6 +6,7 @@
 //
 // 注意：答案中不可以包含重复的三元组。
 
+#include <algorithm>
 #include <vector>
 
 class Solution {
@@ -52,9 +53,10 @@ public:
         }
 
         int l = left, r = right;
+        int pivot = nums[left];
         while (l != r) {
-            for (; l < r && nums[r] >= nums[left]; --r) { }
-            for (; l < r && nums[l] <= nums[left]; ++l) { }
+            for (; l < r && nums[r] >= pivot; --r) { }
+            for (; l < r && nums[l] <= pivot; ++l) { }
             if (l < r) {
                 std::swap(nums[l], nums[r]);
             }
