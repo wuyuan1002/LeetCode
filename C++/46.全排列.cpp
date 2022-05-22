@@ -20,7 +20,7 @@ public:
     void dfs(std::vector<int>& nums, int index, std::vector<std::vector<int>>& result)
     {
         if (index == nums.size()) {
-            result.push_back(std::vector<int>(nums));
+            result.push_back(nums);
             return;
         }
 
