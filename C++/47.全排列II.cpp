@@ -1,7 +1,7 @@
 
-// 46. 全排列
+// 47. 全排列 II
 //
-// 给定一个不含重复数字的数组 nums ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。
+// 给定一个可包含重复数字的序列 nums ，按任意顺序 返回所有不重复的全排列。
 
 #include <algorithm>
 #include <unordered_set>
@@ -9,8 +9,7 @@
 
 class Solution {
 public:
-    // 回溯法
-    std::vector<std::vector<int>> permute(std::vector<int>& nums)
+    std::vector<std::vector<int>> permuteUnique(std::vector<int>& nums)
     {
         std::vector<std::vector<int>> result;
         dfs(nums, 0, result);
@@ -24,7 +23,8 @@ public:
             return;
         }
 
-        // 由于本题nums中不包含重复数字, 所以可以不用visited记录已访问的数字, 而47题就需要
+        // 由于本题nums中包含重复数字, 所以需要visited记录已访问的数字, 而46题就不需要
+        // 还可以使用先在permuteUnique中给nums排序, 之后在dfs中判断当前数字和前一个数字是否相等来去重
         std::unordered_set<int> visited;
 
         for (int i = index; i < nums.size(); ++i) {
