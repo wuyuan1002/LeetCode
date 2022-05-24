@@ -19,6 +19,7 @@ public:
     // 2. 动态规划 -- 完全背包问题
     std::vector<std::vector<int>> combinationSum(std::vector<int>& candidates, int target)
     {
+        // 先排序方便剪枝
         quick_sort(candidates, 0, candidates.size() - 1);
 
         std::vector<int> res;
@@ -36,8 +37,15 @@ public:
 
         for (int i = start; i < candidates.size(); ++i) {
             if (current_sum + candidates[i] > target) {
+                // 剪枝
                 return;
             }
+
+            // 此题说明了数组中无重复元素, 所以不用跳过重复元素
+            // if (i > start && candidates[i] == candidates[i - 1]) {
+            //     // 跳过重复元素
+            //     continue;
+            // }
 
             res.push_back(candidates[i]);
             dfs(candidates, i, current_sum + candidates[i], target, res, result);
