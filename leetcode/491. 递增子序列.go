@@ -69,7 +69,7 @@ func dfs17(nums []int, start, n int, res *[]int, result *[][]int) {
 		return
 	}
 
-	visited := make(map[int]bool) // 由于数组未排序，所以使用map去重，而不是像90那样hi姐比较前一个数字
+	visited := make(map[int]bool) // 由于数组未排序，所以使用map去重，而不是像90那样可以比较前一个数字
 	for i := start; i < len(nums); i++ {
 		if len(*res) > 0 && nums[i] < (*res)[len(*res)-1] {
 			continue
