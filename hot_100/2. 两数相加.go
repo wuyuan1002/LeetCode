@@ -37,7 +37,7 @@ type ListNode struct {
 	Next *ListNode
 }
 
-// 由于两个链表是是逆序存储数字的，秩序从头遍历两个链表相加即可
+// 由于两个链表是是逆序存储数字的，只需从头遍历两个链表相加即可
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	if l1 == nil {
 		return l2
