@@ -13,7 +13,7 @@ public:
     {
         int count = 0;
         for (int i = 0; i < grid.size(); ++i) {
-            for (int j = 0; j < grid[0].size(); ++j) {
+            for (int j = 0; j < grid[i].size(); ++j) {
                 // 若当前节点已被访问过则是*, 水是0, 只有当前节点是陆地时是1
                 if (grid[i][j] == '1') {
                     ++count;

@@ -19,8 +19,8 @@ public:
     // 2. 动态规划 -- 完全背包问题
     std::vector<std::vector<int>> combinationSum(std::vector<int>& candidates, int target)
     {
-        // 先排序方便剪枝
-        quick_sort(candidates, 0, candidates.size() - 1);
+        // 此题说明了数组中无重复元素, 所以不用先排序进行剪枝 -- 见40
+        // quick_sort(candidates, 0, candidates.size() - 1);
 
         std::vector<int> res;
         std::vector<std::vector<int>> result;

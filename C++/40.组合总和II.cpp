@@ -13,7 +13,7 @@ class Solution {
 public:
     std::vector<std::vector<int>> combinationSum2(std::vector<int>& candidates, int target)
     {
-        // 先排序方便剪枝
+        // 先排序方便剪枝 -- 见39
         std::sort(candidates.begin(), candidates.end());
 
         std::vector<int> res;

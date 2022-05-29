@@ -17,7 +17,7 @@ public:
     int islandPerimeter(std::vector<std::vector<int>>& grid)
     {
         for (int i = 0; i < grid.size(); ++i) {
-            for (int j = 0; j < grid[0].size(); ++j) {
+            for (int j = 0; j < grid[i].size(); ++j) {
                 if (grid[i][j] == 1) {
                     // 题目说只会有一个岛屿, 因此找到一个点是岛屿时, 直接遍历并返回即可
                     return dfs(grid, i, j);
