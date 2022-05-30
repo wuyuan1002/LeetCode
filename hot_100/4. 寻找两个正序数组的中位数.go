@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // 4.寻找两高正序数组的中位数
 
 // 给定两个大小分别为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。
@@ -37,6 +39,7 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	for middle >= 0 { // 这里允许等于0是因为在找到中位数后继续寻找中位数的下一个数字
 		if j == len(nums2) { // 若j已经到达数组末尾 -- 则只移动i
 			if middle == 1 { // 已找到中位数
+				fmt.Printf("00 %d", mid)
 				mid = nums1[i]
 			} else if middle == 0 { // 找中位数的下一个数字
 				next = nums1[i]
@@ -44,6 +47,7 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 			i++
 		} else if i == len(nums1) { // 若i已经到达数组末尾 -- 则只移动j
 			if middle == 1 {
+				fmt.Printf("11 %d", mid)
 				mid = nums2[j]
 			} else if middle == 0 {
 				next = nums2[j]
@@ -53,12 +57,15 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 			if nums1[i] <= nums2[j] {
 				if middle == 1 {
 					mid = nums1[i]
+					fmt.Printf("22  %d", mid)
 				} else if middle == 0 {
 					next = nums1[i]
 				}
 				i++
 			} else {
 				if middle == 1 {
+					fmt.Printf("%d -- %d", i, j)
+					fmt.Printf("33 %d", mid)
 					mid = nums2[j]
 				} else if middle == 0 {
 					next = nums2[j]
@@ -80,4 +87,8 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	} else {
 		return float64(mid)
 	}
+}
+
+func main() {
+	fmt.Printf("%f", findMedianSortedArrays([]int{1, 3}, []int{2}))
 }
