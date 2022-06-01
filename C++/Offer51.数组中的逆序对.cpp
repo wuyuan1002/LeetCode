@@ -40,6 +40,7 @@ public:
             } else if (j == r + 1 || tmp[i] <= tmp[j]) {
                 nums[k] = tmp[i++];
             } else {
+                // 如果右侧元素先入结果集，则左侧剩余的所有元素都与它组成逆序对，相反如果左边元素先插入，则说明不存在逆序对
                 nums[k] = tmp[j++];
                 reverse_count += mid - i + 1; // 统计逆序对
             }
