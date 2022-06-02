@@ -7,7 +7,7 @@
 
 class Solution {
 public:
-    // 同offer 25
+    // 同offer 25、leetcode 23
     ListNode* mergeTwoLists(ListNode* list1, ListNode* list2)
     {
         if (list1 == nullptr) {

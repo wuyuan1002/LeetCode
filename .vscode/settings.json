@@ -67,6 +67,7 @@
         "climits": "cpp",
         "unordered_set": "cpp",
         "__functional_03": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "deque": "cpp"
     }
 }
