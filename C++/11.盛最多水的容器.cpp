@@ -12,7 +12,8 @@
 
 class Solution {
 public:
-    // 双指针法，两个指针向中间移动，每次都是移动数字小的那个
+    // 双指针 -- 两个指针向中间移动，每次都是移动数字小的那个
+    // 类似 42
     int maxArea(std::vector<int>& height)
     {
         int l = 0, r = height.size() - 1; // 左右指针
