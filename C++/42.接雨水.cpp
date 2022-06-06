@@ -9,7 +9,7 @@
 
 class Solution {
 public:
-    // 1. 双指针 -- 类似 11
+    // 1. 双指针（按列求） -- 类似 11
     int trap(std::vector<int>& height)
     {
         int lmax = 0, rmax = 0; // 左右最高的列
@@ -27,7 +27,7 @@ public:
         return res;
     }
 
-    // 2. 单调栈 -- 类似 84、239、739、496、503
+    // 2. 单调栈（按行求） -- 类似 84、239、739、496、503
     int trap(std::vector<int>& height)
     {
         int res = 0; // 盛水量
