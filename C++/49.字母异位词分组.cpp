@@ -3,9 +3,9 @@
 //
 // 给定一个字符串数组，将字母异位词组合在一起。字母异位词指字母相同，但排列不同的字符串。
 
-#include <algorithm>
 #include <string>
 #include <unordered_map>
+#include <utility>
 #include <vector>
 
 class Solution {
@@ -23,7 +23,7 @@ public:
 
         std::vector<std::vector<std::string>> res;
         for (auto& p : mp) {
-            res.emplace_back(p.second);
+            res.push_back(std::move(p.second));
         }
 
         return res;
