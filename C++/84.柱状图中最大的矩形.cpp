@@ -11,6 +11,7 @@
 
 class Solution {
 public:
+    // 每个柱子能构成的最大面积 == 柱子高度 * 左右比它低的柱子间距离
     int largestRectangleArea(std::vector<int>& heights, int w)
     {
         heights.push_back(-1); // 往heights末尾插入一个比所有元素都小的值, 确保所有元素都被计算到
