@@ -47,7 +47,7 @@ func isValidBST(root *TreeNode) bool {
 	return true
 }
 
-// 2. 后序遍历，通过最大最小值限定，校验节点是否符合要求
+// 2. 前序遍历，通过最大最小值限定，校验节点是否符合要求
 func isValidBST1(root *TreeNode) bool {
 	return isValidTree(root, math.MinInt64, math.MaxInt64)
 }
