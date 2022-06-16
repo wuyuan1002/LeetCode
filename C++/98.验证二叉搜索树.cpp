@@ -15,7 +15,7 @@
 class Solution {
 public:
     // 1. 二叉搜索树中序遍历后是排序的，因此，在中序遍历时校验当前值是否比前一个值大即可
-    // 2. 后序遍历，通过最大最小值限定，校验节点是否符合要求
+    // 2. 前序遍历，通过最大最小值限定，校验节点是否符合要求
     bool isValidBST(TreeNode* root)
     {
         return isValidTree(root, INT64_MIN, INT64_MAX);
