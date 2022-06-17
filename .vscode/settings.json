@@ -68,6 +68,7 @@
         "unordered_set": "cpp",
         "__functional_03": "cpp",
         "stack": "cpp",
-        "deque": "cpp"
+        "deque": "cpp",
+        "queue": "cpp"
     }
 }
