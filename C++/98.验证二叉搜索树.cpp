@@ -20,6 +20,7 @@ public:
     {
         return isValidTree(root, INT64_MIN, INT64_MAX);
     }
+
     bool isValidTree(TreeNode* root, int64_t min, int64_t max)
     {
         if (root == nullptr) {
