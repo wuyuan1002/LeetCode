@@ -5,6 +5,7 @@
 
 #include "header.h"
 #include <queue>
+#include <utility>
 #include <vector>
 
 class Solution {
@@ -20,12 +21,11 @@ public:
         queue.push(root);
 
         while (!queue.empty()) {
-            int current_count = queue.size(); // 当前行总数
             std::vector<int> res; // 一层的结果
-            for (; current_count > 0; current_count--) { // 遍历某一层
+            for (int count = queue.size(); count > 0; count--) { // 遍历某一层, count: 当前层节点个数
                 TreeNode* node = queue.front();
                 queue.pop();
-                res.emplace_back(node->val);
+                res.push_back(node->val);
 
                 if (node->left != nullptr) {
                     queue.push(node->left);
@@ -34,7 +34,7 @@ public:
                     queue.push(node->right);
                 }
             }
-            result.emplace_back(res);
+            result.push_back(std::move(res));
         }
 
         return result;
