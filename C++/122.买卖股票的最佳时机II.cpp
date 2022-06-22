@@ -12,12 +12,6 @@
 class Solution {
 public:
     // 1. 等价于每天都买卖 -- 前一天比后一天小,买卖; 前一天比后一天大,不买卖 -- 所有上涨交易日都买卖（赚到所有利润）, 所有下降交易日都不买卖（永不亏钱）
-    // 2. 动态规划 -- 类似714
-    // 一天共有两种状态:
-    // 0: 持有股票
-    // 1: 未持有股票
-    //
-    // dp[i][j]表示第i天状态j时所持有的现金数量(越大说明越有钱)
     int maxProfit(std::vector<int>& prices)
     {
         if (prices.size() < 2) {
@@ -32,5 +26,29 @@ public:
         }
 
         return profit;
+    }
+
+    // 2. 动态规划 -- 类似714
+    // 一天共有两种状态:
+    // 0: 持有股票
+    // 1: 未持有股票
+    //
+    // dp[i][j]表示第i天状态j时所持有的现金数量(越大说明越有钱)
+    int maxProfit(std::vector<int>& prices)
+    {
+        if (prices.size() < 2) {
+            return 0;
+        }
+
+        std::vector<std::vector<int>> dp(prices.size(), std::vector<int>(2, 0)); // dp数组
+        dp[0][0] = -prices[0]; // 第1天持有股票时的现金数量 -- 钱都花了, 现在手上剩的钱的负的
+        dp[0][1] = 0; // 第1天未持有股票 -- 手上没钱
+
+        for (int i = 1; i < prices.size(); i++) {
+            dp[i][0] = std::max(dp[i - 1][0], dp[i - 1][1] - prices[i]); // 第i天持有股票可由前一天的两种状态得来 -- 1.前一天就持有股票,今天不做操作, 2.前一天未持有股票,今天进行买入操作
+            dp[i][1] = std::max(dp[i - 1][1], dp[i - 1][0] + prices[i]); // 第i天未持有股票可由前一天的两种状态得来 -- 1.前一天就未持有股票,今天不做操作, 2.前一天持有股票,今天进行卖出操作
+        }
+
+        return dp[prices.size() - 1][1];
     }
 };
