@@ -11,6 +11,7 @@
 
 class Solution {
 public:
+    // 找出在哪天进行买入、在哪天进行卖出可以获得最大利润 -- 只能买卖一次
     int maxProfit(std::vector<int>& prices)
     {
         if (prices.size() < 2) {
