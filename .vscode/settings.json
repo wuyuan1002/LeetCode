@@ -69,6 +69,8 @@
         "__functional_03": "cpp",
         "stack": "cpp",
         "deque": "cpp",
-        "queue": "cpp"
-    }
+        "queue": "cpp",
+        "memory_resource": "cpp"
+    },
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: WebKit}"
 }

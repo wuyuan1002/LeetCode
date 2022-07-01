@@ -31,8 +31,8 @@ func rob(nums []int) int {
 	}
 
 	// 偷到某个房屋的最大价值 = max(当前房屋价值+前两个房屋最大价值, 前一个房屋的最大价值)
-	preSecond := nums[0]            // 前一个房屋的最大价值
-	preOne := max(nums[0], nums[1]) // 前两个房屋的最大价值
+	preSecond := nums[0]            // 前两个房屋的最大价值
+	preOne := max(nums[0], nums[1]) // 前一个房屋的最大价值
 
 	for i := 2; i < len(nums); i++ {
 		// 偷盗当前房屋的最大价值
