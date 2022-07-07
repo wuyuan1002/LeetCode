@@ -53,24 +53,20 @@ public:
         }
     }
 
-    void quick_sort(std::vector<int>& nums, int left, int right)
+    // 2. 动态规划 -- 组合问题 -- 完全背包问题 -- 只能求出解的个数, 无法求出每个解是什么
+    int combinationSum2(std::vector<int>& candidates, int target)
     {
-        if (nums.empty() || left >= right) {
-            return;
-        }
+        std::vector<int> dp(target + 1, 0); // dp[i] += dp[i - num]
+        dp[0] = 0;
 
-        int l = left, r = right;
-        int pivot = nums[left];
-        while (l < r) {
-            for (; l < r && nums[r] >= pivot; --r) { }
-            for (; l < r && nums[l] <= pivot; ++l) { }
-            if (l < r) {
-                std::swap(nums[l], nums[r]);
+        for (int num : candidates) { // 遍历物品
+            for (int i = 1; i <= target; i++) { // 遍历背包容量 -- 若每个数字只能使用1次, 则应该倒序遍历, 如40
+                if (i >= num) {
+                    dp[i] += dp[i - num];
+                }
             }
         }
-        std::swap(nums[l], nums[left]);
 
-        quick_sort(nums, left, l - 1);
-        quick_sort(nums, r + 1, right);
+        return dp[target];
     }
 };
