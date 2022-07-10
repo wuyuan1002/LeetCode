@@ -40,4 +40,31 @@ public:
 
         return dp[text1.size()][text2.size()];
     }
+
+    // 滚动数组 -- 一维dp
+    int longestCommonSubsequence(std::string text1, std::string text2)
+    {
+        if (text1.empty() || text2.empty()) {
+            return 0;
+        }
+
+        std::vector<int> dp(text2.size() + 1, 0);
+        dp[0] = 0;
+
+        for (int i = 1; i <= text1.size(); i++) {
+            int up_left = 0; // 记录左上角的值, 防止被覆盖
+            for (int j = 1; j <= text2.size(); j++) {
+                int tmp = dp[j];
+                if (text1[i - 1] == text2[j - 1]) {
+                    dp[j] = up_left + 1;
+                } else {
+                    dp[j] = std::max(dp[j - 1], dp[j]);
+                }
+
+                up_left = tmp; // 记录下一个字母的左上角的值
+            }
+        }
+
+        return dp[text2.size()];
+    }
 };
