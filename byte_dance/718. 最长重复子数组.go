@@ -12,7 +12,7 @@ package main
 // 2. 滑动窗口
 
 // 类似于 1143. 最长公共子序列
-// 2. 二维dp，空间占用较大 -- dp[i][j]表示以下标i-1结尾的nums1和下标j-1结尾的nums2的数组的重复子数组长度
+// 1. 二维dp，空间占用较大 -- dp[i][j]表示以下标i-1结尾的nums1和下标j-1结尾的nums2的数组的重复子数组长度
 func findLength(nums1 []int, nums2 []int) int {
 	if nums1 == nil || len(nums1) == 0 || nums2 == nil || len(nums2) == 0 {
 		return 0
@@ -46,7 +46,7 @@ func findLength(nums1 []int, nums2 []int) int {
 	return maxLen
 }
 
-// 2. 滚动数组优化，一维dp，空间占用较小 -- 类似礼物的最大价值、零钱兑换、不同路径
+// 1. 滚动数组优化，一维dp，空间占用较小 -- 类似礼物的最大价值、零钱兑换、不同路径
 func findLength1(nums1 []int, nums2 []int) int {
 	if nums1 == nil || len(nums1) == 0 || nums2 == nil || len(nums2) == 0 {
 		return 0
