@@ -11,6 +11,7 @@
 
 class Solution {
 public:
+    // 等于279
     // 类似Hot100 518, 416，39(与回溯法的区别)
     // 完全背包问题
     // 动态规划 -- dp[i]表示i元的最少硬币数 -- dp[i] = min(dp[i], dp[i-num]+1)
