@@ -10,6 +10,7 @@
 
 class Solution {
 public:
+    // 类似647、516
     // 中心扩散法
     std::string longestPalindrome(std::string s)
     {
