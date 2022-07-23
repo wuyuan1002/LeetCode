@@ -14,7 +14,7 @@
 
 class Solution {
 public:
-    // 类似于 718. 最长重复子数组、礼物的最大价值、零钱兑换、不同路径
+    // 类似于 392. 判断子序列、718. 最长重复子数组、115. 不同的子序列、礼物的最大价值、零钱兑换、不同路径
     // 动态规划，二维dp -- dp[i][j]表示以下标i-1结尾的text1和下标j-1结尾的text2的数组的字符串的公共子序列长度
     int longestCommonSubsequence(std::string text1, std::string text2)
     {
