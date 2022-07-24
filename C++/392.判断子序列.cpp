@@ -40,6 +40,7 @@ public:
         // 若 A[i-1] == B[j-1], 则 dp[i][j] = dp[i-1][j-1] + 1
         // 若 A[i-1] != B[j-1], 则 dp[i][j] = dp[i][j-1]
         std::vector<std::vector<int>> dp(s.size() + 1, std::vector<int>(t.size() + 1, 0));
+
         for (int i = 1; i <= s.size(); i++) {
             for (int j = 1; j <= t.size(); j++) {
                 if (s[i - 1] == t[j - 1]) {
