@@ -11,6 +11,8 @@
 
 class Solution {
 public:
+    // 动态规划
+    //
     // 找出在哪天进行买入、在哪天进行卖出可以获得最大利润 -- 只能买卖一次
     // 左取最小值, 右取最大值
     int maxProfit(std::vector<int>& prices)
