@@ -6,20 +6,20 @@
 // 你可以按任意顺序返回答案。
 
 #include <iostream>
-#include <unordered_map>
+#include <map>
 #include <vector>
 
 class Solution {
 public:
     std::vector<int> twoSum(std::vector<int>& nums, int target)
     {
-        std::unordered_map<int, int> map;
+        std::map<int, int> hash; // k: 数值, v: 下标
         for (int i = 0; i < nums.size(); i++) {
-            auto iter = map.find(target - nums[i]);
-            if (iter != map.end()) {
+            std::map<int, int>::iterator iter = hash.find(target - nums[i]);
+            if (iter != hash.end()) {
                 return { iter->second, i };
             }
-            map.insert(std::pair<int, int>(nums[i], i));
+            hash.insert(std::make_pair(nums[i], i));
         }
         return {};
     }
