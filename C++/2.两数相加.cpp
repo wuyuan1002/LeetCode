@@ -18,16 +18,17 @@ public:
         ListNode *res_head = new ListNode(), *res = res_head; // 总结果
         int carry = 0; // 进位
         ListNode *node1 = l1, *node2 = l2; // 正在参与计算的数字
+
         while (node1 != nullptr || node2 != nullptr || carry != 0) {
-            int n1 = node1 != nullptr ? node1->val : 0;
-            int n2 = node2 != nullptr ? node2->val : 0;
+            int num1 = node1 != nullptr ? node1->val : 0;
+            int num2 = node2 != nullptr ? node2->val : 0;
 
-            int sum = n1 + n2 + carry; // 求和
-            res->next = new ListNode(sum % 10); // 当前位得数
+            int sum = num1 + num2 + carry; // 求和
+            res->next = new ListNode(sum % 10); //当前位得数
             res = res->next;
-            carry = sum / 10; // 进位
+            carry = sum / 10; //进位
 
-            // 向遍历两链表
+            // 向后遍历链表
             node1 = node1 != nullptr ? node1->next : nullptr;
             node2 = node2 != nullptr ? node2->next : nullptr;
         }
