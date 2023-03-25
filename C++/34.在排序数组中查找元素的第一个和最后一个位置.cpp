@@ -10,7 +10,8 @@
 
 class Solution {
 public:
-    // 二分法
+    // 704. 二分查找
+    // 35. 搜索插入位置
     std::vector<int> searchRange(std::vector<int>& nums, int target)
     {
         return { get_first(nums, target), get_last(nums, target) };
