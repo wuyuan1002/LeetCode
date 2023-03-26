@@ -10,15 +10,14 @@
 class Solution {
 public:
     // 动态规划 -- 同64
-    int maxValue(std::vector<std::vector<int>>& grid)
-    {
+    int maxValue(std::vector<std::vector<int>>& grid) {
         std::vector<int> dp(grid[0].size(), 0);
 
         for (int i = 0; i < grid.size(); i++) {
             for (int j = 0; j < grid[0].size(); j++) {
-                if (j == 0) { // 第一列
+                if (j == 0) {  // 第一列
                     dp[j] = grid[i][j] + dp[j];
-                } else if (i == 0) { // 第一行
+                } else if (i == 0) {  // 第一行
                     dp[j] = grid[i][j] + dp[j - 1];
                 } else {
                     dp[j] = grid[i][j] + std::min(dp[j], dp[j - 1]);

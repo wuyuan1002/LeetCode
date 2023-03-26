@@ -8,14 +8,13 @@
 class Solution {
 public:
     // 动态规划 -- dp[i] = dp[i - 1] + dp[i - 2]
-    int climbStairs(int n)
-    {
+    int climbStairs(int n) {
         if (n < 2) {
             return 1;
         }
 
-        int pre1 = 1, pre2 = 1; // 前一级和前两级跳法总数
-        int num = 0; // 当前级跳法总数
+        int pre1 = 1, pre2 = 1;  // 前一级和前两级跳法总数
+        int num = 0;             // 当前级跳法总数
 
         for (int i = 2; i <= n; ++i) {
             num = pre1 + pre2;

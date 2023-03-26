@@ -11,8 +11,7 @@
 
 class Solution {
 public:
-    std::vector<std::vector<int>> combinationSum2(std::vector<int>& candidates, int target)
-    {
+    std::vector<std::vector<int>> combinationSum2(std::vector<int>& candidates, int target) {
         // 先排序方便剪枝 -- 见39
         // 也可在dfs时使用visited记录已访问的数字来进行剪枝去重
         quick_sort(candidates, 0, candidates.size() - 1);
@@ -24,8 +23,7 @@ public:
         return result;
     }
 
-    void dfs(std::vector<int>& candidates, int start, int current_sum, int target, std::vector<int>& res, std::vector<std::vector<int>>& result)
-    {
+    void dfs(std::vector<int>& candidates, int start, int current_sum, int target, std::vector<int>& res, std::vector<std::vector<int>>& result) {
         if (current_sum == target) {
             result.push_back(res);
             return;
@@ -48,8 +46,7 @@ public:
         }
     }
 
-    void quick_sort(std::vector<int>& nums, int left, int right)
-    {
+    void quick_sort(std::vector<int>& nums, int left, int right) {
         if (nums.empty() || left >= right) {
             return;
         }
@@ -57,8 +54,10 @@ public:
         int l = left, r = right;
         int pivot = nums[left];
         while (l < r) {
-            for (; l < r && nums[r] >= pivot; --r) { }
-            for (; l < r && nums[l] <= pivot; ++l) { }
+            for (; l < r && nums[r] >= pivot; --r) {
+            }
+            for (; l < r && nums[l] <= pivot; ++l) {
+            }
             if (l < r) {
                 std::swap(nums[l], nums[r]);
             }

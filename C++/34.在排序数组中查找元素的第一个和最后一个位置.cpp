@@ -12,13 +12,11 @@ class Solution {
 public:
     // 704. 二分查找
     // 35. 搜索插入位置
-    std::vector<int> searchRange(std::vector<int>& nums, int target)
-    {
-        return { get_first(nums, target), get_last(nums, target) };
+    std::vector<int> searchRange(std::vector<int>& nums, int target) {
+        return {get_first(nums, target), get_last(nums, target)};
     }
 
-    int get_first(std::vector<int>& nums, int target)
-    {
+    int get_first(std::vector<int>& nums, int target) {
         int l = 0, r = nums.size() - 1;
         while (l <= r) {
             int mid = l + (r - l) / 2;
@@ -37,8 +35,7 @@ public:
         return -1;
     }
 
-    int get_last(std::vector<int>& nums, int target)
-    {
+    int get_last(std::vector<int>& nums, int target) {
         int l = 0, r = nums.size() - 1;
         while (l <= r) {
             int mid = l + (r - l) / 2;
@@ -58,8 +55,7 @@ public:
     }
 };
 
-int main()
-{
-    std::vector<int> nums = { 1 };
+int main() {
+    std::vector<int> nums = {1};
     Solution().searchRange(nums, 1);
 }

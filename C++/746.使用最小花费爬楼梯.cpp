@@ -16,8 +16,7 @@ public:
     // 动态规划
     // dp[i]: 第i个台阶的最小花费
     // dp[i] = min(dp[i - 1], dp[i - 2]) + cost[i]
-    int minCostClimbingStairs(std::vector<int>& cost)
-    {
+    int minCostClimbingStairs(std::vector<int>& cost) {
         std::vector<int> dp(cost.size(), 0);
         dp[0] = cost[0];
         dp[1] = cost[1];

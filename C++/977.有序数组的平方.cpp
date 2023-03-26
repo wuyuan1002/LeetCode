@@ -5,8 +5,7 @@
 
 class Solution {
 public:
-    std::vector<int> sortedSquares(std::vector<int>& nums)
-    {
+    std::vector<int> sortedSquares(std::vector<int>& nums) {
         std::vector<int> result(nums.size(), 0);
         int l = 0, r = nums.size() - 1;
         for (int i = result.size() - 1; i >= 0; --i) {
@@ -22,9 +21,8 @@ public:
     }
 };
 
-int main()
-{
-    std::vector<int> list = { -6, -3, -2, 0, 4, 6, 9 };
+int main() {
+    std::vector<int> list = {-6, -3, -2, 0, 4, 6, 9};
 
     auto res = Solution().sortedSquares(list);
     for (auto i : res) {

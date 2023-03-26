@@ -7,6 +7,7 @@
 // 题目数据保证答案符合 32 位带符号整数范围。
 
 #include <stdint.h>
+
 #include <string>
 #include <vector>
 
@@ -17,8 +18,7 @@ public:
     // dp[i][j] =
     // 若 s[i-1] == t[j-1], 则 dp[i][j] = dp[i-1][j-1] + dp[i-1][j]
     // 若 s[i-1] != t[j-1], 则 dp[i][j] = dp[i-1][j]
-    int numDistinct(std::string s, std::string t)
-    {
+    int numDistinct(std::string s, std::string t) {
         std::vector<std::vector<uint64_t>> dp(s.size() + 1, std::vector<uint64_t>(t.size() + 1, 0));
         // 初始化dp, 表示s[i-1]出现空串的个数为1
         for (int i = 0; i < s.size() + 1; i++) {

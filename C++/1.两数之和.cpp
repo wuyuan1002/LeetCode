@@ -11,13 +11,12 @@
 
 class Solution {
 public:
-    std::vector<int> twoSum(std::vector<int>& nums, int target)
-    {
-        std::map<int, int> hash; // k: 数值, v: 下标
+    std::vector<int> twoSum(std::vector<int>& nums, int target) {
+        std::map<int, int> hash;  // k: 数值, v: 下标
         for (int i = 0; i < nums.size(); i++) {
             std::map<int, int>::iterator iter = hash.find(target - nums[i]);
             if (iter != hash.end()) {
-                return { iter->second, i };
+                return {iter->second, i};
             }
             hash.insert(std::make_pair(nums[i], i));
         }
@@ -25,9 +24,8 @@ public:
     }
 };
 
-int main()
-{
-    std::vector<int> list = { 1, 5, 2, 7, 34, 87, 23 };
+int main() {
+    std::vector<int> list = {1, 5, 2, 7, 34, 87, 23};
     auto res = Solution().twoSum(list, 36);
     for (auto i : res) {
         std::cout << i << std::endl;

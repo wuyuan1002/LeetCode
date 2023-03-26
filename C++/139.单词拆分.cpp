@@ -16,8 +16,7 @@
 class Solution {
 public:
     // 动态规划
-    bool wordBreak(std::string s, std::vector<std::string>& wordDict)
-    {
+    bool wordBreak(std::string s, std::vector<std::string>& wordDict) {
         // 将单词添加到set去重, 同时提供了O(1)的查询时间复杂度
         std::unordered_set<std::string> word_set(wordDict.begin(), wordDict.end());
 

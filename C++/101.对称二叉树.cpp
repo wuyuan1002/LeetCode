@@ -8,13 +8,11 @@
 
 class Solution {
 public:
-    bool isSymmetric(TreeNode* root)
-    {
+    bool isSymmetric(TreeNode* root) {
         return isSymme(root, root);
     }
 
-    bool isSymme(TreeNode* left, TreeNode* right)
-    {
+    bool isSymme(TreeNode* left, TreeNode* right) {
         if (left == nullptr && right == nullptr) {
             return true;
         }

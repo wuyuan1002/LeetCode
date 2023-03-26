@@ -9,15 +9,13 @@
 class Solution {
 public:
     // 归并排序, 在归并的过程中求逆序对
-    int reversePairs(std::vector<int>& nums)
-    {
+    int reversePairs(std::vector<int>& nums) {
         std::vector<int> tmp(nums.size());
         return merge_sort(nums, 0, nums.size() - 1, tmp);
     }
 
     // 归并排序, 同时返回逆序对
-    int merge_sort(std::vector<int>& nums, int l, int r, std::vector<int>& tmp)
-    {
+    int merge_sort(std::vector<int>& nums, int l, int r, std::vector<int>& tmp) {
         if (l >= r) {
             return 0;
         }
@@ -42,15 +40,14 @@ public:
             } else {
                 // 如果右侧元素先入结果集，则左侧剩余的所有元素都与它组成逆序对，相反如果左边元素先插入，则说明不存在逆序对
                 nums[k] = tmp[j++];
-                reverse_count += mid - i + 1; // 统计逆序对
+                reverse_count += mid - i + 1;  // 统计逆序对
             }
         }
         return reverse_count;
     }
 };
 
-int main()
-{
-    std::vector<int> nums = { 7, 5, 6, 4 };
+int main() {
+    std::vector<int> nums = {7, 5, 6, 4};
     Solution().reversePairs(nums);
 }

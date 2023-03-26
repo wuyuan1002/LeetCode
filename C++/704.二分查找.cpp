@@ -10,8 +10,7 @@ public:
     // 35. 搜索插入位置
     // 34. 在排序数组中查找元素的第一个和最后一个位置
     // offer 11、leetcode 33、35、153
-    int search(std::vector<int>& nums, int target)
-    {
+    int search(std::vector<int>& nums, int target) {
         int l = 0, r = nums.size() - 1;
         while (l <= r) {
             int mid = l + (r - l) / 2;
@@ -27,9 +26,8 @@ public:
     }
 };
 
-int main()
-{
-    std::vector<int> nums = { 2, 5, 7, 12, 34, 54, 56, 77, 89 };
+int main() {
+    std::vector<int> nums = {2, 5, 7, 12, 34, 54, 56, 77, 89};
     printf("%d", Solution().search(nums, 7));
     return 0;
 }

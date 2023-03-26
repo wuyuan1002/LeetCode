@@ -13,8 +13,7 @@ public:
     // 1. 前序遍历构造链表
     // 2. 后序遍历构造链表
     TreeNode* pre = nullptr;
-    void flatten(TreeNode* root)
-    {
+    void flatten(TreeNode* root) {
         if (root == nullptr) {
             return;
         }

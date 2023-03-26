@@ -11,9 +11,8 @@
 class Solution {
 public:
     // 同剪绳子
-    int integerBreak(int n)
-    {
-        std::vector<int> dp(n + 1, 0); // 拆分数字i所能得到的最大乘积 -- dp[i] = max(dp[i], dp[j] * dp[i-j])
+    int integerBreak(int n) {
+        std::vector<int> dp(n + 1, 0);  // 拆分数字i所能得到的最大乘积 -- dp[i] = max(dp[i], dp[j] * dp[i-j])
         dp[1] = 1;
         dp[2] = 2;
         dp[3] = 3;

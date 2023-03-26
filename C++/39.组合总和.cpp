@@ -17,8 +17,7 @@ class Solution {
 public:
     // 1. 回溯法
     // 2. 动态规划 -- 完全背包问题
-    std::vector<std::vector<int>> combinationSum(std::vector<int>& candidates, int target)
-    {
+    std::vector<std::vector<int>> combinationSum(std::vector<int>& candidates, int target) {
         // 此题说明了数组中无重复元素, 所以不用先排序进行剪枝 -- 见40
         // quick_sort(candidates, 0, candidates.size() - 1);
 
@@ -28,8 +27,7 @@ public:
         return result;
     }
 
-    void dfs(std::vector<int>& candidates, int start, int current_sum, int target, std::vector<int>& res, std::vector<std::vector<int>>& result)
-    {
+    void dfs(std::vector<int>& candidates, int start, int current_sum, int target, std::vector<int>& res, std::vector<std::vector<int>>& result) {
         if (current_sum == target) {
             result.push_back(res);
             return;
@@ -54,13 +52,12 @@ public:
     }
 
     // 2. 动态规划 -- 组合问题 -- 完全背包问题 -- 只能求出解的个数, 无法求出每个解是什么
-    int combinationSum2(std::vector<int>& candidates, int target)
-    {
-        std::vector<int> dp(target + 1, 0); // dp[i] += dp[i - num]
+    int combinationSum2(std::vector<int>& candidates, int target) {
+        std::vector<int> dp(target + 1, 0);  // dp[i] += dp[i - num]
         dp[0] = 0;
 
-        for (int num : candidates) { // 遍历物品
-            for (int i = 1; i <= target; i++) { // 遍历背包容量 -- 若每个数字只能使用1次, 则应该倒序遍历, 如40
+        for (int num : candidates) {             // 遍历物品
+            for (int i = 1; i <= target; i++) {  // 遍历背包容量 -- 若每个数字只能使用1次, 则应该倒序遍历, 如40
                 if (i >= num) {
                     dp[i] += dp[i - num];
                 }

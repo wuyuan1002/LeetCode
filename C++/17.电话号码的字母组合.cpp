@@ -14,21 +14,20 @@
 class Solution {
 private:
     const std::string phone[10] = {
-        "", // 0
-        "", // 1
-        "abc", // 2
-        "def", // 3
-        "ghi", // 4
-        "jkl", // 5
-        "mno", // 6
-        "pqrs", // 7
-        "tuv", // 8
-        "wxyz", // 9
+        "",      // 0
+        "",      // 1
+        "abc",   // 2
+        "def",   // 3
+        "ghi",   // 4
+        "jkl",   // 5
+        "mno",   // 6
+        "pqrs",  // 7
+        "tuv",   // 8
+        "wxyz",  // 9
     };
 
 public:
-    std::vector<std::string> letterCombinations(std::string digits)
-    {
+    std::vector<std::string> letterCombinations(std::string digits) {
         if (digits == "") {
             return {};
         }
@@ -38,8 +37,7 @@ public:
         return result;
     }
 
-    void dfs(const std::string& digits, int index, std::string& res, std::vector<std::string>& result)
-    {
+    void dfs(const std::string& digits, int index, std::string& res, std::vector<std::string>& result) {
         if (index == digits.size()) {
             result.push_back(res);
             return;

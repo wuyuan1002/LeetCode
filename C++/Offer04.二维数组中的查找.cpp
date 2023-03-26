@@ -12,13 +12,12 @@ class Solution {
 public:
     // 240
     // 从左下角开始找
-    bool findNumberIn2DArray(std::vector<std::vector<int>>& matrix, int target)
-    {
+    bool findNumberIn2DArray(std::vector<std::vector<int>>& matrix, int target) {
         if (matrix.size() == 0 || matrix[0].size() == 0) {
             return false;
         }
 
-        int i = matrix.size() - 1, j = 0; // i,j指向左下角元素，由左下开始移动
+        int i = matrix.size() - 1, j = 0;  // i,j指向左下角元素，由左下开始移动
         while (i >= 0 && j <= matrix[0].size() - 1) {
             if (matrix[i][j] > target) {
                 i--;
@@ -33,9 +32,8 @@ public:
     }
 };
 
-int main()
-{
-    std::vector<std::vector<int>> list = { {} };
+int main() {
+    std::vector<std::vector<int>> list = {{}};
     bool res = Solution().findNumberIn2DArray(list, 1);
     std::cout << res << std::endl;
     return 0;

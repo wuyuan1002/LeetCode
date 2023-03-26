@@ -7,8 +7,7 @@
 
 class Solution {
 public:
-    ListNode* removeElements(ListNode* head, int val)
-    {
+    ListNode* removeElements(ListNode* head, int val) {
         ListNode* dummy = new ListNode(0, head);
         for (ListNode* node = dummy; node != nullptr && node->next != nullptr;) {
             if (node->next->val == val) {

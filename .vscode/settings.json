@@ -72,5 +72,5 @@
         "queue": "cpp",
         "memory_resource": "cpp"
     },
-    "C_Cpp.clang_format_style": "{ BasedOnStyle: WebKit}"
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4, AccessModifierOffset: -4, ColumnLimit: 0}"
 }

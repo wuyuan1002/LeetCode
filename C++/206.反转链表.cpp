@@ -7,8 +7,7 @@
 class Solution {
 public:
     // 三指针
-    ListNode* reverseList(ListNode* head)
-    {
+    ListNode* reverseList(ListNode* head) {
         ListNode *pre = nullptr, *node = head, *next = head;
         while (node != nullptr) {
             next = node->next;

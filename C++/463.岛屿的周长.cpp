@@ -14,8 +14,7 @@
 
 class Solution {
 public:
-    int islandPerimeter(std::vector<std::vector<int>>& grid)
-    {
+    int islandPerimeter(std::vector<std::vector<int>>& grid) {
         for (int i = 0; i < grid.size(); ++i) {
             for (int j = 0; j < grid[i].size(); ++j) {
                 if (grid[i][j] == 1) {
@@ -30,8 +29,7 @@ public:
 
     // 土地到土地 -- 不会跨越边长
     // 土地到海洋，土地到超出边界 -- 跨越一条边长
-    int dfs(std::vector<std::vector<int>>& grid, int i, int j)
-    {
+    int dfs(std::vector<std::vector<int>>& grid, int i, int j) {
         if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size() || grid[i][j] == 0) {
             // 若当前位置是海洋或超出边界，土地到海洋，土地到超出边界，返回1
             return 1;

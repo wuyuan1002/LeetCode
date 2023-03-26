@@ -11,15 +11,14 @@
 class Solution {
 public:
     // 1.
-    int maxSubArray(std::vector<int>& nums)
-    {
+    int maxSubArray(std::vector<int>& nums) {
         if (nums.empty()) {
             return 0;
         } else if (nums.size() == 1) {
             return nums[0];
         }
 
-        int sum = nums[0], max_sum = nums[0]; // 当前和、最大和
+        int sum = nums[0], max_sum = nums[0];  // 当前和、最大和
         for (int i = 1; i < nums.size(); i++) {
             sum = std::max(sum + nums[i], nums[i]);
             max_sum = std::max(sum, max_sum);
@@ -29,15 +28,14 @@ public:
     }
 
     // 2. 动态规划
-    int maxSubArray(std::vector<int>& nums)
-    {
+    int maxSubArray(std::vector<int>& nums) {
         if (nums.empty()) {
             return 0;
         }
 
-        int max_sum = nums[0]; // 最大和
+        int max_sum = nums[0];  // 最大和
 
-        std::vector<int> dp(nums.size()); // dp[i]表示以第i个数结尾的最大和
+        std::vector<int> dp(nums.size());  // dp[i]表示以第i个数结尾的最大和
         dp[0] = nums[0];
 
         for (int i = 1; i < nums.size(); i++) {

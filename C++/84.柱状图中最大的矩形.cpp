@@ -12,11 +12,10 @@
 class Solution {
 public:
     // 每个柱子能构成的最大面积 == 柱子高度 * 左右比它低的柱子间距离
-    int largestRectangleArea(std::vector<int>& heights, int w)
-    {
-        heights.push_back(-1); // 往heights末尾插入一个比所有元素都小的值, 确保所有元素都被计算到
-        int res = 0; // 最大面积
-        std::stack<int> stack; // 单调递增栈 -- 存元素下标，栈内每个元素的前一个元素都是它左面第一个比它低的元素
+    int largestRectangleArea(std::vector<int>& heights, int w) {
+        heights.push_back(-1);  // 往heights末尾插入一个比所有元素都小的值, 确保所有元素都被计算到
+        int res = 0;            // 最大面积
+        std::stack<int> stack;  // 单调递增栈 -- 存元素下标，栈内每个元素的前一个元素都是它左面第一个比它低的元素
         for (int i = 0; i < heights.size(); ++i) {
             while (!stack.empty() && heights[i] < heights[stack.top()]) {
                 // 获取栈顶元素并出栈
@@ -36,8 +35,8 @@ public:
     }
 };
 
-int main()
-{
-    std::vector<int> heights = { 5, 3, 2 };
-    Solution().largestRectangleArea(heights);
+int main() {
+    std::vector<int> heights = {5, 3, 2};
+    Solution().largestRectangleArea(heights, 7);
+    return 0;
 }

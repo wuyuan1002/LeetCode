@@ -13,8 +13,7 @@ public:
     // 求水王数
     // 相当于一次删除两个不同的数字，有水王数时最后剩下的就是水王数，
     // 但若没有水王数时，也可能剩下来，此时需要再遍历一次数组查看剩下来数字的出现次数，比如1,2,3,4,5会剩下5
-    int majorityElement(std::vector<int>& nums)
-    {
+    int majorityElement(std::vector<int>& nums) {
         if (nums.size() == 0) {
             return 0;
         }

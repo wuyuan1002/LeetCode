@@ -13,8 +13,7 @@ public:
     // 704. 二分查找
     // 34. 在排序数组中查找元素的第一个和最后一个位置
     // offer 11、leetcode 33、35、153
-    int searchInsert(std::vector<int>& nums, int target)
-    {
+    int searchInsert(std::vector<int>& nums, int target) {
         int l = 0, r = nums.size() - 1;
         while (l <= r) {
             int mid = l + (r - l) / 2;

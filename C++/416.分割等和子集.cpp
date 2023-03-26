@@ -11,8 +11,7 @@ public:
     // Hot100 322, 518，39(与回溯法的区别)
     // 01背包问题
     // 背包问题 - 存在问题 -- dp[i] = dp[i] || dp[i-num]
-    bool canPartition(std::vector<int>& nums)
-    {
+    bool canPartition(std::vector<int>& nums) {
         int sum = 0;
         std::for_each(nums.begin(), nums.end(), [&sum](int n) { sum += n; });
         if (sum & 1 != 0) {
@@ -20,12 +19,12 @@ public:
             return false;
         }
 
-        int target = sum / 2; // 背包容量
-        std::vector<bool> dp(target + 1, false); // dp[i]表示是否存在子集和为i
-        dp[0] = true; // target=0不需要选择任何元素，所以是可以实现的
+        int target = sum / 2;                     // 背包容量
+        std::vector<bool> dp(target + 1, false);  // dp[i]表示是否存在子集和为i
+        dp[0] = true;                             // target=0不需要选择任何元素，所以是可以实现的
 
-        for (int num : nums) { // 遍历选择列表 -- 所有零钱
-            for (int i = target; i >= num; i--) { // 遍历目标值 -- 目标值target -- 每个物品只能被使用1次时就应该倒序遍历
+        for (int num : nums) {                     // 遍历选择列表 -- 所有零钱
+            for (int i = target; i >= num; i--) {  // 遍历目标值 -- 目标值target -- 每个物品只能被使用1次时就应该倒序遍历
                 dp[i] = dp[i] || dp[i - num];
             }
         }

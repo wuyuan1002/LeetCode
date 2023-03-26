@@ -16,8 +16,7 @@ public:
     // 同样类似于跳楼梯，只不过跳的楼梯数不是1和2，而是每一个金额数了
     // 背包问题 - 组合问题-- dp[i] += dp[i-num]
     // 同Hot100 494
-    int change(int amount, std::vector<int>& coins)
-    {
+    int change(int amount, std::vector<int>& coins) {
         if (coins.empty()) {
             return 0;
         }

@@ -14,10 +14,9 @@ class Solution {
 public:
     // 双指针 -- 两个指针向中间移动，每次都是移动数字小的那个
     // 类似 42
-    int maxArea(std::vector<int>& height)
-    {
-        int l = 0, r = height.size() - 1; // 左右指针
-        int res = 0; // 最大盛水量
+    int maxArea(std::vector<int>& height) {
+        int l = 0, r = height.size() - 1;  // 左右指针
+        int res = 0;                       // 最大盛水量
 
         while (l < r) {
             res = height[l] < height[r] ? std::max(res, (r - l) * height[l++]) : std::max(res, (r - l) * height[r--]);
@@ -26,8 +25,7 @@ public:
     }
 };
 
-int main()
-{
-    std::vector<int> list = { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
+int main() {
+    std::vector<int> list = {1, 8, 6, 2, 5, 4, 8, 3, 7};
     Solution().maxArea(list);
 }

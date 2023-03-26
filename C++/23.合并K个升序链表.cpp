@@ -4,15 +4,15 @@
 // 给你一个链表数组，每个链表都已经按升序排列。
 // 请你将所有链表合并到一个升序链表中，返回合并后的链表。
 
-#include "header.h"
 #include <vector>
+
+#include "header.h"
 
 class Solution {
 public:
     // leetcode 21
     // 1. 分治法 -- 类似归并排序，先解决前半部分链表合并，后解决后半部分链表合并，再合并两部分已合并好的链表；其实就是分割成两个链表合并问题
-    ListNode* mergeKLists(std::vector<ListNode*>& lists)
-    {
+    ListNode* mergeKLists(std::vector<ListNode*>& lists) {
         if (lists.empty()) {
             return nullptr;
         }
@@ -20,8 +20,7 @@ public:
         return merge(lists, 0, lists.size() - 1);
     }
 
-    ListNode* merge(std::vector<ListNode*>& lists, int l, int r)
-    {
+    ListNode* merge(std::vector<ListNode*>& lists, int l, int r) {
         if (l >= r) {
             return lists[l];
         }
@@ -33,8 +32,7 @@ public:
         return mergeTwoLists(left, right);
     }
 
-    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2)
-    {
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
         if (list1 == nullptr) {
             return list2;
         } else if (list2 == nullptr) {
@@ -50,8 +48,7 @@ public:
 
     // ---------
     // 2. 先合并数组中第1个和第2个链表，再将合并好的链表和第3个合并，再将合并好的链表和第4个合并...直到合并完数组中的所有链表
-    ListNode* mergeKLists(std::vector<ListNode*>& lists)
-    {
+    ListNode* mergeKLists(std::vector<ListNode*>& lists) {
         if (lists.empty()) {
             return nullptr;
         }

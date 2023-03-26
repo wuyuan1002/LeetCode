@@ -12,16 +12,14 @@
 
 class Solution {
 public:
-    std::vector<std::vector<int>> combinationSum3(int k, int n)
-    {
+    std::vector<std::vector<int>> combinationSum3(int k, int n) {
         std::vector<int> res;
         std::vector<std::vector<int>> result;
         dfs(1, k, 0, n, res, result);
         return result;
     }
 
-    void dfs(int start, int k, int current_sum, int target, std::vector<int>& res, std::vector<std::vector<int>>& result)
-    {
+    void dfs(int start, int k, int current_sum, int target, std::vector<int>& res, std::vector<std::vector<int>>& result) {
         if (current_sum == target && res.size() == k) {
             result.push_back(res);
             return;

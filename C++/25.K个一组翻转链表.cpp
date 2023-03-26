@@ -12,8 +12,7 @@
 
 class Solution {
 public:
-    ListNode* reverseKGroup(ListNode* head, int k)
-    {
+    ListNode* reverseKGroup(ListNode* head, int k) {
         ListNode* next_group_start_node = head;
         for (int i = 0; i < k; ++i) {
             if (next_group_start_node == nullptr) {
@@ -32,8 +31,7 @@ public:
 
 private:
     // 反转链表
-    ListNode* reverse(ListNode* head, ListNode* next_group_start_node)
-    {
+    ListNode* reverse(ListNode* head, ListNode* next_group_start_node) {
         ListNode *pre = next_group_start_node, *node = head, *next = head;
         while (node != next_group_start_node) {
             next = node->next;

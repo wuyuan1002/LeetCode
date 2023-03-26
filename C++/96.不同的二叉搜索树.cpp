@@ -9,8 +9,7 @@
 class Solution {
 public:
     // 动态规划
-    int numTrees(int n)
-    {
+    int numTrees(int n) {
         // dp[i]表示总数为i个节点时所能的不同二叉排序树的总数
         std::vector<int> dp(n + 1);
         dp[0] = 1;

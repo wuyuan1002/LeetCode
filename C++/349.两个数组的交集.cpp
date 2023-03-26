@@ -8,8 +8,7 @@
 
 class Solution {
 public:
-    std::vector<int> intersection(std::vector<int>& nums1, std::vector<int>& nums2)
-    {
+    std::vector<int> intersection(std::vector<int>& nums1, std::vector<int>& nums2) {
         std::unordered_set<int> result;
         std::unordered_set<int> nums1_set(nums1.begin(), nums1.end());
 

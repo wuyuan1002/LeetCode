@@ -11,8 +11,7 @@
 
 class Solution {
 public:
-    std::vector<std::vector<int>> threeSum(std::vector<int>& nums)
-    {
+    std::vector<std::vector<int>> threeSum(std::vector<int>& nums) {
         // std::sort(nums.begin(), nums.end());
         quick_sort(nums, 0, nums.size() - 1);
 
@@ -34,11 +33,13 @@ public:
                 } else if (sum < 0) {
                     ++l;
                 } else {
-                    result.push_back({ nums[i], nums[l], nums[r] });
+                    result.push_back({nums[i], nums[l], nums[r]});
 
                     // 跳过重复元素
-                    for (++l; l < r && nums[l] == nums[l - 1]; ++l) { }
-                    for (--r; l < r && nums[r] == nums[r + 1]; --r) { }
+                    for (++l; l < r && nums[l] == nums[l - 1]; ++l) {
+                    }
+                    for (--r; l < r && nums[r] == nums[r + 1]; --r) {
+                    }
                 }
             }
         }
@@ -46,8 +47,7 @@ public:
         return result;
     }
 
-    void quick_sort(std::vector<int>& nums, int left, int right)
-    {
+    void quick_sort(std::vector<int>& nums, int left, int right) {
         if (nums.empty() || left >= right) {
             return;
         }
@@ -55,8 +55,10 @@ public:
         int l = left, r = right;
         int pivot = nums[left];
         while (l != r) {
-            for (; l < r && nums[r] >= pivot; --r) { }
-            for (; l < r && nums[l] <= pivot; ++l) { }
+            for (; l < r && nums[r] >= pivot; --r) {
+            }
+            for (; l < r && nums[l] <= pivot; ++l) {
+            }
             if (l < r) {
                 std::swap(nums[l], nums[r]);
             }

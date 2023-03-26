@@ -10,15 +10,13 @@
 class Solution {
 public:
     // 回溯法
-    std::vector<std::vector<int>> permute(std::vector<int>& nums)
-    {
+    std::vector<std::vector<int>> permute(std::vector<int>& nums) {
         std::vector<std::vector<int>> result;
         dfs(nums, 0, result);
         return result;
     }
 
-    void dfs(std::vector<int>& nums, int index, std::vector<std::vector<int>>& result)
-    {
+    void dfs(std::vector<int>& nums, int index, std::vector<std::vector<int>>& result) {
         if (index == nums.size()) {
             result.push_back(nums);
             return;

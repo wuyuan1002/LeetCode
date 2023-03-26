@@ -9,8 +9,7 @@
 
 class Solution {
 public:
-    int numIslands(std::vector<std::vector<char>>& grid)
-    {
+    int numIslands(std::vector<std::vector<char>>& grid) {
         int count = 0;
         for (int i = 0; i < grid.size(); ++i) {
             for (int j = 0; j < grid[i].size(); ++j) {
@@ -25,8 +24,7 @@ public:
         return count;
     }
 
-    void dfs(std::vector<std::vector<char>>& grid, int i, int j)
-    {
+    void dfs(std::vector<std::vector<char>>& grid, int i, int j) {
         // 若当前位置不是岛屿或已被访问过，直接返回
         if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size() || grid[i][j] != '1') {
             return;

@@ -12,9 +12,8 @@ public:
     // 因为每个数字都在0~n-1范围内，所以如果所有数字都不重复的话，每个数字对应一个下标，但是若有数字重复的话
     // 就会有一个数字对应多个下标。因此，可以遍历数组，把遇到的每一个数字都放到它对应的下标处，如果在放某个数字时发现
     // 下标处的数字已经和下标相等了，那么这个数字就是重复数字
-    int findRepeatNumber(std::vector<int>& nums)
-    {
-        int i = 0, num = 0; // 当前下标和对应的数字
+    int findRepeatNumber(std::vector<int>& nums) {
+        int i = 0, num = 0;  // 当前下标和对应的数字
         while (i < nums.size()) {
             num = nums[i];
 

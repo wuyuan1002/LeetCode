@@ -3,19 +3,13 @@ struct ListNode {
     ListNode* next;
 
     ListNode()
-        : val(0)
-        , next(nullptr)
-    {
+        : val(0), next(nullptr) {
     }
     ListNode(int x)
-        : val(x)
-        , next(nullptr)
-    {
+        : val(x), next(nullptr) {
     }
     ListNode(int x, ListNode* next)
-        : val(x)
-        , next(next)
-    {
+        : val(x), next(next) {
     }
     ~ListNode() = default;
 };
@@ -25,22 +19,13 @@ struct TreeNode {
     TreeNode* left;
     TreeNode* right;
     TreeNode()
-        : val(0)
-        , left(nullptr)
-        , right(nullptr)
-    {
+        : val(0), left(nullptr), right(nullptr) {
     }
     TreeNode(int x)
-        : val(x)
-        , left(nullptr)
-        , right(nullptr)
-    {
+        : val(x), left(nullptr), right(nullptr) {
     }
     TreeNode(int x, TreeNode* left, TreeNode* right)
-        : val(x)
-        , left(left)
-        , right(right)
-    {
+        : val(x), left(left), right(right) {
     }
     ~TreeNode() = default;
 };

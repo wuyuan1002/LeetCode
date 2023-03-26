@@ -15,8 +15,7 @@ public:
     // 1.使用插入排序，在排序过程中计算最长连续序列
     // 2.依次遍历数组中每一个数字x，不断尝试寻找x+1,x+2...是否存在，这个寻找的过程，可以使用map或set来做到O(1)的时间复杂度
     // 3.不可以也像Hot100 300那样用动态规划
-    int longestConsecutive(std::vector<int>& nums)
-    {
+    int longestConsecutive(std::vector<int>& nums) {
         if (nums.size() == 0) {
             return 0;
         }
@@ -33,7 +32,8 @@ public:
 
             // 查找x+1,x+2,x+3,x+4...
             int i = 1;
-            for (; num_set.find(num + i) != num_set.end(); i++) { }
+            for (; num_set.find(num + i) != num_set.end(); i++) {
+            }
 
             // 更新最长连续序列
             longest = std::max(longest, i);

@@ -24,8 +24,7 @@ public:
     // 5. 第三次买入
     // 6. 第三次卖出
     // 7. ...
-    int maxProfit(int k, std::vector<int>& prices)
-    {
+    int maxProfit(int k, std::vector<int>& prices) {
         if (prices.empty()) {
             return 0;
         }
@@ -44,10 +43,10 @@ public:
             for (int j = 1; j < dp[i].size(); j++) {
                 if (j % 2 != 0) {
                     // 2. 奇数为买入状态
-                    dp[i][j] = std::max(dp[i - 1][j], dp[i - 1][j - 1] - prices[i]); // 保持前一天的买入状态或在前一天卖出的情况下买入
+                    dp[i][j] = std::max(dp[i - 1][j], dp[i - 1][j - 1] - prices[i]);  // 保持前一天的买入状态或在前一天卖出的情况下买入
                 } else {
                     // 3. 偶数为卖出状态
-                    dp[i][j] = std::max(dp[i - 1][j], dp[i - 1][j - 1] + prices[i]); // 保持前一天的卖出状态或在前一天没有卖出的情况下卖出
+                    dp[i][j] = std::max(dp[i - 1][j], dp[i - 1][j - 1] + prices[i]);  // 保持前一天的卖出状态或在前一天没有卖出的情况下卖出
                 }
             }
         }

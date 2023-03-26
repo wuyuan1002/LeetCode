@@ -14,8 +14,7 @@
 class Solution {
 public:
     // 二分法
-    int search(std::vector<int>& nums, int target)
-    {
+    int search(std::vector<int>& nums, int target) {
         if (nums.size() == 0) {
             return -1;
         } else if (nums.size() == 0) {
@@ -30,13 +29,13 @@ public:
                 return mid;
             }
 
-            if (nums[0] <= nums[mid]) { // 若左面时排好序的
+            if (nums[0] <= nums[mid]) {  // 若左面时排好序的
                 if (nums[0] <= target && nums[mid] > target) {
                     r = mid - 1;
                 } else {
                     l = mid + 1;
                 }
-            } else { // 若右面是排好序的
+            } else {  // 若右面是排好序的
                 if (nums[nums.size() - 1] >= target && nums[mid] < target) {
                     l = mid + 1;
                 } else {

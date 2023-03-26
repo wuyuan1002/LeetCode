@@ -28,8 +28,7 @@ public:
     // dp[i][1] = max(dp[i - 1][1], dp[i - 1][3]);
     // dp[i][2] = dp[i - 1][0] + prices[i];
     // dp[i][3] = dp[i - 1][2];
-    int maxProfit(std::vector<int>& prices)
-    {
+    int maxProfit(std::vector<int>& prices) {
         std::vector<std::vector<int>> dp(prices.size(), std::vector<int>(4, 0));
 
         // 初始化dp

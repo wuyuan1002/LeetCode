@@ -10,13 +10,12 @@ class Solution {
 public:
     // 动态规划
     // 以某个值结尾的最大乘积 = max(当前元素, max(以上一个元素结尾的的最小乘积 * 当前元素, 以上一个元素结尾的的最大乘积 * 当前元素))
-    int maxProduct(std::vector<int>& nums)
-    {
+    int maxProduct(std::vector<int>& nums) {
         if (nums.size() < 2) {
             return nums[0];
         }
 
-        int max_product = nums[0]; // 最大乘积
+        int max_product = nums[0];  // 最大乘积
 
         // 以前一个元素结尾的子数组乘积的最小值、最大值
         int min_pre = nums[0], max_pre = nums[0];

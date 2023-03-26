@@ -17,8 +17,7 @@ public:
     // 其实就是求两个字符串的最长公共子序列的长度, 因为公共子序列数字的相对位置不变, 这样画出的线一定不相交
     //
     // 动态规划 -- 同最长公共子序列
-    int maxUncrossedLines(std::vector<int>& nums1, std::vector<int>& nums2)
-    {
+    int maxUncrossedLines(std::vector<int>& nums1, std::vector<int>& nums2) {
         std::vector<std::vector<int>> dp(nums1.size() + 1, std::vector<int>(nums2.size() + 1, 0));
 
         for (int i = 1; i <= nums1.size(); i++) {

@@ -9,8 +9,7 @@
 
 class Solution {
 public:
-    std::vector<std::vector<int>> merge(std::vector<std::vector<int>>& intervals)
-    {
+    std::vector<std::vector<int>> merge(std::vector<std::vector<int>>& intervals) {
         if (intervals.empty()) {
             return {};
         }
@@ -20,8 +19,8 @@ public:
             return a[0] < b[0];
         });
 
-        std::vector<std::vector<int>> result; // 结果集
-        std::vector<int> current = intervals[0]; // 当前总区间
+        std::vector<std::vector<int>> result;     // 结果集
+        std::vector<int> current = intervals[0];  // 当前总区间
         for (int i = 1; i < intervals.size(); ++i) {
             std::vector<int> interval = intervals[i];
             if (interval[0] <= current[1]) {

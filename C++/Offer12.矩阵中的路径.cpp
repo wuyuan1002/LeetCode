@@ -12,8 +12,7 @@
 
 class Solution {
 public:
-    bool exist(std::vector<std::vector<char>>& board, std::string word)
-    {
+    bool exist(std::vector<std::vector<char>>& board, std::string word) {
         std::vector<std::vector<bool>> visited(board.size(), std::vector<bool>(board[0].size(), false));
         for (int i = 0; i < board.size(); ++i) {
             for (int j = 0; j < board[0].size(); ++j) {
@@ -25,13 +24,12 @@ public:
         return false;
     }
 
-    bool dfs(std::vector<std::vector<char>>& board, int i, int j, int index, std::string& word, std::vector<std::vector<bool>>& visited)
-    {
+    bool dfs(std::vector<std::vector<char>>& board, int i, int j, int index, std::string& word, std::vector<std::vector<bool>>& visited) {
         if (index >= word.size()) {
             return true;
         }
 
-        bool exist = false; // 从当前位置出发, 是否存在完整路径
+        bool exist = false;  // 从当前位置出发, 是否存在完整路径
         if (i >= 0 && i < board.size() && j >= 0 && j < board[0].size() && word[index] == board[i][j] && !visited[i][j]) {
             // 标记当前字母已被使用
             visited[i][j] = true;

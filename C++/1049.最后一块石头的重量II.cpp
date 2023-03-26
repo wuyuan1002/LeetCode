@@ -17,17 +17,16 @@ public:
     // 动态规划 -- 01背包
     // 类似hoot100 416
     // 尽量让石头分成重量相同的两堆，相撞之后剩下的石头最小，这样就化解成01背包问题了
-    int lastStoneWeightII(std::vector<int>& stones)
-    {
+    int lastStoneWeightII(std::vector<int>& stones) {
         int sum = 0;
         std::for_each(stones.begin(), stones.end(), [&sum](int n) { sum += n; });
-        int target = sum / 2; // 目标和向下取整，接下来计算容量为target的背包所能背的最大重量
+        int target = sum / 2;  // 目标和向下取整，接下来计算容量为target的背包所能背的最大重量
 
-        std::vector<int> dp(target + 1, 0); // dp[i]表示容量为i的背包所能盛放的最大重量 -- dp[i] = max(dp[i], dp[i - num] + num)
+        std::vector<int> dp(target + 1, 0);  // dp[i]表示容量为i的背包所能盛放的最大重量 -- dp[i] = max(dp[i], dp[i - num] + num)
         dp[0] = 0;
 
-        for (int stone : stones) { //遍历物品
-            for (int i = target; i >= stone; i--) { // 遍历背包容量 -- 一块石头只能使用一次, 倒序遍历
+        for (int stone : stones) {                   //遍历物品
+            for (int i = target; i >= stone; i--) {  // 遍历背包容量 -- 一块石头只能使用一次, 倒序遍历
                 dp[i] = std::max(dp[i], dp[i - stone] + stone);
             }
         }

@@ -15,8 +15,7 @@
 
 class Solution {
 public:
-    std::vector<std::string> restoreIpAddresses(std::string s)
-    {
+    std::vector<std::string> restoreIpAddresses(std::string s) {
         if (s == "") {
             return {};
         }
@@ -27,8 +26,7 @@ public:
         return result;
     }
 
-    void dfs(std::string& s, int start, std::vector<std::string>& res, std::vector<std::string>& result)
-    {
+    void dfs(std::string& s, int start, std::vector<std::string>& res, std::vector<std::string>& result) {
         if (res.size() == 4) {
             if (start == s.size()) {
                 std::string ip;

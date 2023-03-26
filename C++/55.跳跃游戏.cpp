@@ -10,9 +10,8 @@
 
 class Solution {
 public:
-    bool canJump(std::vector<int>& nums)
-    {
-        int farthest = 0; // 能跳到的最远距离
+    bool canJump(std::vector<int>& nums) {
+        int farthest = 0;  // 能跳到的最远距离
         for (int i = 0; i < nums.size(); ++i) {
             if (i > farthest) {
                 return false;

@@ -16,19 +16,18 @@ public:
     // 同 213、337
     // 动态规划
     // 偷到某个房屋的最大价值 = max(当前房屋价值+前两个房屋最大价值, 前一个房屋的最大价值)
-    int rob(std::vector<int>& nums)
-    {
+    int rob(std::vector<int>& nums) {
         if (nums.size() == 0) {
             return 0;
         } else if (nums.size() == 1) {
             return nums[0];
         }
 
-        int pre_two = nums[0]; // 前两个房屋的最大价值
-        int pre_one = std::max(nums[0], nums[1]); // 前一个房屋的最大价值
+        int pre_two = nums[0];                     // 前两个房屋的最大价值
+        int pre_one = std::max(nums[0], nums[1]);  // 前一个房屋的最大价值
 
         for (int i = 2; i < nums.size(); i++) {
-            int price = std::max(nums[i] + pre_two, pre_one); // 偷当前房屋的最大价值
+            int price = std::max(nums[i] + pre_two, pre_one);  // 偷当前房屋的最大价值
 
             pre_two = pre_one;
             pre_one = price;

@@ -15,8 +15,7 @@
 class Solution {
 public:
     // 等于在所有机器人的运动的范围中最大的那个
-    int maxAreaOfIsland(std::vector<std::vector<int>>& grid)
-    {
+    int maxAreaOfIsland(std::vector<std::vector<int>>& grid) {
         int max_area = 0;
         for (int i = 0; i < grid.size(); ++i) {
             for (int j = 0; j < grid[i].size(); ++j) {
@@ -29,8 +28,7 @@ public:
         return max_area;
     }
 
-    int dfs(std::vector<std::vector<int>>& grid, int i, int j)
-    {
+    int dfs(std::vector<std::vector<int>>& grid, int i, int j) {
         // 若当前位置不是岛屿或已被访问过，直接返回
         if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size() || grid[i][j] != 1) {
             return 0;

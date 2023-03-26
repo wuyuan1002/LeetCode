@@ -14,8 +14,7 @@ class Solution {
 public:
     // 类似 128、300
     // 动态规划 -- dp[i]表示以下标i处数字结尾的连续递增序列长度
-    int findLengthOfLCIS(std::vector<int>& nums)
-    {
+    int findLengthOfLCIS(std::vector<int>& nums) {
         std::vector<int> dp(nums.size(), 1);
 
         int max_len = 1;

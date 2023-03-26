@@ -6,21 +6,21 @@
 // 路径和 是路径中各节点值的总和。
 // 给你一个二叉树的根节点 root ，返回其 最大路径和 。
 
-#include "header.h"
-#include <algorithm>
 #include <stdint.h>
+
+#include <algorithm>
+
+#include "header.h"
 
 class Solution {
 public:
-    int maxPathSum(TreeNode* root)
-    {
+    int maxPathSum(TreeNode* root) {
         int max_sum = INT32_MIN;
         path_sum(root, &max_sum);
         return max_sum;
     }
 
-    int path_sum(TreeNode* root, int* max_sum)
-    {
+    int path_sum(TreeNode* root, int* max_sum) {
         if (root == nullptr) {
             return 0;
         }

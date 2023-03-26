@@ -10,9 +10,8 @@
 class Solution {
 public:
     // 动态规划 -- 到达某一个位置的走法 == 它上面位置的走法个数 + 左面位置的走法个数
-    int uniquePathsWithObstacles(std::vector<std::vector<int>>& obstacleGrid)
-    {
-        std::vector<std::vector<int>> dp(obstacleGrid.size(), std::vector<int>(obstacleGrid[0].size(), 0)); // dp数组
+    int uniquePathsWithObstacles(std::vector<std::vector<int>>& obstacleGrid) {
+        std::vector<std::vector<int>> dp(obstacleGrid.size(), std::vector<int>(obstacleGrid[0].size(), 0));  // dp数组
         // 初始化第一行和第一列的走法个数
         for (int i = 0; i < obstacleGrid.size(); ++i) {
             if (obstacleGrid[i][0] == 1) {

@@ -14,8 +14,7 @@ public:
     // 类似 128、674
     // 动态规划 -- dp[i]表示以第i个数字结尾的最长递增序列的长度 -- dp[i] = max(dp[i], dp[j] + 1) for j in [0, i)
 
-    int lengthOfLIS(std::vector<int>& nums)
-    {
+    int lengthOfLIS(std::vector<int>& nums) {
         std::vector<int> dp(nums.size(), 1);
 
         int max_len = 1;

@@ -6,8 +6,9 @@
 //
 // 你可以不用到任何额外空间并在O(n)时间复杂度内解决这个问题吗？
 
-#include <iostream>
 #include <math.h>
+
+#include <iostream>
 #include <vector>
 
 class Solution {
@@ -19,8 +20,7 @@ public:
     // 使用下标位置数字的正负值来表示对应数字是否已出现过, 遍历时若下标处数字为正, 说明现在数字是第一次出现,
     // 将下标处数字置为负数, 若下标处数字为负数, 说明当前数字已经出现过, 为重复数字, 写入结果并将下标处数字
     // 重新置为正数(为了将数组恢复原样)
-    std::vector<int> findDuplicates(std::vector<int>& nums)
-    {
+    std::vector<int> findDuplicates(std::vector<int>& nums) {
         std::vector<int> result;
 
         for (int n : nums) {
@@ -40,9 +40,8 @@ public:
     }
 };
 
-int main()
-{
-    std::vector<int> list = { 4, 3, 2, 7, 8, 2, 3, 1 };
+int main() {
+    std::vector<int> list = {4, 3, 2, 7, 8, 2, 3, 1};
     auto res = Solution().findDuplicates(list);
     for (auto i : res) {
         std::cout << i << std::endl;

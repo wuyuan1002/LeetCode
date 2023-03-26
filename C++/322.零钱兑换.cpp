@@ -15,17 +15,16 @@ public:
     // 类似Hot100 518, 416，39(与回溯法的区别)
     // 完全背包问题
     // 动态规划 -- dp[i]表示i元的最少硬币数 -- dp[i] = min(dp[i], dp[i-num]+1)
-    int coinChange(std::vector<int>& coins, int amount)
-    {
+    int coinChange(std::vector<int>& coins, int amount) {
         if (coins.size() == 0 || amount < 0) {
             return -1;
         }
 
-        std::vector<int> dp(amount + 1, amount + 1); // 初始化dp数组 -- dp[i]最大的可能性也只能是amount, 因此用amount+1表示该金额无法被组成
+        std::vector<int> dp(amount + 1, amount + 1);  // 初始化dp数组 -- dp[i]最大的可能性也只能是amount, 因此用amount+1表示该金额无法被组成
         dp[0] = 0;
 
-        for (int coin : coins) { // 遍历每一个物品
-            for (int i = 1; i <= amount; i++) { // 遍历背包容量 -- 求选择这个物品后构成目标值的最优解 -- 每个物品只能被使用1次时应该是倒序遍历，如Hot100 416、494
+        for (int coin : coins) {                 // 遍历每一个物品
+            for (int i = 1; i <= amount; i++) {  // 遍历背包容量 -- 求选择这个物品后构成目标值的最优解 -- 每个物品只能被使用1次时应该是倒序遍历，如Hot100 416、494
                 if (i >= coin) {
                     dp[i] = std::min(dp[i - coin] + 1, dp[i]);
                 }

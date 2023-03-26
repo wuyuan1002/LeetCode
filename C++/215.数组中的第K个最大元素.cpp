@@ -9,8 +9,7 @@
 
 class Solution {
 public:
-    int findKthLargest(std::vector<int>& nums, int k)
-    {
+    int findKthLargest(std::vector<int>& nums, int k) {
         if (k <= 0 || k > nums.size()) {
             return 0;
         }
@@ -23,14 +22,15 @@ public:
         return nums[index];
     }
 
-    int partition(std::vector<int>& nums, int left, int right)
-    {
+    int partition(std::vector<int>& nums, int left, int right) {
         int l = left, r = right;
         int povit = nums[left];
 
         while (l < r) {
-            for (; l < r && nums[r] <= povit; r--) { }
-            for (; l < r && nums[l] >= povit; l++) { }
+            for (; l < r && nums[r] <= povit; r--) {
+            }
+            for (; l < r && nums[l] >= povit; l++) {
+            }
             if (l < r) {
                 std::swap(nums[l], nums[r]);
             }

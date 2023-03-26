@@ -13,13 +13,11 @@ public:
     // 类似Hot100 23, offer 51
     // 1.插入排序 O(n2)
     // 2.归并排序 O(nlogn) -- 自顶向下，或自底向上
-    ListNode* sortList(ListNode* head)
-    {
+    ListNode* sortList(ListNode* head) {
         return sort(head, nullptr);
     }
 
-    ListNode* sort(ListNode* head, ListNode* tail)
-    {
+    ListNode* sort(ListNode* head, ListNode* tail) {
         // [head, tail)
         if (head == nullptr) {
             return nullptr;
@@ -42,8 +40,7 @@ public:
         return mergeTwoLists(sort(head, mid), sort(mid, tail));
     }
 
-    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2)
-    {
+    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
         if (list1 == nullptr) {
             return list2;
         } else if (list2 == nullptr) {

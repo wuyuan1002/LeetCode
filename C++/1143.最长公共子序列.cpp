@@ -17,8 +17,7 @@ public:
     // 同1035. 不相交的线
     // 类似于 392. 判断子序列、718. 最长重复子数组、115. 不同的子序列、礼物的最大价值、零钱兑换、不同路径
     // 动态规划，二维dp -- dp[i][j]表示以下标i-1结尾的text1和下标j-1结尾的text2的数组的字符串的公共子序列长度
-    int longestCommonSubsequence(std::string text1, std::string text2)
-    {
+    int longestCommonSubsequence(std::string text1, std::string text2) {
         if (text1.empty() || text2.empty()) {
             return 0;
         }
@@ -43,8 +42,7 @@ public:
     }
 
     // 滚动数组 -- 一维dp
-    int longestCommonSubsequence(std::string text1, std::string text2)
-    {
+    int longestCommonSubsequence(std::string text1, std::string text2) {
         if (text1.empty() || text2.empty()) {
             return 0;
         }
@@ -53,7 +51,7 @@ public:
         dp[0] = 0;
 
         for (int i = 1; i <= text1.size(); i++) {
-            int up_left = 0; // 记录左上角的值, 防止被覆盖
+            int up_left = 0;  // 记录左上角的值, 防止被覆盖
             for (int j = 1; j <= text2.size(); j++) {
                 int tmp = dp[j];
                 if (text1[i - 1] == text2[j - 1]) {
@@ -62,7 +60,7 @@ public:
                     dp[j] = std::max(dp[j - 1], dp[j]);
                 }
 
-                up_left = tmp; // 记录下一个字母的左上角的值
+                up_left = tmp;  // 记录下一个字母的左上角的值
             }
         }
 

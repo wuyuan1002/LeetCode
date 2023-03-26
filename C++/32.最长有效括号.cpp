@@ -8,8 +8,7 @@
 
 class Solution {
 public:
-    int longestValidParentheses(std::string s)
-    {
+    int longestValidParentheses(std::string s) {
         int left = 0, right = 0, max_len = 0;
 
         // 正序遍历字符串

@@ -12,8 +12,7 @@
 class Solution {
 public:
     // 回溯法
-    bool exist(std::vector<std::vector<char>>& board, std::string word)
-    {
+    bool exist(std::vector<std::vector<char>>& board, std::string word) {
         std::vector<char> res;
 
         for (int i = 0; i < board.size(); ++i) {
@@ -27,15 +26,13 @@ public:
         return false;
     }
 
-    bool dfs(std::vector<std::vector<char>>& board, std::string& word, int i, int j, int index, std::vector<char>& res)
-    {
+    bool dfs(std::vector<std::vector<char>>& board, std::string& word, int i, int j, int index, std::vector<char>& res) {
         if (res.size() == word.size()) {
             return true;
         }
 
         bool exist = false;
         if (i >= 0 && i < board.size() && j >= 0 && j < board[0].size() && board[i][j] == word[index] && board[i][j] != '*') {
-
             // 标记当前位置已被访问
             char c = board[i][j];
             board[i][j] = '*';

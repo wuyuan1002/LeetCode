@@ -9,15 +9,13 @@
 
 class Solution {
 public:
-    std::vector<std::vector<int>> permuteUnique(std::vector<int>& nums)
-    {
+    std::vector<std::vector<int>> permuteUnique(std::vector<int>& nums) {
         std::vector<std::vector<int>> result;
         dfs(nums, 0, result);
         return result;
     }
 
-    void dfs(std::vector<int>& nums, int index, std::vector<std::vector<int>>& result)
-    {
+    void dfs(std::vector<int>& nums, int index, std::vector<std::vector<int>>& result) {
         if (index == nums.size()) {
             result.push_back(nums);
             return;

@@ -17,8 +17,7 @@ public:
     //
     // 从递推公式：dp[i][j] = dp[i + 1][j - 1] + 2; 可以看出 递推公式是计算不到 i 和j相同时候的情况，
     // 所以需要手动初始化一下，当i与j相同，那么dp[i][j]一定是等于1的，即：一个字符的回文子序列长度就是1
-    int longestPalindromeSubseq(std::string s)
-    {
+    int longestPalindromeSubseq(std::string s) {
         // 创建并初始化dp
         std::vector<std::vector<int>> dp(s.size(), std::vector<int>(s.size(), 0));
         for (int i = 0; i < s.size(); i++) {

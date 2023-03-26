@@ -8,9 +8,8 @@
 
 class Solution {
 public:
-    int minSubArrayLen(int target, std::vector<int>& nums)
-    {
-        int min_len = INT32_MAX; // 最小的窗口长度
+    int minSubArrayLen(int target, std::vector<int>& nums) {
+        int min_len = INT32_MAX;  // 最小的窗口长度
         int sum = 0;
         for (int l = 0, r = 0; r < nums.size(); ++r) {
             sum += nums[r];
@@ -24,9 +23,8 @@ public:
     }
 };
 
-int main()
-{
-    std::vector<int> list = { 12, 43, 54, 23, 65, 23, 45, 76, 23, 65, 23 };
+int main() {
+    std::vector<int> list = {12, 43, 54, 23, 65, 23, 45, 76, 23, 65, 23};
     printf("%d", Solution().minSubArrayLen(200, list));
     return 0;
 }

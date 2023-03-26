@@ -9,16 +9,14 @@
 class Solution {
 public:
     // 回溯法 -- 先放左括号, 再放右括号, 左右括号各数都等于n时即表示得到一个结果
-    std::vector<std::string> generateParenthesis(int n)
-    {
+    std::vector<std::string> generateParenthesis(int n) {
         std::string res;
         std::vector<std::string> result;
         dfs(0, 0, n, res, result);
         return result;
     }
 
-    void dfs(int left_count, int right_count, int n, std::string& res, std::vector<std::string>& result)
-    {
+    void dfs(int left_count, int right_count, int n, std::string& res, std::vector<std::string>& result) {
         // 左右括号各数都等于n时即表示得到一个结果
         if (left_count == n && right_count == n) {
             result.push_back(res);

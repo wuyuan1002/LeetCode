@@ -9,8 +9,7 @@
 
 class Solution {
 public:
-    int strStr(std::string haystack, std::string needle)
-    {
+    int strStr(std::string haystack, std::string needle) {
         int index = -1;
         for (int i = 0; i < haystack.size(); ++i) {
             int k = i, j = 0;

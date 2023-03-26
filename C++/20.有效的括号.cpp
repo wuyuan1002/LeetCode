@@ -14,15 +14,10 @@
 
 class Solution {
 public:
-    std::unordered_map<char, char> brackets = {
-        { '(', ')' },
-        { '[', ']' },
-        { '{', '}' }
-    };
+    std::unordered_map<char, char> brackets = {{'(', ')'}, {'[', ']'}, {'{', '}'}};
 
     // 定义一个栈，遇到左括号则入栈，遇到右括号则和栈顶元素比较并弹出栈顶元素，若与栈顶元素不同，则说明不合法
-    bool isValid(std::string s)
-    {
+    bool isValid(std::string s) {
         std::stack<char> stack;
         for (char c : s) {
             if (c == '(' || c == '[' || c == '{') {

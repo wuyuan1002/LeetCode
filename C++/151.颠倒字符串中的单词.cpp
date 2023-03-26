@@ -17,8 +17,7 @@
 class Solution {
 public:
     // 先翻转整个字符串，再翻转每一个单词, 或者先翻转每个单词，再翻转整个字符串
-    std::string reverseWords(std::string s)
-    {
+    std::string reverseWords(std::string s) {
         if (s.empty()) {
             return s;
         }
@@ -31,12 +30,12 @@ public:
         reverse(s, 0, s.size() - 1);
 
         // 翻转每个单词
-        int start = 0; // 当前单词首字母下标
+        int start = 0;  // 当前单词首字母下标
         for (int i = 1; i < s.size(); ++i) {
-            if (s[i] == ' ') { // 翻转前一个单词
+            if (s[i] == ' ') {  // 翻转前一个单词
                 reverse(s, start, i - 1);
                 start = i + 1;
-            } else if (i == s.size() - 1) { // 到达最后一个字母
+            } else if (i == s.size() - 1) {  // 到达最后一个字母
                 reverse(s, start, i);
             }
         }
@@ -44,7 +43,7 @@ public:
         // 去掉字母间的多余空格
         for (int i = 0; i < s.size(); ++i) {
             if (s[i] == ' ' && s[i - 1] == ' ') {
-                s.erase(i--, 1); // 删除i位置后把下标向前移动一位, 防止漏掉空格, 如: ab   cdefg
+                s.erase(i--, 1);  // 删除i位置后把下标向前移动一位, 防止漏掉空格, 如: ab   cdefg
             }
         }
 
@@ -52,8 +51,7 @@ public:
     }
 
     // 反转给定string的指定区间
-    void reverse(std::string& s, int l, int r)
-    {
+    void reverse(std::string& s, int l, int r) {
         while (l < r) {
             std::swap(s[l++], s[r--]);
         }

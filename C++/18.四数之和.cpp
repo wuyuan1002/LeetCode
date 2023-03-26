@@ -12,18 +12,17 @@
 
 class Solution {
 public:
-    std::vector<std::vector<int>> fourSum(std::vector<int>& nums, int target)
-    {
+    std::vector<std::vector<int>> fourSum(std::vector<int>& nums, int target) {
         quick_sort(nums, 0, nums.size() - 1);
 
         std::vector<std::vector<int>> result;
-        for (int i = 0; i < nums.size(); ++i) { // 先固定一个值
+        for (int i = 0; i < nums.size(); ++i) {  // 先固定一个值
             if (i > 0 && nums[i] == nums[i - 1]) {
                 // 跳过重复元素
                 continue;
             }
 
-            for (int j = i + 1; j < nums.size(); ++j) { // 进行三数之和
+            for (int j = i + 1; j < nums.size(); ++j) {  // 进行三数之和
                 if (j > i + 1 && nums[j] == nums[j - 1]) {
                     // 跳过重复元素
                     continue;
@@ -37,10 +36,12 @@ public:
                     } else if (nums[i] + nums[j] < target - (nums[l] + nums[r])) {
                         ++l;
                     } else {
-                        result.push_back({ nums[i], nums[j], nums[l], nums[r] });
+                        result.push_back({nums[i], nums[j], nums[l], nums[r]});
 
-                        for (++l; l < r && nums[l] == nums[l - 1]; ++l) { }
-                        for (--r; l < r && nums[r] == nums[r + 1]; --r) { }
+                        for (++l; l < r && nums[l] == nums[l - 1]; ++l) {
+                        }
+                        for (--r; l < r && nums[r] == nums[r + 1]; --r) {
+                        }
                     }
                 }
             }
@@ -49,8 +50,7 @@ public:
         return result;
     }
 
-    void quick_sort(std::vector<int>& nums, int left, int right)
-    {
+    void quick_sort(std::vector<int>& nums, int left, int right) {
         if (nums.empty() || left >= right) {
             return;
         }
@@ -58,8 +58,10 @@ public:
         int l = left, r = right;
         int pivot = nums[left];
         while (l < r) {
-            for (; l < r && nums[r] >= pivot; --r) { }
-            for (; l < r && nums[l] <= pivot; ++l) { }
+            for (; l < r && nums[r] >= pivot; --r) {
+            }
+            for (; l < r && nums[l] <= pivot; ++l) {
+            }
             if (l < r) {
                 std::swap(nums[l], nums[r]);
             }

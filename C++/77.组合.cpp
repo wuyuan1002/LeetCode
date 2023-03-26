@@ -8,16 +8,14 @@
 
 class Solution {
 public:
-    std::vector<std::vector<int>> combine(int n, int k)
-    {
+    std::vector<std::vector<int>> combine(int n, int k) {
         std::vector<int> res;
         std::vector<std::vector<int>> result;
         dfs(n, k, 1, res, result);
         return result;
     }
 
-    void dfs(int n, int k, int start, std::vector<int>& res, std::vector<std::vector<int>>& result)
-    {
+    void dfs(int n, int k, int start, std::vector<int>& res, std::vector<std::vector<int>>& result) {
         if (res.size() == k) {
             result.push_back(res);
             return;

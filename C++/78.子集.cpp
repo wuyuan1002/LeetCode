@@ -11,8 +11,7 @@
 
 class Solution {
 public:
-    std::vector<std::vector<int>> subsets(std::vector<int>& nums)
-    {
+    std::vector<std::vector<int>> subsets(std::vector<int>& nums) {
         std::vector<int> res;
         std::vector<std::vector<int>> result;
         for (int i = 0; i <= nums.size(); ++i) {
@@ -21,8 +20,7 @@ public:
         return result;
     }
 
-    void dfs(std::vector<int>& nums, int start, int len, std::vector<int>& res, std::vector<std::vector<int>>& result)
-    {
+    void dfs(std::vector<int>& nums, int start, int len, std::vector<int>& res, std::vector<std::vector<int>>& result) {
         if (res.size() == len) {
             result.push_back(res);
             return;

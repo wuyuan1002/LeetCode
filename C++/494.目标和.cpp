@@ -21,8 +21,7 @@ public:
     // left组合 - right组合 = target
     // left + right等于sum，而sum是固定的
     // left - (sum - left) = target -> left = (target + sum)/2 -> 问题转换成了组合总和
-    int findTargetSumWays(std::vector<int>& nums, int target)
-    {
+    int findTargetSumWays(std::vector<int>& nums, int target) {
         int sum = 0;
         std::for_each(nums.begin(), nums.end(), [&sum](int n) { sum += n; });
 
@@ -32,12 +31,12 @@ public:
 
         // 计算目标值
         int t = (sum + target) / 2;
-        if (t < 0) { // 防止nums = [100], target = -200
+        if (t < 0) {  // 防止nums = [100], target = -200
             return 0;
         }
 
         // 进行dp
-        std::vector<int> dp(t + 1, 0); // dp[i] += dp[i - num]
+        std::vector<int> dp(t + 1, 0);  // dp[i] += dp[i - num]
         dp[0] = 1;
 
         for (int num : nums) {

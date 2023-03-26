@@ -11,14 +11,12 @@
 
 class Solution {
 public:
-    int movingCount(int m, int n, int k)
-    {
+    int movingCount(int m, int n, int k) {
         std::vector<std::vector<bool>> visited(m, std::vector<bool>(n, false));
         return dfs(0, 0, m, n, k, visited);
     }
 
-    int dfs(int i, int j, int m, int n, int k, std::vector<std::vector<bool>>& visited)
-    {
+    int dfs(int i, int j, int m, int n, int k, std::vector<std::vector<bool>>& visited) {
         std::function<bool()> can_move = [=]() {
             std::function<int(int)> sum = [](int num) {
                 int count = 0;
@@ -40,8 +38,7 @@ public:
     }
 };
 
-int main()
-{
+int main() {
     Solution().movingCount(2, 3, 4);
     return 0;
 }

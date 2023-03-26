@@ -11,16 +11,14 @@
 
 class Solution {
 public:
-    std::vector<std::vector<std::string>> partition(std::string s)
-    {
+    std::vector<std::vector<std::string>> partition(std::string s) {
         std::vector<std::string> res;
         std::vector<std::vector<std::string>> result;
         dfs(s, 0, res, result);
         return result;
     }
 
-    void dfs(std::string& s, int start, std::vector<std::string>& res, std::vector<std::vector<std::string>>& result)
-    {
+    void dfs(std::string& s, int start, std::vector<std::string>& res, std::vector<std::vector<std::string>>& result) {
         if (start == s.size()) {
             result.push_back(res);
             return;
@@ -37,8 +35,7 @@ public:
     }
 
     // 判断是否为回文串
-    bool is_partion(std::string& s, int l, int r)
-    {
+    bool is_partion(std::string& s, int l, int r) {
         for (; l < r; ++l, --r) {
             if (s[l] != s[r]) {
                 return false;

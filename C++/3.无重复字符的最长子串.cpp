@@ -11,10 +11,9 @@ class Solution {
 public:
     // Offer 48
     // 双指针, 滑动窗口, 同时使用map存储字符出现过的下标
-    int lengthOfLongestSubstring(std::string s)
-    {
-        std::map<char, int> hash; // 用于存每个字符和它的下标
-        int max_len = 0; // 最大长度
+    int lengthOfLongestSubstring(std::string s) {
+        std::map<char, int> hash;  // 用于存每个字符和它的下标
+        int max_len = 0;           // 最大长度
 
         // 左右指针遍历字符串
         for (int l = 0, r = 0; r < s.size(); r++) {

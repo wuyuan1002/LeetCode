@@ -26,8 +26,7 @@
 
 class Solution {
 public:
-    void nextPermutation(std::vector<int>& nums)
-    {
+    void nextPermutation(std::vector<int>& nums) {
         // 1
         int k = nums.size() - 2;
         for (; k >= 0; --k) {

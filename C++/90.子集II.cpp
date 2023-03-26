@@ -11,8 +11,7 @@
 
 class Solution {
 public:
-    std::vector<std::vector<int>> subsetsWithDup(std::vector<int>& nums)
-    {
+    std::vector<std::vector<int>> subsetsWithDup(std::vector<int>& nums) {
         // 因为有重复元素, 所以先排序方便剪枝
         quick_sort(nums, 0, nums.size() - 1);
 
@@ -24,8 +23,7 @@ public:
         return result;
     }
 
-    void dfs(std::vector<int>& nums, int start, int len, std::vector<int>& res, std::vector<std::vector<int>>& result)
-    {
+    void dfs(std::vector<int>& nums, int start, int len, std::vector<int>& res, std::vector<std::vector<int>>& result) {
         if (res.size() == len) {
             result.push_back(res);
             return;
@@ -43,8 +41,7 @@ public:
         }
     }
 
-    void quick_sort(std::vector<int>& nums, int left, int right)
-    {
+    void quick_sort(std::vector<int>& nums, int left, int right) {
         if (nums.empty() || left >= right) {
             return;
         }
@@ -52,8 +49,10 @@ public:
         int l = left, r = right;
         int pivot = nums[left];
         while (l < r) {
-            for (; l < r && nums[r] >= pivot; --r) { }
-            for (; l < r && nums[l] <= pivot; ++l) { }
+            for (; l < r && nums[r] >= pivot; --r) {
+            }
+            for (; l < r && nums[l] <= pivot; ++l) {
+            }
             if (l < r) {
                 std::swap(nums[l], nums[r]);
             }

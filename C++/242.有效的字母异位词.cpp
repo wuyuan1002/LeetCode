@@ -11,9 +11,8 @@
 class Solution {
 public:
     // 使用数组记录
-    bool isAnagram(std::string s, std::string t)
-    {
-        int record[26] = { 0 };
+    bool isAnagram(std::string s, std::string t) {
+        int record[26] = {0};
         for (int i = 0; i < s.size(); ++i) {
             ++record[s[i] - 'a'];
         }
@@ -30,8 +29,7 @@ public:
     }
 
     // 使用map记录
-    bool isAnagram1(std::string s, std::string t)
-    {
+    bool isAnagram1(std::string s, std::string t) {
         std::unordered_map<char, int> record;
 
         for (int i = 0; i < s.size(); ++i) {

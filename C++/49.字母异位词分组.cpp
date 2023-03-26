@@ -12,8 +12,7 @@ class Solution {
 public:
     // 1. 排序 -- 用map存排序后的字符串和各个字母异位词字符串
     // 2. 计数 -- 用map存计数结果和各个字母异位词字符串
-    std::vector<std::vector<std::string>> groupAnagrams(std::vector<std::string>& strs)
-    {
+    std::vector<std::vector<std::string>> groupAnagrams(std::vector<std::string>& strs) {
         std::unordered_map<std::string, std::vector<std::string>> mp;
         for (std::string& str : strs) {
             std::string s = str;

@@ -12,7 +12,7 @@
 class Solution {
 public:
     // 类似5、516
-    // 
+    //
     // 动态规划 -- 二维dp
     // dp[i][j] -- s[i]与s[j]之间的子串是否为回文串（[i, j]为左闭右闭）
     //
@@ -21,9 +21,8 @@ public:
     //      情况一：下标i 与 j相同，同一个字符例如a，当然是回文子串
     //      情况二：下标i 与 j相差为1，例如aa，也是回文子串
     //      情况三：下标：i 与 j相差大于1的时候，例如cabac，此时s[i]与s[j]已经相同了，我们看i到j区间是不是回文子串就看aba是不是回文就可以了，那么aba的区间就是 i+1 与 j-1区间，这个区间是不是回文就看dp[i + 1][j - 1]是否为true。
-    int countSubstrings(std::string s)
-    {
-        std::vector<std::vector<bool>> dp(s.size(), std::vector<bool>(s.size(), false)); // dp数组
+    int countSubstrings(std::string s) {
+        std::vector<std::vector<bool>> dp(s.size(), std::vector<bool>(s.size(), false));  // dp数组
         int result = 0;
 
         // 因为dp[i][j]依赖于dp[i + 1][j - 1], 因此dp数组应该是从左下往右上遍历 -- 字符串要倒着遍历

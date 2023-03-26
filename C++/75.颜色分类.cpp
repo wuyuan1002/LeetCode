@@ -14,8 +14,7 @@ public:
     // [0, p) -> 0
     // [p、q] -> 1
     // (q, nums.size() - 1] -> 2
-    void sortColors(std::vector<int>& nums)
-    {
+    void sortColors(std::vector<int>& nums) {
         int p = 0, q = nums.size() - 1;
         for (int i = 0; i <= q;) {
             if (nums[i] == 0) {

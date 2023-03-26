@@ -13,8 +13,7 @@ class Solution {
 public:
     // offer 56， leetcode 260
     // 异或运算 -- 一个数字与本身异或后为0
-    int singleNumber(std::vector<int>& nums)
-    {
+    int singleNumber(std::vector<int>& nums) {
         int num = 0;
         std::for_each(nums.begin(), nums.end(), [&num](int n) { num ^= n; });
         return num;

@@ -17,17 +17,16 @@ public:
     // 动态规划 -- 完全背包问题
     // 类似322, 只是物品不是零钱而是1、4、9这样的完全平方数了
     // dp[i] = min(dp[i], dp[i-j*j]+1)
-    int numSquares(int n)
-    {
+    int numSquares(int n) {
         if (n <= 0) {
             return 0;
         }
 
-        std::vector<int> dp(n + 1, n + 1); // -- dp[i]最大的可能性也只能是n, 因此用n+1表示该金额无法被组成
+        std::vector<int> dp(n + 1, n + 1);  // -- dp[i]最大的可能性也只能是n, 因此用n+1表示该金额无法被组成
         dp[0] = 0;
 
-        for (int i = 1; i <= n; i++) { // 遍历背包容量
-            for (int j = 1; j * j <= i; j++) { // 遍历物品
+        for (int i = 1; i <= n; i++) {          // 遍历背包容量
+            for (int j = 1; j * j <= i; j++) {  // 遍历物品
                 dp[i] = std::min(dp[i], dp[i - j * j] + 1);
             }
         }

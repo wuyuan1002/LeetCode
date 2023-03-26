@@ -7,8 +7,7 @@
 
 class Solution {
 public:
-    ListNode* detectCycle(ListNode* head)
-    {
+    ListNode* detectCycle(ListNode* head) {
         ListNode *fast = head, *slow = head;
         while (fast != nullptr && fast->next != nullptr) {
             fast = fast->next->next;

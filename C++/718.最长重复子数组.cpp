@@ -17,8 +17,7 @@ public:
 
     // 类似于 1143. 最长公共子序列
     // 1. 二维dp
-    int findLength(std::vector<int>& nums1, std::vector<int>& nums2)
-    {
+    int findLength(std::vector<int>& nums1, std::vector<int>& nums2) {
         // dp[i][j]表示以下标i-1结尾的nums1和下标j-1结尾的nums2的数组的重复子数组长度
         // dp[i][j] =
         // 若 A[i-1] == B[j-1], 则 dp[i][j] = dp[i-1][j-1] + 1
@@ -49,8 +48,7 @@ public:
     }
 
     // 一维dp
-    int findLength(std::vector<int>& nums1, std::vector<int>& nums2)
-    {
+    int findLength(std::vector<int>& nums1, std::vector<int>& nums2) {
         if (nums1.empty() || nums2.empty()) {
             return 0;
         }

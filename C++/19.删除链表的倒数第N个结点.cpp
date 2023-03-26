@@ -9,8 +9,7 @@
 class Solution {
 public:
     // 双指针
-    ListNode* removeNthFromEnd(ListNode* head, int n)
-    {
+    ListNode* removeNthFromEnd(ListNode* head, int n) {
         ListNode *l = head, *r = head;
         for (int i = 0; i < n; ++i) {
             if (r == nullptr) {

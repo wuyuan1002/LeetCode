@@ -22,8 +22,7 @@ public:
     // 在不偷窃第一个房子的情况下（即 nums[1:]），最大金额是 p1
     // 在不偷窃最后一个房子的情况下（即 nums[:n-1]），最大金额是 p2
     // 综合偷窃最大金额： 为以上两种情况的较大值，即 max(p1,p2)max(p1,p2) 。
-    int rob(std::vector<int>& nums)
-    {
+    int rob(std::vector<int>& nums) {
         if (nums.size() == 0) {
             return 0;
         } else if (nums.size() == 1) {
@@ -35,10 +34,9 @@ public:
         return std::max(rob(nums, 1, nums.size()), rob(nums, 0, nums.size() - 1));
     }
 
-    int rob(std::vector<int>& nums, int start, int end)
-    {
-        int pre_two = nums[start]; // 前两个房屋的最大价值
-        int pre_one = std::max(nums[start], nums[start + 1]); // 前一个房屋的最大价值
+    int rob(std::vector<int>& nums, int start, int end) {
+        int pre_two = nums[start];                             // 前两个房屋的最大价值
+        int pre_one = std::max(nums[start], nums[start + 1]);  // 前一个房屋的最大价值
 
         for (int i = start + 2; i < end; i++) {
             int price = std::max(nums[i] + pre_two, pre_one);
