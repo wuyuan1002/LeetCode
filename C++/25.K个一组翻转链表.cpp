@@ -12,9 +12,11 @@
 
 class Solution {
 public:
+    // 24. 两两交换链表中的节点
+    // 递归
     ListNode* reverseKGroup(ListNode* head, int k) {
         ListNode* next_group_start_node = head;
-        for (int i = 0; i < k; ++i) {
+        for (int i = 0; i < k; i++) {
             if (next_group_start_node == nullptr) {
                 return head;
             }
@@ -29,7 +31,6 @@ public:
         return new_head;
     }
 
-private:
     // 反转链表
     ListNode* reverse(ListNode* head, ListNode* next_group_start_node) {
         ListNode *pre = next_group_start_node, *node = head, *next = head;
