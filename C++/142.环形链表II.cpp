@@ -7,6 +7,9 @@
 
 class Solution {
 public:
+    // 141
+    // 使用快慢指针确认链表有环后, 两指针一个从head开始一个从相遇位置开始,
+    // 继续向前移动, 直到相遇时相遇点就是入环的起点
     ListNode* detectCycle(ListNode* head) {
         ListNode *fast = head, *slow = head;
         while (fast != nullptr && fast->next != nullptr) {
@@ -14,10 +17,10 @@ public:
             slow = slow->next;
 
             if (fast == slow) {
-                slow = head;
-                while (slow != fast) {
-                    slow = slow->next;
+                fast = head;
+                while (fast != slow) {
                     fast = fast->next;
+                    slow = slow->next;
                 }
                 return slow;
             }
