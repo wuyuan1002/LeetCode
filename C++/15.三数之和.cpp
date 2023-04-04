@@ -55,14 +55,15 @@ public:
         int l = left, r = right;
         int pivot = nums[left];
         while (l != r) {
-            for (; l < r && nums[r] >= pivot; --r) {
+            for (; l < r && nums[r] >= pivot; r--) {
             }
-            for (; l < r && nums[l] <= pivot; ++l) {
+            for (; l < r && nums[l] <= pivot; l++) {
             }
             if (l < r) {
                 std::swap(nums[l], nums[r]);
             }
         }
+
         std::swap(nums[left], nums[l]);
 
         quick_sort(nums, left, l - 1);

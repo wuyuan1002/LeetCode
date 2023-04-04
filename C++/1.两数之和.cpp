@@ -11,6 +11,7 @@
 
 class Solution {
 public:
+    // 使用map存放已经遍历过的数字, 遍历之后的数字时在map中查找
     std::vector<int> twoSum(std::vector<int>& nums, int target) {
         std::map<int, int> hash;  // k: 数值, v: 下标
         for (int i = 0; i < nums.size(); i++) {
