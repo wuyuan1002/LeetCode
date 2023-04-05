@@ -11,6 +11,8 @@
 
 class Solution {
 public:
+    // 双指针
+    // 先固定一个数, 再双指针寻找剩下的两个数
     std::vector<std::vector<int>> threeSum(std::vector<int>& nums) {
         // std::sort(nums.begin(), nums.end());
         quick_sort(nums, 0, nums.size() - 1);
