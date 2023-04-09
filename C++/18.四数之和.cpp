@@ -42,6 +42,7 @@ public:
 
                 int l = j + 1, r = nums.size() - 1;
                 while (l < r) {
+                    // 直接四数相加进行比较可能会溢出
                     if (nums[i] + nums[j] > target - nums[l] - nums[r]) {
                         r--;
                     } else if (nums[i] + nums[j] < target - nums[l] - nums[r]) {
