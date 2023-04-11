@@ -32,7 +32,7 @@ public:
         int start = 0;  // 当前单词首字母下标
         for (int i = 0; i <= s.length(); i++) {
             // i到达末尾或指向空格时, 开始反转前一个单词
-            // 没到达末尾时, i指向的是前一个单词后的空格, 
+            // 没到达末尾时, i指向的是前一个单词后的空格,
             // 到达末尾时, i指向的是最后一个字母的后一个位置, 所以i-1始终是前一个单词的最后一个字母
             if (i == s.length() || s[i] == ' ') {
                 // 反转每一个单词
@@ -45,15 +45,8 @@ public:
         return s;
     }
 
-    // 反转给定string的指定区间
-    void reverse(std::string& s, int l, int r) {
-        while (l < r) {
-            std::swap(s[l++], s[r--]);
-        }
-    }
-
     // 去除所有空格并在相邻单词之间添加空格, 双指针
-    // 27.移除元素, 将每个单词看作一个整体, 相当于移除单词间的所有空格
+    // 27.移除元素, 将每个单词看作一个整体, 相当于移除单词间的空格
     void removeExtraSpaces(std::string& s) {
         int i = 0;
         for (int j = 0; j < s.length(); j++) {
@@ -70,5 +63,12 @@ public:
         }
         // i之前的数据就是去除空格之后的数据
         s.resize(i);
+    }
+
+    // 反转给定string的指定区间
+    void reverse(std::string& s, int l, int r) {
+        while (l < r) {
+            std::swap(s[l++], s[r--]);
+        }
     }
 };
