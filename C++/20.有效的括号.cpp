@@ -8,15 +8,15 @@
 // 左括号必须用相同类型的右括号闭合。
 // 左括号必须以正确的顺序闭合。
 
+#include <map>
 #include <stack>
 #include <string>
-#include <unordered_map>
 
 class Solution {
 public:
-    std::unordered_map<char, char> brackets = {{'(', ')'}, {'[', ']'}, {'{', '}'}};
+    std::map<char, char> brackets = {{'(', ')'}, {'[', ']'}, {'{', '}'}};
 
-    // 定义一个栈，遇到左括号则入栈，遇到右括号则和栈顶元素比较并弹出栈顶元素，若与栈顶元素不同，则说明不合法
+    // 定义一个栈，遇到左括号则入栈，遇到右括号则和栈顶元素比较并弹出栈顶元素，若与栈顶元素不匹配，则说明不合法
     bool isValid(std::string s) {
         std::stack<char> stack;
         for (char c : s) {
