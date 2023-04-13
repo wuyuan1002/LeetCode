@@ -64,7 +64,7 @@ public:
         s.resize(i);
     }
 
-    // 反转给定string的指定区间
+    // 反转给定string的指定区间 []
     void reverse(std::string& s, int l, int r) {
         while (l < r) {
             std::swap(s[l++], s[r--]);
