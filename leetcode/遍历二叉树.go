@@ -1,14 +1,12 @@
-package main
+package leetcode
 
-import "fmt"
+import (
+	"fmt"
+)
 
-// 非递归遍历二叉树
+// 遍历二叉树
 
-// func main() {
-
-// }
-
-// 前序遍历
+// preOrder 非递归遍历二叉树 -- 前序遍历
 func preOrder(root *TreeNode) {
 	// 使用栈保存已被访问的根节点
 	stack := make([]*TreeNode, 0)
@@ -34,7 +32,7 @@ func preOrder(root *TreeNode) {
 	}
 }
 
-// 中序遍历
+// inOrder 非递归遍历二叉树 -- 中序遍历
 func inOrder(root *TreeNode) {
 	// 使用栈保存需要被访问的根节点
 	stack := make([]*TreeNode, 0)
@@ -65,7 +63,7 @@ func inOrder(root *TreeNode) {
 	}
 }
 
-// 后序遍历
+// laterOrder 非递归遍历二叉树 -- 后序遍历
 // 1. 传统非递归遍历方法
 // 2. 使用根右左的前序遍历方法遍历，然后在反转数组即可
 func laterOrder(root *TreeNode) {
@@ -102,4 +100,11 @@ func laterOrder(root *TreeNode) {
 			}
 		}
 	}
+}
+
+// TreeNode .
+type TreeNode struct {
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
 }
