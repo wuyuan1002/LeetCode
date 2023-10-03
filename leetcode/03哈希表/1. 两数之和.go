@@ -9,6 +9,7 @@ package leetcode
 // 你可以按任意顺序返回答案。
 
 // twoSum .
+// 类似 202. 快乐数
 // 在查找的过程中将数字存入map中，这样，下次使用时可以直接获取
 func twoSum(nums []int, target int) []int {
 	hash := make(map[int]int) // k: 数值, v: 下标
