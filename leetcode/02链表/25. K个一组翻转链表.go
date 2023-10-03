@@ -1,4 +1,4 @@
-package leetcode
+package main
 
 // 25. K个一组翻转链表
 

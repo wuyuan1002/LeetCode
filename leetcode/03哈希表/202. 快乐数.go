@@ -1,4 +1,4 @@
-package leetcode
+package main
 
 // 202. 快乐数
 

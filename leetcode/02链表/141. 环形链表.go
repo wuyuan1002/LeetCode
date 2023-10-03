@@ -1,4 +1,4 @@
-package leetcode
+package main
 
 // 141. 环形链表
 

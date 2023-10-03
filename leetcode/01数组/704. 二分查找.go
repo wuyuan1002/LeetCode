@@ -1,4 +1,4 @@
-package leetcode
+package main
 
 // 704. 二分查找
 

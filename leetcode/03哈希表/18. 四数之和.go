@@ -1,4 +1,4 @@
-package leetcode
+package main
 
 // 18. 四数之和
 

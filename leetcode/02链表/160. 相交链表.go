@@ -1,4 +1,4 @@
-package leetcode
+package main
 
 // 160. 相交链表
 

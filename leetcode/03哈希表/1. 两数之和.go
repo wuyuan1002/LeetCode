@@ -1,4 +1,4 @@
-package leetcode
+package main
 
 // 1. 两数之和
 

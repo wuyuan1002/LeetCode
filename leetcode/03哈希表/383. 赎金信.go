@@ -1,4 +1,4 @@
-package leetcode
+package main
 
 // 383. 赎金信
 

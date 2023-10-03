@@ -1,4 +1,4 @@
-package leetcode
+package main
 
 // 350. 两个数组的交集 II
 // 给你两个整数数组 nums1 和 nums2 ，请你以数组形式返回两数组的交集。

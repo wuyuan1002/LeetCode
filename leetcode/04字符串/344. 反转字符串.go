@@ -1,4 +1,4 @@
-package leetcode
+package main
 
 // 344. 反转字符串
 

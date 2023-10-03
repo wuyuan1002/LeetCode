@@ -1,4 +1,4 @@
-package leetcode
+package main
 
 // 203. 移除链表元素
 

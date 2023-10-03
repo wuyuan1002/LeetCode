@@ -1,4 +1,4 @@
-package leetcode
+package main
 
 // 977. 有序数组的平方
 
