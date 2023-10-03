@@ -16,30 +16,28 @@ func threeSum(nums []int) [][]int {
 		return nil
 	}
 
-	result := make([][]int, 0)
-
-	// 排序
 	quickSort(nums, 0, len(nums)-1)
 
-	for i, num := range nums {
-		if num > 0 {
+	result := make([][]int, 0)
+	for i := 0; i < len(nums); i++ {
+		if nums[i] > 0 {
 			// 剪枝 -- 若i指向大于0的数，则直接退出，因为数组已排序，i后面的数也肯定都是正数
 			break
-		} else if i > 0 && num == nums[i-1] {
+		} else if i > 0 && nums[i] == nums[i-1] {
 			// 剪枝 -- 跳过重复元素
 			continue
 		}
 
 		l, r := i+1, len(nums)-1
 		for l < r {
-			sum := num + nums[l] + nums[r]
+			sum := nums[i] + nums[l] + nums[r]
 			if sum > 0 {
 				r--
 			} else if sum < 0 {
 				l++
 			} else {
 				// 记录结果
-				result = append(result, []int{num, nums[l], nums[r]})
+				result = append(result, []int{nums[i], nums[l], nums[r]})
 
 				// 剪枝 -- 跳过重复元素
 				for l++; l < r && nums[l] == nums[l-1]; l++ {
