@@ -8,6 +8,17 @@ package leetcode
 // swapPairs .
 // 同 leetcode 25. K个一组翻转链表
 func swapPairs(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+	newHead := head.Next
+	head.Next = swapPairs(newHead.Next)
+	newHead.Next = head
+	return newHead
+}
+
+// swapPairs1 使用 K个一组翻转链表 当K==2时的情况
+func swapPairs1(head *ListNode) *ListNode {
 	if head == nil {
 		return nil
 	}
@@ -21,6 +32,6 @@ func swapPairs(head *ListNode) *ListNode {
 	}
 
 	newHead := reverse(head, nextGroupHead)
-	head.Next = swapPairs(nextGroupHead)
+	head.Next = swapPairs1(nextGroupHead)
 	return newHead
 }
