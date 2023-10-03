@@ -19,7 +19,7 @@ func reverseStr(s string, k int) string {
 	return string(sb)
 }
 
-// reverse 反转切片的字符
+// reverse 反转切片的字符 []
 func reverse(s []byte) {
 	l, r := 0, len(s)-1
 	for l < r {
