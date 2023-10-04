@@ -16,7 +16,8 @@ package main
 // 你所使用的语言也许不支持栈。你可以使用 list 或者 deque（双端队列）来模拟一个栈，只要是标准的栈操作即可。
 
 // MyQueue .
-// 同 Offer 09. 用两个栈实现队列
+// 同 Offer 09. 用两个栈实现队列、leetcode 225. 用队列实现栈
+// 使用两个栈来模拟队列
 // 入队列时始终将元素放进ru栈，
 // 出队列时始终从chu栈获取栈顶元素，若chu栈已经为空，将ru栈的元素挨个出栈放入chu栈，再从chu栈获取栈顶元素
 type MyQueue struct {
@@ -24,8 +25,8 @@ type MyQueue struct {
 	chu []int // 出队列所用的栈
 }
 
-// Constructor .
-func Constructor() MyQueue {
+// ConstructorMyQueue .
+func ConstructorMyQueue() MyQueue {
 	return MyQueue{
 		ru:  []int{},
 		chu: []int{},
@@ -47,12 +48,13 @@ func (this *MyQueue) Pop() int {
 		this.ru = this.ru[len(this.ru):]
 	}
 
-	// 进行出队列操作
+	// 进行出队列操作 -- 获取栈尾元素并删除
 	val := -1
 	if len(this.chu) > 0 {
 		val = this.chu[len(this.chu)-1]
 		this.chu = this.chu[:len(this.chu)-1]
 	}
+
 	return val
 }
 
