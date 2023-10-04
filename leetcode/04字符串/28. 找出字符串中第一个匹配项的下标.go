@@ -7,7 +7,8 @@ package main
 // 如果 needle 不是 haystack 的一部分，则返回  -1 。
 
 // strStr .
-// 1. KMP前缀表解法
+// 同 459. 重复的子字符串
+// 1. KMP前缀表解法 -- 使用前缀数组记录子串指针匹配失败时子串指针最多可以向前移动几个字符
 // 2. 遍历第一个字符串, 每遍历一个字符接着遍历第二个字符串进行比较
 func strStr(haystack string, needle string) int {
 	index := -1 // 结果
