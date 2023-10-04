@@ -36,6 +36,6 @@ func isValid(s string) bool {
 		}
 	}
 
-	// 若栈不为空说明字符串末尾有多余的右括号
+	// 若栈不为空说明有多余的左括号
 	return len(stack) == 0
 }
