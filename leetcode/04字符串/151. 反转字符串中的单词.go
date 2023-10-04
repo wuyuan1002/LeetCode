@@ -12,11 +12,11 @@ package main
 // 翻转后的字符串中不应包含额外的空格。
 
 // reverseWords .
-// offer 58、leetcode 189、541
+// offer 58、leetcode 151、189、541
 // 先反转整个字符串，再反转每一个单词, 或者先反转每个单词，再反转整个字符串
 func reverseWords(s string) string {
 
-	// 移除前面、中间、后面存在的多余空格
+	// 去除前面、中间、后面存在的多余空格
 	// s = strings.TrimSpace(s)
 	sb := removeExtraSpaces([]byte(s))
 	if len(sb) == 0 {
