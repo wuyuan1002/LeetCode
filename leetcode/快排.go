@@ -10,19 +10,20 @@ func quickSortWithRecursion(nums []int, left, right int) {
 	}
 
 	l, r := left, right
-	tmp := nums[left]
+	temp := nums[left]
 	for l < r {
-		for l < r && nums[r] >= tmp {
+		for l < r && nums[r] >= temp {
 			r--
 		}
-		for l < r && nums[l] <= tmp {
+		for l < r && nums[l] <= temp {
 			l++
 		}
 		if l < r {
 			nums[l], nums[r] = nums[r], nums[l]
 		}
 	}
-	nums[l], nums[left] = tmp, nums[l]
+	nums[left], nums[l] = nums[l], nums[left]
+
 	quickSortWithRecursion(nums, left, l-1)
 	quickSortWithRecursion(nums, r+1, right)
 }
@@ -39,19 +40,19 @@ func quickSortWithoutRecursion(nums []int, left, right int) {
 
 		// 开始partition
 		l, r := left, right
-		tmp := nums[left]
+		temp := nums[left]
 		for l < r {
-			for l < r && nums[r] >= tmp {
+			for l < r && nums[r] >= temp {
 				r--
 			}
-			for l < r && nums[l] <= tmp {
+			for l < r && nums[l] <= temp {
 				l++
 			}
 			if l < r {
 				nums[l], nums[r] = nums[r], nums[l]
 			}
 		}
-		nums[l], nums[left] = tmp, nums[l]
+		nums[left], nums[l] = nums[l], nums[left]
 
 		// 将下一次需要partition的左右边界入栈
 		stack = append(stack, left, l)
