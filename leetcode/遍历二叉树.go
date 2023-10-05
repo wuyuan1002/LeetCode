@@ -24,6 +24,24 @@ func dfsPreOrder(node *TreeNode, result *[]int) {
 	dfsPreOrder(node.Right, result)
 }
 
+// inorderTraversal 递归遍历二叉树 -- 中序遍历
+func inorderTraversal(root *TreeNode) []int {
+	result := make([]int, 0)
+	dfsInOrder(root, &result)
+	return result
+}
+
+// dfsInOrder 深度优先中序遍历二叉树
+func dfsInOrder(node *TreeNode, result *[]int) {
+	if node == nil {
+		return
+	}
+
+	dfsInOrder(node.Left, result)
+	*result = append(*result, node.Val)
+	dfsInOrder(node.Right, result)
+}
+
 // ------------------------------------
 
 // preOrder 非递归遍历二叉树 -- 前序遍历
