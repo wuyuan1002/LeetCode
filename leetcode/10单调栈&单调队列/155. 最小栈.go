@@ -12,7 +12,7 @@ package main
 // int getMin() 获取堆栈中的最小元素。
 
 // MinStack .
-// 同 Offer 59
+// 同 Offer 59-2、leetcode 239. 滑动窗口最大值
 type MinStack struct {
 	stack    []int // 存储栈中所有元素 -- 后进先出
 	minstack []int // 单调递增栈 -- 栈顶元素为最小值，栈顶的下一个元素为栈内栈顶元素后的最小值，以此类推
