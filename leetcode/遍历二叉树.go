@@ -6,6 +6,26 @@ import (
 
 // 遍历二叉树
 
+// preorderTraversal 递归遍历二叉树 -- 前序遍历
+func preorderTraversal(root *TreeNode) []int {
+	result := make([]int, 0)
+	dfsPreOrder(root, &result)
+	return result
+}
+
+// dfsPreOrder 深度优先前序遍历二叉树
+func dfsPreOrder(node *TreeNode, result *[]int) {
+	if node == nil {
+		return
+	}
+
+	*result = append(*result, node.Val)
+	dfsPreOrder(node.Left, result)
+	dfsPreOrder(node.Right, result)
+}
+
+// ------------------------------------
+
 // preOrder 非递归遍历二叉树 -- 前序遍历
 func preOrder(root *TreeNode) {
 	// 使用栈保存已被访问的根节点
