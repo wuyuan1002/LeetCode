@@ -28,6 +28,8 @@ func quickSortWithRecursion(nums []int, left, right int) {
 	quickSortWithRecursion(nums, r+1, right)
 }
 
+// ----------------------------------------------------
+
 // quickSortWithoutRecursion 非递归快排
 func quickSortWithoutRecursion(nums []int, left, right int) {
 	stack := []int{left, right} // 使用栈保存每次需要递归的左右界限
