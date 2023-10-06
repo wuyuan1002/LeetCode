@@ -46,10 +46,3 @@ func dfsBinaryTreePaths(node *TreeNode, res *[]int, result *[]string) {
 	// 当前节点遍历完成，将当前节点的值移出本次遍历的路径中
 	*res = (*res)[:len(*res)-1]
 }
-
-// TreeNode .
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
-}
