@@ -7,7 +7,7 @@ package main
 // 二叉树的 最大深度 是指从根节点到最远叶子节点的最长路径上的节点数。
 
 // maxDepth .
-// 同 leetcode 111. 二叉树的最小深度、leetcode 102. 二叉树的层序遍历、leetcode 543. 二叉树的直径
+// 同 leetcode 111. 二叉树的最小深度、leetcode 102. 二叉树的层序遍历、leetcode 543. 二叉树的直径、leetcode 110. 平衡二叉树
 // 1. 使用102的层级遍历二叉树，遍历过程中统计二叉树一共有多少层，层数即为二叉树的最大深度
 // 2. 后序遍历二叉树，递归求出左右子树的最大深度，然后加上当前节点的深度返回
 func maxDepth(root *TreeNode) int {
