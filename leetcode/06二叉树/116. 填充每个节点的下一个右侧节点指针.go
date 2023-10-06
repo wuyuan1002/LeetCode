@@ -16,7 +16,7 @@ package main
 
 // connect .
 // 同 leetcode 102. 二叉树的层序遍历
-// 层序遍历二叉树，遍历每一层的节点时将其next指针指向该层的下一个节点
+// 层级遍历二叉树，遍历每一层的节点时将其next指针指向该层的下一个节点
 func connect(root *Node) *Node {
 	if root == nil {
 		return nil
