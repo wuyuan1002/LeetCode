@@ -16,7 +16,7 @@ func hasPathSum(root *TreeNode, targetSum int) bool {
 }
 
 // dfsHasPathSum 前序遍历二叉树，判断给定节点是否为结果路径上的节点
-func dfsHasPathSum(node *TreeNode, currentSum int, targetSum int) bool {
+func dfsHasPathSum(node *TreeNode, currentSum, targetSum int) bool {
 	if node == nil {
 		return false
 	}

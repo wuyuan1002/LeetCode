@@ -19,7 +19,7 @@ func pathSum113(root *TreeNode, targetSum int) [][]int {
 }
 
 // dfsPathSum 回溯递归遍历节点获取路径
-func dfsPathSum113(node *TreeNode, currentSum int, targetSum int, res *[]int, result *[][]int) {
+func dfsPathSum113(node *TreeNode, currentSum, targetSum int, res *[]int, result *[][]int) {
 	if node == nil {
 		return
 	}
