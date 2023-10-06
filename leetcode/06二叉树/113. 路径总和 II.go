@@ -7,19 +7,19 @@ package main
 //
 // 叶子节点 是指没有子节点的节点。
 
-// pathSum .
-// 同 leetcode 112. 路径总和、leetcode 257. 二叉树的所有路径
+// pathSum113 .
+// 同 leetcode 112. 路径总和、leetcode 437. 路径总和 III、leetcode 257. 二叉树的所有路径
 // 回溯 -- 前序递归遍历二叉树，遍历过程中记录满足条件的路径
-func pathSum(root *TreeNode, targetSum int) [][]int {
+func pathSum113(root *TreeNode, targetSum int) [][]int {
 	res := make([]int, 0)      // 一次遍历路径上的节点
 	result := make([][]int, 0) // 总结果
 
-	dfsPathSum(root, 0, targetSum, &res, &result)
+	dfsPathSum113(root, 0, targetSum, &res, &result)
 	return result
 }
 
 // dfsPathSum 回溯递归遍历节点获取路径
-func dfsPathSum(node *TreeNode, currentSum int, targetSum int, res *[]int, result *[][]int) {
+func dfsPathSum113(node *TreeNode, currentSum int, targetSum int, res *[]int, result *[][]int) {
 	if node == nil {
 		return
 	}
@@ -37,8 +37,8 @@ func dfsPathSum(node *TreeNode, currentSum int, targetSum int, res *[]int, resul
 		*result = append(*result, temp)
 	} else {
 		// 若当前节点不满足条件 -- 继续遍历当前节点的左右子节点
-		dfsPathSum(node.Left, currentSum, targetSum, res, result)
-		dfsPathSum(node.Right, currentSum, targetSum, res, result)
+		dfsPathSum113(node.Left, currentSum, targetSum, res, result)
+		dfsPathSum113(node.Right, currentSum, targetSum, res, result)
 	}
 
 	// 当前节点遍历完成，将当前节点的值移出本次遍历的路径中

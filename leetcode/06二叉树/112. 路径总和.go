@@ -9,7 +9,7 @@ package main
 // 叶子节点 是指没有子节点的节点。
 
 // hasPathSum .
-// 同 leetcode 113. 路径总和 II
+// 同 leetcode 113. 路径总和 II、leetcode、437. 路径总和 III
 // 前序遍历二叉树，同时相加路径上的值判断是否满足路径总和
 func hasPathSum(root *TreeNode, targetSum int) bool {
 	return dfsHasPathSum(root, 0, targetSum)
