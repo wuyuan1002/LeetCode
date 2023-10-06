@@ -9,9 +9,9 @@ import "strconv"
 // 叶子节点 是指没有子节点的节点。
 
 // binaryTreePaths .
-// 递归遍历二叉树，遍历到叶节点时记录一条路径结果
+// 回溯 -- 前序递归遍历二叉树，遍历到叶节点时记录一条路径结果
 func binaryTreePaths(root *TreeNode) []string {
-	res := make([]int, 0)       // 一次遍历的路径节点
+	res := make([]int, 0)       // 一次遍历路径上的节点
 	result := make([]string, 0) // 总结果集
 
 	dfsBinaryTreePaths(root, &res, &result)

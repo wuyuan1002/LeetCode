@@ -9,12 +9,13 @@ package main
 // 叶子节点 是指没有子节点的节点。
 
 // hasPathSum .
-// 递归遍历二叉树，同时相加路径上的值，若恰好存在则返回true
+// 同 leetcode 113. 路径总和 II
+// 前序遍历二叉树，同时相加路径上的值判断是否满足路径总和
 func hasPathSum(root *TreeNode, targetSum int) bool {
 	return dfsHasPathSum(root, 0, targetSum)
 }
 
-// dfsHasPathSum 判断给定节点是否为结果路径上的节点
+// dfsHasPathSum 前序遍历二叉树，判断给定节点是否为结果路径上的节点
 func dfsHasPathSum(node *TreeNode, currentSum int, targetSum int) bool {
 	if node == nil {
 		return false
