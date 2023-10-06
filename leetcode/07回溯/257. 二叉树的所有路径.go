@@ -27,8 +27,8 @@ func dfsBinaryTreePaths(node *TreeNode, res *[]int, result *[]string) {
 	// 将当前节点的值加入到本次遍历的路径中
 	*res = append(*res, node.Val)
 
-	// 若当前节点为叶节点，则记录一条路径到总结果集
 	if node.Left == nil && node.Right == nil {
+		// 若当前节点为叶节点，则记录一条路径到总结果集
 		path := ""
 		for i, val := range *res {
 			path += strconv.Itoa(val)
