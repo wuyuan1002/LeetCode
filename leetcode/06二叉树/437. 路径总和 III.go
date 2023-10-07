@@ -27,7 +27,7 @@ func pathSum437(root *TreeNode, targetSum int) int {
 	return result
 }
 
-// dfsPathSum437 统计以给定节点node为跟节点的满足条件的路径个数
+// dfsPathSum437 统计以给定节点node为根节点出发的满足条件的路径个数
 // 此函数功能类似于 leetcode 113. 路径总和 II
 func dfsPathSum437(node *TreeNode, currentSum, targetSum int, result *int) {
 	if node == nil {
