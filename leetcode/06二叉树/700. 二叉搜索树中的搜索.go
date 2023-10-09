@@ -32,9 +32,9 @@ func searchBST1(root *TreeNode, val int) *TreeNode {
 	}
 
 	// 先去左子树找，左子树没找到再去右子树找
-	result := searchBST(root.Left, val)
+	result := searchBST1(root.Left, val)
 	if result == nil {
-		result = searchBST(root.Right, val)
+		result = searchBST1(root.Right, val)
 	}
 	return result
 }
