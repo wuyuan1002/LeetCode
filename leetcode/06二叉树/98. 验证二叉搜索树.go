@@ -38,6 +38,7 @@ func dfsIsValidBST(node *TreeNode, min, max int) bool {
 // ----------------
 
 // isValidBST1 .
+// 同 leetcode 530. 二叉搜索树的最小绝对差
 // 2. 若为二叉搜索树则中序遍历为递增的，因此，在中序遍历时校验当前值是否比前一个值大即可
 func isValidBST1(root *TreeNode) bool {
 	preVal := math.MinInt64
