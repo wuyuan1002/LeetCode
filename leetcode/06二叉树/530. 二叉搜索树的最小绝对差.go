@@ -13,29 +13,30 @@ import "math"
 // 中序遍历二叉树，过程中记录最小差值
 // 二叉搜索树的中序遍历是递增的，相当于是求一个递增序列的最小差值，递增序列的最小差值一定是两个相邻数的差值
 func getMinimumDifference(root *TreeNode) int {
-	result := math.MaxInt64
-	dfsGetMinimumDifference(root, nil, &result)
+	preVal, result := math.MaxInt64, math.MaxInt64
+	dfsGetMinimumDifference(root, &preVal, &result)
 	return result
 }
 
 // dfsGetMinimumDifference 中序遍历二叉树，求最小差值
-// pre: 遍历的前一个节点
+// preVal: 遍历的前一个节点
 // result: 最小差值
-func dfsGetMinimumDifference(node *TreeNode, pre *TreeNode, result *int) {
+func dfsGetMinimumDifference(node *TreeNode, preVal *int, result *int) {
 	if node == nil {
 		return
 	}
 
 	// 遍历左子树
-	dfsGetMinimumDifference(node.Left, pre, result)
+	dfsGetMinimumDifference(node.Left, preVal, result)
 
 	// 使用当前节点值和前一个节点的值求最小差值
-	if pre != nil {
-		*result = min(*result, node.Val-pre.Val)
+	if *preVal != math.MaxInt64 {
+		*result = min(*result, node.Val-*preVal)
 	}
+
 	// 标记当前节点为已遍历
-	pre = node
+	*preVal = node.Val
 
 	// 遍历右子树
-	dfsGetMinimumDifference(node.Right, pre, result)
+	dfsGetMinimumDifference(node.Right, preVal, result)
 }
