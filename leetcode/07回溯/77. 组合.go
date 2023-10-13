@@ -22,7 +22,7 @@ func combine(n int, k int) [][]int {
 // dfsCombine 回溯遍历选择列表，记录满足条件的结果
 // n: 选择列表 -- [1, n]
 // k: 终止条件 -- 取k个数的组合
-// start: 每次遍历的起始下标
+// start: 每次遍历的起始下标 -- 指定当前层的选择范围
 // res: 一次回溯过程中的结果 -- 回溯路径
 // result: 总结果集
 func dfsCombine(n int, k int, start int, res *[]int, result *[][]int) {
