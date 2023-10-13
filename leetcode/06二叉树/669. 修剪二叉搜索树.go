@@ -20,10 +20,13 @@ func trimBST(root *TreeNode, low int, high int) *TreeNode {
 	}
 
 	if root.Val < low {
+		// 当前节点值比要求的最小值都小，说明当前节点及其左子树全部应该被修剪掉，直接返回修建右子树的结果
 		return trimBST(root.Right, low, high)
 	} else if root.Val > high {
+		// 当前节点值比要求的最大值都大，说明当前节点及其右子树全部应该被修剪掉，直接返回修建左子树的结果
 		return trimBST(root.Left, low, high)
 	} else {
+		// 当前节点的值位于目标区间内，则分别修剪当前节点的左右子树
 		root.Left = trimBST(root.Left, low, high)
 		root.Right = trimBST(root.Right, low, high)
 		return root
