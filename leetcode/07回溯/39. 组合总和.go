@@ -42,6 +42,7 @@ func dfsCombinationSum(candidates []int, start int, currentSum, target int, res 
 		return
 	}
 
+	// 从本层的选择列表中不断固定元素到回溯路径, 然后进行下一层的数字选择并进行回溯
 	for i := start; i < len(candidates); i++ {
 		if currentSum+candidates[i] > target {
 			// 剪枝
@@ -56,9 +57,9 @@ func dfsCombinationSum(candidates []int, start int, currentSum, target int, res 
 
 		// 将当前值加入到回溯路径
 		*res = append(*res, candidates[i])
-		// 递归进行下一个值的回溯 -- 因为每个数字可以无限制重复被选取,
+		// 递归进入下一层 -- 因为每个数字可以无限制重复被选取,
 		// 所以进入下一层时当前数字仍然可以被使用, 因此下一层的start为i,
-		// 如果每个数字只能被使用一次, 那么下一层的start应该传i+1
+		// 如果每个数字只能被使用一次, 那么下一层的start应该传 i+1
 		dfsCombinationSum(candidates, i, currentSum+candidates[i], target, res, result)
 		// 将当前值移出回溯路径
 		*res = (*res)[:len(*res)-1]

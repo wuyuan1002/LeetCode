@@ -43,7 +43,7 @@ func dfsCombine(n int, k int, start int, res *[]int, result *[][]int) {
 
 		// 将当前值加入到回溯路径
 		*res = append(*res, i)
-		// 递归进行下一个值的回溯
+		// 递归进行下一层
 		dfsCombine(n, k, i+1, res, result)
 		// 将当前值移出回溯路径
 		*res = (*res)[:len(*res)-1]
