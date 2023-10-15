@@ -48,7 +48,7 @@ func dfsRestoreIpAddresses(s string, start int, res *[]string, result *[]string)
 		// 本次分割的字符串
 		str := s[start : i+1]
 
-		// 剪枝 -- 本次分割到的字符串不满足IP地址的数字要求
+		// 剪枝 -- 本次分割到的字符串不满足IP地址的数字要求 -- 已经不满足条件了, 直接返回即可
 		if str != "0" && str[0] == '0' {
 			return
 		} else if n, _ := strconv.Atoi(str); n > 255 {
