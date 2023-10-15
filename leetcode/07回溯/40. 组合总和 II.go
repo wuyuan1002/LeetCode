@@ -28,7 +28,7 @@ func combinationSum2(candidates []int, target int) [][]int {
 
 // dfsCombinationSum2 回溯遍历选择列表，记录满足条件的结果
 // candidates: 选择列表
-// start: 每次遍历的起始下标 -- 指定当前层的选择范围
+// start: 每次遍历的起始下标 -- 指定当前层的选择范围 -- candidates[start: ]
 // currentSum: 当前和
 // target: 目标和 -- 终止条件
 // res: 一次回溯过程中的结果 -- 回溯路径

@@ -16,7 +16,7 @@ func partition(s string) [][]string {
 
 // dfsPartition .
 // s: 选择列表
-// start: 每次遍历的起始下标 -- 指定当前层的选择范围
+// start: 每次遍历的起始下标 -- 指定当前层的选择范围 -- s[start: ]
 // res: 一次回溯过程中的结果, 里面存放一次回溯路径中每一层所选的满足条件的回文字符串 -- 回溯路径
 // result: 总结果集
 func dfsPartition(s string, start int, res *[]string, result *[][]string) {
