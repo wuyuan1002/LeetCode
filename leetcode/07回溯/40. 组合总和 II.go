@@ -17,6 +17,7 @@ func combinationSum2(candidates []int, target int) [][]int {
 
 	// 先排序方便剪枝
 	// 也可在dfs时使用visited记录已访问的数字来进行剪枝去重
+	// sort.Ints(candidates)
 	quickSort40(candidates, 0, len(candidates)-1)
 
 	res := make([]int, 0)      // 一次回溯过程中的结果 -- 回溯路径
@@ -26,12 +27,12 @@ func combinationSum2(candidates []int, target int) [][]int {
 }
 
 // dfsCombinationSum2 回溯遍历选择列表，记录满足条件的结果
-// // candidates: 选择列表
-// // start: 每次遍历的起始下标 -- 指定当前层的选择范围
-// // currentSum: 当前和
-// // target: 目标和 -- 终止条件
-// // res: 一次回溯过程中的结果 -- 回溯路径
-// // result: 总结果集
+// candidates: 选择列表
+// start: 每次遍历的起始下标 -- 指定当前层的选择范围
+// currentSum: 当前和
+// target: 目标和 -- 终止条件
+// res: 一次回溯过程中的结果 -- 回溯路径
+// result: 总结果集
 func dfsCombinationSum2(candidates []int, start int, currentSum, target int, res *[]int, result *[][]int) {
 	if currentSum == target {
 		// 回溯路径已满足条件 -- 将本次回溯的结果计入总结果集后返回
