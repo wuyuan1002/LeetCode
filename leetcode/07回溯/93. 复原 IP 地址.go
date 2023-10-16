@@ -13,6 +13,9 @@ import "strconv"
 // 你 不能重新排序或删除 s 中的任何数字。你可以按 任何 顺序返回答案。
 
 // restoreIpAddresses .
+// 切割问题和组合问题本质上是一样的
+// 组合问题: 选取一个a后，在bcdef中再去选取第二个，选取b之后在cdef中再选取第三个...
+// 切割问题: 切割一个a后，在bcdef中再去切割第二段，切割b之后在cdef中再切割第三段...
 func restoreIpAddresses(s string) []string {
 	res := make([]string, 0)    // 存放一次回溯路径分割的数字
 	result := make([]string, 0) // 总结果集

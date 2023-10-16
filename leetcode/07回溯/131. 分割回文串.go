@@ -7,6 +7,9 @@ package main
 // 回文串 是正着读和反着读都一样的字符串。
 
 // partition .
+// 切割问题和组合问题本质上是一样的
+// 组合问题: 选取一个a后，在bcdef中再去选取第二个，选取b之后在cdef中再选取第三个...
+// 切割问题: 切割一个a后，在bcdef中再去切割第二段，切割b之后在cdef中再切割第三段...
 func partition(s string) [][]string {
 	res := make([]string, 0)      // 存放一次回溯路径中每一层所选的满足条件的回文字符串
 	result := make([][]string, 0) // 总结果集
@@ -35,15 +38,19 @@ func dfsPartition(s string, start int, res *[]string, result *[][]string) {
 	// 开始从下一层选择回文串直到整个字符串寻找完成, 此时就完成了一次寻找 -- 将回溯路径中的结果记入总结果集
 	// 然后回溯到上一层, 在上一层寻找新的回文串, 找到后再次进入下一层进行递归
 	for i := start; i < len(s); i++ {
-		// 不断在本层寻找回文串加入回溯路径, 然后进入下一层在剩余字符中寻找下一层的回文串
-		if isPartion(s, start, i) {
-			// 将本层当前选好的回文串加入回溯路径
-			*res = append(*res, s[start:i+1])
-			// 进入下一层在剩余字符中寻找下一层的回文串
-			dfsPartition(s, i+1, res, result)
-			// 下一层的回文串已经找完了, 将本层该回文串移出回溯路径, 继续在本层寻找下一个回文串
-			*res = (*res)[:len(*res)-1]
+		// 不断在本层切割回文串加入回溯路径, 然后进入下一层在剩余字符中寻找下一个的回文串
+
+		// 剪枝 -- 在本层切割到不是回文串
+		if !isPartion(s, start, i) {
+			continue
 		}
+
+		// 将本层当前选好的回文串加入回溯路径
+		*res = append(*res, s[start:i+1])
+		// 进入下一层在剩余字符中寻找下一层的回文串
+		dfsPartition(s, i+1, res, result)
+		// 下一层的回文串已经找完了, 将本层该回文串移出回溯路径, 继续在本层寻找下一个回文串
+		*res = (*res)[:len(*res)-1]
 	}
 }
 

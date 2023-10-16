@@ -15,19 +15,19 @@ func combine(n int, k int) [][]int {
 	res := make([]int, 0)      // 一次回溯过程中的结果 -- 回溯路径
 	result := make([][]int, 0) // 总结果集
 
-	dfsCombine(n, k, 1, &res, &result)
+	dfsCombine(n, 1, k, &res, &result)
 	return result
 }
 
 // dfsCombine 回溯遍历选择列表，记录满足条件的结果
 // n: 选择列表 -- [1, n]
+// start: 每次遍历的起始下标 -- 指定当前层的选择范围 -- [start, n]
 // k: 终止条件 -- 取k个数的组合
-// start: 每次遍历的起始下标 -- 指定当前层的选择范围
 // res: 一次回溯过程中的结果 -- 回溯路径
 // result: 总结果集
-func dfsCombine(n int, k int, start int, res *[]int, result *[][]int) {
+func dfsCombine(n int, start int, k int, res *[]int, result *[][]int) {
+	// 回溯路径已满足条件 -- 将本次回溯的结果计入总结果集后返回
 	if len(*res) == k {
-		// 回溯路径已满足条件 -- 将本次回溯的结果计入总结果集后返回
 		temp := make([]int, k)
 		copy(temp, *res)
 		*result = append(*result, temp)
