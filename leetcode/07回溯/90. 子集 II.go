@@ -30,7 +30,7 @@ func subsetsWithDup(nums []int) [][]int {
 // res: 一次回溯过程中的结果 -- 回溯路径
 // result: 总结果集
 func dfsSubsetsWithDup(nums []int, start int, count int, res *[]int, result *[][]int) {
-	// 回溯路径已满足条件 -- 将本次回溯的结果计入总结果集后返回
+	// 回溯路径已满足条件 -- 将本次回溯的结果记入总结果集后返回
 	if len(*res) == count {
 		temp := make([]int, count)
 		copy(temp, *res)
