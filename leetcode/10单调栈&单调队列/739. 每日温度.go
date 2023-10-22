@@ -28,11 +28,11 @@ func dailyTemperatures(temperatures []int) []int {
 		// 计算栈内比当前元素小的元素与当前元素的下标差值 -- 计算栈内比当前元素小的下一个比自己高的温度出现在几天后
 		for len(stack) > 0 && temperatures[i] > temperatures[stack[len(stack)-1]] {
 			// 获取栈内栈顶元素并出栈 -- 获取栈内第一个比当前元素小的天 -- 当前元素左边第一个比自己小的数字
-			top := stack[len(stack)-1]
+			numIndex := stack[len(stack)-1]
 			stack = stack[:len(stack)-1]
 
 			// 计算当前元素和左边数字top的下标差值即为左边数字top距离其右边第一个比自己大的数字的距离 -- 左边数字top的下一个比自己更高温度出现在几天后
-			result[top] = i - top
+			result[numIndex] = i - numIndex
 		}
 
 		// 计算完栈内比当前元素小的元素后，栈内元素逗比当前元素大了，将当前元素入栈
