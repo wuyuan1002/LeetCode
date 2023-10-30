@@ -44,14 +44,14 @@ func fib1(n int) int {
 		return 1
 	}
 
-	result := 0          // 总结果
-	fib_1, fib_2 := 1, 0 // 前一个dp[i-1]和前两个dp[i-2]数字的斐波那契数
+	result := 0        // 总结果
+	pre1, pre2 := 1, 0 // 前一个dp[i-1]和前两个dp[i-2]数字的斐波那契数
 
 	// 开始遍历求斐波那契数，并保存前一个和前两个的中间结果
 	for i := 2; i <= n; i++ {
-		result = fib_1 + fib_2
-		fib_2 = fib_1
-		fib_1 = result
+		result = pre1 + pre2
+		pre2 = pre1
+		pre1 = result
 	}
 
 	return result
