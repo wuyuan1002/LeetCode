@@ -26,22 +26,24 @@ func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 	// 初始化dp数组 -- 初始化第一行和第一列的走法个数，第一行和第一列在障碍物后面的走法个数都为0
 	for i := 0; i < len(obstacleGrid); i++ {
 		if obstacleGrid[i][0] == 1 {
+			// 遇到障碍物直接break，保持障碍物后面的位置走法个数为0
 			break
 		}
 		dp[i][0] = 1
 	}
 	for j := 0; j < len(obstacleGrid[0]); j++ {
 		if obstacleGrid[0][j] == 1 {
+			// 遇到障碍物直接break，保持障碍物后面的位置走法个数为0
 			break
 		}
 		dp[0][j] = 1
 	}
 
 	// 挨个行遍历数组，计算每一个位置的走法个数
-	for i := 1; i < len(obstacleGrid); i++ { // 遍历每一行
-		for j := 1; j < len(obstacleGrid[0]); j++ { // 遍历当前行的每一列
+	for i := 1; i < len(obstacleGrid); i++ { // 从第二行开始遍历，因为第一行已经初始化过了
+		for j := 1; j < len(obstacleGrid[0]); j++ { // 从第二列开始遍历，因为第一列已经初始化过了
 			if obstacleGrid[i][j] == 1 {
-				// 遇到障碍物，将障碍物位置的走法个数置为0
+				// 遇到障碍物，将障碍物位置的走法个数置为0，表示不能从障碍物处走
 				dp[i][j] = 0
 			} else {
 				// 其它位置的走法个数为上面和左面的走法个数相加
@@ -64,7 +66,7 @@ func uniquePathsWithObstacles1(obstacleGrid [][]int) int {
 	// 构造dp数组，因为滚动数组记录的是某一行的走法个数，所以大小为行的大小
 	dp := make([]int, len(obstacleGrid[0]))
 
-	// 初始化dp数组 -- 第一行第一个位置的走法个数为1，因为要从[0, 0]位置出发，所以第一个位置一定会是障碍物
+	// 初始化dp数组 -- 第一行第一个位置的走法个数为1，因为要从[0, 0]位置出发，所以第一个位置一定不会是障碍物
 	dp[0] = 1
 
 	// 遍历计算每个位置的走法个数并保存中间结果到dp数组
