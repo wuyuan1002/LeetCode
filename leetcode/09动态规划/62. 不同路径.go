@@ -52,7 +52,7 @@ func uniquePaths1(m int, n int) int {
 		return 0
 	}
 
-	// 构造dp数组，因为滚动数组记录的是某一行的走法个数，所以大小为n
+	// 构造dp数组 -- dp数组记录的是前一行每个位置的走法个数
 	dp := make([]int, n)
 
 	// 初始化dp数组 -- 第一行第一个位置的走法个数为1

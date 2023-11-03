@@ -63,7 +63,7 @@ func uniquePathsWithObstacles(obstacleGrid [][]int) int {
 // dp[j]表示在某一行第j个位置的走法个数
 // dp[j] = dp[j] + dp[j - 1]
 func uniquePathsWithObstacles1(obstacleGrid [][]int) int {
-	// 构造dp数组，因为滚动数组记录的是某一行的走法个数，所以大小为行的大小
+	// 构造dp数组 -- dp数组记录的是前一行每个位置的走法个数
 	dp := make([]int, len(obstacleGrid[0]))
 
 	// 初始化dp数组 -- 第一行第一个位置的走法个数为1，因为要从[0, 0]位置出发，所以第一个位置一定不会是障碍物
