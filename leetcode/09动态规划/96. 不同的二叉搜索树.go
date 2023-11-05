@@ -23,5 +23,6 @@ func numTrees(n int) int {
 		}
 	}
 
+	// 返回总节点个数为n的数量
 	return dp[n]
 }
