@@ -8,6 +8,7 @@ package main
 
 // integerBreak .
 // 同剪绳子
+// 背包问题 -- 最值问题 -- dp[i] = max(dp[i], dp[j] * dp[i-j])
 // dp[i]表示拆分数字i所能得到的最大乘积
 // dp[i] = max(dp[i], dp[j] * dp[i-j])
 func integerBreak(n int) int {
