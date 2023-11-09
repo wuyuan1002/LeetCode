@@ -14,7 +14,7 @@ package main
 // dp[i]表示凑出总金额i的硬币组合数
 // dp[i] = dp[i] + dp[i - coin]
 func change(amount int, coins []int) int {
-	// 构造dp数组 -- dp[i]表示凑出总金额i有几种组合方式
+	// 构造dp数组 -- dp[i]表示凑出总金额i有几种组合方式 -- 默认值为0表示初始时每种总金额的组合个数都为0
 	dp := make([]int, amount+1)
 	// 初始化dp数组 -- 凑出总金额为0的硬币组合数为1，其实这个值没有意义，只是如果dp[0] = 0 的话，后面所有推导出来的值都是0了
 	dp[0] = 1

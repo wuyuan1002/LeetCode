@@ -13,7 +13,7 @@ package main
 
 // combinationSum .
 // 1. 回溯法
-// 2. 动态规划 -- 完全背包问题 -- 组合问题 -- 只能求出解的个数, 无法求出每个解是什么
+// 2. 动态规划 -- 完全背包 -- 组合问题 -- 只能求出解的个数, 无法求出每个解是什么 -- leetcode 518
 func combinationSum(candidates []int, target int) [][]int {
 	if candidates == nil || len(candidates) == 0 {
 		return nil
