@@ -25,7 +25,7 @@ func wordBreak(s string, wordDict []string) bool {
 
 	// 开始dp -- 计算字符串前i部分能否被选择列表中的单词拼接构成
 	// 本题求的是排列数，所以应该先遍历背包再遍历选择列表 -- 因为物品的顺序影响结果，所以是排列问题 leetcode 377
-	for i := 1; i <= len(s); i++ { // 遍历背包容量
+	for i := 1; i <= len(s); i++ { // 遍历背包容量 -- 遍历字符串s
 		for j := 0; j < i; j++ { // 遍历选择列表 -- 若s的[0, j)和[j, i)都可以被选择列表中的单词构成，那么[0, i)部分也就可以被选择列表中的单词构成
 			if dp[j] && wordMap[s[j:i]] {
 				dp[i] = true
@@ -34,6 +34,6 @@ func wordBreak(s string, wordDict []string) bool {
 		}
 	}
 
-	// 返回字符串s的前len(s)部分是否可以被选择列表中的单词拼接构成
+	// 返回字符串s能否可以被选择列表中的单词拼接构成
 	return dp[len(s)]
 }
