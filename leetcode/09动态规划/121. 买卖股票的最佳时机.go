@@ -1,5 +1,7 @@
 package main
 
+import "math"
+
 // 121. 买卖股票的最佳时机
 
 // 给定一个数组 prices ，它的第i 个元素prices[i] 表示一支给定股票第 i 天的价格。
@@ -7,45 +9,55 @@ package main
 // 设计一个算法来计算你所能获取的最大利润。
 // 返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。
 
-// maxProfit .
+// maxProfit121 .
 // 1. 贪心
 // 因为股票只买卖一次，那么贪心的想法很自然就是取左侧最小值，取右侧最大值，两者的差值就是最大利润
-func maxProfit(prices []int) int {
+func maxProfit121(prices []int) int {
 	if len(prices) < 2 {
 		return 0
 	}
 
 	// 最小成本、最大利润
-	minCost, result := prices[0], 0
+	minCost, maxProfit := math.MaxInt32, 0
 
 	// 遍历每天的股票，更新最小成本并计算最大利润
 	for _, price := range prices {
 		if price < minCost {
 			minCost = price
 		} else {
-			result = max(result, price-result)
+			maxProfit = max(maxProfit, price-minCost)
 		}
 	}
 
 	// 返回最大利润
-	return result
+	return maxProfit
 }
 
-// maxProfit .
+// maxProfit1211 .
 // 2. 动态规划
 // 一天共有两种状态(状态j)：0持有股票、1未持有股票
 //
 // dp[i][j]表示第i天状态j时所持有的最大现金数量(越大说明越有钱)
 // dp[i][0] = max(dp[i - 1][0], -prices[i])
-// 	 第i天为持有股票的状态时所持有的现金数量，可由两种情况得出：
+// 	 第i天为持有股票的状态时所持有的最大现金数量，可由两种情况得出：
 // 	 1. 前一天就已经持有股票，保持现状 -- 即前一天手上的现金数量：dp[i - 1][0]
 // 	 2. 当天买入股票 -- 即按照当天股票价格买了股票的现金数量： -prices[i]
 // dp[i][1] = max(dp[i - 1][1], dp[i - 1][0] + prices[i])
-//   第i天为不持有股票的状态时所持有的现金数量，可由两种情况得出：
+//   第i天为不持有股票的状态时所持有的最大现金数量，可由两种情况得出：
 //   1. 前一天就不持有股票，保持现状 -- 即前一天手上的现金数量：dp[i - 1][1]
 //   2. 当天卖出股票 -- 即按照当天价格卖掉手上持有的股票后得到的现金数量：dp[i - 1][0] + prices[i]
-func maxProfit1(prices []int) int {
-
+//
+// eg: prices = [7, 3, 5, 2, 6]
+//  0持有 | 1不持有
+//   +---------+
+// 0 | -7 | 0  |
+// 1 | -3 | 0  |  ->  max(-7, -3)、max(0, -7 + 3)
+// 2 | -3 | 2  |  ->  max(-3, -5)、max(0, -3 + 5)
+// 3 | -2 | 2  |  ->  max(-3, -2)、max(2, -3 + 2)
+// 4 | -2 | 4  |  ->  max(-2, -6)、max(2, -2 + 6)
+//   +---------+
+// 所以答案为4
+func maxProfit1211(prices []int) int {
 	// 构造dp数组 -- dp[i][j]表示第i天状态j时所持有的最大现金数量(越大说明越有钱)
 	dp := make([][2]int, len(prices))
 
