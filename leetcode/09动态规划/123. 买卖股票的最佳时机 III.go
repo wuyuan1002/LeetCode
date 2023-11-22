@@ -15,7 +15,7 @@ func maxProfit123(prices []int) int {
 	// 构造dp数组 -- dp[i][j]表示第i天状态j时所持有的最大现金数量(越大说明越有钱)
 	dp := make([][5]int, len(prices))
 
-	// 初始化dp数组
+	// 初始化dp数组 -- 初始化第一天的5种状态
 	dp[0][0] = 0
 	dp[0][1] = -prices[0]
 	dp[0][2] = 0

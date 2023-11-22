@@ -22,7 +22,7 @@ func maxProfit188(k int, prices []int) int {
 		dp[i] = make([]int, 2*k+1)
 	}
 
-	// 初始化dp数组
+	// 初始化dp数组 -- 初始化第一天的所有状态
 	dp[0][0] = 0
 	for i := 1; i < 2*k; i += 2 {
 		// 当i为奇数时初始化第i次买入的剩余现金数、当i为偶数时剩余现金数初始化为0
