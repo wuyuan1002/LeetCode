@@ -30,6 +30,7 @@ func lengthOfLIS(nums []int) int {
 				dp[i] = max(dp[i], dp[j]+1)
 			}
 		}
+		// 更新整体的最长递增子序列长度
 		maxLen = max(maxLen, dp[i])
 	}
 
