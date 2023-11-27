@@ -7,14 +7,10 @@ package main
 // 子数组 是数组中的一个连续部分。
 
 // maxSubArray .
-// 1. 只使用一个变量currentSum保存前一个数字的最大和，遍历数组时计算最大子数组和
-// 2. 动态规划
+// 1. 动态规划
 //
 // dp[i]表示以下标i处数字结尾的数组的最大和
 // dp[i] = max(dp[i-1]+nums[i], nums[i])
-//
-// 可以看到在计算下一个数字结尾的数组最大和时，只需要使用dp[i-1]即可，所以没必要使用dp数组记录所有中间结果，
-// 只使用一个变量currentSum保存前一个数字的最大和即可
 func maxSubArray(nums []int) int {
 	if nums == nil || len(nums) == 0 {
 		return 0
@@ -40,7 +36,9 @@ func maxSubArray(nums []int) int {
 }
 
 // maxSubArray1 .
-// 只使用一个变量currentSum保存前一个数字的最大和，遍历数组时计算最大子数组和
+// 2. 只使用一个变量currentSum保存前一个数字的最大和，遍历数组时计算最大子数组和
+//
+// 可以看到在计算下一个数字结尾的数组最大和时，只需要使用dp[i-1]即可，所以没必要使用dp数组记录所有中间结果
 func maxSubArray1(nums []int) int {
 	if nums == nil || len(nums) == 0 {
 		return 0
@@ -50,7 +48,7 @@ func maxSubArray1(nums []int) int {
 
 	currentSum, maxSum := nums[0], nums[0] // 以当前数字结尾的最大子数组和、全局最大子数组和
 	for i := 1; i < len(nums); i++ {
-		// 更新当前最大的连续和
+		// 更新以当前数字结尾的最大子数组和
 		currentSum = max(currentSum+nums[i], nums[i])
 		// 更新全局最大子数组和
 		maxSum = max(currentSum, maxSum)
