@@ -10,6 +10,7 @@ package main
 // 两个字符串的 公共子序列 是这两个字符串所共同拥有的子序列。
 
 // longestCommonSubsequence .
+// 同 leetcode 1035
 // 二维dp
 //
 // dp[i][j]表示以下标i-1结尾的text1和下标j-1结尾的text2的子串的最长公共子序列长度
@@ -82,5 +83,6 @@ func longestCommonSubsequence1(text1 string, text2 string) int {
 		}
 	}
 
+	// 返回最终两个完整字符串的公共子序列长度
 	return dp[len(text2)]
 }
