@@ -18,7 +18,7 @@ package main
 // 最终若在t中找到了s中的所有字符，说明s是t的子序列
 func isSubsequence(s string, t string) bool {
 	i, j := 0, 0
-	// 不断循环遍历i和j指向的字符是否相等 -- 在t中不断寻找s中的所有字符
+	// 不断循环遍历i和j指向的字符判断是否相等 -- 在t中不断寻找s中的所有字符
 	for i < len(s) && j < len(t) {
 		if s[i] == t[j] {
 			// 若当前i指向的s中的字符在t中找到了，向前移动i指向下一个字符，继续在t中寻找
