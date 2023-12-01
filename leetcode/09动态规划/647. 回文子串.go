@@ -8,6 +8,7 @@ package main
 // 具有不同开始位置或结束位置的子串，即使是由相同的字符组成，也会被视作不同的子串。
 
 // countSubstrings .
+// 同 leetcode 5、516
 // 1. 双指针 -- 中心扩散法
 // 2. 动态规划
 //
@@ -35,7 +36,7 @@ func countSubstrings(s string) int {
 	// 初始化dp数组 -- 每个位置dp[i][j]都应该为false，表示每个字符
 	// 因为bool默认为false，所以这里不用单独遍历dp进行初始化false的操作
 
-	// 因为dp[i][j]依赖于dp[i + 1][j - 1], 因此dp数组应该是从左下往右上遍历 -- 字符串i要倒着遍历
+	// 因为dp[i][j]依赖于dp[i+1][j-1], 因此dp数组应该是从左下往右上遍历 -- 字符串i要倒着遍历
 	for i := len(s) - 1; i >= 0; i-- {
 		// j遍历区间 [i, len(s)) 的所有字符，不断计算[i, j]区间的字符是否为回文串并累加result
 		for j := i; j < len(s); j++ {
