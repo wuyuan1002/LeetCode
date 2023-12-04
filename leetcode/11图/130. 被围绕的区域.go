@@ -29,7 +29,7 @@ func solve(board [][]byte) {
 	}
 }
 
-// dfsSolve 判断给定坐标所属陆地是否为飞地，同时将陆地坐标标记为给定标记
+// dfsSolve 判断给定坐标所属陆地是否为飞地，同时将给定范围坐标标记为给定标记
 func dfsSolve(board [][]byte, i, j int, isFlyArea *bool, base, mark byte) {
 	// 若当前坐标超出地图范围或不是陆地或已被访问过
 	if i < 0 || i >= len(board) || j < 0 || j >= len(board[0]) || board[i][j] != base {
