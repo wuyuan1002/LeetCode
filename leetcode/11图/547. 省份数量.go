@@ -44,7 +44,7 @@ func dfsFindCircleNum(isConnected [][]int, i int, visited []bool) {
 	// 标记当前城市已被访问
 	visited[i] = true
 
-	// 遍历所有城市，寻找与当前城市相连接的城市并进行深度遍历
+	// 遍历所有城市，寻找并标记与当前城市直接和间接相连接的城市
 	for j := 0; j < len(isConnected); j++ {
 		if isConnected[i][j] == 1 && !visited[j] {
 			dfsFindCircleNum(isConnected, j, visited)
