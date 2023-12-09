@@ -29,6 +29,8 @@ func allPathsSourceTarget(graph [][]int) [][]int {
 // result: 总结果集
 func dfsAllPathsSourceTarget(graph [][]int, i int, res *[]int, result *[][]int) {
 	// 若当前节点已经是最后一个节点，说明已经寻找完了所有节点，已经找到了一条路径，将路径记录到结果集
+	// 因为求的是 0~n-1 的节点路径，所以终点一定是最后一个节点（即第 len(graph)-1 个节点），所以这里以当前节点是否为最后一个节点作为判断条件
+	// 若题目要求是求从第0个节点出发的所有路径（不要求终点必须是第n-1个节点），那么这里的判断条件需要改成 if len(graph) > 0，即判断从当前节点出发还有没有可到达的其它节点，若没有，说明当前节点是当前路径的最后一个节点，将当前路径记录到结果集
 	if i == len(graph)-1 {
 		temp := make([]int, len(*res))
 		copy(temp, *res)
