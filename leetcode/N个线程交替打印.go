@@ -26,8 +26,8 @@ func printAlternately(threadCount int, maxNum int) {
 	for i := range readyChans {
 		// 这里每个协程的条件变量必须是有缓冲区的channel，保证发送信号的协程不会因为channel上没有阻塞的协程而导致发送信号的协程也被阻塞。
 		// 若channel没有缓冲区，会导致通知协程结束时，最后一个结束的协程向下一个协程的channel发送信号，
-		// 但是下一个channel上已经没有协程阻塞在上面了，会导致最后一个协程在发送信号时阻塞，从而无法执行wg.Done()，
-		// 此时m主协程和最后一个打印协程都阻塞了，出现协程泄漏deadlock
+		// 但是下一个channel上已经没有协程阻塞在上面了，会导致最后一个协程在发送信号时阻塞，进而无法执行wg.Done()，
+		// 此时主协程和最后一个打印协程都阻塞了，出现协程泄漏deadlock
 		readyChans[i] = make(chan bool, 1)
 	}
 
