@@ -1,4 +1,4 @@
-package leetcode
+package main
 
 // 快排
 // 如何优化排序算法: https://mp.weixin.qq.com/s/5HqfRGqPyAhFt0krPgMHOQ
