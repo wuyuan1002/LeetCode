@@ -28,9 +28,9 @@ func findDisappearedNumbers(nums []int) []int {
 	}
 
 	// 遍历[1, n] -- 将所有对应数字大于0的n记录到结果集表示数字n没有出现过
-	for n := 1; n <= len(nums); n++ {
-		if nums[n-1] > 0 {
-			result = append(result, n)
+	for num := 1; num <= len(nums); num++ {
+		if nums[num-1] > 0 {
+			result = append(result, num)
 		}
 	}
 

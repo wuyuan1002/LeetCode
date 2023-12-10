@@ -22,6 +22,7 @@ func removeElements(head *ListNode, val int) *ListNode {
 	return dummy.Next
 }
 
+// ListNode .
 type ListNode struct {
 	Val  int
 	Next *ListNode
