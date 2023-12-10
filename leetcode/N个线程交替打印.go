@@ -48,7 +48,8 @@ func printAlternately(threadCount int, maxNum int) {
 				// 若要打印的数字已经大于最大值
 				if num > maxNum {
 					readyChans[(gid+1)%threadCount] <- true // 通知下一个协程退出
-					break                                   // 退出当前协程
+					wg.Done()                               // 标记当前协程执行结束
+					return                                  // 退出当前协程
 				}
 
 				// 打印数字
@@ -57,9 +58,6 @@ func printAlternately(threadCount int, maxNum int) {
 				// 通知下一个协程开始打印
 				readyChans[(gid+1)%threadCount] <- true
 			}
-
-			// 标记当前协程执行结束
-			wg.Done()
 		}(i)
 	}
 
