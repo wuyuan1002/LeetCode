@@ -23,7 +23,7 @@ func longestPalindrome(s string) string {
 			r++
 		}
 
-		// 之后左右指针同时想两边扩散，直至左右指针的值不想等
+		// 之后左右指针同时向两边扩散，直至左右指针的值不相等
 		for l >= 0 && r <= len(s)-1 && s[l] == s[r] {
 			l--
 			r++
