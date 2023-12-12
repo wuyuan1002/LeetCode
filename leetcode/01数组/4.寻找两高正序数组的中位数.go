@@ -11,10 +11,10 @@ package main
 // 1. 合并两个数组，求中位数 -- 合并过程类似归并排序的一部分，见Offer 51
 // 2. 不需要合并两个数组，由于两个数组长度已知，因此最终的中位数是第几个也是已知的，使用两个指针同时遍历两个数组即可得到中位数
 func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
-	midNum := 0                       // 中位数
 	alllen := len(nums1) + len(nums2) // 总数字个数
 	midIndex := alllen / 2            // 中位数是总数字中的第几个
-	next := 0                         // 中位数的下一个数字 -- 若总数为偶数时使用
+	midNum := 0                       // 中位数
+	midNext := 0                      // 中位数的下一个数字 -- 若总数为偶数时使用
 
 	// 若总长度为奇数，前面求的 alllen/2 会默认向下取整，实际奇数时的中位数需要+1
 	if alllen%2 != 0 {
@@ -35,14 +35,14 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 			if midIndex == 1 { // 找到中位数
 				midNum = nums2[j]
 			} else if midIndex == 0 { // 找中位数的下一个数字
-				next = nums2[j]
+				midNext = nums2[j]
 			}
 			j++
 		} else if j == len(nums2) { // j已指向数组末尾，只向后移动i
 			if midIndex == 1 { // 找到中位数
 				midNum = nums1[i]
 			} else if midIndex == 0 { // 找中位数的下一个数字
-				next = nums1[i]
+				midNext = nums1[i]
 			}
 			i++
 		} else { // 若两个指针都未到达末尾，比较双指针指向数字的大小，向后移动数字小的那个指针
@@ -50,14 +50,14 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 				if midIndex == 1 { // 找到中位数
 					midNum = nums1[i]
 				} else if midIndex == 0 {
-					next = nums1[i]
+					midNext = nums1[i]
 				}
 				i++
 			} else {
 				if midIndex == 1 { // 找到中位数
 					midNum = nums2[j]
 				} else if midIndex == 0 { // 找中位数的下一个数字
-					next = nums2[j]
+					midNext = nums2[j]
 				}
 				j++
 			}
@@ -66,9 +66,8 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 
 	// 若总个数为偶数，返回中位数与下一个数字的平均数，若总数是奇数，直接返回中位数
 	if alllen%2 == 0 {
-		return float64(midNum+next) / 2
+		return float64(midNum+midNext) / 2
 	} else {
 		return float64(midNum)
 	}
-
 }
