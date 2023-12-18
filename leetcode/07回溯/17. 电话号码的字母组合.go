@@ -32,7 +32,7 @@ func dfsLetterCombinations(digits string, index int, res *[]byte, result *[]stri
 	}
 
 	// 获取当前层的数字
-	number := string(digits[index])
+	number := digits[index]
 
 	// 遍历当前数字对应的所有字符
 	for _, char := range phone[number] {
@@ -46,13 +46,13 @@ func dfsLetterCombinations(digits string, index int, res *[]byte, result *[]stri
 }
 
 // phone 数字与字母对应表
-var phone = map[string][]byte{
-	"2": {'a', 'b', 'c'},
-	"3": {'d', 'e', 'f'},
-	"4": {'g', 'h', 'i'},
-	"5": {'j', 'k', 'l'},
-	"6": {'m', 'n', 'o'},
-	"7": {'p', 'q', 'r', 's'},
-	"8": {'t', 'u', 'v'},
-	"9": {'w', 'x', 'y', 'z'},
+var phone = map[byte][]byte{
+	'2': {'a', 'b', 'c'},
+	'3': {'d', 'e', 'f'},
+	'4': {'g', 'h', 'i'},
+	'5': {'j', 'k', 'l'},
+	'6': {'m', 'n', 'o'},
+	'7': {'p', 'q', 'r', 's'},
+	'8': {'t', 'u', 'v'},
+	'9': {'w', 'x', 'y', 'z'},
 }
