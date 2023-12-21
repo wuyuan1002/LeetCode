@@ -7,6 +7,7 @@ package main
 // 你不能使用任何內建的用于处理大整数的库（比如 BigInteger）， 也不能直接将输入的字符串转换为整数形式。
 
 // addStrings .
+// 同 leetcode 43. 字符串相乘、67. 二进制求和
 // 两指针分别从两字符串尾部进行相加操作，同时使用一个变量记录进位，将进位相加到下一位的计算中，
 // 使用一个切片保存每一位的得数，将每一位的计算结果添加到切片末尾，最终计算完后反转整个切片即为最终结果
 func addStrings(num1 string, num2 string) string {
@@ -14,6 +15,7 @@ func addStrings(num1 string, num2 string) string {
 	carry := 0                       // 进位
 	i, j := len(num1)-1, len(num2)-1 // 两个指针分别指向两数末尾
 
+	// 不断计算每一位的得数和进位，并将每一位的得数添加到总结果尾部
 	for i >= 0 || j >= 0 || carry > 0 {
 		// 获取i、j位置对应的的数字
 		n1, n2 := 0, 0
@@ -26,7 +28,7 @@ func addStrings(num1 string, num2 string) string {
 
 		// 计算当前位得数和进位
 		sum := n1 + n2 + carry
-		result = append(result, byte((sum%10)+'0'))
+		result = append(result, byte(sum%10)+'0')
 		carry = sum / 10
 
 		// 同时向前移动两指针
