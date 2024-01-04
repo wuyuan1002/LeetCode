@@ -19,7 +19,7 @@ func hammingWeight1(num uint32) int {
 }
 
 // hammingWeight2 .
-// 2. 把一个整数减1再和原来的整数作与运算，会把该整数最右面的1变成0。那么一个整数中有多少个1就可以做多少次这样的操作
+// 2. 把一个整数减1再和原来的整数作与运算，会把该整数最右面的1变成0 -- 一个整数中有多少个1就可以做多少次这样的操作
 func hammingWeight2(num uint32) int {
 	count := 0
 	for num != 0 {
