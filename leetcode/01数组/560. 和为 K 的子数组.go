@@ -7,6 +7,7 @@ package main
 // 子数组是数组中元素的连续非空序列。
 
 // subarraySum .
+// 同 leetcode 523. 连续的子数组和
 // 前缀和 -- 从数组第0项到当前项的和
 // 题意：有几种 i、j 的组合，使得从第 i 到 j 项的子数组和等于 k
 // ↓ ↓ ↓ 转化为 ↓ ↓ ↓
@@ -18,10 +19,15 @@ func subarraySum(nums []int, k int) int {
 
 	// 不断遍历数组中的每一项，计算其前缀和sum，并统计map中有几项前缀和为sum-k的，更新出现次数并递增当前前缀和出现的次数
 	for i := 0; i < len(nums); i++ {
+		// 更新当前以当前数字结尾的前缀和
 		sum += nums[i]
+
+		// 查找在数组中下标[0, i)范围内前缀和为 sum-k 的出现过几次
 		if _, ok := prefixSum[sum-k]; ok {
 			count += prefixSum[sum-k]
 		}
+
+		// 将当前前缀和出现的次数+1
 		prefixSum[sum] += 1
 	}
 	return count
