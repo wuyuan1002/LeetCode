@@ -11,7 +11,7 @@ package main
 // 前缀和 -- 从数组第0项到当前项的和
 // 题意：有几种 i、j 的组合，使得从第 i 到 j 项的子数组和等于 k
 // ↓ ↓ ↓ 转化为 ↓ ↓ ↓
-// 有几种 i、j 的组合，满足 prefixSum[j] - prefixSum[i-1] == k  ->  prefixSum[i-1] == prefixSum[j] - k
+// 有几种 i、j 的组合，满足 prefixSum[j] - prefixSum[i-1] = k  ->  prefixSum[i-1] = prefixSum[j] - k
 // 可以通过求出 prefixSum 数组的每一项，再看哪些项相减等于k，求出count
 func subarraySum(nums []int, k int) int {
 	count, sum := 0, 0             // sum: nums从第0项到当前项的和

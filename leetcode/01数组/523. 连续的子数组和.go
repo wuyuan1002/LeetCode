@@ -12,10 +12,13 @@ package main
 
 // checkSubarraySum .
 // 同 leetcode 560. 和为 K 的子数组
-// 前缀和 -- 从数组第0项到当前项的和
-// 相当于求数组中和为K的倍数的子数组
+// 前缀和 -- 从数组第0项到当前项的和 -- 相当于求数组中和为K的倍数的子数组
+// sum[j] − sum[i−1] = n * k
+// ↓ ↓ ↓ 转化为 ↓ ↓ ↓
+// sum[j] / k − sum[i−1] / k = n  ->  要使得两者除k相减为整数，需要满足 sum[j] 和 sum[i−1] 对k取余相同
+// 也就是说，我们只需要枚举右端点j，然后在枚举右端点j的时候检查[0, j)是否出现过左端点i，使得sum[j]和sum[i−1]对k取余相同
 func checkSubarraySum(nums []int, k int) bool {
-	// prefixSum[sum]: 从第0项开始，前缀和为sum的下标，存的是前缀和与k取余后的得数，因为这里要求的是子数组和为k的倍数 -- 初始定义一个和为0的下标为-1
+	// prefixSum[sum]: 从第0项开始，前缀和为sum的下标，存的是前缀和与k取余后的得数，因为这里要求的是对k取余相同的前缀和的下标 -- 初始定义一个和为0的下标为-1
 	prefixSum := map[int]int{0: -1}
 
 	// 不断遍历数组中的每一项，计算其前缀和sum，并查看map中前缀和为sum-k的下标是否满足条件
@@ -25,7 +28,7 @@ func checkSubarraySum(nums []int, k int) bool {
 		sum += nums[i]
 
 		// 判断map中前缀和为 sum%k 是否出现过，若出现过且子数组长度大于2则说明存在满足条件的子数组
-		// prefixSum存的是前缀和与k取余后的得数，因为这里要求的是子数组和为k的倍数
+		// prefixSum存的是前缀和与k取余后的得数，因为这里要求的是对k取余相同的前缀和的下标
 		if idx, ok := prefixSum[sum%k]; ok {
 			if i-idx >= 2 {
 				return true
