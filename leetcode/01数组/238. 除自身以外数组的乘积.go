@@ -17,6 +17,7 @@ func productExceptSelf(nums []int) []int {
 	// 第一个元素左侧没有元素，所以 result[0] = 1
 	result[0] = 1
 	for i := 1; i < len(nums); i++ {
+		// 索引为i的数字的前缀之积 = 索引为i-1的前缀之积 * 索引为i-1的数字
 		result[i] = result[i-1] * nums[i-1]
 	}
 
@@ -24,7 +25,7 @@ func productExceptSelf(nums []int) []int {
 	// 使用变量R存储每个数字的后缀之积，表示每个数字右侧的所有数字的乘积，最后一个数字右侧没有元素，所以accu初始值为1
 	R := 1
 	for i := len(nums) - 1; i >= 0; i-- {
-		// 对于当前数字索引为i，左边的乘积为 result[i]，右边的乘积为 R -- 将当前数字nums[i]的前缀之积和后缀之积相乘即得到当前数字的答案
+		// 对于当前数字索引为i，左边的乘积为result[i]，右边的乘积为R -- 将当前数字nums[i]的前缀之积和后缀之积相乘即得到当前数字的答案
 		result[i] *= R
 		// 更新后缀之积 -- 将当前数字乘到R上，得到前一个数字的后缀之积
 		R *= nums[i]
