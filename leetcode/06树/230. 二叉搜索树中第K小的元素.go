@@ -14,16 +14,11 @@ func kthSmallest(root *TreeNode, k int) int {
 
 // dfsKthSmallest 中序遍历二叉树寻找第k小的数字，找到后直接返回，不继续递归
 func dfsKthSmallest(node *TreeNode, k *int, result *int) {
-	if node == nil {
+	if node == nil || *k == 0 {
 		return
 	}
 
 	dfsKthSmallest(node.Left, k, result)
-
-	// 若已经找到第k小的数字，直接返回不继续递归
-	if *k == 0 {
-		return
-	}
 
 	// 将k减一，标记遍历的数字个数
 	*k--
