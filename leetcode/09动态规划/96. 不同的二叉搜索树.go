@@ -6,7 +6,7 @@ package main
 // 返回满足题意的二叉搜索树的种数。
 
 // numTrees .
-// 同 leetcode 70. 爬楼梯
+// 同 leetcode 70. 爬楼梯、95. 不同的二叉搜索树 II
 // dp[i]表示总数为i个节点时所能的不同二叉排序树的总数
 // dp[i] = dp[i] + dp[j - 1] * dp[i - j]
 func numTrees(n int) int {
