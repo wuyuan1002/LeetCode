@@ -22,7 +22,7 @@ func maxProfit(prices []int) int {
 		if price < minCost {
 			minCost = price
 		} else {
-			result = max(result, price-result)
+			result = max(result, price-minCost)
 		}
 	}
 
