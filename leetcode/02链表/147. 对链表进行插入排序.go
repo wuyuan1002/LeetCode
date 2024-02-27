@@ -24,7 +24,7 @@ func insertionSortList(head *ListNode) *ListNode {
 	// 遍历每一个节点，将其插入到正确的位置
 	for current := head.Next; current != nil; current = sortedTail.Next {
 		// 若要插入的节点正好应该在整改排序链表的最后，则直接更新尾节点
-		if current.Val > sortedTail.Val {
+		if current.Val >= sortedTail.Val {
 			sortedTail = sortedTail.Next
 			continue
 		}
