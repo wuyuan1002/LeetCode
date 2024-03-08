@@ -40,7 +40,7 @@ func totalSteps(nums []int) int {
 		stack = append(stack, step{nums[i], count})
 	}
 
-	// 此时栈内存的是每个能删元素的数子及其能删掉的数字数量，这些里的最大值就是最终结果
+	// 此时栈内存的是每个能删元素的数字及其能删掉的数字数量，这些里的最大值就是最终结果
 	result := 0
 	for _, s := range stack {
 		result = max(result, s.count)
