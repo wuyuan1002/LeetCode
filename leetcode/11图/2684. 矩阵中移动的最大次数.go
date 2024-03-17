@@ -19,7 +19,7 @@ package main
 func maxMoves(grid [][]int) int {
 
 	// 能够到达当前列的哪些横坐标
-	canMoveOn := make(map[int]bool, 0)
+	canMoveOn := make(map[int]bool)
 
 	// 第一列都可以到达，默认加入到集合中 -- 从第一列开始向后移动
 	for i := 0; i < len(grid); i++ {
