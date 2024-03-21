@@ -46,15 +46,3 @@ func largestSumAfterKNegations(nums []int, k int) int {
 
 	return result
 }
-
-// abs 求绝对值
-func abs(a int) int {
-	if a < 0 {
-		return -a
-	}
-	return a
-}
-
-func main() {
-	largestSumAfterKNegations([]int{4, 2, 3}, 1)
-}
