@@ -51,11 +51,3 @@ func maxSubArrayDP(nums []int) int {
 
 	return maxSum
 }
-
-// max .
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
