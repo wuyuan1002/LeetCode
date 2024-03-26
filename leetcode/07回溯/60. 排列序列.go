@@ -38,12 +38,13 @@ func getPermutation(n int, k int) string {
 
 	// 分别定位结果的前第i位是那个数字
 	for i := 0; i < n; i++ {
-		// 计算当前剩余数字总个数-1的阶乘数 -- 如剩余5个数字，则求4的阶乘
+		// 计算 当前剩余数字总个数-1 的阶乘数 -- 如剩余5个数字，则求4的阶乘
 		factor := factorial(n - i - 1)
 		// 定位总结果的前第i个数字并加入到总结果
-		result[i] = byte(nums[k/factor] + '0')
+		idx := k / factor
+		result[i] = byte(nums[idx] + '0')
 		// 将已使用归位的前第i个数字从数组中移除
-		nums = append(nums[:k/factor], nums[k/factor+1:]...)
+		nums = append(nums[:idx], nums[idx+1:]...)
 
 		// 计算在剩余数组数字中找前k个排列
 		k = k % factor
