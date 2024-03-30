@@ -12,10 +12,10 @@ package main
 // 给你一个整数数组 nums ，返回 nums 中作为 摆动序列 的 最长子序列的长度 。
 
 // wiggleMaxLength .
-// up[i]表示数组在[0, i]区间内最后两个数字递增的最长摆动子序列长度 -- 如[1, 6, 3, 8, 5, 7]为递增子序列（7比5大，最后两个数字递增）
-// down[i]表示数组在[0, i]区间内最后两个数字递减的最长摆动子序列长度 -- 如[1, 6, 3, 8, 5]为递减子序列（5比8小，最后两个数字递减）
-// up[i] = max(up[i-1], down[i-1]+1)
-// down[i] = max(up[i-1]+1, down[i-1])
+// 同 leetcode 1567. 乘积为正数的最长子数组长度
+//
+// up[i]表示以第i个数字结尾的最后两个数字递增的最长摆动子序列长度 -- 如[1, 6, 3, 8, 5, 7]为递增子序列（7比5大，最后两个数字递增）
+// down[i]表示以第i个数字结尾的最后两个数字递减的最长摆动子序列长度 -- 如[1, 6, 3, 8, 5]为递减子序列（5比8小，最后两个数字递减）
 func wiggleMaxLength(nums []int) int {
 	if len(nums) == 0 {
 		return 0
@@ -52,7 +52,7 @@ func wiggleMaxLength(nums []int) int {
 	return max(up[len(nums)-1], down[len(nums)-1])
 }
 
-// wiggleMaxLength1 .
+// wiggleMaxLength1 滚动数组优化
 // 可以看出在求up[i]和down[i]时，只依赖其前一个数字的结果，即up[i-1]和down[i-1]，
 // 因此，up和down可以只使用一个变量用来记录前一个下标所能构成的最长递增摆动子序列和最长递减摆动子序列的长度即可，
 // 而不必使用数组将每一个下标的都记录下来
