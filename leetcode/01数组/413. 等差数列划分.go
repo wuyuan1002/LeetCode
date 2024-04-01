@@ -20,18 +20,18 @@ func numberOfArithmeticSlices(nums []int) int {
 	result := 0
 
 	// 当前数字与前一个数字的差、当前差出现的次数
-	diff, t := nums[1]-nums[0], 0
+	diff, count := nums[1]-nums[0], 0
 
 	// 遍历每个数字计算等差数列个数 -- 因为等差数列的长度至少为3，所以可以从第3个数字开始遍历
 	for i := 2; i < len(nums); i++ {
 		if nums[i]-nums[i-1] == diff {
-			t++
+			count++
 		} else {
-			diff, t = nums[i]-nums[i-1], 0
+			diff, count = nums[i]-nums[i-1], 0
 		}
 
 		// 递增计算总结果
-		result += t
+		result += count
 	}
 
 	return result

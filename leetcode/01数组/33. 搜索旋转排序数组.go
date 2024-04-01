@@ -9,7 +9,7 @@ package main
 // 给你旋转后的数组nums和一个整数target，如果 nums 中存在这个目标值target，则返回它的下标，否则返回-1。
 
 // search33 .
-// 二分查找
+// 同 leetcode 81. 搜索旋转排序数组 II
 func search33(nums []int, target int) int {
 	l, r := 0, len(nums)-1
 	for l <= r {
@@ -18,17 +18,17 @@ func search33(nums []int, target int) int {
 			return mid
 		}
 
-		if nums[0] <= nums[mid] { // 若mid左面是排好序的 -- 接下来判断应该在mid左面找还是右面找
-			if nums[mid] > target && nums[0] <= target {
-				// 若目标值在mid左面排好序的区间内 [0, mid) ，说明应该在mid左面寻找
+		if nums[l] <= nums[mid] { // 若mid左面是排好序的 -- 接下来判断应该在mid左面找还是右面找
+			if nums[mid] > target && nums[l] <= target {
+				// 若目标值在mid左面排好序的区间内 [l, mid) ，说明应该在mid左面寻找
 				r = mid - 1
 			} else {
 				// 否则应该在mid右面寻找
 				l = mid + 1
 			}
 		} else { // 若mid右面是排好序的 -- 接下来判断应该在mid左面找还是右面找
-			if nums[mid] < target && nums[len(nums)-1] >= target {
-				// 若目标值在mid右面排好序的区间内 (mid, len(nums)-1] ，说明应该在mid右面寻找
+			if nums[mid] < target && nums[r] >= target {
+				// 若目标值在mid右面排好序的区间内 (mid, r] ，说明应该在mid右面寻找
 				l = mid + 1
 			} else {
 				// 否则应该在mid左面寻找
