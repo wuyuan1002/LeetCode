@@ -6,6 +6,8 @@ package main
 // 求在该柱状图中，能够勾勒出来的矩形的最大面积。
 
 // largestRectangleArea .
+// 同 leetcode 85. 最大矩形
+//
 // 单调栈 -- 单调递减栈
 // 每个柱子能构成的最大面积 == 当前柱子高度 * 左右比它低的柱子间距离
 func largestRectangleArea(heights []int) int {
