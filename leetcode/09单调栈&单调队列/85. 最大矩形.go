@@ -16,20 +16,20 @@ package main
 // 每个柱子能构成的最大面积 == 当前柱子高度 * 左右比它低的柱子间距离
 func maximalRectangle(matrix [][]byte) int {
 	// 用来存以matrix的每一行作为基线横坐标的坐标系，以及其每一列的向上连续1的个数
-	heightsList := make([][]int, len(matrix))
+	allHeights := make([][]int, len(matrix))
 
 	// 分别统计以matrix的每一行作为基线横坐标，其每一列的向上连续1的个数
 	for i := 0; i < len(matrix); i++ {
-		heightsList[i] = make([]int, len(matrix[0]))
+		allHeights[i] = make([]int, len(matrix[0]))
 
 		for j := 0; j < len(matrix[0]); j++ {
 			if i == 0 { // 第一行
-				heightsList[i][j] = int(matrix[i][j] - '0')
+				allHeights[i][j] = int(matrix[i][j] - '0')
 			} else { // 其它行
 				if matrix[i][j] == '0' {
-					heightsList[i][j] = 0
+					allHeights[i][j] = 0
 				} else {
-					heightsList[i][j] = heightsList[i-1][j] + 1
+					allHeights[i][j] = allHeights[i-1][j] + 1
 				}
 			}
 		}
@@ -37,7 +37,7 @@ func maximalRectangle(matrix [][]byte) int {
 
 	// 分别计算每个坐标系的最大矩形面积 -- 此处与 leetcode 84. 柱状图中最大的矩形 完全一致
 	result := 0
-	for _, heights := range heightsList {
+	for _, heights := range allHeights {
 		result = max(result, largestRectangleArea(heights))
 	}
 
