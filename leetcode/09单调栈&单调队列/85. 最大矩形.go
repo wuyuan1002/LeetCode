@@ -35,7 +35,7 @@ func maximalRectangle(matrix [][]byte) int {
 		}
 	}
 
-	// 分别计算每个坐标系的最大矩形面积 -- 次数与 leetcode 84. 柱状图中最大的矩形 完全一致
+	// 分别计算每个坐标系的最大矩形面积 -- 此处与 leetcode 84. 柱状图中最大的矩形 完全一致
 	result := 0
 	for _, heights := range heightsList {
 		result = max(result, largestRectangleArea(heights))
