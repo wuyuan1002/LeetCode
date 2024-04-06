@@ -8,9 +8,9 @@ package main
 
 // levelOrder429 .
 // 使用一个单端队列存储遍历过程中的所有子节点，不断遍历当前层节点将其下一层加入到队列中
-func levelOrder429(root *Node429) [][]int {
-	result := make([][]int, 0) // 结果集
-	queue := []*Node429{root}  // 使用一个单端队列存储遍历过程中的所有子节点
+func levelOrder429(root *NodeNTree) [][]int {
+	result := make([][]int, 0)  // 结果集
+	queue := []*NodeNTree{root} // 使用一个单端队列存储遍历过程中的所有子节点
 
 	// 只要队列中有节点就说明没遍历完 -- 若当前层有节点，则遍历该层
 	for len(queue) != 0 {
@@ -37,8 +37,8 @@ func levelOrder429(root *Node429) [][]int {
 	return result
 }
 
-// Node429 .
-type Node429 struct {
+// NodeNTree .
+type NodeNTree struct {
 	Val      int
-	Children []*Node429
+	Children []*NodeNTree
 }
