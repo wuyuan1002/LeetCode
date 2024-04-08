@@ -10,6 +10,7 @@ package main
 // 给你一个元素值 互不相同 的数组 nums ，它原来是一个升序排列的数组，并按上述情形进行了多次旋转。请你找出并返回数组中的 最小元素 。
 
 // findMin .
+// 同 leetcode 852. 山脉数组的峰顶索引
 // 二分查找
 func findMin(nums []int) int {
 	l, r := 0, len(nums)-1
