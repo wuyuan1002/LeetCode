@@ -12,7 +12,7 @@ package main
 // rob .
 // 同 leetcode 70、509
 // 偷到某个房屋的最大价值 = max(当前房屋的金额 + 偷到前两个房屋所能得到的最高金额, 偷到前一个房屋所能得到的最高金额)
-// dp[i]表示偷到第i间房间所能得到的最高金额
+// dp[i]表示偷到第i间房间所能得到的最高总金额
 // dp[i] = max(nums[i] + dp[i-2], dp[i-1])
 func rob(nums []int) int {
 	if nums == nil || len(nums) == 0 {
