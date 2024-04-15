@@ -20,13 +20,13 @@ package main
 func deleteAndEarn(nums []int) int {
 	// 获取数组中的最大值 -- 最终要偷盗的数组长度必须是maxVal+1（下标0无意义），
 	// 因为在被偷盗的数组中，使用下标表示要被偷的数字，所以选择不偷x−1和x+1时是按照下标选择的
-	maxVal := 0
+	maxNum := 0
 	for _, val := range nums {
-		maxVal = max(maxVal, val)
+		maxNum = max(maxNum, val)
 	}
 
 	// 构造最终要被偷盗的数组，下标表示数字，其值表示该数字所能贡献的点数 -- 统计每个数字及其出现的和
-	sums := make([]int, maxVal+1)
+	sums := make([]int, maxNum+1)
 	for _, n := range nums {
 		sums[n] += n
 	}
