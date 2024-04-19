@@ -23,7 +23,7 @@ func nextGreaterElements(nums []int) []int {
 		result[i] = -1 // 初始化res各个元素的下标为-1，先假设每个元素都没有下一个更大元素
 	}
 
-	stack := make([]int, 0) // 单调递增栈，用来存还没有出现下一个比其大的元素的下标
+	stack := make([]int, 0) // 单调递减栈，用来存还没有出现下一个比其大的元素的下标
 
 	// 因为本题是一个循环数组，所以将nums首尾相连，相当于遍历两遍nums数组
 	for i := 0; i < len(nums)*2-1; i++ {
