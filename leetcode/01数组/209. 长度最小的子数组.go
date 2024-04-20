@@ -10,6 +10,8 @@ import "math"
 // 并返回其长度。如果不存在符合条件的子数组，返回 0 。
 
 // minSubArrayLen .
+// 同 leetcode 713. 乘积小于 K 的子数组
+//
 // 双指针, 滑动窗口
 // 右指针不断向前移动把数字加到sum, 当发现 sum >= target 时, 开始向前移动左指针, 并不断记录窗口大小
 func minSubArrayLen(target int, nums []int) int {
