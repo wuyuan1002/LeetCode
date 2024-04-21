@@ -50,8 +50,10 @@ func networkDelayTime(times [][]int, n int, k int) int {
 
 	// -------
 
-	// done[a]表示从节点k到节点a的最短路径已经计算完成，即dist[a]不能再变的更小
+	// done[a]表示从节点k到节点a的最短路径已经计算完成，即dist[a]不能再变的更小 -- 初始值默认都为false
 	done := make([]bool, n)
+
+	// -------
 
 	// 遍历每一个节点i，计算从节点k到该节点i的最短路径长度
 	for i := 0; i < n; i++ {
@@ -72,6 +74,8 @@ func networkDelayTime(times [][]int, n int, k int) int {
 			dist[z] = min(dist[z], dist[x]+time)
 		}
 	}
+
+	// -------
 
 	// 每个节点都计算完后，节点k到每个节点的最短路径已经计算结束，即dist[a]，接下来计算这些最短路径长度中的最大值即为答案
 	result := -1
