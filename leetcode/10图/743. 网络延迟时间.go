@@ -68,7 +68,7 @@ func networkDelayTime(times [][]int, n int, k int) int {
 		// 标记节点x为已确定节点 -- 即节点k到节点x的最短路径长度已计算完成，dist[x]已经是最小值了
 		done[x] = true
 
-		// 用节点k到节点x的最短路径去更新每个节点z的最短路径长度
+		// 用节点k到节点x的最短路径dist[x]去更新节点k到每个节点z的最短路径长度
 		// 用节点x更新节点z的意思是，用起点k到节点x的最短路长度加上从节点x到节点z的边的长度，去比较原来计算的从起点k到节点z的最短路长度，如果前者小于后者，就用前者更新后者
 		for z, time := range g[x] {
 			dist[z] = min(dist[z], dist[x]+time)
