@@ -22,7 +22,13 @@ package main
 // 2. 将G(n)的每个数首位调换位置后在每个数的二进制位前面添加1得到另一个序列P(n)
 // 3. 此时R(n)和P(n)分别为新阶格雷码的一般，将其进行拼接即得到 G(n+1) = R(n) + P(n)
 func grayCode(n int) []int {
-	result := make([]int, 0, 1<<n) // 2的n次方个，第一位为0表示0阶格雷码为0（result[0]=0）
+	// n阶格雷码的个数共有2的n次方个
+	result := make([]int, 0, 1<<n)
+
+	// 第一位为0表示0阶格雷码为0（result[0]=0）
+	result = append(result, 0)
+
+	// 分别计算 1阶、2阶 ... n阶 格雷码
 	for i := 1; i <= n; i++ {
 		for j := len(result) - 1; j >= 0; j-- {
 			result = append(result, result[j]|1<<(i-1))
