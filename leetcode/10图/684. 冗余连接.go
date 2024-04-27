@@ -49,13 +49,13 @@ func findRedundantConnection(edges [][]int) []int {
 
 // connect 给定两个节点尝试将其进行连接（合并两个连通分量），若两节点已处于同一个连通分量中则说明连接这两节点会出现环，返回false，若两节点分别在不同的连通分量中，则将两节点进行相连，返回true
 func connect(parent []int, node1, node2 int) bool {
-	// 分别获取两节点所在连通分量的跟节点
+	// 分别获取两节点所在连通分量的根节点
 	root1, root2 := getRoot(parent, node1), getRoot(parent, node2)
-	// 若跟节点相同说明两节点已经处于同一个连通分量重，再将这两节点连接会出现环，返回false
+	// 若根节点相同说明两节点已经处于同一个连通分量重，再将这两节点连接会出现环，返回false
 	if root1 == root2 {
 		return false
 	}
-	// 连接两节点 -- 将任意一个节点的跟节点连接到另一个节点的跟节点上，将两个连通分量合并成了一个
+	// 连接两节点 -- 将任意一个节点的根节点连接到另一个节点的根节点上，将两个连通分量合并成了一个
 	parent[root1] = root2
 	return true
 }
@@ -63,11 +63,11 @@ func connect(parent []int, node1, node2 int) bool {
 // getRoot 给定一个节点，获取该节点所在该连通分量的根节点
 func getRoot(parent []int, node int) int {
 	if parent[node] != node {
-		// 若当前节点的父节点不是当前节点的话，说明当前节点不是当前连通分量的跟节点
-		// 不断将当前节点的父节点设置为当前节点父节点的父节点，直到找到整个连通分量的跟节点后返回
+		// 若当前节点的父节点不是当前节点的话，说明当前节点不是当前连通分量的根节点
+		// 不断将当前节点的父节点设置为当前节点父节点的父节点，直到找到整个连通分量的根节点后返回
 		//
-		// 也就是对节点node进行查找后，parent[node]存的其实是其所在连通分量的跟节点了，而不是其直接相连的父节点，
-		// 这样做是方便后续再对node进行查找时方便直接获取其跟节点是谁，而不是再次一层一层父节点向上查找
+		// 也就是对节点node进行查找后，parent[node]存的其实是其所在连通分量的根节点了，而不是其直接相连的父节点，
+		// 这样做是方便后续再对node进行查找时方便直接获取其根节点是谁，而不是再次一层一层父节点向上查找 -- 路径压测
 		parent[node] = getRoot(parent, parent[node])
 	}
 	return parent[node]
