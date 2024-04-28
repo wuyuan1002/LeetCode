@@ -24,7 +24,7 @@ func asteroidCollision(asteroids []int) []int {
 
 		// 若当前行星向左且栈顶行星当前向右，则将两行星进行碰撞
 		for aster < 0 && alive && len(stack) > 0 && stack[len(stack)-1] > 0 {
-			alive = abs(stack[len(stack)-1]) < abs(aster) // 当前行星是否会被爆炸
+			alive = abs(aster) > abs(stack[len(stack)-1]) // 当前行星是否会被爆炸
 			if abs(stack[len(stack)-1]) <= abs(aster) {   // 栈顶行星是否会被爆炸
 				stack = stack[:len(stack)-1]
 			}
