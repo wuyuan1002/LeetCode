@@ -31,6 +31,6 @@ func areAlmostEqual(s1 string, s2 string) bool {
 		}
 	}
 
-	// 若两位置字符交叉相等说明可以交换使两字符串相等
-	return s1[a] == s2[b] && s1[b] == s2[a]
+	// 若存在两个位置字符不同，且两位置字符交叉相等说明可以交换使两字符串相等
+	return a >= 0 && b >= 0 && s1[a] == s2[b] && s1[b] == s2[a]
 }
