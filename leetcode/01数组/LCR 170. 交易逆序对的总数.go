@@ -13,41 +13,40 @@ func reversePairs(record []int) int {
 	return reverseNum
 }
 
-// mergeSort 归并排序，过程中统计逆序对个数
+// mergeSort 归并排序，过程中统计逆序对个数，返回排好序的数组和该数组中逆序对个数
 // nums：待排序的数组
-// 返回：排好序的数组、该数组中逆序对个数
 func mergeSort(nums []int) ([]int, int) {
-	// 递归结束条件：数组中只剩下一个元素
+	// 若数组中只剩一个元素则直接返回
 	if len(nums) <= 1 {
 		return nums, 0
 	}
 
 	// 每对将数组平均分成两个子数组，递归进行归并排序
-	left, leftReverseNum := mergeSort(nums[:len(nums)/2])
-	right, rightReverseNum := mergeSort(nums[len(nums)/2:])
+	leftNums, leftReverseNum := mergeSort(nums[:len(nums)/2])
+	rightNums, rightReverseNum := mergeSort(nums[len(nums)/2:])
 
-	// 两个子数组排序完成后，合并两个子数组，同时统计逆序对个数，逻辑为：
-	// 同时按下标从小到大遍历两个子数组，数组内部已经是排好序，只需要比较两个子数组之间的元素
-	// 逆序对就在此时计算出来，在组建结果集的过程中，
-	// 如果右侧元素先入结果集，则左侧剩余的所有元素都与它组成逆序对，相反如果左边元素先插入，则说明不存在逆序对
-	resultNums := make([]int, 0, len(left)+len(right))
+	// 两个子数组排序完成后，合并两个子数组，同时统计逆序对个数，
+	// 同时按下标从小到大遍历两个子数组，数组内部已经是排好序的，按照大小依次将左右数组元素添加到结果集，同时统计逆序对个数，
+	// 若右侧元素先入结果集，则左侧剩余的所有元素都与它组成逆序对，相反如果左边元素先插入，则说明不存在逆序对
+	resultNums := make([]int, 0, len(nums))
 	i, j, reverseNum := 0, 0, leftReverseNum+rightReverseNum
-	for i < len(left) && j < len(right) {
-		if left[i] <= right[j] {
-			resultNums = append(resultNums, left[i])
+	for i < len(leftNums) && j < len(rightNums) {
+		if leftNums[i] <= rightNums[j] {
+			resultNums = append(resultNums, leftNums[i])
 			i++
 		} else {
-			resultNums = append(resultNums, right[j])
+			resultNums = append(resultNums, rightNums[j])
 			j++
-			reverseNum += len(left) - i
+			// 若右侧元素先入结果集，说明左侧剩余元素都比其大且都在它左面，都能与其构成逆序对
+			reverseNum += len(leftNums) - i
 		}
 	}
 
 	// 上面遍历时任何一个子数组遍历完就会跳出循环，对剩下一个未遍历完的数组全部追加
-	if i < len(left) {
-		resultNums = append(resultNums, left[i:]...)
+	if i < len(leftNums) {
+		resultNums = append(resultNums, leftNums[i:]...)
 	} else {
-		resultNums = append(resultNums, right[j:]...)
+		resultNums = append(resultNums, rightNums[j:]...)
 	}
 
 	return resultNums, reverseNum
