@@ -7,7 +7,7 @@ package main
 
 // reversePairs .
 // 同 Offer 51. 数组中的逆序对
-// 归并排序，过程中统计逆序对个数
+// 归并排序，过程中统计逆序对个数 -- 其实就是求每个数的后面有多少个数字比其小
 func reversePairs(record []int) int {
 	_, reverseNum := mergeSort(record)
 	return reverseNum
