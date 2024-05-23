@@ -9,7 +9,7 @@ package main
 // 请返回整理师 总共需要整理多少个格子。
 
 // wardrobeFinishing .
-// 同 Offer 13. 机器人的运动范围
+// Offer 13. 机器人的运动范围
 // 模拟机器人运动，从[0, 0]点出发进行递归向下向右移动，若能移动到则说明该作坐标满足要求
 func wardrobeFinishing(m int, n int, cnt int) int {
 	visited := make([][]bool, m) // 创建地图，默认每个位置都为false，表示没有还走过

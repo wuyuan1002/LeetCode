@@ -6,7 +6,7 @@ package main
 // 请设计一个程序，输入一段时间内的股票交易记录 record，返回其中存在的「交易逆序对」总数。
 
 // reversePairs .
-// 同 Offer 51. 数组中的逆序对
+// Offer 51. 数组中的逆序对
 // 归并排序，过程中统计逆序对个数 -- 其实就是求每个数的后面有多少个数字比其小
 func reversePairs(record []int) int {
 	_, reverseNum := mergeSort(record)
