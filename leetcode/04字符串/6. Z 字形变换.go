@@ -38,6 +38,8 @@ func convert(s string, numRows int) string {
 		if i == 0 || i == numRows-1 {
 			flag *= -1
 		}
+
+		// 移动到下一行
 		i += flag
 	}
 
