@@ -7,8 +7,8 @@ package main
 
 // minDistance .
 // 1. 求两个字符串的最长公共子序列，然后两串长度与公共子序列差值的和就是最小的删除次数 -- 同 leetcode 1143
-// 2. 编辑距离
-func minDistance(word1 string, word2 string) int {
+// 2. 编辑距离 -- 同 leetcode 72
+func minDistance583(word1 string, word2 string) int {
 
 	// 构造dp数组 -- dp[i][j]表示以下标i-1结尾的word1和下标j-1结尾的word2的子串的最长公共子序列长度
 	dp := make([][]int, len(word1)+1)
