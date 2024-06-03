@@ -8,6 +8,7 @@ package main
 //
 // 注意：答案中不可以包含重复的四元组。
 
+// fourSum .
 // 1. 动态规划，01背包问题 -- 可以求出解的个数
 // 2. 回溯法 -- 可以求出各个解是什么
 // 3. 类似三数之和，双指针 -- 比三数之和多固定一个数，多一层for循环
@@ -37,9 +38,13 @@ func fourSum(nums []int, target int) [][]int {
 			for l < r {
 				sum := nums[i] + nums[j] + nums[l] + nums[r]
 				if sum > target {
-					r--
+					// 移动到下一个不相同数字位置
+					for r--; l < r && nums[r] == nums[r+1]; r-- {
+					}
 				} else if sum < target {
-					l++
+					// 移动到下一个不相同数字位置
+					for l++; l < r && nums[l] == nums[l-1]; l++ {
+					}
 				} else {
 					result = append(result, []int{nums[i], nums[j], nums[l], nums[r]})
 

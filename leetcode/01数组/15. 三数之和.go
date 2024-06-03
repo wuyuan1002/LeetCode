@@ -32,9 +32,13 @@ func threeSum(nums []int) [][]int {
 		for l < r {
 			sum := nums[i] + nums[l] + nums[r]
 			if sum > 0 {
-				r--
+				// 移动到下一个不相同数字位置
+				for r--; l < r && nums[r] == nums[r+1]; r-- {
+				}
 			} else if sum < 0 {
-				l++
+				// 移动到下一个不相同数字位置
+				for l++; l < r && nums[l] == nums[l-1]; l++ {
+				}
 			} else {
 				// 记录结果
 				result = append(result, []int{nums[i], nums[l], nums[r]})

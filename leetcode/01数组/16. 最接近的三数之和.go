@@ -33,9 +33,13 @@ func threeSumClosest(nums []int, target int) int {
 
 			// 收缩双指针
 			if sum > target {
-				r--
+				// 移动到下一个不相同数字位置
+				for r--; l < r && nums[r] == nums[r+1]; r-- {
+				}
 			} else if sum < target {
-				l++
+				// 移动到下一个不相同数字位置
+				for l++; l < r && nums[l] == nums[l-1]; l++ {
+				}
 			} else {
 				// 若当前三数之和正好等于target则直接返回，因为不会有比target本身更接近target的值了
 				return sum
