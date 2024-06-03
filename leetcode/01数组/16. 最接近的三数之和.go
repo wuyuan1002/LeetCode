@@ -1,0 +1,52 @@
+package main
+
+import (
+	"math"
+	"sort"
+)
+
+// 16. 最接近的三数之和
+
+// 给你一个长度为 n 的整数数组 nums 和 一个目标值 target。
+// 请你从 nums 中选出三个整数，使它们的和与 target 最接近。
+// 返回这三个数的和。
+//
+// 假定每组输入只存在恰好一个解。
+
+// threeSumClosest .
+// 使用绝对值判断与目标值的距离
+func threeSumClosest(nums []int, target int) int {
+	result := math.MaxInt32
+
+	sort.Ints(nums)
+	// quickSort(nums, 0, len(nums)-1)
+
+	for i := 0; i < len(nums); i++ {
+		if i > 0 && nums[i] == nums[i-1] {
+			// 剪枝 -- 跳过重复元素
+			continue
+		}
+
+		l, r := i+1, len(nums)-1
+		for l < r {
+			sum := nums[i] + nums[l] + nums[r]
+
+			// 收缩双指针
+			if sum > target {
+				r--
+			} else if sum < target {
+				l++
+			} else {
+				// 若当前三数之和正好等于target则直接返回，因为不会有比target本身更接近target的值了
+				return sum
+			}
+
+			// 若当前三数之和比原来结果更接近target则更新总结果
+			if abs(sum-target) < abs(result-target) {
+				result = sum
+			}
+		}
+	}
+
+	return result
+}

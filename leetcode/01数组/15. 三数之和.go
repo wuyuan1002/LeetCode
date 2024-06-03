@@ -50,29 +50,3 @@ func threeSum(nums []int) [][]int {
 
 	return result
 }
-
-// quickSort 快排
-func quickSort(nums []int, left, right int) {
-	if nums == nil || len(nums) == 0 || left >= right {
-		return
-	}
-
-	l, r := left, right
-	temp := nums[left]
-
-	for l < r {
-		for l < r && nums[r] >= temp {
-			r--
-		}
-		for l < r && nums[l] <= temp {
-			l++
-		}
-		if l < r {
-			nums[l], nums[r] = nums[r], nums[l]
-		}
-	}
-
-	nums[left], nums[l] = nums[l], nums[left]
-	quickSort(nums, left, l-1)
-	quickSort(nums, r+1, right)
-}
