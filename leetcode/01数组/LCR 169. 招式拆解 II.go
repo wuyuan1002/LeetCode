@@ -5,9 +5,9 @@ package main
 // 某套连招动作记作仅由小写字母组成的序列 arr，其中 arr[i] 第 i 个招式的名字。
 // 请返回第一个只出现一次的招式名称，如不存在请返回空格。
 
-// dismantlingAction .
+// dismantlingAction169 .
 // 返回第一个只出现一次的字符
-func dismantlingAction(arr string) byte {
+func dismantlingAction169(arr string) byte {
 	hmap := make(map[byte]int, len(arr))
 
 	// 第一次遍历字符统计出现次数
