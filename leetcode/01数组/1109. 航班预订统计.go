@@ -19,7 +19,7 @@ func corpFlightBookings(bookings [][]int, n int) []int {
 	// 创建diff数组用来记录每一站相较于前一站的人数变化 -- 为了计算方便，补充第一站的前一站以及最后一站的后一站方便计算
 	diff := make([]int, n+2)
 
-	// 遍历每一个人数变化记录
+	// 遍历计算每一站的人数变化记录 -- 车站从1到n进行编号
 	for _, booking := range bookings {
 		// 记录第i站相较于前一站多了多少人，以及第j+1站相较于前一站少了多少人
 		diff[booking[0]] += booking[2]
@@ -33,4 +33,9 @@ func corpFlightBookings(bookings [][]int, n int) []int {
 
 	// 返回第一站到最后一站的总人数
 	return diff[1 : n+1]
+}
+
+func main() {
+	corpFlightBookings([][]int{{1, 2, 10}, {2, 3, 20}, {2, 5, 25}}, 5)
+
 }
