@@ -72,3 +72,8 @@ func getRoot(parent []int, node int) int {
 	}
 	return parent[node]
 }
+
+// isConnect 判断两节点是否联通（两节点是否属于同一连通分量）
+func isConnect(parent []int, node1, node2 int) bool {
+	return getRoot(parent, node1) == getRoot(parent, node2)
+}
