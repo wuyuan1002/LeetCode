@@ -9,15 +9,20 @@ package main
 // 你可以按任意顺序返回答案。
 
 // twoSum .
-// 类似 202. 快乐数
+// 类似 leetcode 202. 快乐数
 // 在查找的过程中将数字存入map中，这样，下次使用时可以直接获取
 func twoSum(nums []int, target int) []int {
-	hash := make(map[int]int) // k: 数值, v: 下标
+	// 使用一个map存已经出现过的数字 -- k: 数值, v: 下标
+	hash := make(map[int]int)
+
 	for i, num := range nums {
+		// 若target-num已经在map中，说明存在两个数字之和为target，直接将其返回即可
 		if index, ok := hash[target-num]; ok {
 			return []int{i, index}
 		}
+		// 将当前数字存入map供后续使用
 		hash[num] = i
 	}
+
 	return nil
 }
