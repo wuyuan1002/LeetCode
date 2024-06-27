@@ -74,7 +74,52 @@ func longestPalindrome2(s string) string {
 // 同 leetcode 1143. 最长公共子序列
 //
 // 3. 回文串正反都一样，所以可以求字符串s和将s倒置后的字符串求最长公共子串即可
+// dp[i][j]表示以下标i-1结尾的text1和下标j-1结尾的text2的子串的最长公共子串长度
+//
+// **************
+// 这种方式不是所有的都可以，比如"aacabdkacaa"，最长回文子串是"aca"，此方法计算的结果却是"aaca"
+// **************
 func longestPalindrome3(s string) string {
-	longestCommonSubsequence(s, s)
-	return ""
+	text1, text2 := s, reverse(s) // 要求最长公共子串的两个字符串
+	maxLen, maxEnd := 0, 0        // 最长公共子串的长度和结束下标
+
+	// 构造dp数组 -- dp[i][j]表示以下标i-1结尾的text1和下标j-1结尾的text2的子串的最长公共子串长度
+	dp := make([][]int, len(text1)+1)
+	for i := range dp {
+		dp[i] = make([]int, len(text2)+1)
+	}
+
+	// 初始化dp数组 -- dp[0][0]、dp[i][0]、dp[0][j]其实都是没有意义的，只是为了dp结果正确
+	// dp[0][0]、dp[i][0]、dp[0][j]的默认值应该为0，这些位置在构造dp数组的时候默认就是0，因此不需要单独初始化赋值为0
+
+	// 开始dp -- 计算以每个下标结束的两个子串的公共子串长度
+	for i := 1; i <= len(text1); i++ {
+		for j := 1; j <= len(text2); j++ {
+			// 若当前两下标的字符相等，则更新以当前下标结尾的子串长度
+			// 此处只记录回文串的长度，因此在两字符不一致时不进行记录历史序列的长度 -- 这里是与 leetcode 1143. 最长公共子序列 存在差异的地方
+			if text1[i-1] == text2[j-1] {
+				dp[i][j] = dp[i-1][j-1] + 1
+			}
+
+			// 若当前下标结尾的最长子串大于记录的最长子串长度，则更新最长子串长度和结束下标
+			if dp[i][j] > maxLen {
+				maxLen, maxEnd = dp[i][j], i
+			}
+		}
+	}
+
+	// 返回最长子串
+	return s[maxEnd-maxLen : maxEnd]
+}
+
+// reverse 反转切片的字符 []
+func reverse(s string) string {
+	rs := []byte(s)
+	l, r := 0, len(rs)-1
+	for l < r {
+		rs[l], rs[r] = rs[r], rs[l]
+		l++
+		r--
+	}
+	return string(rs)
 }
