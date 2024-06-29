@@ -14,12 +14,13 @@ import (
 // 假定每组输入只存在恰好一个解。
 
 // threeSumClosest .
+// 同 leetcode 15. 三数之和
 // 使用绝对值判断与目标值的距离
 func threeSumClosest(nums []int, target int) int {
 	result := math.MaxInt32
 
+	// 现将数组从小到大排序
 	sort.Ints(nums)
-	// quickSort(nums, 0, len(nums)-1)
 
 	for i := 0; i < len(nums); i++ {
 		if i > 0 && nums[i] == nums[i-1] {
@@ -33,11 +34,11 @@ func threeSumClosest(nums []int, target int) int {
 
 			// 收缩双指针
 			if sum > target {
-				// 移动到下一个不相同数字位置
+				// 右指针移动到下一个不相同数字位置
 				for r--; l < r && nums[r] == nums[r+1]; r-- {
 				}
 			} else if sum < target {
-				// 移动到下一个不相同数字位置
+				// 左指针移动到下一个不相同数字位置
 				for l++; l < r && nums[l] == nums[l-1]; l++ {
 				}
 			} else {
