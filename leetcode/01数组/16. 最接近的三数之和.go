@@ -19,7 +19,7 @@ import (
 func threeSumClosest(nums []int, target int) int {
 	result := math.MaxInt32
 
-	// 现将数组从小到大排序
+	// 先将数组从小到大排序
 	sort.Ints(nums)
 
 	for i := 0; i < len(nums); i++ {
