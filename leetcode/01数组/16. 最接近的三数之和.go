@@ -14,7 +14,8 @@ import (
 // 假定每组输入只存在恰好一个解。
 
 // threeSumClosest .
-// 同 leetcode 15. 三数之和
+// leetcode 15. 三数之和
+//
 // 使用绝对值判断与目标值的距离
 func threeSumClosest(nums []int, target int) int {
 	result := math.MaxInt32
