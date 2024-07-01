@@ -6,11 +6,11 @@ package main
 // 如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。
 // 必须 原地 修改，只允许使用额外常数空间。
 
-// 按字典顺序生成序列：
-// 1.先找出最大的索引 k 满足 nums[k] < nums[k+1]，如果不存在，就翻转整个数组后返回；
-// 2.再找出另一个最大索引 l 满足 nums[l] > nums[k]；
-// 3.交换 nums[l] 和 nums[k]；
-// 4.最后翻转 nums[k+1:]。
+// 按字典顺序生成序列步骤：
+// 1. 先找出比它的下一个元素小的最大的索引k，若k不存在则说明整个数组已经是最大值了，翻转整个数组后返回
+// 2. 再找出比nums[k]大的最大索引l
+// 3. 交换 nums[l] 和 nums[k]
+// 4. 最后翻转 nums[k+1:]
 //
 // 举个例子：
 // 比如 nums = [1,2,7,4,3,1]，下一个排列是什么？
@@ -24,7 +24,7 @@ package main
 
 // nextPermutation .
 func nextPermutation(nums []int) {
-	// 1. 找到满足比它的下一个元素小的最大的索引k
+	// 1. 先找出比它的下一个元素小的最大的索引k
 	k := len(nums) - 2
 	for ; k >= 0; k-- {
 		if nums[k] < nums[k+1] {
@@ -38,7 +38,7 @@ func nextPermutation(nums []int) {
 		return
 	}
 
-	// 2. 找出满足比nums[k]大的最大索引l
+	// 2. 再找出比nums[k]大的最大索引l
 	l := len(nums) - 1
 	for ; l >= 0; l-- {
 		if nums[l] > nums[k] {
