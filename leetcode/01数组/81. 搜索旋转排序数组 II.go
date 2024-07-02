@@ -11,12 +11,19 @@ package main
 // 你必须尽可能减少整个操作步骤。
 
 // search81 .
-// 同 leetcode 33. 搜索旋转排序数组
+// leetcode 33. 搜索旋转排序数组
+//
+// 二分查找
+// 虽然无法通过nums[mid]与target的大小关系确定target在mid的左侧还是右侧，
+// 但是可以通过nums[l]、nums[mid]、nums[r]三者来确定好target的方位，然后进行左右指针的收缩，
+// 若nums[l]、nums[mid]、nums[r]三者数字相等时，将无法区分mid的左右哪边是已经排好序的，
+// 所以此时需要将左右指针分别向中间移动来去除重复数字，在新的区间中进行二分 -- 如[3, 1, 2, 3, 3, 3, 3, 3, 3, 3]
 func search81(nums []int, target int) bool {
 	l, r := 0, len(nums)-1
 	for l <= r {
 		mid := l + (r-l)/2
-		if nums[mid] == target {
+
+		if nums[mid] == target { // 若mid等于目标值则直接返回
 			return true
 		}
 
