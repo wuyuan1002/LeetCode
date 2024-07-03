@@ -8,6 +8,7 @@ package main
 // 你可以设计并实现时间复杂度为O(log n)的算法解决此问题吗？
 
 // searchRange .
+// 二分查找
 // 分别二分查找目标值在数组中的第一个值和最后一个值，然后返回两个坐标
 func searchRange(nums []int, target int) []int {
 	return []int{getFirst(nums, target), getLast(nums, target)}
