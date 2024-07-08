@@ -9,6 +9,7 @@ import "sort"
 
 // groupAnagrams .
 // 字母异位词排序后为相等的字符串
+// 先将所有字符串排序后存入map，最终同一个key所对应的就是一组异位词分组
 func groupAnagrams(strs []string) [][]string {
 	result := make([][]string, 0)        // 总结果
 	sortMap := make(map[string][]string) // 各个字符串排序，暂存异位词字符串（key为排序后的字符串）
