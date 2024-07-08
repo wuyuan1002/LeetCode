@@ -8,17 +8,13 @@ package main
 
 // maxSubArray .
 // 1. 使用两个变量分别记录当前和以及最大和，在遍历数组过程中更新两个值
-// 2. 动态规划
 func maxSubArray(nums []int) int {
-	if nums == nil || len(nums) == 0 {
-		return 0
-	} else if len(nums) == 1 {
-		return nums[0]
-	}
+	// 以当前数字结尾的最大子数组和、全局最大子数组和
+	currentSum, maxSum := nums[0], nums[0]
 
-	currentSum, maxSum := nums[0], nums[0] // 以当前数字结尾的最大子数组和、全局最大子数组和
+	// 遍历每个数字，更新以当前数字结尾的最大子数组和，并更新全局最大子数组和
 	for i := 1; i < len(nums); i++ {
-		// 更新当前最大的连续和
+		// 更新以当前数字结尾的最大子数组和
 		currentSum = max(currentSum+nums[i], nums[i])
 		// 更新全局最大子数组和
 		maxSum = max(currentSum, maxSum)
@@ -27,21 +23,21 @@ func maxSubArray(nums []int) int {
 	return maxSum
 }
 
-// maxSubArrayDP 动态规划
+// maxSubArrayDP .
+// 2. 动态规划
+// dp[i]表示以第i个数字结尾的最大子数组和
+// dp[i] = max(dp[i-1]+nums[i], nums[i])
 func maxSubArrayDP(nums []int) int {
-	if nums == nil || len(nums) == 0 {
-		return 0
-	} else if len(nums) == 1 {
-		return nums[0]
-	}
+	// 全局最大子数组和
+	maxSum := nums[0]
 
-	maxSum := nums[0] // 最大子数组和
-
-	// 定义并初始化dp数组 -- dp[i]表示以第i个数结尾的最大子数组和
+	// 定义dp数组 -- dp[i]表示以第i个数字结尾的最大子数组和
 	dp := make([]int, len(nums))
+
+	// 初始化dp数组 -- 以第一个数字结尾的最大子数组和就是该数字本身
 	dp[0] = nums[0]
 
-	// 遍历数组，更新dp数组和最大子数组和
+	// 开始dp -- 更新dp数组中以每个数字结尾的最大子数组和，并更新全局最大子数组和
 	for i := 1; i < len(nums); i++ {
 		// 更新以当前数字结尾的最大子数组和
 		dp[i] = max(dp[i-1]+nums[i], nums[i])
