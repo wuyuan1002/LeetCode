@@ -9,7 +9,8 @@ package main
 // 给你一个整数 target ，如果 target 在矩阵中，返回 true ；否则，返回 false 。
 
 // searchMatrix .
-// 从左下角往右上角进行寻找
+// 数组从上到下，从左至右都是递增的，所以从左下角往右上角进行寻找
+// 比目标数字大则向上移动，比目标数字小则向右移动
 func searchMatrix(matrix [][]int, target int) bool {
 	i, j := len(matrix)-1, 0
 	for i >= 0 && j <= len(matrix[0])-1 {
