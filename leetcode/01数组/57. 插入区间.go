@@ -14,6 +14,7 @@ func insert(intervals [][]int, newInterval []int) [][]int {
 	result := make([][]int, 0)                    // 总结果
 	left, right := newInterval[0], newInterval[1] // 插入区间的左右范围
 
+	// 遍历所有区间，判断其与要插入的区间是否有重叠，若有重叠则将其与要插入的区间进行合并，若没有重叠则将该区间直接加入到结果集
 	for _, interval := range intervals {
 		if interval[1] < left || interval[0] > right {
 			// 若该区间与插入区间无交集 -- 直接将区间入结果集
