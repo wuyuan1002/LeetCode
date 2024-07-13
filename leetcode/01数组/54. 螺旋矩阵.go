@@ -5,6 +5,7 @@ package main
 // 给你一个 m 行 n 列的矩阵 matrix ，请按照 顺时针螺旋顺序 ，返回矩阵中的所有元素。
 
 // spiralOrder .
+// 从外到内一圈一圈打印，最终要打印的圈数为：min(len(matrix)+1, len(matrix[0])+1) / 2
 func spiralOrder(matrix [][]int) []int {
 	result := make([]int, 0, len(matrix)*len(matrix[0])) // 总结果
 	orderNum := min(len(matrix)+1, len(matrix[0])+1) / 2 // 要打印的圈数
