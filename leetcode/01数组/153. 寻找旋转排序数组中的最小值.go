@@ -10,15 +10,20 @@ package main
 // 给你一个元素值 互不相同 的数组 nums ，它原来是一个升序排列的数组，并按上述情形进行了多次旋转。请你找出并返回数组中的 最小元素 。
 
 // findMin .
-// 同 leetcode 852. 山脉数组的峰顶索引
+// leetcode 852. 山脉数组的峰顶索引
+//
 // 二分查找
+// 这里需要使用 l < r 的二分查找，而不能使用 l <= r 的二分查找，
+// 因为当nums[mid]比nums[r]小时，说明mid到r是单调递增的，最小值一定在mid左侧（因为可能正好是mid，所以这里不能用 l <= r 的那种循环，也就不能使用 r=mid-1 这样赋值）
+// 否则说明0到mid是单调递增的，最小值一定出现在mid右侧（因为0到mid是单调递增的且求的是最小值，此时mid一定不会是最小值，所以可以直接 l=mid+1 赋值）
 func findMin(nums []int) int {
 	l, r := 0, len(nums)-1
 
 	for l < r {
 		mid := l + (r-l)/2
-		// 当nums[mid]比nums[r]小时，说明mid到r是单调递增的，最小值一定在mid左侧（因为可能正好是mid，所以这里不能用 l <= r 的那种循环，也就不能使用 r=mid-1 这样赋值）
-		// 否则说明0到mid是单调递增的，最小值一定出现在mid右侧（因为0到mid是单调递增的且求的是最小值，此时mid一定不会是最小值，所以可以直接 l=mid+1 赋值）
+
+		// 若nums[mid] < nums[r]，说明最小值位于nums[0, mid]范围内（可能正好是nums[mid]），所以将r指向mid
+		// 若nums[mid] >= nums[r]，说明最小值位于nums(mid, r]范围内（一定不会是nums[mid]），所以将l指向mid+1
 		if nums[mid] < nums[r] {
 			r = mid
 		} else {
