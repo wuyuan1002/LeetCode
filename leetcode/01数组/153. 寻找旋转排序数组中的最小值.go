@@ -11,6 +11,7 @@ package main
 
 // findMin .
 // leetcode 852. 山脉数组的峰顶索引
+// leetcode 162. 寻找峰值
 //
 // 二分查找
 // 这里需要使用 l < r 的二分查找，而不能使用 l <= r 的二分查找，
