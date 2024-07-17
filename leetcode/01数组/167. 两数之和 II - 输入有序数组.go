@@ -13,18 +13,18 @@ package main
 // 你所设计的解决方案必须只使用常量级的额外空间。
 
 // twoSum .
-// 双指针从两边向中间移动，直到两指针指向的数字合为target
+// 双指针从两边分别选取一个大数一个小数，并不断向中间移动，直到两指针指向的数字和为target
 func twoSum(numbers []int, target int) []int {
-	i, j := 0, len(numbers)-1
-	for i < j {
-		sum := numbers[i] + numbers[j]
+	l, r := 0, len(numbers)-1
+	for l < r {
+		sum := numbers[l] + numbers[r]
 
 		if sum > target {
-			j--
+			r--
 		} else if sum < target {
-			i++
+			l++
 		} else {
-			return []int{i + 1, j + 1}
+			return []int{l + 1, r + 1}
 		}
 	}
 
