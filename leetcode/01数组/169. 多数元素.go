@@ -9,23 +9,24 @@ package main
 // majorityElement .
 // leetcode 229. 多数元素 II
 //
-// 摩尔投票、求水王数
-//
-// 相当于一次删除两个不同的数字，有水王数时最后剩下的就是水王数
-// 但若没有水王数时，也可能剩下来，此时需要再遍历一次数组查看剩下来数字的出现次数，比如 [1, 2, 3, 4, 5] 会剩下 5
+// 摩尔投票 -- 每两个不同的数字抵消一次，最终剩下的就是出现超过1/2的数字
 func majorityElement(nums []int) int {
-	num, veto := nums[0], 1
-	for i := 1; i < len(nums); i++ {
+	// 目标数字、目标数字投票数
+	element, veto := 0, 0
+
+	for _, num := range nums {
+		// 若目标数字的投票数为0则选择当前数字为目标数字
 		if veto == 0 {
-			num = nums[i]
+			element = num
 		}
 
-		if nums[i] == num {
+		// 若当前数字为目标数字则增加目标数字的投票数，否则将当前数字和目标数字进行抵消（递减目标数字的投票数）
+		if num == element {
 			veto++
 		} else {
 			veto--
 		}
 	}
 
-	return num
+	return element
 }
