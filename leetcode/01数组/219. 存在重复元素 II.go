@@ -13,13 +13,13 @@ func containsNearbyDuplicate(nums []int, k int) bool {
 	hash := make(map[int]bool, k)
 
 	for i, n := range nums {
-		// 若窗口中元素大于k了，则先将窗口左侧元素移出
+		// 若窗口中元素大于k了，则先将窗口左侧元素移出，保证窗口长度始终为k
 		if i > k {
 			delete(hash, nums[i-k-1])
 		}
 
-		// 若新加入窗口的数字在窗口中已出现，则返回true
-		if _, ok := hash[n]; ok {
+		// 若新加入窗口的数字在窗口中已出现，则说明该数字出现重复
+		if hash[n] {
 			return true
 		}
 
