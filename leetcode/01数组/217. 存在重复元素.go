@@ -6,8 +6,7 @@ package main
 // 如果数组中每个元素互不相同，返回 false 。
 
 // containsDuplicate .
-// 1. 排序
-// 2. map
+// 从头遍历数组元素，将访问到的数字存到map中，若在存入map时发现已经存在则说明该数字出现重复
 func containsDuplicate(nums []int) bool {
 	hash := make(map[int]bool)
 	for _, num := range nums {
