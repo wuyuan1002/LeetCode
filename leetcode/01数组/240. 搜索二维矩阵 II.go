@@ -7,7 +7,10 @@ package main
 // 每列的元素从上到下升序排列。
 
 // searchMatrix240 .
-// 从左下角往右上角进行寻找
+// leetcode 74. 搜索二维矩阵
+//
+// 数组从上到下，从左至右都是递增的，所以从左下角往右上角进行寻找
+// 比目标数字大则向上移动，比目标数字小则向右移动
 func searchMatrix240(matrix [][]int, target int) bool {
 	i, j := len(matrix)-1, 0
 	for i >= 0 && j <= len(matrix[0])-1 {
