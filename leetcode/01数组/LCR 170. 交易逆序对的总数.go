@@ -7,14 +7,15 @@ package main
 
 // reversePairs .
 // Offer 51. 数组中的逆序对
-// 归并排序，过程中统计逆序对个数 -- 其实就是求每个数的后面有多少个数字比其小
+// leetcode 315. 计算右侧小于当前元素的个数
+//
+// 升序归并排序，过程中统计逆序对个数 -- 其实就是求每个数的后面有多少个比其小的数字
 func reversePairs(record []int) int {
 	_, reverseNum := mergeSort(record)
 	return reverseNum
 }
 
-// mergeSort 归并排序，过程中统计逆序对个数，返回排好序的数组和该数组中逆序对个数
-// nums：待排序的数组
+// mergeSort 升序归并排序，过程中统计逆序对个数，返回排好序的数组和该数组中逆序对个数
 func mergeSort(nums []int) ([]int, int) {
 	// 若数组中只剩一个元素则直接返回
 	if len(nums) <= 1 {
@@ -25,29 +26,33 @@ func mergeSort(nums []int) ([]int, int) {
 	leftNums, leftReverseNum := mergeSort(nums[:len(nums)/2])
 	rightNums, rightReverseNum := mergeSort(nums[len(nums)/2:])
 
-	// 两个子数组排序完成后，合并两个子数组，同时统计逆序对个数，
+	// 两个子数组排序完成后，合并两个子数组，同时统计逆序对个数，左侧子数组的所有元素在原数组中一定都位于右侧子数组前面，
 	// 同时按下标从小到大遍历两个子数组，数组内部已经是排好序的，按照大小依次将左右数组元素添加到结果集，同时统计逆序对个数，
 	// 若右侧元素先入结果集，则左侧剩余的所有元素都与它组成逆序对，相反如果左边元素先插入，则说明不存在逆序对
 	resultNums := make([]int, 0, len(nums))
 	i, j, reverseNum := 0, 0, leftReverseNum+rightReverseNum
-	for i < len(leftNums) && j < len(rightNums) {
-		if leftNums[i] <= rightNums[j] {
+	for i < len(leftNums) || j < len(rightNums) {
+		if i == len(leftNums) {
+			// 若左侧数组已经遍历完成，则直接将右侧数组全部追加
+			resultNums = append(resultNums, rightNums[j:]...)
+			break
+		} else if j == len(rightNums) {
+			// 若右侧数组已经遍历完成，则直接将左侧数组全部追加
+			resultNums = append(resultNums, leftNums[i:]...)
+			break
+		} else if leftNums[i] <= rightNums[j] {
+			// 若左侧数组先入结果集，说明不存在逆序对，因为说明该数字比右侧所有剩余元素都要小，无法构成逆序对
 			resultNums = append(resultNums, leftNums[i])
 			i++
 		} else {
 			resultNums = append(resultNums, rightNums[j])
 			j++
+
 			// 若右侧元素先入结果集，说明左侧剩余元素都比其大且都在它左面，都能与其构成逆序对
 			reverseNum += len(leftNums) - i
 		}
 	}
 
-	// 上面遍历时任何一个子数组遍历完就会跳出循环，对剩下一个未遍历完的数组全部追加
-	if i < len(leftNums) {
-		resultNums = append(resultNums, leftNums[i:]...)
-	} else {
-		resultNums = append(resultNums, rightNums[j:]...)
-	}
-
+	// 返回当前数组的排序结果以及逆序对个数
 	return resultNums, reverseNum
 }
