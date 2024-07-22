@@ -41,7 +41,7 @@ func mergeSort(nums []int) ([]int, int) {
 			resultNums = append(resultNums, leftNums[i:]...)
 			break
 		} else if leftNums[i] <= rightNums[j] {
-			// 若左侧数组先入结果集，说明不存在逆序对，因为说明该数字比右侧所有剩余元素都要小，无法构成逆序对
+			// 若左侧元素先入结果集，说明不存在逆序对，因为说明该数字比右侧所有剩余元素都要小，无法构成逆序对
 			resultNums = append(resultNums, leftNums[i])
 			i++
 		} else {
