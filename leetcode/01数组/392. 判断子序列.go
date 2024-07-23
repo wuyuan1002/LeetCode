@@ -12,16 +12,15 @@ package main
 // 如果有大量输入的 S，称作 S1, S2, ... , Sk 其中 k >= 10亿，
 // 你需要依次检查它们是否为 T 的子序列。在这种情况下，你会怎样改变代码？
 
-// isSubsequence .
+// isSubsequence1 .
 // 1. 双指针
-// 使用两个指针i和j分别只想s和t的头部，不断遍历i和j，判断两个字符是否相等，
-// 最终若在t中找到了s中的所有字符，说明s是t的子序列
-func isSubsequence(s string, t string) bool {
+// 使用两个指针i和j分别指向s和t的头部，不断遍历i和j，判断两个字符是否相等，最终若在t中找到了s中的所有字符，说明s是t的子序列
+func isSubsequence1(s string, t string) bool {
 	i, j := 0, 0
 	// 不断循环遍历i和j指向的字符是否相等 -- 在t中不断寻找s中的所有字符
 	for i < len(s) && j < len(t) {
 		if s[i] == t[j] {
-			// 若当前i指向的s中的字符在t中找到了，向前移动i指向下一个字符，继续在t中寻找
+			// 若当前i指向的s中的字符在t中找到了，向前移动i指向下一个字符，继续在t中寻找s[i]
 			i++
 		}
 		// 不断遍历t中的下一个字符
@@ -34,10 +33,10 @@ func isSubsequence(s string, t string) bool {
 	return i == len(s)
 }
 
-// isSubsequence1 .
-// 2. 动态规划 -- 同 leetcode 1143
+// isSubsequence2 .
+// 2. 动态规划 -- leetcode 1143. 最长公共子序列
 // 求出s和t的最长公共子序列, 然后判断最长公共子序列长度是否等于s的长度
-func isSubsequence1(s string, t string) bool {
+func isSubsequence2(s string, t string) bool {
 
 	// 构造dp数组 -- dp[i][j]表示以下标i-1结尾的s和下标j-1结尾的t的子串的最长公共子序列长度
 	dp := make([][]int, len(s)+1)
