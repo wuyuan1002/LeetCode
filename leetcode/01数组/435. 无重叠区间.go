@@ -10,7 +10,7 @@ import "sort"
 // eraseOverlapIntervals .
 // leetcode 452. 用最少数量的箭引爆气球
 //
-// 移除最少区间使得剩余的不重叠，相当于选出最多数量的互不重叠的区间
+// 移除最少区间使得剩余的不重叠，相当于求有多少互不重叠的区间，再用总数减去即可
 // 将所有区间按照右端点从小到大排序，然后遍历排好序的区间右端点进行区间选择，选择出其中不重叠的区间
 func eraseOverlapIntervals(intervals [][]int) int {
 	if len(intervals) <= 1 {

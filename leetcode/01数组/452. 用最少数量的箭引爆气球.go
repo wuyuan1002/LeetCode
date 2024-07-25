@@ -11,7 +11,8 @@ import "sort"
 // 给你一个数组 points ，返回引爆所有气球所必须射出的 最小 弓箭数 。
 
 // findMinArrowShots .
-// 同 leetcode 435. 无重叠区间
+// leetcode 435. 无重叠区间
+//
 // 等于是求所有区间中有多少个互不重叠的区间
 func findMinArrowShots(points [][]int) int {
 	if len(points) <= 1 {
