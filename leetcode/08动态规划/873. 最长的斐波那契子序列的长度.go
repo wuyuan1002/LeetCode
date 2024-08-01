@@ -38,7 +38,7 @@ func lenLongestFibSubseq(arr []int) int {
 	// 开始dp -- 从小到大遍历下标i，从大到小遍历下标j，查找满足条件的下标k，更新dp数组的过程中更新总结果最大值
 	for i := 0; i < len(arr); i++ {
 		for j := len(arr) - 1; j >= 0; j-- {
-			// 若数组中存在下标k满足k < i < j，且 arr[k] + arr[i] == arr[j]，说明以arr[i]和arr[j]结尾的斐波那契数列左侧可以增添新的元素arr[k]了
+			// 若数组中存在下标k满足k < i < j，且arr[k] + arr[i] == arr[j]
 			if k, ok := hash[arr[j]-arr[i]]; ok && k < i {
 				// 更新dp数组，既然arr[k]可以作为以arr[i]和arr[j]结尾的斐波那契数列的元素，
 				// 那么以arr[i]和arr[j]结尾的斐波那契数列长度就等于max(以arr[k]和arr[i]结尾的斐波那契数列长度 + 1, 3)
