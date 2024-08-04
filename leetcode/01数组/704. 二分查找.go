@@ -6,14 +6,8 @@ package main
 // 写一个函数搜索nums中的 target，如果目标值存在返回下标，否则返回 -1。
 
 // search .
-// 35. 搜索插入位置
-// 34. 在排序数组中查找元素的第一个和最后一个位置
-// offer 11、leetcode 33、35、153
+// leetcode 35. 搜索插入位置
 func search(nums []int, target int) int {
-	if nums == nil || len(nums) == 0 {
-		return -1
-	}
-
 	l, r := 0, len(nums)-1
 	for l <= r {
 		// mid := (l + r) / 2
