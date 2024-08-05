@@ -8,7 +8,7 @@ package main
 // 如果数组有多个中心下标，应该返回 最靠近左边 的那一个。如果数组不存在中心下标，返回 -1 。
 
 // pivotIndex .
-// 先求出数组所有数字的总和，然后遍历数组，计算每个下标的左右侧之和
+// 先求出数组所有数字的总和（整个数组的右侧数字之和），然后从左到右遍历数组，计算每个下标的左右侧之和
 func pivotIndex(nums []int) int {
 	// 分别表示当前下标数字的左右侧之和
 	leftSum, rightSum := 0, 0
@@ -16,7 +16,7 @@ func pivotIndex(nums []int) int {
 		rightSum += n
 	}
 
-	// 遍历数组，计算每个下标的左右侧之和
+	// 遍历数组，计算每个下标的左右侧之和，当一个数字的左右侧数字之和相同时说明找到了中心下标
 	for i, n := range nums {
 		rightSum -= n
 		if leftSum == rightSum {
