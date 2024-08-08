@@ -18,8 +18,8 @@ package main
 // 当窗口中出现的水果类型数量大于果篮数量时，则向前移动左指针将蓝中水果进行删除，直到水果种类为果篮个数，
 // 因为一棵树只能采摘一个水果，所以最终收集的水果数量其实就是子数组的长度
 func totalFruit(fruits []int) int {
-	result := 0                    // 总结果
-	fruitType := make(map[int]int) // 使用一个map记录当前收集到的所有水果类型及其个数
+	result := 0                       // 总结果
+	fruitType := make(map[int]int, 2) // 使用一个只有两个键值对的map表示两个果篮 -- key表示这个果篮的水果种类，value表示收集到的该类型水果数量
 
 	// 不断向前移动右指针进行水果收集
 	for l, r := 0, 0; r < len(fruits); r++ {
