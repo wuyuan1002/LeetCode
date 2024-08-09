@@ -6,6 +6,7 @@ package main
 
 // longestOnes .
 // leetcode 424. 替换后的最长重复字符
+// leetcode 1052. 爱生气的书店老板
 //
 // 滑动窗口
 // 相当于求窗口中0的个数小于k的最大窗口长度

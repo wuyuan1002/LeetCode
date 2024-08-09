@@ -8,6 +8,7 @@ package main
 
 // characterReplacement .
 // leetcode 1004. 最大连续1的个数 III
+// leetcode 1052. 爱生气的书店老板
 //
 // 滑动窗口
 // 不断遍历字符串中的每一个位置作为右端点，求满足滑动窗口内除了出现次数最多的那个字符外，剩余的字符数量不超过k个的最大窗口长度
