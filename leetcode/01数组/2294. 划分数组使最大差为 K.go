@@ -20,8 +20,8 @@ func partitionArray(nums []int, k int) int {
 	// 先将数组从小到大进行排序
 	sort.Ints(nums)
 
-	// 不断从小到大选择数字加入到子序列中，若发现当前子序列差值大于k时，说明一个子序列已满，开始下一个子序列
-	start := nums[0]
+	// 不断从小到大选择数字加入到当前子序列中，若发现当前子序列差值大于k时，说明当前子序列已满，开始下一个子序列
+	start := nums[0] // 当前子序列的首个元素
 	for _, num := range nums {
 		// 若当前子序列已满，则开始下一个子序列
 		if num-start > k {
