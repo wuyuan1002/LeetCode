@@ -11,8 +11,9 @@ package main
 
 // findTargetIn2DPlants .
 // Offer 04. 二维数组中的查找
+//
+// 从左下角开始找，比目标值大则向上移动，比目标值小则向右移动
 func findTargetIn2DPlants(plants [][]int, target int) bool {
-	// 从左下角开始找
 	i, j := len(plants)-1, 0
 
 	for i >= 0 && j <= len(plants[0])-1 {
