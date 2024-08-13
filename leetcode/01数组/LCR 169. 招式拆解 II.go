@@ -14,6 +14,7 @@ func dismantlingAction169(arr string) byte {
 	for _, c := range []byte(arr) {
 		hmap[c]++
 	}
+
 	// 第二次遍历字符返回第一个只出现一次的字符
 	for _, c := range []byte(arr) {
 		if hmap[c] == 1 {
