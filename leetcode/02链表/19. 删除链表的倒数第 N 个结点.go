@@ -7,7 +7,9 @@ package main
 // 进阶：你能尝试使用一趟扫描实现吗？
 
 // removeNthFromEnd .
-// 同Offer 22
+// Offer 22. 链表中倒数第k个节点
+//
+// 双指针
 // 先让右指针向后移动n, 之后左右指针同时向后移动, 当右指针到末尾时, 要删除的元素正好时左指针的下一个节点
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
 
@@ -34,6 +36,6 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 
 	// 删除倒数第n个节点
 	l.Next = l.Next.Next
-	return head
 
+	return head
 }
