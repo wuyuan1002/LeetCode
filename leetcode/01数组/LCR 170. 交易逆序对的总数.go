@@ -9,13 +9,13 @@ package main
 // Offer 51. 数组中的逆序对
 // leetcode 315. 计算右侧小于当前元素的个数
 //
-// 升序归并排序，过程中统计逆序对个数 -- 其实就是求每个数的后面有多少个比其小的数字
+// 其实就是求每个数的右侧有多少个比其小的数字 -- 升序归并排序，过程中统计逆序对个数
 func reversePairs(record []int) int {
 	_, reverseNum := mergeSort(record)
 	return reverseNum
 }
 
-// mergeSort 升序归并排序，过程中统计逆序对个数，返回排好序的数组和该数组中逆序对个数
+// mergeSort 升序归并排序，过程中统计逆序对个数，返回排好序的数组和该数组中逆序对的个数
 func mergeSort(nums []int) ([]int, int) {
 	// 若数组中只剩一个元素则直接返回
 	if len(nums) <= 1 {
@@ -28,7 +28,7 @@ func mergeSort(nums []int) ([]int, int) {
 
 	// 两个子数组排序完成后，合并两个子数组，同时统计逆序对个数，左侧子数组的所有元素在原数组中一定都位于右侧子数组前面，
 	// 同时按下标从小到大遍历两个子数组，数组内部已经是排好序的，按照大小依次将左右数组元素添加到结果集，同时统计逆序对个数，
-	// 若右侧元素先入结果集，则左侧剩余的所有元素都与它组成逆序对，相反如果左边元素先插入，则说明不存在逆序对
+	// 若右侧元素先入结果集，则左侧剩余的所有元素都与它组成逆序对，相反如果左边元素先入结果集，则说明不存在逆序对
 	resultNums := make([]int, 0, len(nums))
 	i, j, reverseNum := 0, 0, leftReverseNum+rightReverseNum
 	for i < len(leftNums) || j < len(rightNums) {
