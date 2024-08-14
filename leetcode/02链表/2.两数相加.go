@@ -10,7 +10,9 @@ package main
 // 你可以假设除了数字 0 之外，这两个数都不会以 0 开头。
 
 // addTwoNumbers .
-// 由于两个链表是是逆序存储数字的，只需从头遍历两个链表相加即可
+// leetcode 445. 两数相加 II
+//
+// 由于两个链表是是逆序存储数字的，所以只需从头遍历两个链表相加即可
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	dummy := &ListNode{} // 总结果虚拟头节点
 	preNode := dummy     // 上一位的结果节点
