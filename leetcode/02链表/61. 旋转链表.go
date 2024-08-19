@@ -5,7 +5,9 @@ package main
 // 给你一个链表的头节点 head ，旋转链表，将链表每个节点向右移动 k 个位置。
 
 // rotateRight .
-// 先把链表首位相连，之后根据k计算断开的位置
+// 每个节点向后移动k个位置，相当于是将链表的后k个节点截断连接至链表头
+//
+// 先把链表首尾相连，之后根据k计算断开的位置
 func rotateRight(head *ListNode, k int) *ListNode {
 	if head == nil || head.Next == nil || k <= 0 {
 		return head
