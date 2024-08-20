@@ -4,11 +4,11 @@ package main
 
 // 给定一个已排序的链表的头 head ， 删除原始链表中所有重复数字的节点，只留下不同的数字 。返回 已排序的链表 。
 
-// deleteDuplicates .
+// deleteDuplicates82 .
 // leetcode 83. 删除排序链表中的重复元素
 //
 // 本题要求将出现重复的数字一个不留全部删除，而83要求是将出现重复的数字保留一个在链表中
-func deleteDuplicates(head *ListNode) *ListNode {
+func deleteDuplicates82(head *ListNode) *ListNode {
 	// 虚拟头节点
 	dummy := &ListNode{Next: head}
 
