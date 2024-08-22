@@ -15,11 +15,11 @@ package main
 // 你能用 O(1)（即，常量）内存解决此问题吗？
 
 // hasCycle .
-// 同 142. 环形链表 II
-// 1. 遍历所有节点, 使用map记录已经访问过的节点
-// 2. 快慢指针
-// 分别定义 fast 和 slow 指针, 从头结点出发, fast指针每次移动两个节点,
-// slow指针每次移动一个节点, 如果 fast 和 slow指针在途中相遇, 说明这个链表有环
+// leetcode 142. 环形链表 II
+//
+// 快慢指针
+// 分别定义fast和slow指针，从头结点出发，fast指针每次移动两个节点，
+// slow指针每次移动一个节点，如果fast和slow指针在途中相遇，说明这个链表有环
 func hasCycle(head *ListNode) bool {
 	slow, fast := head, head
 	for fast != nil && fast.Next != nil {
