@@ -13,8 +13,11 @@ package main
 // 你是否可以使用 O(1) 空间解决此题？
 
 // detectCycle .
-// 同 141. 环形链表
-// 使用快慢指针确认链表有环后, 两指针一个从head开始一个从相遇位置开始, 继续向前移动, 直到相遇时相遇点就是入环的起点
+// leetcode 141. 环形链表
+//
+// 快慢指针
+// 使用快慢指针确认链表有环后，两指针一个从head开始一个从相遇位置开始，
+// 继续向前移动，再次相遇时的相遇点就是环的起点
 func detectCycle(head *ListNode) *ListNode {
 	slow, fast := head, head
 	for fast != nil && fast.Next != nil {
