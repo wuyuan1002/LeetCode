@@ -10,6 +10,7 @@ package main
 // 重复直到所有输入数据插入完为止。
 
 // insertionSortList .
+// 使用一个变量记录已排好序的尾节点，不断遍历每一个节点将其插入到正确的位置
 func insertionSortList(head *ListNode) *ListNode {
 	if head == nil {
 		return nil
@@ -23,18 +24,19 @@ func insertionSortList(head *ListNode) *ListNode {
 
 	// 遍历每一个节点，将其插入到正确的位置
 	for current := head.Next; current != nil; current = sortedTail.Next {
-		// 若要插入的节点正好应该在整改排序链表的最后，则直接更新尾节点
+		// 若要插入的节点正好应该在整个排序链表的最后，则直接更新尾节点
 		if current.Val >= sortedTail.Val {
-			sortedTail = sortedTail.Next
+			sortedTail = current
 			continue
 		}
 
-		// pre用来记录被插入节点的前一个节点，不断向后移动查找要被插入的节点
+		// 遍历排好序的链表，寻找要被插入节点的前一个节点pre
 		pre := dummy
 		for pre.Next.Val <= current.Val {
 			pre = pre.Next
 		}
-		// 将节点进行插入并更新
+
+		// 将当前节点插入到pre的后面
 		sortedTail.Next = current.Next
 		current.Next = pre.Next
 		pre.Next = current
