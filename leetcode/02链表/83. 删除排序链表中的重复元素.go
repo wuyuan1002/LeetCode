@@ -6,6 +6,7 @@ package main
 
 // deleteDuplicates83 .
 // leetcode 82. 删除排序链表中的重复元素 II
+// leetcode 203. 移除链表元素
 //
 // 本题要求将出现重复的数字保留一个在链表中，而82要求是将出现重复的数字一个不留全部删除
 func deleteDuplicates83(head *ListNode) *ListNode {
