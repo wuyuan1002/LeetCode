@@ -6,7 +6,8 @@ package main
 // 输出结果中的每个元素一定是 唯一 的。我们可以 不考虑输出结果的顺序 。
 
 // intersection .
-// 同 350. 两个数组的交集 II
+// leetcode 350. 两个数组的交集 II
+//
 // 先将两个字符串分别存入set，进行字符去重并方便查找
 func intersection(nums1 []int, nums2 []int) []int {
 
