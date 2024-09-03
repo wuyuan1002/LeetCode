@@ -11,14 +11,16 @@ package main
 // 如果 n 是快乐数就返回 true ；不是，则返回 false 。
 
 // isHappy .
-// 类似 1. 两数之和
-// 使用map存某个结果是否出现过，若出现过，则说明将会无限循环永远变不成1
+// leetcode 1. 两数之和
+//
+// 使用map存某个结果是否出现过，若出现过，则说明将会无限循环永远不会变成1
 func isHappy(n int) bool {
 	// 存某个结果是否出现过
 	hash := make(map[int]bool)
 
 	for {
 		if n = getSum(n); n == 1 {
+			// 当前数字各位数字的平方和为1，说明当前数字为快乐数
 			return true
 		} else if _, ok := hash[n]; ok {
 			// 该结果出现过，说明出现了循环，不可能是快乐数
