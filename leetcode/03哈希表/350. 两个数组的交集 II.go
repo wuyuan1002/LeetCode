@@ -6,7 +6,9 @@ package main
 // 可以不考虑输出结果的顺序。
 
 // intersect .
-// 使用map存数字出现的次数
+// leetcode 349. 两个数组的交集
+//
+// 将两个数组分别存入两个map中，使用map统计各数字出现的次数
 func intersect(nums1 []int, nums2 []int) []int {
 	// 遍历nums1 -- 将每个值及其出现的次数存入map
 	hash1 := make(map[int]int)
@@ -14,7 +16,7 @@ func intersect(nums1 []int, nums2 []int) []int {
 		hash1[n]++
 	}
 
-	// 遍历nums2 -- 判断hash1中数字是否还有余量
+	// 遍历nums2 -- 判断hash1中数字是否还有余量，若某个nums2的数字在nums1中还有余量则将其记入结果集
 	result := make([]int, 0)
 	for _, n := range nums2 {
 		if count, ok := hash1[n]; ok && count > 0 {
