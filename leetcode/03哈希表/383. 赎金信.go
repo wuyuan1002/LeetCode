@@ -10,8 +10,9 @@ package main
 // 组成单词来表达意思。杂志字符串中的每个字符只能在赎金信字符串中使用一次。)
 
 // canConstruct .
-// 同 242. 有效的字母异位词
-// 使用map存第一个字符串字符出现的次数
+// leetcode 242. 有效的字母异位词
+//
+// 使用map存第二个字符串字符出现的次数
 func canConstruct(ransomNote string, magazine string) bool {
 	// 使用数组记录magazine每个字符出现的次数
 	record := make([]int, 26)
