@@ -44,8 +44,8 @@ func findDuplicates1(nums []int) []int {
 // 一次遍历数组，不断将 数字n 归位到 下标n-1 处，若发现要交换的数字已经在正确的位置，
 // 说明这个数字重复了，将其记入结果集（记录总结果时需要进行去重）
 func findDuplicates2(nums []int) []int {
-	// 临时存放结果，用于去重 -- 因为重复的数字会被遍历到多次，所以需要去重
-	unique := make(map[int]struct{})
+	// 临时存放结果，用于去重 -- 因为重复的数字可能会被遍历到多次，所以需要去重
+	unique := make(map[int]bool)
 
 	// 不断遍历数组的每一个数字将其归位到正确的位置上，若发现重复则将其记入结果集
 	for i, n := 0, 0; i < len(nums); {
@@ -60,7 +60,7 @@ func findDuplicates2(nums []int) []int {
 				nums[i], nums[n-1] = nums[n-1], nums[i]
 			} else {
 				// 若目标交换下标处的数字已经在正确位置，说明当前数字是重复数字，将其记入结果集并继续遍历下一个下标
-				unique[n] = struct{}{}
+				unique[n] = true
 				i++
 			}
 		} else {
@@ -76,12 +76,4 @@ func findDuplicates2(nums []int) []int {
 	}
 
 	return result
-}
-
-// abs .
-func abs(n int) int {
-	if n < 0 {
-		return -n
-	}
-	return n
 }

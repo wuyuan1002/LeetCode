@@ -49,3 +49,11 @@ func firstMissingPositive(nums []int) int {
 	// 数组中所有数字都小于0，说明数组中数字全部为[1, n]区间内且没有重复数字，缺失的第一个正数为n+1
 	return len(nums) + 1
 }
+
+// abs .
+func abs(n int) int {
+	if n < 0 {
+		return -n
+	}
+	return n
+}
