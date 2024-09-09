@@ -18,19 +18,19 @@ func findDisappearedNumbers(nums []int) []int {
 	// 遍历数组 -- 将每个出现的数字对应下标处数字标记为负数表示对应数字出现过，遍历完后，数组中为正数的数字下标对应的数字即为没出现过的数字
 	for i := 0; i < len(nums); i++ {
 		// 获取当前数字的绝对值 -- 因为当前位置数字可能为负数, 所以要使用绝对值
-		num := abs(nums[i])
+		n := abs(nums[i])
 
 		// 若对应下标处的数字大于0说明当前数字第一次出现，将下标处对应数字标记为负数表示当前数字出现过，
 		// 若已是负数则说明当前数字出现过不止一次，不做操作
-		if nums[num-1] > 0 {
-			nums[num-1] = -nums[num-1]
+		if nums[n-1] > 0 {
+			nums[n-1] = -nums[n-1]
 		}
 	}
 
-	// 遍历[1, n] -- 将所有对应数字大于0的n记录到结果集表示数字n没有出现过
-	for num := 1; num <= len(nums); num++ {
-		if nums[num-1] > 0 {
-			result = append(result, num)
+	// 遍历数字[1, n] -- 若下标n-1处数字是否大于0说明数字n未出现过
+	for n := 1; n <= len(nums); n++ {
+		if nums[n-1] > 0 {
+			result = append(result, n)
 		}
 	}
 
