@@ -14,8 +14,10 @@ import "strings"
 // 之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如："PAHNAPLSIIGYIR"。
 
 // convert .
-// 行的遍历总是从0到numRows，再从numRows到0如此循环，因此遍历字符串s，将每个字符添加到其所在行中，
-// 期间使用一个变量flag进行行的遍历方向控制，当flag为1时，字符添加方向为从0到numRows，flag为-1时，字符添加方向为从numRows到0
+//
+// 遍历字符串，每个字符应在第几行总是从0到numRows，再从numRows到0如此循环
+// 遍历过程中，使用一个numRows大小的数组，下标i处存放的是应在第i行的所有字符
+// 遍历结束后，将每一行的字符拼接后返回
 func convert(s string, numRows int) string {
 	// 若只有一行，则直接返回s即可
 	if numRows < 2 {
