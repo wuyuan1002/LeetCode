@@ -22,17 +22,27 @@ import "strings"
 // 给定一个整数，将其转换为罗马数字。
 
 // intToRoman .
-// 若数字以4或9开头则使用减法形式，否则使用加法形式
-// 1=1: I
-// 2=1+1: II
-// 3=1+1+1: III
-// 4=5-1: IV
-// 5: V
-// 6=5+1: VI
-// 7=5+1+1: VII
-// 8=5+1+1+1: VIII
-// 9=10-1: IX
-// 因此，罗马数字的基础组成只包括以下数字，其它数字都是通过加法形式将它们进行拼接得到：
+//
+// 罗马数字的基础组成只包括baseRoman中的数字，其它数字都是通过加法形式将它们进行拼接得到
+//
+// 从大到小不断遍历baseRoman，将baseRoman中的数字不断从num中减去，
+// 然后将被减去数字对应的罗马数字的字符串拼接到总结果的后面，直到将num减到0后返回总结果字符串
+func intToRoman(num int) string {
+	result := &strings.Builder{}
+	// 不断从大到小将基础数字从目标数字中减去并将罗马数字拼接到结果中
+	for _, base := range baseRoman {
+		for num >= base.num {
+			num -= base.num
+			result.WriteString(base.roman)
+		}
+		if num == 0 {
+			break
+		}
+	}
+	return result.String()
+}
+
+// baseRoman 罗马数字中的基本数字，其它数字都是由这里的数字相加得到
 var baseRoman = []struct {
 	num   int
 	roman string
@@ -50,20 +60,4 @@ var baseRoman = []struct {
 	{5, "V"},
 	{4, "IV"},
 	{1, "I"},
-}
-
-// intToRoman .
-func intToRoman(num int) string {
-	result := &strings.Builder{}
-	// 不断从大到小将基础数字从目标数字中减去并将罗马数字拼接到结果中
-	for _, base := range baseRoman {
-		for num >= base.num {
-			num -= base.num
-			result.WriteString(base.roman)
-		}
-		if num == 0 {
-			break
-		}
-	}
-	return result.String()
 }
