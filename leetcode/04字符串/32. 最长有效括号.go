@@ -40,6 +40,7 @@ func longestValidParentheses(s string) int {
 			right++
 		}
 
+		// 当左右括号个数一致时更新最长有效括号长度，当左括号个数大于右括号个数时将括号计数归零重新统计
 		if left == right {
 			maxLen = max(maxLen, left+right)
 		} else if left > right {

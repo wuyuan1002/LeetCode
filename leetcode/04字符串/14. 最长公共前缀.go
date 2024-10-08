@@ -17,7 +17,7 @@ func longestCommonPrefix(strs []string) string {
 
 	// 从头到尾遍历第一个字符串的的每个字符
 	for i := 0; i < len(strs[0]); i++ {
-		// 遍历每一个字符串，判断当前字符是否出现在当前字符串的相同位置
+		// 不断遍历第j个字符串，判断其第i个位置的字符是否与第一个字符串一致
 		for j := 1; j < len(strs); j++ {
 			// 若当前字符未出现在当前字符串的相同位置，说明最长公共前缀就是到当前字符前一个字符的子串
 			if i == len(strs[j]) || strs[j][i] != strs[0][i] {
