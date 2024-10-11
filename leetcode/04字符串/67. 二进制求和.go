@@ -5,8 +5,10 @@ package main
 // 给你两个二进制字符串 a 和 b ，以二进制字符串的形式返回它们的和。
 
 // addBinary .
-// 同 leetcode 415. 字符串相加、43. 字符串相乘
-// 此题与 415. 字符串相加 完全一致，只是415是十进制，此题是二进制（在求当前位得数和进位时使用的是2而不是10）
+// leetcode 415. 字符串相加
+// leetcode 43. 字符串相乘
+//
+// 此题与415完全一致，只是415是十进制，此题是二进制（在求当前位得数和进位时使用的是2而不是10）
 func addBinary(a string, b string) string {
 	result := make([]byte, 0)  // 总结果
 	carry := 0                 // 进位
@@ -34,13 +36,13 @@ func addBinary(a string, b string) string {
 	}
 
 	// 反转总结果切片
-	reverse67(result)
+	reverseSlice(result)
 
 	return string(result)
 }
 
-// reverse67 .
-func reverse67(nums []byte) {
+// reverseSlice 反转切片
+func reverseSlice(nums []byte) {
 	for l, r := 0, len(nums)-1; l < r; l, r = l+1, r-1 {
 		nums[l], nums[r] = nums[r], nums[l]
 	}
