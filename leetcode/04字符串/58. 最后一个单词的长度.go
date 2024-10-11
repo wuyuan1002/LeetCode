@@ -7,6 +7,7 @@ package main
 // 单词 是指仅由字母组成、不包含任何空格字符的最大子字符串。
 
 // lengthOfLastWord .
+//
 // 倒序遍历字符串统计最后一个单词的长度
 func lengthOfLastWord(s string) int {
 	length := 0
