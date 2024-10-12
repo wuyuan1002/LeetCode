@@ -8,7 +8,9 @@ package main
 // 元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。
 
 // removeElement .
-// leetcode 26、80、283
+// leetcode 26. 删除有序数组中的重复项
+// leetcode 80. 删除有序数组中的重复项 II
+// leetcode 283. 移动零
 //
 // 双指针
 // 左指针l左侧都是不等于val的值 -- [0, l)
