@@ -6,44 +6,40 @@ package main
 // 需保证 返回结果的字典序 最小（要求不能打乱其他字符的相对位置）。
 
 // removeDuplicateLetters .
-// - 遍历一遍字符串，统计每个字符出现的次数 -- 用于记录下一步遍历生成结果时后续剩余的字符数量
-// - 再次遍历字符串，生成结果，不断将当前字母与结果中的前面字符比较字典序，若小于前面字符且前面字符剩余数量大于0则使用当前字符替换掉前面字符
+//
+// 遍历一次字符串，统计每个字符出现的次数，用于记录下一步遍历生成结果时后续剩余的字符数量
+// 再次遍历字符串，生成结果，不断将当前字母与结果中的前面字符比较字典序，若小于前面字符且前面字符剩余数量大于0则使用当前字符替换掉前面字符
 func removeDuplicateLetters(s string) string {
 	// 遍历一遍字符串，统计每个字符出现的剩余次数
-	count := make([]int, 26)
+	count := make(map[byte]int)
 	for _, c := range []byte(s) {
-		count[c-'a']++
+		count[c]++
 	}
 
-	// 中间结果（存的是字符减去'a'的ascii码）、用于记录字符是否已在总结果中
-	res, isInReault := make([]byte, 0), make([]bool, 26)
+	// 总结果、用于记录字符是否已在总结果中
+	result, isInReault := make([]byte, 0), make(map[byte]bool)
 
 	// 再次遍历字符串，计算最终结果
 	for _, c := range []byte(s) {
 		// 递减当前字符剩余的出现次数
-		count[c-'a']--
+		count[c]--
 
 		// 若当前字符在结果中已经出现过则直接跳过
-		if isInReault[c-'a'] {
+		if isInReault[c] {
 			continue
 		}
 
-		// 若当前字符小于结果的末尾字符且末尾字符还有剩余，则将末尾字符去除 -- 从后向前去除总结果中所有大于当前字符且还有剩余的字符
-		for len(res) > 0 && c-'a' < res[len(res)-1] && count[res[len(res)-1]] > 0 {
-			// 将末尾字符从总结果中去除并更新标记在总结果中未出现
-			isInReault[res[len(res)-1]] = false
-			res = res[:len(res)-1]
+		// 从后向前去除总结果中所有大于当前字符且还有剩余的字符
+		// 即将字典序小的字符尽量安排到总结果的前面，保证总结果的字典序最小
+		for len(result) > 0 && c < result[len(result)-1] && count[result[len(result)-1]] > 0 {
+			// 更新标记末尾字符在总结果中未出现，并将其从总结果中去除
+			isInReault[result[len(result)-1]] = false
+			result = result[:len(result)-1]
 		}
 
-		// 将当前字符加入到总结果末尾并标记当前字符在总结果中出现过
-		res = append(res, c-'a')
-		isInReault[c-'a'] = true
-	}
-
-	// 最终结果 -- 将每个字符的ascii码加'a'
-	result := make([]rune, len(res))
-	for i, c := range res {
-		result[i] = rune(c + 'a')
+		// 将当前字符加入到总结果末尾，并标记当前字符在总结果中出现过
+		result = append(result, c)
+		isInReault[c] = true
 	}
 
 	return string(result)
