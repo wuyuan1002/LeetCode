@@ -7,7 +7,9 @@ package main
 // 你不能使用任何內建的用于处理大整数的库（比如 BigInteger）， 也不能直接将输入的字符串转换为整数形式。
 
 // addStrings .
-// 同 leetcode 43. 字符串相乘、67. 二进制求和
+// leetcode 43. 字符串相乘
+// leetcode 67. 二进制求和
+//
 // 两指针分别从两字符串尾部进行相加操作，同时使用一个变量记录进位，将进位相加到下一位的计算中，
 // 使用一个切片保存每一位的得数，将每一位的计算结果添加到切片末尾，最终计算完后反转整个切片即为最终结果
 func addStrings(num1 string, num2 string) string {
@@ -37,14 +39,7 @@ func addStrings(num1 string, num2 string) string {
 	}
 
 	// 反转总结果切片
-	reverse415(result)
+	reverseSlice(result)
 
 	return string(result)
-}
-
-// reverse415 .
-func reverse415(nums []byte) {
-	for l, r := 0, len(nums)-1; l < r; l, r = l+1, r-1 {
-		nums[l], nums[r] = nums[r], nums[l]
-	}
 }
