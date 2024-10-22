@@ -7,6 +7,8 @@ package main
 // 给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。
 
 // letterCombinations .
+//
+// 递归回溯所有路径，在回溯到最后一个数字时表示找到了一个字母组合，将其添加到结果集中
 func letterCombinations(digits string) []string {
 	if digits == "" {
 		return nil
@@ -21,7 +23,7 @@ func letterCombinations(digits string) []string {
 
 // dfsLetterCombinations .
 // digits：选择列表 -- 数字列表
-// index：指定当前层的数字下标 -- 当前层的字母选择范围即为phone[string(digits[index])]
+// index：指定当前层的数字下标 -- 当前层的字母选择范围即为phone[digits[index]]
 // res: 存放一次回溯路径的结果 -- 一次回溯的字母组合
 // result: 总结果 -- 所有的字母组合
 func dfsLetterCombinations(digits string, index int, res *[]byte, result *[]string) {
