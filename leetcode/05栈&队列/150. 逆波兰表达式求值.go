@@ -17,13 +17,14 @@ import "strconv"
 // 答案及所有中间计算结果可以用 32 位 整数表示。
 
 // evalRPN .
-// 遇到数字则入栈；遇到算符则取出栈顶两个数字进行计算，并将结果压入栈中
+//
+// 遇到数字则入栈，遇到运算符则取出栈顶两个数字进行计算，并将结果压入栈中
 func evalRPN(tokens []string) int {
 	stack := make([]int, 0)
 	for _, token := range tokens {
-		if val, err := strconv.Atoi(token); err == nil {
+		if num, err := strconv.Atoi(token); err == nil {
 			// 遇到数字则入栈
-			stack = append(stack, val)
+			stack = append(stack, num)
 		} else {
 			// 遇到操作符则取出栈顶两元素进行计算后将结果入栈
 			num1, num2 := stack[len(stack)-2], stack[(len(stack))-1]
