@@ -5,7 +5,10 @@ package main
 // 给你一个二叉树的根节点 root ， 检查它是否轴对称。
 
 // isSymmetric .
-// 同 Offer 28、leetcode 100. 相同的树
+// leetcode 100. 相同的树
+// Offer 28
+//
+// 前序遍历二叉树，先判断当前节点是否相等，后分别遍历左右子树是否对称相等
 func isSymmetric(root *TreeNode) bool {
 	if root == nil {
 		return true
@@ -14,7 +17,7 @@ func isSymmetric(root *TreeNode) bool {
 	return isSymme(root.Left, root.Right)
 }
 
-// isSymme 判断给定的两个节点是否镜像对称
+// isSymme 判断给定的两个节点是否镜像对称相等
 func isSymme(node1, node2 *TreeNode) bool {
 
 	// 判断node1和node2是否相等
