@@ -7,7 +7,9 @@ package main
 // 如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。
 
 // isSameTree .
-// 同 leetcode 101. 对称二叉树
+// leetcode 101. 对称二叉树
+//
+// 前序遍历二叉树，先比较当前节点是否相等，后分别遍历左右子树是否相等
 func isSameTree(p *TreeNode, q *TreeNode) bool {
 
 	// 判断p、q是否相等
