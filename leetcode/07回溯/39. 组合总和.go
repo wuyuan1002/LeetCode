@@ -12,8 +12,13 @@ package main
 // 对于给定的输入，保证和为target 的不同组合数少于 150 个。
 
 // combinationSum .
-// 1. 回溯法
-// 2. 动态规划 -- 完全背包 -- 组合问题 -- 只能求出解的个数, 无法求出每个解是什么 -- leetcode 518
+//
+// 递归回溯
+// 每次选定一个数字后进入下一层继续选择下一个数字到回溯路径，直到总和达到目标值说明找到一个解，
+// 记录结果后向前回溯，将回溯路径的数字不断重新选择，寻找其他的解并进行记录
+//
+// 此题也类似动态规划完全背包问题 -- leetcode 518. 零钱兑换
+// 不过动态规划只能求出解的个数，而无法求出每个解是什么
 func combinationSum(candidates []int, target int) [][]int {
 	if candidates == nil || len(candidates) == 0 {
 		return nil
@@ -57,9 +62,9 @@ func dfsCombinationSum(candidates []int, start int, currentSum, target int, res 
 
 		// 将当前值加入到回溯路径
 		*res = append(*res, candidates[i])
-		// 递归进入下一层 -- 因为每个数字可以无限制重复被选取,
-		// 所以进入下一层时当前数字仍然可以被使用, 因此下一层的start为i,
-		// 如果每个数字只能被使用一次, 那么下一层的start应该传 i+1
+		// 递归进入下一层选择下一个数字
+		// 因为每个数字可以无限制重复被选取，所以进入下一层时当前数字仍然可以被使用，因此下一层的start为i
+		// 如果每个数字只能被使用一次，那么下一层的start应该传i+1
 		dfsCombinationSum(candidates, i, currentSum+candidates[i], target, res, result)
 		// 将当前值移出回溯路径
 		*res = (*res)[:len(*res)-1]
