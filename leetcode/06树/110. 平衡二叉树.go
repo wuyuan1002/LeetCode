@@ -8,7 +8,9 @@ package main
 // 一个二叉树每个节点的左右两个子树的高度差的绝对值不超过 1 。
 
 // isBalanced .
-// 同 Offer 55-2、leetcode 104. 二叉树的最大深度
+// leetcode 104. 二叉树的最大深度
+// Offer 55 - II. 平衡二叉树
+//
 // 递归求出左右子树的最大深度，然后判断该节点是否平衡
 func isBalanced(root *TreeNode) bool {
 	depth := 0
@@ -23,14 +25,14 @@ func isBalance(node *TreeNode, maxDepth *int) bool {
 		return true
 	}
 
-	leftDepth, rightDepth := 0, 0            // 左右子节点的最大深度
-	lb := isBalance(node.Left, &leftDepth)   // 左子树是否平衡
-	rb := isBalance(node.Right, &rightDepth) // 右子树是否平衡
+	leftDepth, rightDepth := 0, 0                        // 左右子节点的最大深度
+	isLeftBalance := isBalance(node.Left, &leftDepth)    // 左子树是否平衡
+	isRightBalance := isBalance(node.Right, &rightDepth) // 右子树是否平衡
 
 	diff := leftDepth - rightDepth // 当前节点的左右子树高度差
 
-	// 当前节点平衡
-	if lb && rb && diff >= -1 && diff <= 1 {
+	// 若当前节点的左右子树都平衡并且左右子树的高度差不超过1，则说明当前节点是平衡的
+	if isLeftBalance && isRightBalance && diff >= -1 && diff <= 1 {
 		// 获取当前节点的最大深度并返回
 		*maxDepth = max(leftDepth, rightDepth) + 1
 		return true
