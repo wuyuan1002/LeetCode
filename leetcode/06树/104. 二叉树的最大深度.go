@@ -25,11 +25,3 @@ func maxDepth(root *TreeNode) int {
 	// 返回当前节点的最大深度+1 -- 当前节点的深度也需要被加上
 	return max(leftDepth, rightDepth) + 1
 }
-
-// max .
-func max(a, b int) int {
-	if a >= b {
-		return a
-	}
-	return b
-}
