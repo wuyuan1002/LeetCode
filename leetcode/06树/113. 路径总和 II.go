@@ -8,8 +8,12 @@ package main
 // 叶子节点 是指没有子节点的节点。
 
 // pathSum113 .
-// 同 leetcode 112. 路径总和、leetcode 437. 路径总和 III、leetcode 257. 二叉树的所有路径
-// 回溯 -- 前序递归遍历二叉树，遍历过程中记录满足条件的路径
+// leetcode 112. 路径总和
+// leetcode 437. 路径总和 III
+// leetcode 257. 二叉树的所有路径
+//
+// 前序遍历二叉树，同时相加当前节点的值判断是否满足路径总和
+// 若某个节点恰好是叶子结点并且路径总和为目标值，则将其记录到结果集
 func pathSum113(root *TreeNode, targetSum int) [][]int {
 	res := make([]int, 0)      // 一次遍历路径上的节点
 	result := make([][]int, 0) // 总结果
@@ -18,7 +22,7 @@ func pathSum113(root *TreeNode, targetSum int) [][]int {
 	return result
 }
 
-// dfsPathSum 回溯递归遍历节点获取路径
+// dfsPathSum 回溯递归遍历节点获取满足条件的路径
 func dfsPathSum113(node *TreeNode, currentSum, targetSum int, res *[]int, result *[][]int) {
 	if node == nil {
 		return
@@ -31,7 +35,7 @@ func dfsPathSum113(node *TreeNode, currentSum, targetSum int, res *[]int, result
 	*res = append(*res, node.Val)
 
 	if node.Left == nil && node.Right == nil && currentSum == targetSum {
-		// 若当前节点为叶子节点且当前和等于目标值 -- 记录一条路径总和到总结果
+		// 若当前节点为叶子节点且当前和等于目标值 -- 记录当前路径总和到总结果
 		temp := make([]int, len(*res))
 		copy(temp, *res)
 		*result = append(*result, temp)
