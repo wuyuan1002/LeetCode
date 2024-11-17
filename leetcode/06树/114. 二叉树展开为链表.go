@@ -8,13 +8,13 @@ package main
 // 展开后的单链表应该与二叉树 先序遍历 顺序相同。
 
 // flatten .
-// 右左根后序遍历二叉树 -- 因为结果要与前序遍历一致，而递归相当于栈
+//
+// 因为结果要与左右根前序遍历一致，而递归相当于栈，所以需要使用右左根后续遍历进行结点替换
 func flatten(root *TreeNode) {
-
 	// 指向前一个遍历的节点
-	pre := (*TreeNode)(nil)
+	var pre *TreeNode = nil
 
-	// 后序遍历二叉树 -- 因为结果要与前序遍历一致，而递归相当于栈
+	// 右左根后序遍历二叉树，并将当前节点的值进行替换
 	var dfsFlatten func(node *TreeNode)
 	dfsFlatten = func(node *TreeNode) {
 		if node == nil {
@@ -29,6 +29,6 @@ func flatten(root *TreeNode) {
 		pre = node
 	}
 
-	// 开始遍历跟节点
+	// 从根节点开始遍历
 	dfsFlatten(root)
 }
