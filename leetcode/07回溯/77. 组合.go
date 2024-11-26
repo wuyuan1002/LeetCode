@@ -7,6 +7,13 @@ package main
 // 你可以按 任何顺序 返回答案。
 
 // combine .
+//
+// 递归回溯
+// 每次选定一个数字后进入下一层继续选择下一个数字到回溯路径，直到回溯路径中的数字个数达到k则说明找到了一个解
+// 记录结果后向前回溯，将回溯路径的数字不断重新选择，寻找其他的解并进行记录
+//
+// 此题也类似动态规划01背包问题 -- leetcode 416. 分割等和子集
+// 不过动态规划只能求出解的个数，而无法求出每个解是什么，且此题有重复元素，计算时需要去重
 func combine(n int, k int) [][]int {
 	if n < k {
 		return nil
@@ -44,7 +51,7 @@ func dfsCombine(n int, start int, k int, res *[]int, result *[][]int) {
 		// 将当前值加入到回溯路径
 		*res = append(*res, i)
 		// 递归进行下一层
-		dfsCombine(n, k, i+1, res, result)
+		dfsCombine(n, i+1, k, res, result)
 		// 将当前值移出回溯路径
 		*res = (*res)[:len(*res)-1]
 	}
