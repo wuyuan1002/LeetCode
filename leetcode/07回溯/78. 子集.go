@@ -7,14 +7,18 @@ package main
 // 解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。
 
 // subsets .
+// leetcode 77. 组合
+// leetcode 90. 子集 II
+//
+// 递归回溯
 // 相当于求nums中 0个数字的组合 + 1个数字的组合 + 2个数字的组合 + ... + len(nums)个数字的组合 的并集
 func subsets(nums []int) [][]int {
 	res := make([]int, 0)      // 一次回溯过程中的结果 -- 回溯路径
 	result := make([][]int, 0) // 总结果集
 
 	// 分别求 nums中 0 ～ len(nums) 个数字的组合的并集
-	for i := 0; i <= len(nums); i++ {
-		dfsSubsets(nums, 0, i, &res, &result)
+	for k := 0; k <= len(nums); k++ {
+		dfsSubsets(nums, 0, k, &res, &result)
 	}
 
 	return result
