@@ -1,5 +1,7 @@
 package main
 
+import "sort"
+
 // 90. 子集 II
 
 // 给你一个整数数组 nums ，其中可能包含重复元素，请你返回该数组所有可能的子集（幂集）。
@@ -7,10 +9,14 @@ package main
 // 解集 不能 包含重复的子集。返回的解集中，子集可以按 任意顺序 排列。
 
 // subsetsWithDup .
+// leetcode 77. 组合
+// leetcode 78. 子集
+//
+// 递归回溯
 // 相当于求nums中 0个数字的组合 + 1个数字的组合 + 2个数字的组合 + ... + len(nums)个数字的组合 的并集
 func subsetsWithDup(nums []int) [][]int {
 	// 因为有重复元素, 所以先排序方便剪枝
-	quickSort90(nums, 0, len(nums)-1)
+	sort.Ints(nums)
 
 	res := make([]int, 0)      // 一次回溯过程中的结果 -- 回溯路径
 	result := make([][]int, 0) // 总结果集
@@ -44,6 +50,7 @@ func dfsSubsetsWithDup(nums []int, start int, count int, res *[]int, result *[][
 		if len(*res)+len(nums)-start+1 < count {
 			return
 		}
+
 		// 剪枝 -- 跳过重复元素, 防止出现重复子集
 		if i > start && nums[i] == nums[i-1] {
 			continue
@@ -56,31 +63,4 @@ func dfsSubsetsWithDup(nums []int, start int, count int, res *[]int, result *[][
 		// 将本层固定的数字移出回溯路径, 重新固定下一个数字
 		*res = (*res)[:len(*res)-1]
 	}
-}
-
-// quickSort90 快排
-func quickSort90(nums []int, left, right int) {
-	if len(nums) == 0 || left >= right {
-		return
-	}
-
-	l, r := left, right
-	temp := nums[left]
-
-	for l < r {
-		for l < r && nums[r] >= temp {
-			r--
-		}
-		for l < r && nums[l] <= temp {
-			l++
-		}
-
-		if l < r {
-			nums[l], nums[r] = nums[r], nums[l]
-		}
-	}
-
-	nums[left], nums[l] = nums[l], nums[left]
-	quickSort90(nums, left, l-1)
-	quickSort90(nums, r+1, right)
 }
