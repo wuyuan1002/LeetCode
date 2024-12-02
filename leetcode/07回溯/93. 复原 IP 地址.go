@@ -13,6 +13,11 @@ import "strconv"
 // 你 不能重新排序或删除 s 中的任何数字。你可以按 任何 顺序返回答案。
 
 // restoreIpAddresses .
+// leetcode 77. 组合
+//
+// 递归回溯
+// 每一层递归都分割一个符合条件的IP数字加入到回溯路径，在每次递归回溯前进行路径检查是否已经切割成正确的IP地址
+//
 // 切割问题和组合问题本质上是一样的
 // 组合问题: 选取一个a后，在bcdef中再去选取第二个，选取b之后在cdef中再选取第三个...
 // 切割问题: 切割一个a后，在bcdef中再去切割第二段，切割b之后在cdef中再切割第三段...
@@ -29,10 +34,10 @@ func restoreIpAddresses(s string) []string {
 // res: 存放一次回溯路径分割的数字
 // result: 总结果 -- 分割后符合条件的IP列表
 func dfsRestoreIpAddresses(s string, start int, res *[]string, result *[]string) {
-	// 若已选择足够数量的符合IP地址的数字 -- 没必要进入下一层继续选择第5个数字了, 检查一下当前回溯路径的数字是否符合IP地址
+	// 若已选择足够数量的符合IP地址的数字 -- 没必要进入下一层继续选择第5个数字了，检查一下当前回溯路径的数字是否符合IP地址
 	if len(*res) == 4 {
-		// 若整个字符串都已经遍历到了, 并且恰好分成了4个数字, 说明切分到了一个符合条件的IP地址 -- 加入结果集
-		// 否则说明没遍历完整个字符串时就分割够了4个数字, 不符合条件 -- 直接返回
+		// 若整个字符串都已经遍历到了，并且恰好分成了4个数字，说明切分到了一个符合条件的IP地址 -- 加入结果集
+		// 否则说明没遍历完整个字符串时就分割够了4个数字，不符合条件 -- 直接返回
 		if start == len(s) {
 			str := ""
 			for i, n := range *res {
@@ -48,10 +53,10 @@ func dfsRestoreIpAddresses(s string, start int, res *[]string, result *[]string)
 
 	// 不断从本层分割数字放入回溯路径然后进入下一层继续选择下一个数字
 	for i := start; i < len(s); i++ {
-		// 本次分割的字符串
+		// 本次分割到的字符串
 		str := s[start : i+1]
 
-		// 剪枝 -- 本次分割到的字符串不满足IP地址的数字要求 -- 已经不满足条件了, 直接返回即可
+		// 剪枝 -- 本次分割到的字符串不满足IP地址的数字要求 -- 已经不满足条件了，直接返回即可
 		if str != "0" && str[0] == '0' {
 			return
 		} else if n, _ := strconv.Atoi(str); n > 255 {
@@ -62,7 +67,7 @@ func dfsRestoreIpAddresses(s string, start int, res *[]string, result *[]string)
 		*res = append(*res, str)
 		// 进入下一层选择下一个数字
 		dfsRestoreIpAddresses(s, i+1, res, result)
-		// 将当前数字移出回溯路径, 从当前层分割另一个数字
+		// 将当前数字移出回溯路径，从当前层分割另一个数字
 		*res = (*res)[:len(*res)-1]
 	}
 }
