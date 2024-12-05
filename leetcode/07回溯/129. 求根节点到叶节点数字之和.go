@@ -13,7 +13,9 @@ import "strconv"
 // 叶节点 是指没有子节点的节点。
 
 // sumNumbers .
-// 回溯法 -- 遍历到叶节点则计算总和，中间节点则继续向下遍历
+//
+// 递归回溯 + 前序遍历二叉树
+// 遍历到叶节点则计算总和，中间节点则继续向下遍历
 func sumNumbers(root *TreeNode) int {
 	result := 0
 	nums := make([]byte, 0)
@@ -30,7 +32,7 @@ func dfsSumNumbers(node *TreeNode, nums *[]byte, result *int) {
 		return
 	}
 
-	// 将当前节点加入到回溯路径
+	// 将当前节点的数字加入到回溯路径
 	*nums = append(*nums, byte(node.Val+'0'))
 
 	if node.Left == nil && node.Right == nil {
