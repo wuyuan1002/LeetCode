@@ -15,17 +15,22 @@ package main
 // 初始状态下，所有 next 指针都被设置为 NULL。
 
 // connect .
-// 同 leetcode 102. 二叉树的层序遍历
+// leetcode 102. 二叉树的层序遍历
+//
 // 层级遍历二叉树，遍历每一层的节点时将其next指针指向该层的下一个节点
 func connect(root *Node) *Node {
 	if root == nil {
 		return nil
 	}
 
-	queue := []*Node{root} // 使用一个单端队列存储遍历过程中的左右节点 -- 初始化先将root入队
+	// 使用一个单端队列存储遍历过程中的左右节点 -- 初始化先将root入队
+	queue := []*Node{root}
 
-	for len(queue) > 0 { // 若当前层有节点，则遍历该层
-		for count := len(queue); count > 0; count-- { // 开始遍历当前层，count：当前层节点个数
+	// 队列不为空说明还有层没有遍历，不断遍历每一层
+	for len(queue) > 0 {
+		// 开始遍历当前层，此时队列内的所有节点都是当前层的节点
+		// 因为在遍历的过程中遍历过的节点会从queue中删除，所以遍历完一层后队列内的节点就是下一层的所有节点
+		for count := len(queue); count > 0; count-- {
 			// 获取当前层下一个节点并出队
 			node := queue[0]
 			queue = queue[1:]
