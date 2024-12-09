@@ -11,7 +11,7 @@ package main
 // countNodes .
 // 1. 递归遍历二叉树，过程中统计节点个数
 // 2. 层级遍历二叉树，过程中统计节点个数
-// 3. 利用完全二叉树的特点进行求解 -- 使用满二叉树的公式求解
+// 3. 利用完全二叉树的特点，使用满二叉树的公式求解：若一个满二叉树的深度为k，则其节点总数为(2^k)-1
 func countNodes(root *TreeNode) int {
 	if root == nil {
 		return 0
@@ -21,8 +21,8 @@ func countNodes(root *TreeNode) int {
 	return countNodes(root.Left) + countNodes(root.Right) + 1
 }
 
-// countNodes1 3. 利用完全二叉树的特点进行求解 -- 使用满二叉树的公式求解
-func countNodes1(root *TreeNode) int {
+// countNodes222 利用完全二叉树的特点进行求解 -- 使用满二叉树的公式求解
+func countNodes222(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
@@ -40,12 +40,12 @@ func countNodes1(root *TreeNode) int {
 		rightDepth++
 	}
 
-	// 由于给定的树是一棵完全二叉树 -- 所以若当前节点的左右子树深度相同，说明当前节点为一颗满二叉树的根
-	// 可以使用满二叉树的公式求出以当前节点为根的满二叉树的节点个数
+	// 由于给定的树是一棵完全二叉树，则
+	// 若当前节点的左右子树深度相同，说明当前节点为一颗满二叉树的根，使用满二叉树公式求解当前节点子节点总数
 	if leftDepth == rightDepth {
 		return (2 << leftDepth) - 1
 	}
 
-	// 当前节点不是一个满二叉树的根，则分别求其左右子树的节点个数+1
-	return countNodes1(root.Left) + countNodes1(root.Right) + 1
+	// 若当前节点不是一个满二叉树的根，则分别求其左右子树的节点个数+1
+	return countNodes222(root.Left) + countNodes222(root.Right) + 1
 }
