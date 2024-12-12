@@ -10,7 +10,7 @@ package main
 // lowestCommonAncestor236 .
 // leetcode 235. 二叉搜索树的最近公共祖先
 //
-// 后序遍历二叉树
+// 后序遍历二叉树，自底向上进行查找
 // 分别在左右子树中查找p和q，第一个分别在左右子树中找到p和q的节点即为p和q的最近公共祖先
 func lowestCommonAncestor236(root, p, q *TreeNode) *TreeNode {
 	// 递归到叶节点或当前节点为p或q，则返回当前节点

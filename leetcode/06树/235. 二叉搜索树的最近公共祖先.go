@@ -8,10 +8,10 @@ package main
 // 满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
 
 // lowestCommonAncestor235 .
-// 同 leetcode 236. 二叉树的最近公共祖先
-// 1. 使用236的解法，使用后序遍历自底向上寻找
-// 2. 利用二叉搜索树的特性，左子树的值一定都小于当前值，右子树的值一定大于当前值，
-// 因此我们使用前序遍历二叉搜索树，发现的第一个处于 [p, q] 范围的值便是p和q的最近公共祖先
+// leetcode 236. 二叉树的最近公共祖先
+//
+// 1. 后序遍历自底向上查找 -- 同236
+// 2. 前序遍历二叉搜索树自顶向下查找 -- 发现的第一个处于[p, q]范围的节点便是p和q的最近公共祖先
 func lowestCommonAncestor235(root, p, q *TreeNode) *TreeNode {
 	if root == nil {
 		return root
