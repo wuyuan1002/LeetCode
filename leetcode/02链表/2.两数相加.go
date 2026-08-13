@@ -20,14 +20,16 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	node1, node2 := l1, l2 // 正在参与计算的两个节点
 	carry := 0             // 进位
 
-	for node1 != nil || node2 != nil || carry != 0 {
-		// 计算两数之和 -- sum = num1 + num2 + carry
+	for node1 != nil || node2 != nil || carry > 0 {
+		// 计算当前位的两数之和，并移动数字到下一位 -- sum = num1 + num2 + carry
 		sum := carry
 		if node1 != nil {
 			sum += node1.Val
+			node1 = node1.Next
 		}
 		if node2 != nil {
 			sum += node2.Val
+			node2 = node2.Next
 		}
 
 		// 计算当前位得数并构造当前位节点、计算进位
@@ -37,14 +39,6 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		// 将当前位结果加入到结果链表中
 		preNode.Next = curNode
 		preNode = preNode.Next
-
-		// 向后移动参与计算的数字
-		if node1 != nil {
-			node1 = node1.Next
-		}
-		if node2 != nil {
-			node2 = node2.Next
-		}
 	}
 
 	// 返回结果头节点

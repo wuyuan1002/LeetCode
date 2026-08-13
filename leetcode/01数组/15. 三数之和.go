@@ -15,7 +15,7 @@ import "sort"
 // 先固定一个值，接下来就是在剩余数字中寻找两数之和，但是需要保证结果不重复，
 // 如果寻找两数之和时使用map的话，结果会重复；因此我们先将数组排序，在寻找两数之和时使用双指针从两边移动来找
 func threeSum(nums []int) [][]int {
-	if nums == nil || len(nums) < 3 {
+	if len(nums) < 3 {
 		return nil
 	}
 

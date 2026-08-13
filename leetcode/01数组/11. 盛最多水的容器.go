@@ -15,8 +15,8 @@ package main
 // 左右两个指针用来选择盛水所用的两边柱子，不断向内移动短的那个柱子，计算并更新最大盛水量
 //
 // 为什么移动短柱子而不是长的呢？
-// 若向内移动短柱子，水槽的短板可能变大 -- 下一个水槽的面积可能增大
-// 若向内移动长柱子，水槽的短板不变或变小 -- 下一个水槽的面积一定变小
+// 若向内移动短柱子，水槽的短板不变或变大 -- 下一个水槽的面积可能变大
+// 若向内移动长柱子，水槽的短板不变或变小 -- 下一个水槽的面积可能变小
 func maxArea(height []int) int {
 	l, r := 0, len(height)-1
 	result := 0
@@ -34,12 +34,4 @@ func maxArea(height []int) int {
 	}
 
 	return result
-}
-
-// max .
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
