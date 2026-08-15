@@ -12,10 +12,9 @@ package main
 // 双指针
 // 先让右指针向后移动n, 之后左右指针同时向后移动, 当右指针到末尾时, 要删除的元素正好时左指针的下一个节点
 func removeNthFromEnd(head *ListNode, n int) *ListNode {
+	dummy := &ListNode{0, head}
+	l, r := dummy, head
 
-	l, r := head, head
-
-	// 右指针先向后移动n
 	for i := 0; i < n; i++ {
 		if r == nil {
 			return head
@@ -23,19 +22,12 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 		r = r.Next
 	}
 
-	// 倒数第n个节点恰巧是头节点 -- 要删除的元素正好的head
-	if r == nil {
-		return head.Next
-	}
-
-	// 双指针同时向后移动
-	for r.Next != nil {
+	for r != nil {
 		l = l.Next
 		r = r.Next
 	}
 
-	// 删除倒数第n个节点
 	l.Next = l.Next.Next
 
-	return head
+	return dummy.Next
 }

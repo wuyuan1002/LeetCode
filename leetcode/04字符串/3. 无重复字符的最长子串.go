@@ -10,12 +10,12 @@ package main
 // 窗口内字符所构成的子串就是每一个无重复字符的子串，在遍历过程中统计窗口的最大长度
 func lengthOfLongestSubstring(s string) int {
 	sbyte := []byte(s)
-	hash := make(map[byte]int) // 存储每个字符和它最近一次出现的下标
-	maxLen := 0                // 无重复字符的最长子串长度
+	hash := make(map[byte]int, len(sbyte)) // 存储每个字符和它最近一次出现的下标
+	maxLen := 0                            // 无重复字符的最长子串长度
 
 	// 双指针遍历字符串形成滑动窗口，同时根据窗口长度计算无重复字符的最长子串长度
 	for l, r := 0, 0; r < len(sbyte); r++ {
-		// 若当前字符已经出现过，将左指针向右移动或保持不变，不能直接移动到index+1，原因: abba
+		// 若当前字符已经出现过，将左指针向右移动或保持不变，不能直接移动到index+1（这样会导致l回退），原因: abba
 		// 当前字符上次出现的位置可能在窗口内也可能不在窗口内，若在窗口内那么需要向前移动左指针到index+1，若没在窗口内那就不需要移动左指针
 		if index, ok := hash[sbyte[r]]; ok {
 			l = max(l, index+1)
@@ -29,12 +29,4 @@ func lengthOfLongestSubstring(s string) int {
 	}
 
 	return maxLen
-}
-
-// max .
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
