@@ -28,9 +28,8 @@ func removeElement(nums []int, val int) int {
 	for r < len(nums) {
 		// 若当前元素不等于val说明当前元素是目标值，要将其放到左指针左侧，所以将其赋值给左指针并将左指针向右移动一位
 		if nums[r] != val {
-			// 此处使用交换更加直观，只是等于val的值后续不再使用，所以可以直接赋值覆盖
-			// nums[l], nums[r] = nums[r], nums[l]
-			nums[l] = nums[r]
+			// 将r指向的与val不一致的值交换至l，并将l移动至下一位
+			nums[l], nums[r] = nums[r], nums[l]
 			l++
 		}
 

@@ -19,7 +19,7 @@ func removeDuplicates(nums []int) int {
 	for r < len(nums) {
 		// 若当前右指针指向的数字与左指针左侧数字不一致，说明这个数字首次出现，将其赋值给左指针所指位置并将左指针向右移动一位
 		if nums[r] != nums[l-1] {
-			nums[l] = nums[r]
+			nums[l], nums[r] = nums[r], nums[l]
 			l++
 		}
 
@@ -27,6 +27,6 @@ func removeDuplicates(nums []int) int {
 		r++
 	}
 
-	// 最终左指针及其前面的数字就是不重复的数字
+	// 最终左指针前面的数字就是不重复的数字，返回不重复的数组长度 -- [0, l)
 	return l
 }
