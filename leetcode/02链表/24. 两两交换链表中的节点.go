@@ -44,3 +44,23 @@ func swapPairs2(head *ListNode) *ListNode {
 	head.Next = swapPairs2(nextGroupHead)
 	return newHead
 }
+
+// swapPairs3 .
+// 设置虚拟头节点dummy，不断交换temp节点的后面两个节点，整个链表交换结束后返回最终的链表头节点
+func swapPairs3(head *ListNode) *ListNode {
+	// 设置虚拟头节点
+	dummy := &ListNode{0, head}
+
+	// 不断交换temp的后两个节点
+	for temp := dummy; temp.Next != nil && temp.Next.Next != nil; {
+		node1 := temp.Next
+		node2 := temp.Next.Next
+		temp.Next = node2
+		node1.Next = node2.Next
+		node2.Next = node1
+		temp = node1
+	}
+
+	// 整个链表交换结束后，返回dummy指向的最终链表头节点
+	return dummy.Next
+}
