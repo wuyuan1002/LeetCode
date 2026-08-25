@@ -31,18 +31,18 @@ func convert(s string, numRows int) string {
 	}
 
 	// 遍历每一个字符，将其添加到其所在行中，使用flag控制行的遍历方向
-	i, flag := 0, -1 // i: 行号（当前字符应该添加到第几行）、flag: 控制行的遍历方向
+	line, flag := 0, -1 // line: 行号（当前字符应该添加到第几行）、flag: 控制行的遍历方向
 	for _, c := range []byte(s) {
 		// 将当前字符添加到其所在行中
-		rows[i].WriteByte(c)
+		rows[line].WriteByte(c)
 
 		// 打印到头调转方向
-		if i == 0 || i == numRows-1 {
+		if line == 0 || line == numRows-1 {
 			flag *= -1
 		}
 
 		// 移动到下一行
-		i += flag
+		line += flag
 	}
 
 	// 将所有行的字符串进行拼接
