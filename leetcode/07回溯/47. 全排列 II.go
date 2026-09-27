@@ -36,7 +36,10 @@ func dfsPermuteUnique(nums []int, start int, result *[][]int) {
 	}
 
 	// 由于本题nums中包含重复数字，所以需要visited记录已访问的数字，而46题就不需要
-	// 还可以使用先在permuteUnique中给nums排序，之后在dfs时判断当前数字和前一个数字是否相等来去重
+	//
+	// 注意：这里不能使用在permuteUnique中给nums排序，之后在dfs时判断当前数字和前一个数字是否相等来去重，
+	// 因为使用直接在nums中进行交换的方式表示当前层的选择数字，在交换后下层回溯时顺序就乱了，如果要使用排序，
+	// 那么需要在每层交换数字后都对下层回溯先进行一次排序，或者直接使用res进行当前回溯路径的记录，而不是直接在nums中交换
 	visited := make(map[int]bool)
 
 	for i := start; i < len(nums); i++ {
