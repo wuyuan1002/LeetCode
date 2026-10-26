@@ -12,19 +12,20 @@ package main
 // dp[i]表示以下标i处数字结尾的数组的最大和
 // dp[i] = max(dp[i-1]+nums[i], nums[i])
 func maxSubArray(nums []int) int {
-	if nums == nil || len(nums) == 0 {
+	if len(nums) == 0 {
 		return 0
-	} else if len(nums) == 1 {
-		return nums[0]
 	}
 
-	maxSum := nums[0] // 最大子数组和
+	// 全局最大子数组和
+	maxSum := nums[0]
 
-	// 定义并初始化dp数组 -- dp[i]表示以第i个数结尾的最大子数组和
+	// 定义dp数组 -- dp[i]表示以第i个数字结尾的最大子数组和
 	dp := make([]int, len(nums))
+
+	// 初始化dp数组 -- 以第一个数字结尾的最大子数组和就是该数字本身
 	dp[0] = nums[0]
 
-	// 遍历数组，更新dp数组和最大子数组和
+	// 开始dp -- 更新dp数组中以每个数字结尾的最大子数组和，并更新全局最大子数组和
 	for i := 1; i < len(nums); i++ {
 		// 更新以当前数字结尾的最大子数组和
 		dp[i] = max(dp[i-1]+nums[i], nums[i])
@@ -40,13 +41,13 @@ func maxSubArray(nums []int) int {
 //
 // 可以看到在计算下一个数字结尾的数组最大和时，只需要使用dp[i-1]即可，所以没必要使用dp数组记录所有中间结果
 func maxSubArray1(nums []int) int {
-	if nums == nil || len(nums) == 0 {
+	if len(nums) == 0 {
 		return 0
-	} else if len(nums) == 1 {
-		return nums[0]
 	}
 
-	currentSum, maxSum := nums[0], nums[0] // 以当前数字结尾的最大子数组和、全局最大子数组和
+	// 以当前数字结尾的最大子数组和、全局最大子数组和
+	currentSum, maxSum := nums[0], nums[0]
+
 	for i := 1; i < len(nums); i++ {
 		// 更新以当前数字结尾的最大子数组和
 		currentSum = max(currentSum+nums[i], nums[i])
@@ -55,12 +56,4 @@ func maxSubArray1(nums []int) int {
 	}
 
 	return maxSum
-}
-
-// max .
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
 }
